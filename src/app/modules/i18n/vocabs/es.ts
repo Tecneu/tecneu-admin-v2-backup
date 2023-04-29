@@ -1,103 +1,103 @@
-// Spain
+// ESPAÑA
 export const locale = {
   lang: 'es',
   data: {
     TRANSLATOR: {
-      SELECT: 'Elige tu idioma',
+      SELECT: 'Seleccione su idioma',
     },
     MENU: {
       NEW: 'nuevo',
-      ACTIONS: 'Comportamiento',
+      ACTIONS: 'Acciones',
       CREATE_POST: 'Crear nueva publicación',
-      PAGES: 'Pages',
-      FEATURES: 'Caracteristicas',
+      PAGES: 'Páginas',
+      FEATURES: 'Funciones',
       APPS: 'Aplicaciones',
-      DASHBOARD: 'Tablero'
+      DASHBOARD: 'Tablero',
     },
     AUTH: {
       GENERAL: {
         OR: 'O',
         SUBMIT_BUTTON: 'Enviar',
-        NO_ACCOUNT: 'No tienes una cuenta?',
-        SIGNUP_BUTTON: 'Regístrate',
-        FORGOT_BUTTON: 'Se te olvidó tu contraseña',
-        BACK_BUTTON: 'Espalda',
-        PRIVACY: 'Intimidad',
+        NO_ACCOUNT: '¿No tienes una cuenta?',
+        SIGNUP_BUTTON: 'Registrarse',
+        FORGOT_BUTTON: '¿Olvidaste la contraseña?',
+        BACK_BUTTON: 'Atrás',
+        PRIVACY: 'Privacidad',
         LEGAL: 'Legal',
         CONTACT: 'Contacto',
       },
       LOGIN: {
-        TITLE: 'Crear una cuenta',
-        BUTTON: 'Registrarse',
+        TITLE: 'Iniciar sesión',
+        BUTTON: 'Ingresar',
       },
       FORGOT: {
-        TITLE: 'Contraseña olvidada?',
+        TITLE: '¿Contraseña olvidada?',
         DESC: 'Ingrese su correo electrónico para restablecer su contraseña',
-        SUCCESS: 'Your account has been successfully reset.'
+        SUCCESS: 'Se ha restablecido correctamente su cuenta.'
       },
       REGISTER: {
-        TITLE: 'Sign Up',
-        DESC: 'Enter your details to create your account',
-        SUCCESS: 'Your account has been successfuly registered.'
+        TITLE: 'Registrarse',
+        DESC: 'Ingrese sus datos para crear su cuenta',
+        SUCCESS: 'Su cuenta ha sido registrada exitosamente.'
       },
       INPUT: {
-        EMAIL: 'Email',
-        FULLNAME: 'Fullname',
-        PASSWORD: 'Password',
-        CONFIRM_PASSWORD: 'Confirm Password',
-        USERNAME: 'Usuario'
+        EMAIL: 'Correo electrónico',
+        FULLNAME: 'Nombre completo',
+        PASSWORD: 'Contraseña',
+        CONFIRM_PASSWORD: 'Confirmar contraseña',
+        USERNAME: 'Nombre de usuario'
       },
       VALIDATION: {
-        INVALID: '{{name}} is not valid',
-        REQUIRED: '{{name}} is required',
-        MIN_LENGTH: '{{name}} minimum length is {{min}}',
-        AGREEMENT_REQUIRED: 'Accepting terms & conditions are required',
-        NOT_FOUND: 'The requested {{name}} is not found',
-        INVALID_LOGIN: 'The login detail is incorrect',
-        REQUIRED_FIELD: 'Required field',
-        MIN_LENGTH_FIELD: 'Minimum field length:',
-        MAX_LENGTH_FIELD: 'Maximum field length:',
-        INVALID_FIELD: 'Field is not valid',
+        INVALID: '{{name}} no es válido',
+        REQUIRED: '{{name}} es obligatorio',
+        MIN_LENGTH: 'La longitud mínima de {{name}} es {{min}}',
+        AGREEMENT_REQUIRED: 'Se requiere aceptar los términos y condiciones',
+        NOT_FOUND: 'El {{name}} solicitado no se encuentra',
+        INVALID_LOGIN: 'Los datos de inicio de sesión son incorrectos',
+        REQUIRED_FIELD: 'Campo obligatorio',
+        MIN_LENGTH_FIELD: 'Longitud mínima del campo:',
+        MAX_LENGTH_FIELD: 'Longitud máxima del campo:',
+        INVALID_FIELD: 'El campo no es válido',
       }
     },
     ECOMMERCE: {
       COMMON: {
-        SELECTED_RECORDS_COUNT: 'Selected records count: ',
-        ALL: 'All',
-        SUSPENDED: 'Suspended',
-        ACTIVE: 'Active',
-        FILTER: 'Filter',
-        BY_STATUS: 'by Status',
-        BY_TYPE: 'by Type',
-        BUSINESS: 'Business',
+        SELECTED_RECORDS_COUNT: 'Cantidad de registros seleccionados: ',
+        ALL: 'Todos',
+        SUSPENDED: 'Suspendido',
+        ACTIVE: 'Activo',
+        FILTER: 'Filtrar',
+        BY_STATUS: 'por Estado',
+        BY_TYPE: 'por Tipo',
+        BUSINESS: 'Negocio',
         INDIVIDUAL: 'Individual',
-        SEARCH: 'Search',
-        IN_ALL_FIELDS: 'in all fields'
+        SEARCH: 'Buscar',
+        IN_ALL_FIELDS: 'en todos los campos'
       },
       ECOMMERCE: 'eCommerce',
       CUSTOMERS: {
-        CUSTOMERS: 'Customers',
-        CUSTOMERS_LIST: 'Customers list',
-        NEW_CUSTOMER: 'New Customer',
+        CUSTOMERS: 'Clientes',
+        CUSTOMERS_LIST: 'Lista de clientes',
+        NEW_CUSTOMER: 'Nuevo cliente',
         DELETE_CUSTOMER_SIMPLE: {
-          TITLE: 'Customer Delete',
-          DESCRIPTION: 'Are you sure to permanently delete this customer?',
-          WAIT_DESCRIPTION: 'Customer is deleting...',
-          MESSAGE: 'Customer has been deleted'
+          TITLE: 'Eliminar cliente',
+          DESCRIPTION: '¿Está seguro de eliminar permanentemente este cliente?',
+          WAIT_DESCRIPTION: 'El cliente se está eliminando...',
+          MESSAGE: 'El cliente ha sido eliminado'
         },
         DELETE_CUSTOMER_MULTY: {
-          TITLE: 'Customers Delete',
-          DESCRIPTION: 'Are you sure to permanently delete selected customers?',
-          WAIT_DESCRIPTION: 'Customers are deleting...',
-          MESSAGE: 'Selected customers have been deleted'
+          TITLE: 'Eliminar clientes',
+          DESCRIPTION: '¿Está seguro de eliminar permanentemente los clientes seleccionados?',
+          WAIT_DESCRIPTION: 'Los clientes se están eliminando...',
+          MESSAGE: 'Los clientes seleccionados han sido eliminados'
         },
         UPDATE_STATUS: {
-          TITLE: 'Status has been updated for selected customers',
-          MESSAGE: 'Selected customers status have successfully been updated'
+          TITLE: 'El estado se ha actualizado para los clientes seleccionados',
+          MESSAGE: 'El estado de los clientes seleccionados se ha actualizado correctamente'
         },
         EDIT: {
-          UPDATE_MESSAGE: 'Customer has been updated',
-          ADD_MESSAGE: 'Customer has been created'
+          UPDATE_MESSAGE: 'El cliente ha sido actualizado',
+          ADD_MESSAGE: 'El cliente ha sido creado'
         }
       }
     }

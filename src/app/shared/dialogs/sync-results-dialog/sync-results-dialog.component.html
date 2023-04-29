@@ -1,0 +1,27 @@
+<h1 mat-dialog-title>Actualización de todos los productos</h1>
+<!--<mat-progress-bar *ngIf="false" mode="indeterminate"></mat-progress-bar>-->
+<div class="m-t-20" mat-dialog-content>
+  <p *ngIf="data.new_products.length <= 0 && data.updated_products.length <= 0"
+     style="font-weight: 500; font-size:16px; color: #A0A603;">
+    Todos los productos estaban previamente actualizados!</p>
+
+  <div *ngIf="data.new_products.length > 0 || data.updated_products.length > 0">
+    <br>
+    <span style="font-weight: 500; font-size:16px;">Items nuevos:</span>
+    <br>
+    <span *ngFor="let product of data.new_products" class="text-overflow">
+    <span style="font-weight: 500 !important;">asin:</span> {{product.asin}}, {{product.summaries[0].itemName}}
+      <br>
+    </span>
+    <br><br>
+    <span style="font-weight: 500; font-size:16px;">Items actualizados:</span>
+    <br>
+    <span *ngFor="let product of data.updated_products" class="text-overflow">
+    <span style="font-weight: 500 !important;">asin:</span> {{product.asin}}, {{product.summaries[0].itemName}}
+      <br>
+    </span>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button (click)="closeDialog()" mat-button>Cerrar</button>
+</div>

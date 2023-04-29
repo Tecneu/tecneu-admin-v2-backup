@@ -207,5 +207,5 @@ class ThemeMode {
 }
 
 const ThemeModeComponent = new ThemeMode()
-// Initialize app on document ready => ThemeModeComponent.init()
+// Initialize app on document ready → ThemeModeComponent.init()
 export {ThemeModeComponent}

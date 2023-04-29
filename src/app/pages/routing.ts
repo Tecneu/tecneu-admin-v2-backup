@@ -1,4 +1,4 @@
-import { Routes } from '@angular/router';
+import {Routes} from '@angular/router';
 
 const Routing: Routes = [
   {
@@ -15,19 +15,19 @@ const Routing: Routes = [
     path: 'crafted/pages/profile',
     loadChildren: () =>
       import('../modules/profile/profile.module').then((m) => m.ProfileModule),
-    data: { layout: 'light-sidebar' },
+    data: {layout: 'light-sidebar'},
   },
   {
     path: 'crafted/account',
     loadChildren: () =>
       import('../modules/account/account.module').then((m) => m.AccountModule),
-    data: { layout: 'dark-header' },
+    data: {layout: 'dark-header'},
   },
   {
     path: 'crafted/pages/wizards',
     loadChildren: () =>
       import('../modules/wizards/wizards.module').then((m) => m.WizardsModule),
-    data: { layout: 'light-header' },
+    data: {layout: 'light-header'},
   },
   {
     path: 'crafted/widgets',
@@ -35,13 +35,19 @@ const Routing: Routes = [
       import('../modules/widgets-examples/widgets-examples.module').then(
         (m) => m.WidgetsExamplesModule
       ),
-    data: { layout: 'light-header' },
+    data: {layout: 'light-header'},
   },
   {
     path: 'apps/chat',
     loadChildren: () =>
       import('../modules/apps/chat/chat.module').then((m) => m.ChatModule),
-    data: { layout: 'light-sidebar' },
+    data: {layout: 'light-sidebar'},
+  },
+  {
+    path: 'amazon',
+    loadChildren: () =>
+      import('../modules/amazon/amazon.module').then((m) => m.AmazonModule),
+    data: {layout: 'light-sidebar'},
   },
   {
     path: '',
@@ -54,4 +60,4 @@ const Routing: Routes = [
   },
 ];
 
-export { Routing };
+export {Routing};

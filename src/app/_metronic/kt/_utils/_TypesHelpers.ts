@@ -35,7 +35,7 @@ function toJSON(value: string | JSON): JSON | undefined {
     return undefined
   }
 
-  // ("'" => "\"");
+  // ("'" → "\"");
   const result = value
     .toString()
     .split('')

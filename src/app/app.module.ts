@@ -13,6 +13,9 @@ import { AuthService } from './modules/auth/services/auth.service';
 import { environment } from 'src/environments/environment';
 // #fake-start#
 import { FakeAPIService } from './_fake/fake-api.service';
+import { AmazonComponent } from './modules/amazon/amazon.component';
+import { TecneuComponent } from './modules/tecneu/tecneu.component';
+import { SyncResultsDialogComponent } from './shared/dialogs/sync-results-dialog/sync-results-dialog.component';
 // #fake-end#
 
 function appInitializer(authService: AuthService) {
@@ -25,7 +28,7 @@ function appInitializer(authService: AuthService) {
 }
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, AmazonComponent, TecneuComponent, SyncResultsDialogComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

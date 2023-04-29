@@ -1,5 +1,5 @@
 // Localization is based on '@ngx-translate/core';
-// Please be familiar with official documentations first => https://github.com/ngx-translate/core
+// Please be familiar with official documentations first → https://github.com/ngx-translate/core
 
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
@@ -20,10 +20,10 @@ export class TranslationService {
 
   constructor(private translate: TranslateService) {
     // add new langIds to the list
-    this.translate.addLangs(['en']);
+    this.translate.addLangs(['es']);
 
     // this language will be used as a fallback when a translation isn't found in the current language
-    this.translate.setDefaultLang('en');
+    this.translate.setDefaultLang('es');
   }
 
   loadTranslations(...args: Locale[]): void {
