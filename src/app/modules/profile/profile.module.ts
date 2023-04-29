@@ -10,8 +10,8 @@ import {ProfileComponent} from './profile.component';
 import {ConnectionsComponent} from './connections/connections.component';
 import {CardsModule, DropdownMenusModule, WidgetsModule,} from '../../_metronic/partials';
 import {SharedModule} from "../../_metronic/shared/shared.module";
-import {CustomPaginatorComponent} from "../../shared/custom-paginator/custom-paginator.component";
 import {FormsModule} from "@angular/forms";
+import {CustomPaginatorModule} from "../../shared/custom-paginator/custom-paginator.module";
 
 @NgModule({
   declarations: [
@@ -20,8 +20,7 @@ import {FormsModule} from "@angular/forms";
     ProjectsComponent,
     CampaignsComponent,
     DocumentsComponent,
-    ConnectionsComponent,
-    CustomPaginatorComponent
+    ConnectionsComponent
   ],
   imports: [
     CommonModule,
@@ -31,7 +30,8 @@ import {FormsModule} from "@angular/forms";
     WidgetsModule,
     CardsModule,
     SharedModule,
-    FormsModule
+    FormsModule,
+    CustomPaginatorModule
   ],
 })
 export class ProfileModule {

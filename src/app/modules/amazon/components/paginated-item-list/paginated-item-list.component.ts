@@ -272,6 +272,10 @@ export class PaginatedItemListComponent implements OnInit, OnDestroy {
     return ['hsl(', hue, ',60%,50%)'].join('');
   }
 
+  onPageChange(event: { pageIndex: number; pageSize: number }): void {
+    console.log(event);
+  }
+
   ngOnDestroy() {
     this.unsubscribe.forEach((sb) => sb.unsubscribe());
   }
