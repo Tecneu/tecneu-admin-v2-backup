@@ -1,21 +1,23 @@
-import { NgModule, APP_INITIALIZER } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { ClipboardModule } from 'ngx-clipboard';
-import { TranslateModule } from '@ngx-translate/core';
-import { InlineSVGModule } from 'ng-inline-svg-2';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { AuthService } from './modules/auth/services/auth.service';
-import { environment } from 'src/environments/environment';
+import {APP_INITIALIZER, NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {HttpClientModule} from '@angular/common/http';
+import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
+import {ClipboardModule} from 'ngx-clipboard';
+import {TranslateModule} from '@ngx-translate/core';
+import {InlineSVGModule} from 'ng-inline-svg-2';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {AuthService} from './modules/auth/services/auth.service';
+import {environment} from 'src/environments/environment';
 // #fake-start#
-import { FakeAPIService } from './_fake/fake-api.service';
-import { AmazonComponent } from './modules/amazon/amazon.component';
-import { TecneuComponent } from './modules/tecneu/tecneu.component';
-import { SyncResultsDialogComponent } from './shared/dialogs/sync-results-dialog/sync-results-dialog.component';
+import {FakeAPIService} from './_fake/fake-api.service';
+import {AmazonComponent} from './modules/amazon/amazon.component';
+import {TecneuComponent} from './modules/tecneu/tecneu.component';
+import {SyncResultsDialogComponent} from './shared/dialogs/sync-results-dialog/sync-results-dialog.component';
+import {FormsModule} from "@angular/forms";
+
 // #fake-end#
 
 function appInitializer(authService: AuthService) {
@@ -33,14 +35,15 @@ function appInitializer(authService: AuthService) {
     BrowserModule,
     BrowserAnimationsModule,
     TranslateModule.forRoot(),
+    FormsModule,
     HttpClientModule,
     ClipboardModule,
     // #fake-start#
     environment.isMockEnabled
       ? HttpClientInMemoryWebApiModule.forRoot(FakeAPIService, {
-          passThruUnknownUrl: true,
-          dataEncapsulation: false,
-        })
+        passThruUnknownUrl: true,
+        dataEncapsulation: false,
+      })
       : [],
     // #fake-end#
     AppRoutingModule,
@@ -57,4 +60,5 @@ function appInitializer(authService: AuthService) {
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+}

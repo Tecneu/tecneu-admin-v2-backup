@@ -1,19 +1,17 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { InlineSVGModule } from 'ng-inline-svg-2';
-import { OverviewComponent } from './overview/overview.component';
-import { ProjectsComponent } from './projects/projects.component';
-import { CampaignsComponent } from './campaigns/campaigns.component';
-import { DocumentsComponent } from './documents/documents.component';
-import { ProfileRoutingModule } from './profile-routing.module';
-import { ProfileComponent } from './profile.component';
-import { ConnectionsComponent } from './connections/connections.component';
-import {
-  CardsModule,
-  DropdownMenusModule,
-  WidgetsModule,
-} from '../../_metronic/partials';
-import { SharedModule } from "../../_metronic/shared/shared.module";
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {InlineSVGModule} from 'ng-inline-svg-2';
+import {OverviewComponent} from './overview/overview.component';
+import {ProjectsComponent} from './projects/projects.component';
+import {CampaignsComponent} from './campaigns/campaigns.component';
+import {DocumentsComponent} from './documents/documents.component';
+import {ProfileRoutingModule} from './profile-routing.module';
+import {ProfileComponent} from './profile.component';
+import {ConnectionsComponent} from './connections/connections.component';
+import {CardsModule, DropdownMenusModule, WidgetsModule,} from '../../_metronic/partials';
+import {SharedModule} from "../../_metronic/shared/shared.module";
+import {CustomPaginatorComponent} from "../../shared/custom-paginator/custom-paginator.component";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -23,6 +21,7 @@ import { SharedModule } from "../../_metronic/shared/shared.module";
     CampaignsComponent,
     DocumentsComponent,
     ConnectionsComponent,
+    CustomPaginatorComponent
   ],
   imports: [
     CommonModule,
@@ -31,7 +30,9 @@ import { SharedModule } from "../../_metronic/shared/shared.module";
     DropdownMenusModule,
     WidgetsModule,
     CardsModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ],
 })
-export class ProfileModule {}
+export class ProfileModule {
+}

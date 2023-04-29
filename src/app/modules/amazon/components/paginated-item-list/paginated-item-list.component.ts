@@ -82,19 +82,6 @@ export class PaginatedItemListComponent implements OnInit, OnDestroy {
       hideRequired: this.hideRequiredControl,
       floatLabel: this.floatLabelControl,
     });
-
-    // this.scrollDispatcher.scrolled().subscribe(x => {
-    //   const sticky_inner_wrapper = document.querySelector('#sticky_inner_wrapper');
-    //   // BREADCRUMB ES DE HEIGHT 60PX + 7PX DE HR + 15PX DE PADDING DE PAGE-CONTENT
-    //   // TOOLBAR ES DE HEIGHT 64PX
-    //   if (sticky_inner_wrapper.getBoundingClientRect().top <= 64 && (x as CdkScrollable).measureScrollOffset('top') > 82) {
-    //     const sticky_outer_wrapper = document.querySelector('#sticky_container');
-    //     sticky_outer_wrapper.setAttribute('style', `height: ${sticky_inner_wrapper.getBoundingClientRect().height}px`); // Ajustar altura de mapa a la altura de la pantalla
-    //     sticky_inner_wrapper.classList.add('active');
-    //   } else if (sticky_inner_wrapper.classList.contains('active')) {
-    //     sticky_inner_wrapper.classList.remove('active');
-    //   }
-    // });
   }
 
   hasChild = (_: number, node: ItemsTreeDataInterface) => node.expandable;
