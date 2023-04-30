@@ -6,48 +6,48 @@
     >
       <div class="stepper-nav mb-5">
         <div
-          class="stepper-item"
           [ngClass]="{
             current: currentStep$.value === 1,
             completed: currentStep$.value > 1
           }"
+          class="stepper-item"
         >
           <h3 class="stepper-title">Account Type</h3>
         </div>
 
         <div
-          class="stepper-item"
           [ngClass]="{
             current: currentStep$.value === 2,
             completed: currentStep$.value > 2
           }"
+          class="stepper-item"
         >
           <h3 class="stepper-title">Account Info</h3>
         </div>
 
         <div
-          class="stepper-item"
           [ngClass]="{
             current: currentStep$.value === 3,
             completed: currentStep$.value > 3
           }"
+          class="stepper-item"
         >
           <h3 class="stepper-title">Business Info</h3>
         </div>
 
         <div
-          class="stepper-item"
           [ngClass]="{
             current: currentStep$.value === 4,
             completed: currentStep$.value > 4
           }"
+          class="stepper-item"
         >
           <h3 class="stepper-title">Billing Details</h3>
         </div>
 
         <div
-          class="stepper-item"
           [ngClass]="{ current: currentStep$.value === 5 }"
+          class="stepper-item"
         >
           <h3 class="stepper-title">Completed</h3>
         </div>
@@ -55,39 +55,39 @@
 
       <form
         class="mx-auto mw-600px w-100 pt-15 pb-10"
-        noValidate
         id="kt_create_account_form"
+        noValidate
       >
         <div class="current">
           <ng-container *ngIf="currentStep$.value === 1">
             <app-step1
-              class="w-100"
-              [updateParentModel]="updateAccount"
               [defaultValues]="account$.value"
+              [updateParentModel]="updateAccount"
+              class="w-100"
             ></app-step1>
           </ng-container>
 
           <ng-container *ngIf="currentStep$.value === 2">
             <app-step2
-              class="w-100"
-              [updateParentModel]="updateAccount"
               [defaultValues]="account$.value"
+              [updateParentModel]="updateAccount"
+              class="w-100"
             ></app-step2>
           </ng-container>
 
           <ng-container *ngIf="currentStep$.value === 3">
             <app-step3
-              class="w-100"
-              [updateParentModel]="updateAccount"
               [defaultValues]="account$.value"
+              [updateParentModel]="updateAccount"
+              class="w-100"
             ></app-step3>
           </ng-container>
 
           <ng-container *ngIf="currentStep$.value === 4">
             <app-step4
-              class="w-100"
-              [updateParentModel]="updateAccount"
               [defaultValues]="account$.value"
+              [updateParentModel]="updateAccount"
+              class="w-100"
             ></app-step4>
           </ng-container>
 
@@ -100,11 +100,11 @@
           <div class="mr-2">
             <ng-container *ngIf="currentStep$.value !== 1">
               <button
-                type="button"
-                class="btn btn-lg btn-light-primary me-3"
                 (click)="prevStep()"
+                class="btn btn-lg btn-light-primary me-3"
+                type="button"
               >
-                <app-keenicon name="arrow-left" class="fs-3 ms-4 me-1"></app-keenicon>
+                <app-keenicon class="fs-3 ms-4 me-1" name="arrow-left"></app-keenicon>
                 Back
               </button>
             </ng-container>
@@ -113,15 +113,15 @@
           <ng-container *ngIf="currentStep$.value !== formsCount">
             <div>
               <button
-                type="button"
-                class="btn btn-lg btn-primary me-3"
-                [disabled]="!isCurrentFormValid$.value"
                 (click)="nextStep()"
+                [disabled]="!isCurrentFormValid$.value"
+                class="btn btn-lg btn-primary me-3"
+                type="button"
               >
                 <span class="indicator-label">
                   <ng-container *ngIf="currentStep$.value < formsCount - 1">
                     Continuar {{ " " }}
-                    <app-keenicon name="arrow-right" class="fs-3 ms-2 me-0"></app-keenicon>
+                    <app-keenicon class="fs-3 ms-2 me-0" name="arrow-right"></app-keenicon>
                   </ng-container>
                   <ng-container *ngIf="currentStep$.value === formsCount - 1">
                     Submit

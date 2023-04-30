@@ -1,15 +1,15 @@
 <!--begin::Exolore drawer-->
 <div
-  id="kt_engage_demos"
   class="bg-body"
   data-kt-drawer="true"
-  data-kt-drawer-name="explore"
   data-kt-drawer-activate="true"
-  data-kt-drawer-overlay="true"
-  data-kt-drawer-width="{default:'350px', 'lg': '475px'}"
+  data-kt-drawer-close="#kt_engage_demos_close"
   data-kt-drawer-direction="end"
+  data-kt-drawer-name="explore"
+  data-kt-drawer-overlay="true"
   data-kt-drawer-toggle="#kt_engage_demos_toggle"
-  data-kt-drawer-close="#kt_engage_demos_close">
+  data-kt-drawer-width="{default:'350px', 'lg': '475px'}"
+  id="kt_engage_demos">
 
   <!--begin::Card-->
   <div class="card shadow-none rounded-0 w-100">
@@ -18,8 +18,8 @@
       <h3 class="card-title fw-bolder text-gray-700">Explore</h3>
 
       <div class="card-toolbar">
-        <button type="button" class="btn btn-sm btn-icon btn-active-light-primary me-n5" id="kt_engage_demos_close">
-          <app-keenicon name="cross" class="fs-2"></app-keenicon>
+        <button class="btn btn-sm btn-icon btn-active-light-primary me-n5" id="kt_engage_demos_close" type="button">
+          <app-keenicon class="fs-2" name="cross"></app-keenicon>
         </button>
       </div>
     </div>
@@ -29,13 +29,13 @@
     <div class="card-body" id="kt_explore_body">
       <!--begin::Content-->
       <div
-        id="kt_explore_scroll"
         class="scroll-y me-n5 pe-5"
         data-kt-scroll="true"
-        data-kt-scroll-height="auto"
-        data-kt-scroll-wrappers="#kt_explore_body"
         data-kt-scroll-dependencies="#kt_explore_header"
-        data-kt-scroll-offset="5px">
+        data-kt-scroll-height="auto"
+        data-kt-scroll-offset="5px"
+        data-kt-scroll-wrappers="#kt_explore_body"
+        id="kt_explore_scroll">
 
         <!--begin::Wrapper-->
         <div class="mb-0">
@@ -44,7 +44,7 @@
             <div class="d-flex flex-stack">
               <h3 class="mb-0">Metronic Licenses</h3>
 
-              <a href="https://themeforest.net/licenses/standard" class="fw-bold" target="_blank">
+              <a class="fw-bold" href="https://themeforest.net/licenses/standard" target="_blank">
                 License FAQs
               </a>
             </div>
@@ -59,11 +59,11 @@
                   <div class="fs-6 fw-bold text-gray-800 fw-bold mb-0 me-1">Regular License</div>
 
                   <i class="text-gray-400 fas fa-exclamation-circle ms-1 fs-7"
-                     data-bs-toggle="popover"
+                     data-bs-content="Use, by you or one client in a single end product which end users are not charged for."
                      data-bs-custom-class="popover-dark"
-                     data-bs-trigger="hover"
                      data-bs-placement="top"
-                     data-bs-content="Use, by you or one client in a single end product which end users are not charged for.">
+                     data-bs-toggle="popover"
+                     data-bs-trigger="hover">
                   </i>
                 </div>
                 <div class="fs-7 text-muted">For single end product used by you or one client</div>
@@ -85,11 +85,11 @@
                   <div class="fs-6 fw-bold text-gray-800 fw-bold mb-0 me-1">Extended License</div>
 
                   <i class="text-gray-400 fas fa-exclamation-circle ms-1 fs-7"
-                     data-bs-toggle="popover"
+                     data-bs-content="Use, by you or one client, in a single end product which end users can be charged for."
                      data-bs-custom-class="popover-dark"
-                     data-bs-trigger="hover"
                      data-bs-placement="top"
-                     data-bs-content="Use, by you or one client, in a single end product which end users can be charged for.">
+                     data-bs-toggle="popover"
+                     data-bs-trigger="hover">
                   </i>
                 </div>
                 <div class="fs-7 text-muted">For single end product with paying users.</div>
@@ -114,14 +114,14 @@
               </div>
 
               <div class="text-nowrap">
-                <a href="https://keenthemes.com/contact/" class="btn btn-sm btn-success" target="_blank">Contact Us</a>
+                <a class="btn btn-sm btn-success" href="https://keenthemes.com/contact/" target="_blank">Contact Us</a>
               </div>
             </div>
           </div>
           <!--end::License-->
 
           <!--begin::Purchase-->
-          <a href="{{ appPurchaseUrl }}" class="btn btn-primary mb-15 w-100">
+          <a class="btn btn-primary mb-15 w-100" href="{{ appPurchaseUrl }}">
             Buy Now
           </a>
           <!--end::Purchase-->
@@ -133,22 +133,23 @@
             <!--begin::Row-->
             <div class="row g-5">
               <!--begin::Col-->
-              <div class="col-6" *ngFor="let demo of appDemos | keyvalue">
+              <div *ngFor="let demo of appDemos | keyvalue" class="col-6">
                 <!--begin::Demo-->
                 <div class="overlay overflow-hidden position-relative border border-4 border-gray-200 rounded">
                   <ng-container *ngIf="demo.value.published === true; else unpublished">
                     <div class="overlay-wrapper">
-                      <img src="{{ demo.value.thumbnail }}" alt="demo" class="w-100"/>
+                      <img alt="demo" class="w-100" src="{{ demo.value.thumbnail }}"/>
                     </div>
 
                     <div class="overlay-layer bg-dark bg-opacity-10">
-                      <a href="https://preview.keenthemes.com/metronic8/angular/{{ demo.key }}" class="btn btn-sm btn-success shadow">{{ demo.value.title }}</a>
+                      <a class="btn btn-sm btn-success shadow"
+                         href="https://preview.keenthemes.com/metronic8/angular/{{ demo.key }}">{{ demo.value.title }}</a>
                     </div>
                   </ng-container>
 
                   <ng-template #unpublished>
                     <div class="overlay-wrapper">
-                      <img src="{{ demo.value.thumbnail }}" alt="demo" class="w-100 opacity-25"/>
+                      <img alt="demo" class="w-100 opacity-25" src="{{ demo.value.thumbnail }}"/>
                     </div>
 
                     <div class="overlay-layer bg-dark bg-opacity-10">

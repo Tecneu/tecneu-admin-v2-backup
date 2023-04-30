@@ -1,6 +1,6 @@
-import { Component, Input, TemplateRef, ViewChild } from '@angular/core';
-import { ModalConfig } from '../modal.config';
-import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import {Component, Input, TemplateRef, ViewChild} from '@angular/core';
+import {ModalConfig} from '../modal.config';
+import {NgbModal, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-modal',
@@ -11,7 +11,8 @@ export class ModalComponent {
   @ViewChild('modal') private modalContent: TemplateRef<ModalComponent>;
   private modalRef: NgbModalRef;
 
-  constructor(private modalService: NgbModal) {}
+  constructor(private modalService: NgbModal) {
+  }
 
   open(): Promise<boolean> {
     return new Promise<boolean>((resolve) => {

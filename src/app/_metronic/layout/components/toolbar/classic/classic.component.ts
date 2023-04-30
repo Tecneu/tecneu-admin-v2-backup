@@ -1,6 +1,6 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { LayoutService } from '../../../core/layout.service';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Subscription} from 'rxjs';
+import {LayoutService} from '../../../core/layout.service';
 
 @Component({
   selector: 'app-classic',
@@ -8,7 +8,6 @@ import { LayoutService } from '../../../core/layout.service';
   styleUrls: ['./classic.component.scss'],
 })
 export class ClassicComponent implements OnInit, OnDestroy {
-  private unsubscribe: Subscription[] = [];
   appToolbarPrimaryButton: boolean;
   appToolbarPrimaryButtonLabel: string = '';
   appToolbarPrimaryButtonUrl: string = '';
@@ -23,8 +22,10 @@ export class ClassicComponent implements OnInit, OnDestroy {
   secondaryButtonClass: string = '';
   filterButtonClass: string = '';
   daterangepickerButtonClass: string = '';
+  private unsubscribe: Subscription[] = [];
 
-  constructor(private layout: LayoutService) {}
+  constructor(private layout: LayoutService) {
+  }
 
   ngOnInit(): void {
     this.updateProps();

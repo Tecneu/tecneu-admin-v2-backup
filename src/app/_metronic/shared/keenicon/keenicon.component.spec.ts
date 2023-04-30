@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { KeeniconComponent } from './keenicon.component';
+import {KeeniconComponent} from './keenicon.component';
 
 describe('KeeniconComponent', () => {
   let component: KeeniconComponent;
@@ -8,9 +8,9 @@ describe('KeeniconComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ KeeniconComponent ]
+      declarations: [KeeniconComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(KeeniconComponent);
     component = fixture.componentInstance;

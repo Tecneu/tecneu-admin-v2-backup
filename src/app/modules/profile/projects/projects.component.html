@@ -7,11 +7,11 @@
   <div class="d-flex flex-wrap my-2">
     <div class="me-4">
       <select
-        name="status"
+        class="form-select form-select-sm form-select-white w-125px"
         data-control="select2"
         data-hide-search="true"
-        class="form-select form-select-sm form-select-white w-125px"
         defaultValue="Active"
+        name="status"
       >
         <option value="Active">Active</option>
         <option value="Approved">In Progress</option>
@@ -21,8 +21,8 @@
     </div>
     <a
       class="btn btn-primary btn-sm cursor-pointer"
-      data-bs-toggle="modal"
       data-bs-target="#kt_modal_create_project"
+      data-bs-toggle="modal"
     >
       New Project
     </a>
@@ -32,143 +32,143 @@
 <div class="row g-6 g-xl-9">
   <div class="col-md-6 col-xl-4">
     <app-card2
-      icon="./assets/media/svg/brand-logos/plurk.svg"
+      [progress]="50"
+      [users]="users1"
       badgeColor="primary"
+      budget="$284,900.00"
+      date="May 10, 2021"
+      description="CRM App application to HR efficiency"
+      icon="./assets/media/svg/brand-logos/plurk.svg"
       status="In Progress"
       statusColor="primary"
       title="Fitnes App"
-      description="CRM App application to HR efficiency"
-      date="May 10, 2021"
-      budget="$284,900.00"
-      [progress]="50"
-      [users]="users1"
     ></app-card2>
   </div>
 
   <div class="col-md-6 col-xl-4">
     <app-card2
-      icon="./assets/media/svg/brand-logos/disqus.svg"
+      [progress]="30"
+      [users]="users2"
       badgeColor="info"
+      budget="$36,400.00"
+      date="May 10, 2021"
+      description="CRM App application to HR efficiency"
+      icon="./assets/media/svg/brand-logos/disqus.svg"
       status="Pending"
       statusColor="info"
       title="Leaf CRM"
-      description="CRM App application to HR efficiency"
-      date="May 10, 2021"
-      budget="$36,400.00"
-      [progress]="30"
-      [users]="users2"
     ></app-card2>
   </div>
 
   <div class="col-md-6 col-xl-4">
     <app-card2
-      icon="./assets/media/svg/brand-logos/figma-1.svg"
+      [progress]="100"
+      [users]="users3"
       badgeColor="success"
+      budget="$605,100.00"
+      date="Mar 14, 2021"
+      description="CRM App application to HR efficiency"
+      icon="./assets/media/svg/brand-logos/figma-1.svg"
       status="Completed"
       statusColor="success"
       title="Atica Banking"
-      description="CRM App application to HR efficiency"
-      date="Mar 14, 2021"
-      budget="$605,100.00"
-      [progress]="100"
-      [users]="users3"
     ></app-card2>
   </div>
 
   <div class="col-md-6 col-xl-4">
     <app-card2
-      icon="./assets/media/svg/brand-logos/sentry-3.svg"
+      [progress]="60"
+      [users]="users4"
       badgeColor="info"
+      budget="$605,100.00"
+      date="Mar 14, 2021"
+      description="CRM App application to HR efficiency"
+      icon="./assets/media/svg/brand-logos/sentry-3.svg"
       status="Pending"
       statusColor="info"
       title="Finance Dispatch"
-      description="CRM App application to HR efficiency"
-      date="Mar 14, 2021"
-      budget="$605,100.00"
-      [progress]="60"
-      [users]="users4"
     ></app-card2>
   </div>
 
   <div class="col-md-6 col-xl-4">
     <app-card2
-      icon="./assets/media/svg/brand-logos/xing-icon.svg"
-      badgeColor="primary"
-      status="In Progress"
-      statusColor="primary"
-      title="9 Degree"
-      description="CRM App application to HR efficiency"
-      date="Mar 14, 2021"
-      budget="$605,100.00"
       [progress]="40"
       [users]="users5"
-    ></app-card2>
-  </div>
-
-  <div class="col-md-6 col-xl-4">
-    <app-card2
-      icon="./assets/media/svg/brand-logos/tvit.svg"
       badgeColor="primary"
+      budget="$605,100.00"
+      date="Mar 14, 2021"
+      description="CRM App application to HR efficiency"
+      icon="./assets/media/svg/brand-logos/xing-icon.svg"
       status="In Progress"
       statusColor="primary"
       title="9 Degree"
-      description="CRM App application to HR efficiency"
-      date="Mar 14, 2021"
-      budget="$605,100.00"
-      [progress]="70"
-      [users]="users6"
     ></app-card2>
   </div>
 
   <div class="col-md-6 col-xl-4">
     <app-card2
-      icon="./assets/media/svg/brand-logos/aven.svg"
+      [progress]="70"
+      [users]="users6"
       badgeColor="primary"
+      budget="$605,100.00"
+      date="Mar 14, 2021"
+      description="CRM App application to HR efficiency"
+      icon="./assets/media/svg/brand-logos/tvit.svg"
+      status="In Progress"
+      statusColor="primary"
+      title="9 Degree"
+    ></app-card2>
+  </div>
+
+  <div class="col-md-6 col-xl-4">
+    <app-card2
+      [progress]="70"
+      [users]="users7"
+      badgeColor="primary"
+      budget="$605,100.00"
+      date="Mar 14, 2021"
+      description="CRM App application to HR efficiency"
+      icon="./assets/media/svg/brand-logos/aven.svg"
       status="In Progress"
       statusColor="primary"
       title="Buldozer CRM"
-      description="CRM App application to HR efficiency"
-      date="Mar 14, 2021"
-      budget="$605,100.00"
-      [progress]="70"
-      [users]="users7"
     ></app-card2>
   </div>
 
   <div class="col-md-6 col-xl-4">
     <app-card2
-      icon="./assets/media/svg/brand-logos/treva.svg"
+      [progress]="10"
+      [users]="users8"
       badgeColor="danger"
+      budget="$605,100.00"
+      date="Mar 14, 2021"
+      description="CRM App application to HR efficiency"
+      icon="./assets/media/svg/brand-logos/treva.svg"
       status="Overdue"
       statusColor="danger"
       title="Aviasales App"
-      description="CRM App application to HR efficiency"
-      date="Mar 14, 2021"
-      budget="$605,100.00"
-      [progress]="10"
-      [users]="users8"
     ></app-card2>
   </div>
 
   <div class="col-md-6 col-xl-4">
     <app-card2
-      icon="./assets/media/svg/brand-logos/kanba.svg"
+      [progress]="100"
+      [users]="users9"
       badgeColor="success"
+      budget="$605,100.00"
+      date="Mar 14, 2021"
+      description="CRM App application to HR efficiency"
+      icon="./assets/media/svg/brand-logos/kanba.svg"
       status="Completed"
       statusColor="success"
       title="Oppo CRM"
-      description="CRM App application to HR efficiency"
-      date="Mar 14, 2021"
-      budget="$605,100.00"
-      [progress]="100"
-      [users]="users9"
     ></app-card2>
   </div>
 </div>
 
 <app-custom-paginator
-  [length]="4200"
-  [pageSize]="50"
-  [pageSizeOptions]="[20, 50, 100]"
   (pageChange)="onPageChange($event)"
+  [length]="4200"
+  [pageSizeOptions]="[20, 50, 100]"
+  [pageSize]="50"
 ></app-custom-paginator>

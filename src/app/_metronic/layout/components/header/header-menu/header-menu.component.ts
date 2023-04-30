@@ -1,8 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { LayoutType } from '../../../core/configs/config';
-import { LayoutInitService } from '../../../core/layout-init.service';
-import { LayoutService } from '../../../core/layout.service';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {LayoutType} from '../../../core/configs/config';
+import {LayoutInitService} from '../../../core/layout-init.service';
+import {LayoutService} from '../../../core/layout.service';
 
 @Component({
   selector: 'app-header-menu',
@@ -10,9 +10,11 @@ import { LayoutService } from '../../../core/layout.service';
   styleUrls: ['./header-menu.component.scss'],
 })
 export class HeaderMenuComponent implements OnInit {
-  constructor(private router: Router, private layout: LayoutService, private layoutInit: LayoutInitService) {}
+  constructor(private router: Router, private layout: LayoutService, private layoutInit: LayoutInitService) {
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   calculateMenuItemCssClass(url: string): string {
     return checkIsActive(this.router.url, url) ? 'active' : '';

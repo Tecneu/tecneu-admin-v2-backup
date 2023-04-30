@@ -1,5 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
-import { ModalConfig, ModalComponent } from '../../_metronic/partials';
+import {Component, ViewChild} from '@angular/core';
+import {ModalComponent, ModalConfig} from '../../_metronic/partials';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,7 +13,9 @@ export class DashboardComponent {
     closeButtonLabel: 'Cancel'
   };
   @ViewChild('modal') private modalComponent: ModalComponent;
-  constructor() {}
+
+  constructor() {
+  }
 
   async openModal() {
     return await this.modalComponent.open();

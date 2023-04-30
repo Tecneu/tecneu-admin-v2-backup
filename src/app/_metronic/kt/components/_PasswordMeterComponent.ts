@@ -68,6 +68,96 @@ class PasswordMeterComponent {
     DataUtil.set(this.element, this.queries.componentName, this)
   }
 
+  // Static methods
+  public static getInstance = (
+    el: HTMLElement,
+    componentName: string = defaultPasswordMeterQueires.componentName
+  ): PasswordMeterComponent | undefined => {
+    const passwordMeter = DataUtil.get(el, componentName)
+    if (passwordMeter) {
+      return passwordMeter as PasswordMeterComponent
+    }
+  }
+
+  public static createInstances = (
+    selector: string = defaultPasswordMeterQueires.instanseQuery,
+    options: IPasswordMeterOptions = defaultPasswordMeterOptions,
+    queries: IPasswordMeterQueries = defaultPasswordMeterQueires
+  ) => {
+    const elements = document.body.querySelectorAll(selector)
+    elements.forEach((el) => {
+      const item = el as HTMLElement
+      let passwordMeter = PasswordMeterComponent.getInstance(item)
+      if (!passwordMeter) {
+        passwordMeter = new PasswordMeterComponent(item, options, queries)
+      }
+    })
+  }
+
+  public static createInsance = (
+    selector: string = defaultPasswordMeterQueires.instanseQuery,
+    options: IPasswordMeterOptions = defaultPasswordMeterOptions,
+    queries: IPasswordMeterQueries = defaultPasswordMeterQueires
+  ): PasswordMeterComponent | undefined => {
+    const element = document.body.querySelector(selector)
+    if (!element) {
+      return
+    }
+    const item = element as HTMLElement
+    let passwordMeter = PasswordMeterComponent.getInstance(item)
+    if (!passwordMeter) {
+      passwordMeter = new PasswordMeterComponent(item, options, queries)
+    }
+    return passwordMeter
+  }
+
+  public static bootstrap = (selector: string = defaultPasswordMeterQueires.instanseQuery) => {
+    PasswordMeterComponent.createInstances(selector)
+  }
+
+  public static reinitialization = (
+    selector: string = defaultPasswordMeterQueires.instanseQuery
+  ) => {
+    PasswordMeterComponent.createInstances(selector)
+  }
+
+  ///////////////////////
+  public reset = () => {
+    this.score = 0
+    this.highlight()
+  }
+
+  public getScore() {
+    return this.score
+  }
+
+  public check() {
+    let score = 0
+    const checkScore = this.getCheckScore()
+    if (this.checkLength()) {
+      score = score + checkScore
+    }
+
+    if (this.options.checkUppercase && this.checkLowerCase()) {
+      score = score + checkScore
+    }
+
+    if (this.options.checkLowercase && this.checkUppercase()) {
+      score = score + checkScore
+    }
+
+    if (this.options.checkDigit && this.checkDigit()) {
+      score = score + checkScore
+    }
+
+    if (this.options.checkChar && this.checkChar()) {
+      score = score + checkScore
+    }
+
+    this.score = score
+    this.highlight()
+  }
+
   private handlers(): void {
     if (this.inputElement) {
       this.inputElement.addEventListener('input', () => {
@@ -104,6 +194,9 @@ class PasswordMeterComponent {
       this.inputElement.focus()
     }
   }
+
+  ///////////////////////
+  // ** Public API  ** //
 
   private checkScore(): number {
     return 0
@@ -177,97 +270,6 @@ class PasswordMeterComponent {
       }
     })
   }
-
-  ///////////////////////
-  // ** Public API  ** //
-  ///////////////////////
-  public reset = () => {
-    this.score = 0
-    this.highlight()
-  }
-
-  public getScore() {
-    return this.score
-  }
-
-  public check() {
-    let score = 0
-    const checkScore = this.getCheckScore()
-    if (this.checkLength()) {
-      score = score + checkScore
-    }
-
-    if (this.options.checkUppercase && this.checkLowerCase()) {
-      score = score + checkScore
-    }
-
-    if (this.options.checkLowercase && this.checkUppercase()) {
-      score = score + checkScore
-    }
-
-    if (this.options.checkDigit && this.checkDigit()) {
-      score = score + checkScore
-    }
-
-    if (this.options.checkChar && this.checkChar()) {
-      score = score + checkScore
-    }
-
-    this.score = score
-    this.highlight()
-  }
-
-  // Static methods
-  public static getInstance = (
-    el: HTMLElement,
-    componentName: string = defaultPasswordMeterQueires.componentName
-  ): PasswordMeterComponent | undefined  => {
-    const passwordMeter = DataUtil.get(el, componentName)
-    if (passwordMeter) {
-      return passwordMeter as PasswordMeterComponent
-    }
-  }
-
-  public static createInstances = (
-    selector: string = defaultPasswordMeterQueires.instanseQuery,
-    options: IPasswordMeterOptions = defaultPasswordMeterOptions,
-    queries: IPasswordMeterQueries = defaultPasswordMeterQueires
-  ) => {
-    const elements = document.body.querySelectorAll(selector)
-    elements.forEach((el) => {
-      const item = el as HTMLElement
-      let passwordMeter = PasswordMeterComponent.getInstance(item)
-      if (!passwordMeter) {
-        passwordMeter = new PasswordMeterComponent(item, options, queries)
-      }
-    })
-  }
-
-  public static createInsance = (
-    selector: string = defaultPasswordMeterQueires.instanseQuery,
-    options: IPasswordMeterOptions = defaultPasswordMeterOptions,
-    queries: IPasswordMeterQueries = defaultPasswordMeterQueires
-  ): PasswordMeterComponent | undefined => {
-    const element = document.body.querySelector(selector)
-    if (!element) {
-      return
-    }
-    const item = element as HTMLElement
-    let passwordMeter = PasswordMeterComponent.getInstance(item)
-    if (!passwordMeter) {
-      passwordMeter = new PasswordMeterComponent(item, options, queries)
-    }
-    return passwordMeter
-  }
-
-  public static bootstrap = (selector: string = defaultPasswordMeterQueires.instanseQuery) => {
-    PasswordMeterComponent.createInstances(selector)
-  }
-
-  public static reinitialization = (
-    selector: string = defaultPasswordMeterQueires.instanseQuery
-  ) => {
-    PasswordMeterComponent.createInstances(selector)
-  }
 }
+
 export {PasswordMeterComponent, defaultPasswordMeterOptions, defaultPasswordMeterQueires}

@@ -1,13 +1,13 @@
 import {
   DataUtil,
-  getObjectPropertyValueByKey,
-  stringSnakeToCamel,
+  ElementStyleUtil,
   getAttributeValueByBreakpoint,
+  getCSS,
+  getObjectPropertyValueByKey,
   getViewPort,
   isVisibleElement,
+  stringSnakeToCamel,
   throttle,
-  getCSS,
-  ElementStyleUtil,
 } from '../_utils/index'
 import {CookieComponent} from './_CookieComponent'
 
@@ -31,6 +31,115 @@ class ScrollComponent {
     this.update()
     // this.element.setAttribute('data-kt-scrolltop', 'true')
     DataUtil.set(this.element, 'scroll', this)
+  }
+
+  // Static methods
+  public static hasInstace(element: HTMLElement) {
+    return DataUtil.has(element, 'scroll')
+  }
+
+  public static getInstance(element: HTMLElement): ScrollComponent | undefined {
+    if (element !== null && ScrollComponent.hasInstace(element)) {
+      const data = DataUtil.get(element, 'scroll')
+      if (data) {
+        return data as ScrollComponent
+      }
+    }
+  }
+
+  // Create Instances
+  public static createInstances(selector: string) {
+    const elements = document.body.querySelectorAll(selector)
+    elements.forEach((element: Element) => {
+      const item = element as HTMLElement
+      let scroll = ScrollComponent.getInstance(item)
+      if (!scroll) {
+        scroll = new ScrollComponent(item, defaultScrollOptions)
+      }
+    })
+  }
+
+  public static destroyAll(attr: string = '[data-kt-scroll="true"]') {
+  }
+
+  public static bootstrap(attr: string = '[data-kt-scroll="true"]') {
+    ScrollComponent.createInstances(attr)
+    ScrollComponent.resize()
+  }
+
+  public static createInstance = (
+    element: HTMLElement,
+    options: ScrollOptions = defaultScrollOptions
+  ): ScrollComponent | undefined => {
+    let scroll = ScrollComponent.getInstance(element)
+    if (!scroll) {
+      scroll = new ScrollComponent(element, options)
+    }
+    return scroll
+  }
+
+  public static reinitialization(attr: string = '[data-kt-scroll="true"]') {
+    ScrollComponent.createInstances(attr)
+  }
+
+  public static updateAll() {
+    const elements = document.body.querySelectorAll('[data-kt-scroll="true"]')
+    elements.forEach((element: Element) => {
+      const instance = ScrollComponent.getInstance(element as HTMLElement)
+      if (instance) {
+        instance.update()
+      }
+    })
+  }
+
+  public static resize() {
+    // Window Resize Handling
+    window.addEventListener('resize', function () {
+      let timer
+      throttle(
+        timer,
+        () => {
+          // Locate and update Drawer instances on window resize
+          ScrollComponent.updateAll()
+        },
+        200
+      )
+    })
+  }
+
+  ///////////////////////
+  // ** Public API  ** //
+
+  ///////////////////////
+  public update = () => {
+    // Activate/deactivate
+    if (
+      this.getOption('activate') === true ||
+      !this.element.hasAttribute('data-kt-scroll-activate')
+    ) {
+      this.setupHeight()
+      this.setupScrollHandler()
+      this.setupState()
+    } else {
+      this.resetHeight()
+      this.destroyScrollHandler()
+    }
+  }
+
+  public getHeight = () => {
+    const heightType = this.getHeightType()
+    const height = this.getOption(heightType || '')
+    if (height instanceof Function) {
+      return height.call(height)
+    } else if (height !== null && typeof height === 'string' && height.toLowerCase() === 'auto') {
+      return this.getAutoHeight()
+    } else {
+      return height
+    }
+  }
+
+  public getElement = () => {
+    return this.element
   }
 
   private getOption = (name: string) => {
@@ -199,113 +308,6 @@ class ScrollComponent {
     if (heghtType) {
       ElementStyleUtil.set(this.element, heghtType, '')
     }
-  }
-
-  ///////////////////////
-  // ** Public API  ** //
-  ///////////////////////
-  public update = () => {
-    // Activate/deactivate
-    if (
-      this.getOption('activate') === true ||
-      !this.element.hasAttribute('data-kt-scroll-activate')
-    ) {
-      this.setupHeight()
-      this.setupScrollHandler()
-      this.setupState()
-    } else {
-      this.resetHeight()
-      this.destroyScrollHandler()
-    }
-  }
-
-  public getHeight = () => {
-    const heightType = this.getHeightType()
-    const height = this.getOption(heightType || '')
-    if (height instanceof Function) {
-      return height.call(height)
-    } else if (height !== null && typeof height === 'string' && height.toLowerCase() === 'auto') {
-      return this.getAutoHeight()
-    } else {
-      return height
-    }
-  }
-
-  public getElement = () => {
-    return this.element
-  }
-
-  // Static methods
-  public static hasInstace(element: HTMLElement) {
-    return DataUtil.has(element, 'scroll')
-  }
-
-  public static getInstance(element: HTMLElement): ScrollComponent | undefined {
-    if (element !== null && ScrollComponent.hasInstace(element)) {
-      const data = DataUtil.get(element, 'scroll')
-      if (data) {
-        return data as ScrollComponent
-      }
-    }
-  }
-
-  // Create Instances
-  public static createInstances(selector: string) {
-    const elements = document.body.querySelectorAll(selector)
-    elements.forEach((element: Element) => {
-      const item = element as HTMLElement
-      let scroll = ScrollComponent.getInstance(item)
-      if (!scroll) {
-        scroll = new ScrollComponent(item, defaultScrollOptions)
-      }
-    })
-  }
-
-  public static destroyAll(attr: string = '[data-kt-scroll="true"]') {}
-
-  public static bootstrap(attr: string = '[data-kt-scroll="true"]') {
-    ScrollComponent.createInstances(attr)
-    ScrollComponent.resize()
-  }
-
-  public static createInstance = (
-    element: HTMLElement,
-    options: ScrollOptions = defaultScrollOptions
-  ): ScrollComponent | undefined => {
-    let scroll = ScrollComponent.getInstance(element)
-    if (!scroll) {
-      scroll = new ScrollComponent(element, options)
-    }
-    return scroll
-  }
-
-  public static reinitialization(attr: string = '[data-kt-scroll="true"]') {
-    ScrollComponent.createInstances(attr)
-  }
-
-  public static updateAll() {
-    const elements = document.body.querySelectorAll('[data-kt-scroll="true"]')
-    elements.forEach((element: Element) => {
-      const instance = ScrollComponent.getInstance(element as HTMLElement)
-      if (instance) {
-        instance.update()
-      }
-    })
-  }
-
-  public static resize() {
-    // Window Resize Handling
-    window.addEventListener('resize', function () {
-      let timer
-      throttle(
-        timer,
-        () => {
-          // Locate and update Drawer instances on window resize
-          ScrollComponent.updateAll()
-        },
-        200
-      )
-    })
   }
 }
 

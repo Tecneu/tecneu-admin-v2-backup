@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { SidebarLogoComponent } from './sidebar-logo.component';
+import {SidebarLogoComponent} from './sidebar-logo.component';
 
 describe('SidebarLogoComponent', () => {
   let component: SidebarLogoComponent;
@@ -8,9 +8,9 @@ describe('SidebarLogoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SidebarLogoComponent ]
+      declarations: [SidebarLogoComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(SidebarLogoComponent);
     component = fixture.componentInstance;

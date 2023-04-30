@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-reports',
@@ -8,7 +8,9 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ReportsComponent implements OnInit {
   @Input() appPageTitleDisplay: boolean;
 
-  constructor() {}
+  constructor() {
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 }

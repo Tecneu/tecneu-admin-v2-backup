@@ -6,13 +6,13 @@
     <div class="d-flex align-items-center flex-grow-1">
       <!--begin::Avatar -->
       <div class="symbol symbol-45px me-5">
-        <img src="./assets/media/avatars/300-25.jpg" alt="" />
+        <img alt="" src="./assets/media/avatars/300-25.jpg"/>
       </div>
       <!--end::Avatar -->
 
       <!--begin::Info -->
       <div class="d-flex flex-column">
-        <a href="#" class="text-gray-800 text-hover-primary fs-6 fw-bolder">
+        <a class="text-gray-800 text-hover-primary fs-6 fw-bolder" href="#">
           Sam Logan
         </a>
 
@@ -25,13 +25,13 @@
     <!--begin::Menu -->
     <div class="my-0">
       <button
-        type="button"
         class="btn btn-sm btn-icon btn-color-primary btn-active-light-primary"
-        data-kt-menu-trigger="click"
-        data-kt-menu-placement="bottom-end"
         data-kt-menu-flip="top-end"
+        data-kt-menu-placement="bottom-end"
+        data-kt-menu-trigger="click"
+        type="button"
       >
-        <app-keenicon name="category" class="fs-2"></app-keenicon>
+        <app-keenicon class="fs-2" name="category"></app-keenicon>
       </button>
       <app-dropdown-menu1></app-dropdown-menu1>
     </div>
@@ -43,8 +43,8 @@
   <div class="mb-5">
     <!--begin::Image -->
     <div
-      class="bgi-no-repeat bgi-size-cover rounded min-h-250px mb-5"
       [style.background-image]="'url(./assets/media/stock/900x600/20.jpg)'"
+      class="bgi-no-repeat bgi-size-cover rounded min-h-250px mb-5"
     ></div>
     <!--end::Image -->
 
@@ -59,27 +59,27 @@
     <!--begin::Toolbar -->
     <div class="d-flex align-items-center mb-5">
       <a
-        href="#"
         class="
           btn btn-sm btn-light btn-color-muted btn-active-light-success
           px-4
           py-2
           me-4
         "
+        href="#"
       >
-        <app-keenicon name="element-plus" class="fs-3"></app-keenicon>
+        <app-keenicon class="fs-3" name="element-plus"></app-keenicon>
         89
       </a>
 
       <a
-        href="#"
         class="
           btn btn-sm btn-light btn-color-muted btn-active-light-danger
           px-4
           py-2
         "
+        href="#"
       >
-        <app-keenicon name="heart" class="fs-2"></app-keenicon>
+        <app-keenicon class="fs-2" name="heart"></app-keenicon>
         29
       </a>
     </div>
@@ -95,17 +95,17 @@
   <form class="position-relative mb-6">
     <textarea
       class="form-control border-0 p-0 pe-10 resize-none min-h-25px"
-      rows="1"
       placeholder="Reply.."
+      rows="1"
     ></textarea>
 
     <div class="position-absolute top-0 end-0 me-n5">
       <span class="btn btn-icon btn-sm btn-active-color-primary pe-0 me-2">
-        <app-keenicon name="paper-clip" class="fs-3 mb-3"></app-keenicon>
+        <app-keenicon class="fs-3 mb-3" name="paper-clip"></app-keenicon>
       </span>
 
       <span class="btn btn-icon btn-sm btn-active-color-primary ps-0">
-        <app-keenicon name="geolocation" class="fs-2 mb-3"></app-keenicon>
+        <app-keenicon class="fs-2 mb-3" name="geolocation"></app-keenicon>
       </span>
     </div>
   </form>

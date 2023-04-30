@@ -1,5 +1,5 @@
-import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
-import { BehaviorSubject, Subscription } from 'rxjs';
+import {ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
+import {BehaviorSubject, Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-connected-accounts',
@@ -17,7 +17,8 @@ export class ConnectedAccountsComponent implements OnInit, OnDestroy {
     this.unsubscribe.push(loadingSubscr);
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   saveSettings() {
     this.isLoading$.next(true);

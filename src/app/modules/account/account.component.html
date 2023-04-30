@@ -8,7 +8,7 @@
             position-relative
           "
         >
-          <img src="./assets/media/avatars/300-1.jpg" alt="Metronic" />
+          <img alt="Metronic" src="./assets/media/avatars/300-1.jpg"/>
           <div
             class="
               position-absolute
@@ -50,7 +50,7 @@
                 Max Smith
               </a>
               <a class="cursor-pointer">
-                <app-keenicon name="verify" class="fs-1 text-primary"></app-keenicon>
+                <app-keenicon class="fs-1 text-primary" name="verify"></app-keenicon>
               </a>
               <a
                 class="
@@ -62,8 +62,8 @@
                   px-3
                   cursor-pointer
                 "
-                data-bs-toggle="modal"
                 data-bs-target="#kt_modal_upgrade_plan"
+                data-bs-toggle="modal"
               >
                 Upgrade to Pro
               </a>
@@ -80,7 +80,7 @@
                   cursor-pointer
                 "
               >
-                <app-keenicon name="profile-circle" class="fs-4 me-1"></app-keenicon>
+                <app-keenicon class="fs-4 me-1" name="profile-circle"></app-keenicon>
                 Developer
               </a>
               <a
@@ -93,7 +93,7 @@
                   cursor-pointer
                 "
               >
-                <app-keenicon name="geolocation" class="fs-4 me-1"></app-keenicon>
+                <app-keenicon class="fs-4 me-1" name="geolocation"></app-keenicon>
                 SF, Bay Area
               </a>
               <a
@@ -105,7 +105,7 @@
                   cursor-pointer
                 "
               >
-                <app-keenicon name="geolocation" class="fs-4 me-1"></app-keenicon>
+                <app-keenicon class="fs-4 me-1" name="geolocation"></app-keenicon>
                 max@kt.com
               </a>
             </div>
@@ -116,7 +116,7 @@
               class="btn btn-sm btn-light me-2 cursor-pointer"
               id="kt_user_follow_button"
             >
-              <app-keenicon name="phone" class="fs-3 d-none"></app-keenicon>
+              <app-keenicon class="fs-3 d-none" name="phone"></app-keenicon>
               <span class="indicator-label">Follow</span>
               <span class="indicator-progress">
                 Por favor, espera...
@@ -127,8 +127,8 @@
             </a>
             <a
               class="btn btn-sm btn-primary me-3 cursor-pointer"
-              data-bs-toggle="modal"
               data-bs-target="#kt_modal_offer_a_deal"
+              data-bs-toggle="modal"
             >
               Hire Me
             </a>
@@ -137,9 +137,9 @@
                 class="
                   btn btn-sm btn-icon btn-bg-light btn-active-color-primary
                 "
-                data-kt-menu-trigger="click"
-                data-kt-menu-placement="bottom-end"
                 data-kt-menu-flip="top-end"
+                data-kt-menu-placement="bottom-end"
+                data-kt-menu-trigger="click"
               >
                 <i class="bi bi-three-dots fs-3"></i>
               </button>
@@ -163,7 +163,7 @@
                 "
               >
                 <div class="d-flex align-items-center">
-                  <app-keenicon name="arrow-up" class="fs-3 text-success me-2"></app-keenicon>
+                  <app-keenicon class="fs-3 text-success me-2" name="arrow-up"></app-keenicon>
                   <div class="fs-2 fw-bolder">4500$</div>
                 </div>
 
@@ -182,7 +182,7 @@
                 "
               >
                 <div class="d-flex align-items-center">
-                  <app-keenicon name="phone" class="fs-3 text-danger me-2"></app-keenicon>
+                  <app-keenicon class="fs-3 text-danger me-2" name="phone"></app-keenicon>
                   <div class="fs-2 fw-bolder">75</div>
                 </div>
 
@@ -201,7 +201,7 @@
                 "
               >
                 <div class="d-flex align-items-center">
-                  <app-keenicon name="arrow-up" class="fs-3 text-success me-2"></app-keenicon>
+                  <app-keenicon class="fs-3 text-success me-2" name="arrow-up"></app-keenicon>
                   <div class="fs-2 fw-bolder">60%</div>
                 </div>
 
@@ -221,15 +221,15 @@
           >
             <div class="d-flex justify-content-between w-100 mt-auto mb-2">
               <span class="fw-bold fs-6 text-gray-400"
-                >Profile Compleation</span
+              >Profile Compleation</span
               >
               <span class="fw-bolder fs-6">50%</span>
             </div>
             <div class="h-5px mx-3 w-100 bg-light mb-3">
               <div
+                [style.width]="'50%'"
                 class="bg-success rounded h-5px"
                 role="progressbar"
-                [style.width]="'50%'"
               ></div>
             </div>
           </div>

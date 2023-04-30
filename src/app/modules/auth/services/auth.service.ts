@@ -13,23 +13,14 @@ export type UserType = UserModel | undefined;
   providedIn: 'root',
 })
 export class AuthService implements OnDestroy {
-  // private fields
-  private unsubscribe: Subscription[] = []; // Read more: → https://brianflove.com/2016/12/11/anguar-2-unsubscribe-observables/
-  private authLocalStorageToken = `${environment.appVersion}-${environment.USERDATA_KEY}`;
-
   // public fields
   currentUser$: Observable<UserType>;
   isLoading$: Observable<boolean>;
   currentUserSubject: BehaviorSubject<UserType>;
   isLoadingSubject: BehaviorSubject<boolean>;
-
-  get currentUserValue(): UserType {
-    return this.currentUserSubject.value;
-  }
-
-  set currentUserValue(user: UserType) {
-    this.currentUserSubject.next(user);
-  }
+  // private fields
+  private unsubscribe: Subscription[] = []; // Read more: → https://brianflove.com/2016/12/11/anguar-2-unsubscribe-observables/
+  private authLocalStorageToken = `${environment.appVersion}-${environment.USERDATA_KEY}`;
 
   constructor(
     private authHttpService: AuthHTTPService,
@@ -41,6 +32,14 @@ export class AuthService implements OnDestroy {
     this.isLoading$ = this.isLoadingSubject.asObservable();
     const subscr = this.getUserByToken().subscribe();
     this.unsubscribe.push(subscr);
+  }
+
+  get currentUserValue(): UserType {
+    return this.currentUserSubject.value;
+  }
+
+  set currentUserValue(user: UserType) {
+    this.currentUserSubject.next(user);
   }
 
   // public methods
@@ -110,6 +109,10 @@ export class AuthService implements OnDestroy {
       .pipe(finalize(() => this.isLoadingSubject.next(false)));
   }
 
+  ngOnDestroy() {
+    this.unsubscribe.forEach((sb) => sb.unsubscribe());
+  }
+
   // private methods
   private setAuthFromLocalStorage(auth: AuthModel): boolean {
     // store auth authToken/refreshToken/epiresIn in local storage to keep user logged in between page refreshes
@@ -133,9 +136,5 @@ export class AuthService implements OnDestroy {
       console.error(error);
       return undefined;
     }
-  }
-
-  ngOnDestroy() {
-    this.unsubscribe.forEach((sb) => sb.unsubscribe());
   }
 }

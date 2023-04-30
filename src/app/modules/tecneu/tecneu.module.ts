@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { TecneuRoutingModule } from './tecneu-routing.module';
-import { LocationsManagerComponent } from './components/locations-manager/locations-manager.component';
+import {TecneuRoutingModule} from './tecneu-routing.module';
+import {LocationsManagerComponent} from './components/locations-manager/locations-manager.component';
 
 
 @NgModule({
@@ -14,4 +14,5 @@ import { LocationsManagerComponent } from './components/locations-manager/locati
     TecneuRoutingModule
   ]
 })
-export class TecneuModule { }
+export class TecneuModule {
+}

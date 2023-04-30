@@ -9,20 +9,20 @@
 
   <div class="text-gray-400 fw-bold fs-6">
     If you need more info, please check out
-    <a href="#" class="link-primary fw-bolder"> Help Page </a>
+    <a class="link-primary fw-bolder" href="#"> Help Page </a>
     .
   </div>
 </div>
 
-<div class="fv-row" [formGroup]="form">
+<div [formGroup]="form" class="fv-row">
   <div class="row">
     <div class="col-lg-6">
       <input
+        class="btn-check"
         formControlName="accountType"
+        id="kt_create_account_form_account_type_personal"
         name="accountType"
         type="radio"
-        class="btn-check"
-        id="kt_create_account_form_account_type_personal"
         value="personal"
       />
       <label
@@ -35,10 +35,10 @@
         "
         for="kt_create_account_form_account_type_personal"
       >
-        <app-keenicon name="address-book" class="fs-1 me-5"></app-keenicon>
+        <app-keenicon class="fs-1 me-5" name="address-book"></app-keenicon>
         <span class="d-block fw-bold text-start">
           <span class="text-dark fw-bolder d-block fs-4 mb-2"
-            >Personal Account</span
+          >Personal Account</span
           >
           <span class="text-gray-400 fw-bold fs-6">
             If you need more info, please check it out
@@ -49,11 +49,11 @@
 
     <div class="col-lg-6">
       <input
+        class="btn-check"
         formControlName="accountType"
+        id="kt_create_account_form_account_type_corporate"
         name="accountType"
         type="radio"
-        class="btn-check"
-        id="kt_create_account_form_account_type_corporate"
         value="corporate"
       />
       <label
@@ -65,10 +65,10 @@
         "
         for="kt_create_account_form_account_type_corporate"
       >
-        <app-keenicon name="briefcase" class="fs-1 me-5"></app-keenicon>
+        <app-keenicon class="fs-1 me-5" name="briefcase"></app-keenicon>
         <span class="d-block fw-bold text-start">
           <span class="text-dark fw-bolder d-block fs-4 mb-2"
-            >Corporate Account</span
+          >Corporate Account</span
           >
           <span class="text-gray-400 fw-bold fs-6">
             Create corporate account to mane users

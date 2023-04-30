@@ -55,14 +55,13 @@ export class ProjectsComponent implements OnInit {
     {name: 'Meloday Macy', avatar: './assets/media/avatars/300-2.jpg'},
     {name: 'Rabbin Watterman', initials: 'S', color: 'danger'},
   ];
+  @Output() pageChange = new EventEmitter<{ pageIndex: number; pageSize: number }>();
 
   constructor() {
   }
 
   ngOnInit(): void {
   }
-
-  @Output() pageChange = new EventEmitter<{ pageIndex: number; pageSize: number }>();
 
   onPageChange(event: { pageIndex: number; pageSize: number }): void {
     console.log(event);

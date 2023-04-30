@@ -9,13 +9,13 @@
   <div class="card-toolbar">
     <!-- begin::Menu -->
     <button
-      type="button"
       class="btn btn-sm btn-icon btn-color-primary btn-active-light-primary"
-      data-kt-menu-trigger="click"
-      data-kt-menu-placement="bottom-end"
       data-kt-menu-flip="top-end"
+      data-kt-menu-placement="bottom-end"
+      data-kt-menu-trigger="click"
+      type="button"
     >
-      <app-keenicon name="category" class="fs-2"></app-keenicon>
+      <app-keenicon class="fs-2" name="category"></app-keenicon>
     </button>
     <app-dropdown-menu1></app-dropdown-menu1>
     <!-- end::Menu -->
@@ -38,7 +38,7 @@
         <!-- begin::Stat -->
         <div class="d-flex align-items-center">
           <div class="fs-4 fw-bolder">$650</div>
-          <app-keenicon name="arrow-up" class="fs-5 text-success ms-1"></app-keenicon>
+          <app-keenicon class="fs-5 text-success ms-1" name="arrow-up"></app-keenicon>
         </div>
         <!-- end::Stat -->
       </div>
@@ -81,7 +81,7 @@
         <!-- begin::Stat -->
         <div class="d-flex align-items-center">
           <div class="fs-4 fw-bolder">$1,480,00</div>
-          <app-keenicon name="arrow-down" class="fs-5 text-danger ms-1"></app-keenicon>
+          <app-keenicon class="fs-5 text-danger ms-1" name="arrow-down"></app-keenicon>
         </div>
         <!-- end::Stat -->
       </div>
@@ -94,23 +94,23 @@
   <!-- begin::Chart -->
   <div
     #chartRef
-    class="mixed-widget-3-chart card-rounded-bottom"
     [style.height]="chartHeight"
+    class="mixed-widget-3-chart card-rounded-bottom"
   >
     <apx-chart
-      [series]="chartOptions.series"
       [chart]="chartOptions.chart"
-      [xaxis]="chartOptions.xaxis"
-      [yaxis]="chartOptions.yaxis"
-      [dataLabels]="chartOptions.dataLabels"
-      [stroke]="chartOptions.stroke"
-      [legend]="chartOptions.legend"
-      [fill]="chartOptions.fill"
-      [states]="chartOptions.states"
-      [tooltip]="chartOptions.tooltip"
       [colors]="chartOptions.colors"
+      [dataLabels]="chartOptions.dataLabels"
+      [fill]="chartOptions.fill"
+      [legend]="chartOptions.legend"
       [markers]="chartOptions.markers"
       [plotOptions]="chartOptions.plotOptions"
+      [series]="chartOptions.series"
+      [states]="chartOptions.states"
+      [stroke]="chartOptions.stroke"
+      [tooltip]="chartOptions.tooltip"
+      [xaxis]="chartOptions.xaxis"
+      [yaxis]="chartOptions.yaxis"
     ></apx-chart>
   </div>
   <!-- end::Chart -->

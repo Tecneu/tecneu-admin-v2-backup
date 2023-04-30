@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { getCSSVariableValue } from '../../../../../kt/_utils';
+import {Component, OnInit} from '@angular/core';
+import {getCSSVariableValue} from '../../../../../kt/_utils';
 
 @Component({
   selector: 'app-charts-widget1',
@@ -7,7 +7,9 @@ import { getCSSVariableValue } from '../../../../../kt/_utils';
 })
 export class ChartsWidget1Component implements OnInit {
   chartOptions: any = {};
-  constructor() {}
+
+  constructor() {
+  }
 
   ngOnInit(): void {
     this.chartOptions = getChartOptions(350);

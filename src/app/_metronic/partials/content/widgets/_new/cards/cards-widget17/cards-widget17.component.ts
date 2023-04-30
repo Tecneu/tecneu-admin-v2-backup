@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { getCSSVariableValue } from '../../../../../../kt/_utils';
+import {Component, Input, OnInit} from '@angular/core';
+import {getCSSVariableValue} from '../../../../../../kt/_utils';
 
 @Component({
   selector: 'app-cards-widget17',
@@ -14,7 +14,8 @@ export class CardsWidget17Component implements OnInit {
   @Input() chartLine: number = 11;
   @Input() chartRotate?: number = 145;
 
-  constructor() {}
+  constructor() {
+  }
 
   ngOnInit(): void {
     setTimeout(() => {

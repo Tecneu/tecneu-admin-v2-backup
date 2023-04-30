@@ -2,7 +2,7 @@
   <div class="menu-item px-3">
     <div class="menu-content d-flex align-items-center px-3">
       <div class="symbol symbol-50px me-5">
-        <img alt="Logo" [src]="_user.image"/>
+        <img [src]="_user.image" alt="Logo"/>
       </div>
 
       <div class="d-flex flex-column">
@@ -22,13 +22,13 @@
   <div class="separator my-2"></div>
 
   <div class="menu-item px-5">
-    <a routerLink="/crafted/pages/profile" class="menu-link px-5">
+    <a class="menu-link px-5" routerLink="/crafted/pages/profile">
       My Profile
     </a>
   </div>
 
   <div class="menu-item px-5">
-    <a class="menu-link px-5 cursor-pointer" placement="top-start" ngbTooltip="Coming soon">
+    <a class="menu-link px-5 cursor-pointer" ngbTooltip="Coming soon" placement="top-start">
       <span class="menu-text">My Projects</span>
       <span class="menu-badge">
         <span class="badge badge-light-danger badge-circle fw-bolder fs-7">3</span>
@@ -38,9 +38,9 @@
 
   <div
     class="menu-item px-5"
-    data-kt-menu-trigger="hover"
-    data-kt-menu-placement="left-start"
     data-kt-menu-flip="bottom"
+    data-kt-menu-placement="left-start"
+    data-kt-menu-trigger="hover"
   >
     <a class="menu-link px-5 cursor-pointer">
       <span class="menu-title">My Subscription</span>
@@ -49,19 +49,19 @@
 
     <div class="menu-sub menu-sub-dropdown w-175px py-4">
       <div class="menu-item px-3">
-        <a class="menu-link px-5 cursor-pointer" placement="top-start" ngbTooltip="Coming soon">Referrals</a>
+        <a class="menu-link px-5 cursor-pointer" ngbTooltip="Coming soon" placement="top-start">Referrals</a>
       </div>
 
       <div class="menu-item px-3">
-        <a class="menu-link px-5 cursor-pointer" placement="top-start" ngbTooltip="Coming soon">Billing</a>
+        <a class="menu-link px-5 cursor-pointer" ngbTooltip="Coming soon" placement="top-start">Billing</a>
       </div>
 
       <div class="menu-item px-3">
-        <a class="menu-link px-5 cursor-pointer" placement="top-start" ngbTooltip="Coming soon">Payments</a>
+        <a class="menu-link px-5 cursor-pointer" ngbTooltip="Coming soon" placement="top-start">Payments</a>
       </div>
 
       <div class="menu-item px-3">
-        <a class="menu-link d-flex flex-stack px-5 cursor-pointer" placement="top-start" ngbTooltip="Coming soon">
+        <a class="menu-link d-flex flex-stack px-5 cursor-pointer" ngbTooltip="Coming soon" placement="top-start">
           Statements
           <i
             class="fas fa-exclamation-circle ms-2 fs-7"
@@ -80,10 +80,10 @@
           >
             <input
               class="form-check-input w-30px h-20px"
-              type="checkbox"
-              value="1"
               defaultChecked="{true}"
               name="notifications"
+              type="checkbox"
+              value="1"
             />
             <span class="form-check-label text-muted fs-7">Notifications</span>
           </label>
@@ -93,16 +93,16 @@
   </div>
 
   <div class="menu-item px-5">
-    <a class="menu-link px-5 cursor-pointer" placement="top-start" ngbTooltip="Coming soon">My Statements</a>
+    <a class="menu-link px-5 cursor-pointer" ngbTooltip="Coming soon" placement="top-start">My Statements</a>
   </div>
 
   <div class="separator my-2"></div>
 
   <div
     class="menu-item px-5"
-    data-kt-menu-trigger="hover"
-    data-kt-menu-placement="left-start"
     data-kt-menu-flip="bottom"
+    data-kt-menu-placement="left-start"
+    data-kt-menu-trigger="hover"
   >
     <a class="menu-link px-5 cursor-pointer">
       <span class="menu-title position-relative">
@@ -122,9 +122,9 @@
         >
           {{ language.name }}{{ " " }}
           <img
-            class="w-15px h-15px rounded-1 ms-2"
             [src]="language.flag"
             alt="metronic"
+            class="w-15px h-15px rounded-1 ms-2"
           />
         </span>
       </span>
@@ -132,16 +132,16 @@
 
     <div class="menu-sub menu-sub-dropdown w-175px py-4">
       <div
+        (click)="selectLanguage(l.lang)"
         *ngFor="let l of langs"
         class="menu-item px-3 cursor-pointer"
-        (click)="selectLanguage(l.lang)"
       >
         <a
-          class="menu-link d-flex px-5"
           [ngClass]="l.lang === language.lang ? 'active' : ''"
+          class="menu-link d-flex px-5"
         >
           <span class="symbol symbol-20px me-4">
-            <img class="rounded-1" [src]="l.flag" alt="metronic"/>
+            <img [src]="l.flag" alt="metronic" class="rounded-1"/>
           </span>
           {{ l.name }}
         </a>
@@ -150,7 +150,7 @@
   </div>
 
   <div class="menu-item px-5 my-1">
-    <a routerLink="/crafted/account/settings" class="menu-link px-5">
+    <a class="menu-link px-5" routerLink="/crafted/account/settings">
       Account Settings
     </a>
   </div>

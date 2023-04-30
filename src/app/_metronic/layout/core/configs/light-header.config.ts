@@ -1,4 +1,4 @@
-import { ILayout } from './config';
+import {ILayout} from './config';
 
 export const LightHeaderConfig: ILayout = {
   main: {

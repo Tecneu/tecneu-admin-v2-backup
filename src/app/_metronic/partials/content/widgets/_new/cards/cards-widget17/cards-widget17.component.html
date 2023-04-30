@@ -1,5 +1,5 @@
 <!--begin::Card widget 17-->
-<div class="card card-flush" [ngClass]="cssClass">
+<div [ngClass]="cssClass" class="card card-flush">
   <!--begin::Header-->
   <div class="card-header pt-5">
     <!--begin::Title-->
@@ -16,7 +16,7 @@
 
         <!--begin::Badge-->
         <span class="badge badge-light-success fs-base">
-          <app-keenicon name="arrow-up" class="fs-5 text-success ms-n1"></app-keenicon>
+          <app-keenicon class="fs-5 text-success ms-n1" name="arrow-up"></app-keenicon>
           2.2%
         </span>
         <!--end::Badge-->
@@ -35,10 +35,10 @@
   <div class="card-body pt-2 pb-4 d-flex flex-wrap align-items-center">
     <!--begin::Chart-->
     <div class="d-flex flex-center me-5 pt-2">
-      <div id="kt_card_widget_17_chart"
-        [ngStyle]="{'min-width': chartSize + 'px', 'min-height': chartSize + 'px'}"
-        [attr.data-kt-size]="chartSize"
-        [attr.data-kt-line]="chartLine">
+      <div [attr.data-kt-line]="chartLine"
+           [attr.data-kt-size]="chartSize"
+           [ngStyle]="{'min-width': chartSize + 'px', 'min-height': chartSize + 'px'}"
+           id="kt_card_widget_17_chart">
       </div>
     </div>
     <!--end::Chart-->

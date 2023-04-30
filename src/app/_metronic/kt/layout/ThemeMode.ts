@@ -6,12 +6,6 @@ class ThemeMode {
   menu: HTMLElement | null = null
   element: HTMLElement | null = null
 
-  private getParamName = (postfix: string): string => {
-    const ktName = document.body.hasAttribute('data-kt-name')
-    const name = ktName ? ktName + '_' : ''
-    return 'kt_' + name + 'theme_mode_' + postfix
-  }
-
   public getMode = (): Mode => {
     const modeParam: string = this.getParamName('value')
     const menuMode: Mode | '' = this.getMenuMode()
@@ -68,16 +62,16 @@ class ThemeMode {
       this.menu?.querySelector('[data-kt-element="mode"][data-kt-value="' + menuMode + '"]') || null
 
     // Enable switching state
-		this.element?.setAttribute("data-kt-theme-mode-switching", "true");
+    this.element?.setAttribute("data-kt-theme-mode-switching", "true");
 
     // Set mode to the target element
     this.element?.setAttribute('data-bs-theme', mode);
 
     // Disable switching state
     const self = this;
-		setTimeout(function() {
-			self.element?.removeAttribute("data-kt-theme-mode-switching");
-		}, 300);
+    setTimeout(function () {
+      self.element?.removeAttribute("data-kt-theme-mode-switching");
+    }, 300);
 
     // Store mode value in storage
     if (localStorage) {
@@ -112,6 +106,57 @@ class ThemeMode {
 
   public getSystemMode = (): Mode => {
     return window.matchMedia('(prefers-color-scheme: dark)') ? 'dark' : 'light'
+  }
+
+  public flipImages = () => {
+    document.querySelectorAll<HTMLElement>('[data-kt-img-dark]')?.forEach((item: HTMLElement) => {
+      if (item.tagName === 'IMG') {
+        if (this.getMode() === 'dark' && item.hasAttribute('data-kt-img-dark')) {
+          item.setAttribute('data-kt-img-light', item.getAttribute('src') || '')
+          item.setAttribute('src', item.getAttribute('data-kt-img-dark') || '')
+        } else if (this.getMode() === 'light' && item.hasAttribute('data-kt-img-light')) {
+          item.setAttribute('data-kt-img-dark', item.getAttribute('src') || '')
+          item.setAttribute('src', item.getAttribute('data-kt-img-light') || '')
+        }
+      } else {
+        if (this.getMode() === 'dark' && item.hasAttribute('data-kt-img-dark')) {
+          item.setAttribute('data-kt-img-light', item.getAttribute('src') || '')
+          item.style.backgroundImage = "url('" + item.getAttribute('data-kt-img-dark') + "')"
+        } else if (this.getMode() === 'light' && item.hasAttribute('data-kt-img-light')) {
+          item.setAttribute('data-kt-img-dark', item.getAttribute('src') || '')
+          item.style.backgroundImage = "url('" + item.getAttribute('data-kt-img-light') + "')"
+        }
+      }
+    })
+  }
+
+  public on = (name: string, hander: Function) => {
+    if (this.element) {
+      return EventHandlerUtil.on(this.element, name, hander)
+    }
+  }
+
+  public off = (name: string, handlerId: string) => {
+    if (this.element) {
+      return EventHandlerUtil.off(this.element, name, handlerId)
+    }
+  }
+
+  public init = () => {
+    this.menu = document.querySelector<HTMLElement>('[data-kt-element="theme-mode-menu"]')
+    this.element = document.documentElement
+
+    this.initMode()
+
+    if (this.menu) {
+      this.handleMenu()
+    }
+  }
+
+  private getParamName = (postfix: string): string => {
+    const ktName = document.body.hasAttribute('data-kt-name')
+    const name = ktName ? ktName + '_' : ''
+    return 'kt_' + name + 'theme_mode_' + postfix
   }
 
   private initMode = (): void => {
@@ -158,51 +203,6 @@ class ThemeMode {
           }
         })
       })
-  }
-
-  public flipImages = () => {
-    document.querySelectorAll<HTMLElement>('[data-kt-img-dark]')?.forEach((item: HTMLElement) => {
-      if (item.tagName === 'IMG') {
-        if (this.getMode() === 'dark' && item.hasAttribute('data-kt-img-dark')) {
-          item.setAttribute('data-kt-img-light', item.getAttribute('src') || '')
-          item.setAttribute('src', item.getAttribute('data-kt-img-dark') || '')
-        } else if (this.getMode() === 'light' && item.hasAttribute('data-kt-img-light')) {
-          item.setAttribute('data-kt-img-dark', item.getAttribute('src') || '')
-          item.setAttribute('src', item.getAttribute('data-kt-img-light') || '')
-        }
-      } else {
-        if (this.getMode() === 'dark' && item.hasAttribute('data-kt-img-dark')) {
-          item.setAttribute('data-kt-img-light', item.getAttribute('src') || '')
-          item.style.backgroundImage = "url('" + item.getAttribute('data-kt-img-dark') + "')"
-        } else if (this.getMode() === 'light' && item.hasAttribute('data-kt-img-light')) {
-          item.setAttribute('data-kt-img-dark', item.getAttribute('src') || '')
-          item.style.backgroundImage = "url('" + item.getAttribute('data-kt-img-light') + "')"
-        }
-      }
-    })
-  }
-
-  public on = (name: string, hander: Function) => {
-    if (this.element) {
-      return EventHandlerUtil.on(this.element, name, hander)
-    }
-  }
-
-  public off = (name: string, handlerId: string) => {
-    if (this.element) {
-      return EventHandlerUtil.off(this.element, name, handlerId)
-    }
-  }
-
-  public init = () => {
-    this.menu = document.querySelector<HTMLElement>('[data-kt-element="theme-mode-menu"]')
-    this.element = document.documentElement
-
-    this.initMode()
-
-    if (this.menu) {
-      this.handleMenu()
-    }
   }
 }
 

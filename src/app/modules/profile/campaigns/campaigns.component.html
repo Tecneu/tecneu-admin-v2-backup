@@ -7,12 +7,12 @@
   <div class="d-flex align-items-center my-2">
     <div class="w-100px me-5">
       <select
-        name="status"
+        class="form-select form-select-white form-select-sm"
         data-control="select2"
         data-hide-search="true"
-        class="form-select form-select-white form-select-sm"
+        name="status"
       >
-        <option value="1" selected>30 Days</option>
+        <option selected value="1">30 Days</option>
         <option value="2">90 Days</option>
         <option value="3">6 Months</option>
         <option value="4">1 Year</option>
@@ -31,98 +31,98 @@
 <div class="row g-6 g-xl-9">
   <div class="col-sm-6 col-xl-4">
     <app-card5
-      image="./assets/media/svg/brand-logos/twitch.svg"
-      title="Twitch Posts"
-      description="$500.00"
-      status="down"
-      [statusValue]="40.5"
-      statusDesc="more impressions"
       [progress]="0.5"
+      [statusValue]="40.5"
+      description="$500.00"
+      image="./assets/media/svg/brand-logos/twitch.svg"
       progressType="MRR"
+      status="down"
+      statusDesc="more impressions"
+      title="Twitch Posts"
     ></app-card5>
   </div>
   <div class="col-sm-6 col-xl-4">
     <app-card5
-      image="./assets/media/svg/brand-logos/twitter.svg"
-      title="Twitter Followers"
-      description="807k"
-      status="up"
-      [statusValue]="17.62"
-      statusDesc="Followers growth"
       [progress]="5"
+      [statusValue]="17.62"
+      description="807k"
+      image="./assets/media/svg/brand-logos/twitter.svg"
       progressType="New trials"
+      status="up"
+      statusDesc="Followers growth"
+      title="Twitter Followers"
     ></app-card5>
   </div>
   <div class="col-sm-6 col-xl-4">
     <app-card5
-      image="./assets/media/svg/brand-logos/spotify.svg"
-      title="Spotify Listeners"
-      description="1,073"
-      status="down"
+      [progress]="40"
       [statusValue]="10.45"
-      statusDesc="Less comments than usual"
-      [progress]="40"
+      description="1,073"
+      image="./assets/media/svg/brand-logos/spotify.svg"
       progressType="Impressions"
-    ></app-card5>
-  </div>
-  <div class="col-sm-6 col-xl-4">
-    <app-card5
-      image="./assets/media/svg/brand-logos/pinterest-p.svg"
-      title="Pinterest Posts"
-      description="97"
-      status="up"
-      [statusValue]="26.1"
-      statusDesc="More posts"
-      [progress]="10"
-      progressType="Spend"
-    ></app-card5>
-  </div>
-  <div class="col-sm-6 col-xl-4">
-    <app-card5
-      image="./assets/media/svg/brand-logos/github.svg"
-      title="Github Contributes"
-      description="4,109"
       status="down"
+      statusDesc="Less comments than usual"
+      title="Spotify Listeners"
+    ></app-card5>
+  </div>
+  <div class="col-sm-6 col-xl-4">
+    <app-card5
+      [progress]="10"
+      [statusValue]="26.1"
+      description="97"
+      image="./assets/media/svg/brand-logos/pinterest-p.svg"
+      progressType="Spend"
+      status="up"
+      statusDesc="More posts"
+      title="Pinterest Posts"
+    ></app-card5>
+  </div>
+  <div class="col-sm-6 col-xl-4">
+    <app-card5
+      [progress]="40"
       [statusValue]="32.8"
-      statusDesc="Less contributions"
-      [progress]="40"
+      description="4,109"
+      image="./assets/media/svg/brand-logos/github.svg"
       progressType="Dispute"
+      status="down"
+      statusDesc="Less contributions"
+      title="Github Contributes"
     ></app-card5>
   </div>
   <div class="col-sm-6 col-xl-4">
     <app-card5
-      image="./assets/media/svg/brand-logos/youtube-play.svg"
-      title="Youtube Subscribers"
-      description="354"
-      status="up"
+      [progress]="40"
       [statusValue]="29.45"
-      statusDesc="Subscribers growth"
-      [progress]="40"
+      description="354"
+      image="./assets/media/svg/brand-logos/youtube-play.svg"
       progressType="Subscribers"
+      status="up"
+      statusDesc="Subscribers growth"
+      title="Youtube Subscribers"
     ></app-card5>
   </div>
   <div class="col-sm-6 col-xl-4">
     <app-card5
-      image="./assets/media/svg/brand-logos/telegram.svg"
-      title="Telegram Posts"
-      description="566"
-      status="up"
-      [statusValue]="11.4"
-      statusDesc="more clicks"
       [progress]="40"
+      [statusValue]="11.4"
+      description="566"
+      image="./assets/media/svg/brand-logos/telegram.svg"
       progressType="Profit"
+      status="up"
+      statusDesc="more clicks"
+      title="Telegram Posts"
     ></app-card5>
   </div>
   <div class="col-sm-6 col-xl-4">
     <app-card5
-      image="./assets/media/svg/brand-logos/reddit.svg"
-      title="Reddit Awards"
-      description="2.1M"
-      status="up"
-      [statusValue]="46.7"
-      statusDesc="more adds"
       [progress]="0.0"
+      [statusValue]="46.7"
+      description="2.1M"
+      image="./assets/media/svg/brand-logos/reddit.svg"
       progressType="Retention"
+      status="up"
+      statusDesc="more adds"
+      title="Reddit Awards"
     ></app-card5>
   </div>
 </div>

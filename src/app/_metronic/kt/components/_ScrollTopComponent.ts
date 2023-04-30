@@ -1,12 +1,12 @@
 import {
-  getScrollTop,
-  getAttributeValueByBreakpoint,
-  throttle,
-  getObjectPropertyValueByKey,
-  stringSnakeToCamel,
-  getUniqueIdWithPrefix,
   DataUtil,
   ElementAnimateUtil,
+  getAttributeValueByBreakpoint,
+  getObjectPropertyValueByKey,
+  getScrollTop,
+  getUniqueIdWithPrefix,
+  stringSnakeToCamel,
+  throttle,
 } from '../_utils/index'
 
 export interface IScrollTopOptions {
@@ -34,6 +34,66 @@ class ScrollTopComponent {
 
     // Bind Instance
     DataUtil.set(this.element, 'scrolltop', this)
+  }
+
+  // Static methods
+  public static getInstance = (el: HTMLElement): ScrollTopComponent | undefined => {
+    const scrollTop = DataUtil.get(el, 'scrolltop')
+    if (scrollTop) {
+      return scrollTop as ScrollTopComponent
+    }
+  }
+
+  public static createInstances = (selector: string) => {
+    const elements = document.body.querySelectorAll(selector)
+    elements.forEach((el) => {
+      const item = el as HTMLElement
+      let scrollTop = ScrollTopComponent.getInstance(item)
+      if (!scrollTop) {
+        scrollTop = new ScrollTopComponent(item, defaultScrollTopOptions)
+      }
+    })
+  }
+
+  public static createInsance = (
+    selector: string,
+    options: IScrollTopOptions = defaultScrollTopOptions
+  ): ScrollTopComponent | undefined => {
+    const element = document.body.querySelector(selector)
+    if (!element) {
+      return
+    }
+    const item = element as HTMLElement
+    let scrollTop = ScrollTopComponent.getInstance(item)
+    if (!scrollTop) {
+      scrollTop = new ScrollTopComponent(item, options)
+    }
+    return scrollTop
+  }
+
+  public static bootstrap = () => {
+    ScrollTopComponent.createInstances('[data-kt-scrolltop="true"]')
+  }
+
+  ///////////////////////
+  // ** Public API  ** //
+  ///////////////////////
+
+  public static reinitialization = () => {
+    ScrollTopComponent.createInstances('[data-kt-scrolltop="true"]')
+  }
+
+  public static goTop = () => {
+    ElementAnimateUtil.scrollTop(0, defaultScrollTopOptions.speed)
+  }
+
+  // Plugin API
+  public go = () => {
+    return this._go()
+  }
+
+  public getElement = () => {
+    return this.element
   }
 
   private _handlers = () => {
@@ -84,65 +144,6 @@ class ScrollTopComponent {
 
     return null
   }
-
-  ///////////////////////
-  // ** Public API  ** //
-  ///////////////////////
-
-  // Plugin API
-  public go = () => {
-    return this._go()
-  }
-
-  public getElement = () => {
-    return this.element
-  }
-
-  // Static methods
-  public static getInstance = (el: HTMLElement): ScrollTopComponent | undefined => {
-    const scrollTop = DataUtil.get(el, 'scrolltop')
-    if (scrollTop) {
-      return scrollTop as ScrollTopComponent
-    }
-  }
-
-  public static createInstances = (selector: string) => {
-    const elements = document.body.querySelectorAll(selector)
-    elements.forEach((el) => {
-      const item = el as HTMLElement
-      let scrollTop = ScrollTopComponent.getInstance(item)
-      if (!scrollTop) {
-        scrollTop = new ScrollTopComponent(item, defaultScrollTopOptions)
-      }
-    })
-  }
-
-  public static createInsance = (
-    selector: string,
-    options: IScrollTopOptions = defaultScrollTopOptions
-  ): ScrollTopComponent | undefined => {
-    const element = document.body.querySelector(selector)
-    if (!element) {
-      return
-    }
-    const item = element as HTMLElement
-    let scrollTop = ScrollTopComponent.getInstance(item)
-    if (!scrollTop) {
-      scrollTop = new ScrollTopComponent(item, options)
-    }
-    return scrollTop
-  }
-
-  public static bootstrap = () => {
-    ScrollTopComponent.createInstances('[data-kt-scrolltop="true"]')
-  }
-
-  public static reinitialization = () => {
-    ScrollTopComponent.createInstances('[data-kt-scrolltop="true"]')
-  }
-
-  public static goTop = () => {
-    ElementAnimateUtil.scrollTop(0, defaultScrollTopOptions.speed)
-  }
 }
+
 export {ScrollTopComponent, defaultScrollTopOptions}

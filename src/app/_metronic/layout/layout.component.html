@@ -4,7 +4,7 @@
   <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
     <ng-container *ngIf="appHeaderDisplay">
       <!--begin::Header-->
-      <app-header id="kt_app_header" class="app-header" [ngClass]="appHeaderDefaultClass">
+      <app-header [ngClass]="appHeaderDefaultClass" class="app-header" id="kt_app_header">
       </app-header>
       <!--end::Header-->
     </ng-container>
@@ -14,7 +14,7 @@
 
       <ng-container *ngIf="appSidebarDisplay">
         <!--begin::sidebar-->
-        <app-sidebar #ktSidebar id="kt_app_sidebar" class="app-sidebar flex-column" [ngClass]="appSidebarDefaultClass">
+        <app-sidebar #ktSidebar [ngClass]="appSidebarDefaultClass" class="app-sidebar flex-column" id="kt_app_sidebar">
         </app-sidebar>
         <!--end::sidebar-->
       </ng-container>
@@ -27,18 +27,18 @@
         <!--begin::Content wrapper-->
         <div class="d-flex flex-column flex-column-fluid">
           <ng-container *ngIf="appToolbarDisplay">
-            <app-toolbar class="app-toolbar" [ngClass]="appToolbarCSSClass" id="kt_app_toolbar"
-              [appToolbarLayout]="appToolbarLayout"></app-toolbar>
+            <app-toolbar [appToolbarLayout]="appToolbarLayout" [ngClass]="appToolbarCSSClass" class="app-toolbar"
+                         id="kt_app_toolbar"></app-toolbar>
           </ng-container>
-          <app-content id=" kt_app_content" class="app-content" [ngClass]="contentCSSClasses"
-            [contentContainerCSSClass]="contentContainerCSSClass" [appContentContiner]="appContentContiner"
-            [appContentContainerClass]="appContentContainerClass">
+          <app-content [appContentContainerClass]="appContentContainerClass" [appContentContiner]="appContentContiner" [contentContainerCSSClass]="contentContainerCSSClass"
+                       [ngClass]="contentCSSClasses" class="app-content"
+                       id=" kt_app_content">
           </app-content>
         </div>
         <!--end::Content wrapper-->
         <ng-container *ngIf="appFooterDisplay">
-          <app-footer class="app-footer" [ngClass]="appFooterCSSClass" id="kt_app_footer"
-            [appFooterContainerCSSClass]="appFooterContainerCSSClass"></app-footer>
+          <app-footer [appFooterContainerCSSClass]="appFooterContainerCSSClass" [ngClass]="appFooterCSSClass" class="app-footer"
+                      id="kt_app_footer"></app-footer>
         </ng-container>
       </div>
       <!--end:::Main-->
@@ -52,7 +52,7 @@
 
 <app-scripts-init></app-scripts-init>
 <ng-container>
-  <app-scroll-top id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true"></app-scroll-top>
+  <app-scroll-top class="scrolltop" data-kt-scrolltop="true" id="kt_scrolltop"></app-scroll-top>
 </ng-container>
 <!-- begin:: Drawers -->
 <app-activity-drawer></app-activity-drawer>

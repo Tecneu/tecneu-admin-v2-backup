@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ListsWidget26Component } from './lists-widget26.component';
+import {ListsWidget26Component} from './lists-widget26.component';
 
 describe('ListsWidget26Component', () => {
   let component: ListsWidget26Component;
@@ -8,9 +8,9 @@ describe('ListsWidget26Component', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListsWidget26Component ]
+      declarations: [ListsWidget26Component]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(ListsWidget26Component);
     component = fixture.componentInstance;

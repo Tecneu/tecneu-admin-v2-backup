@@ -1,5 +1,5 @@
-<div class="d-flex flex-column flex-center bgi-no-repeat rounded-top px-9 py-10"
-  [style.background-image]="'url(./assets/media/misc/menu-header-bg.jpg)'">
+<div [style.background-image]="'url(./assets/media/misc/menu-header-bg.jpg)'"
+     class="d-flex flex-column flex-center bgi-no-repeat rounded-top px-9 py-10">
   <h3 class="text-white fw-bold mb-3">Quick Links</h3>
   <span class="badge bg-primary py-2 px-3">25 pending tasks</span>
 </div>
@@ -15,7 +15,7 @@
         border-end border-bottom
         cursor-pointer
       ">
-      <app-keenicon name="euro" class="fs-3x text-primary mb-2"></app-keenicon>
+      <app-keenicon class="fs-3x text-primary mb-2" name="euro"></app-keenicon>
       <span class="fs-5 fw-bold text-gray-800 mb-0">Accounting</span>
       <span class="fs-7 text-gray-400">eCommerce</span>
     </a>
@@ -31,7 +31,7 @@
         border-bottom
         cursor-pointer
       ">
-      <app-keenicon name="sms" class="fs-3x text-primary mb-2"></app-keenicon>
+      <app-keenicon class="fs-3x text-primary mb-2" name="sms"></app-keenicon>
       <span class="fs-5 fw-bold text-gray-800 mb-0">Administration</span>
       <span class="fs-7 text-gray-400">Console</span>
     </a>
@@ -47,7 +47,7 @@
         border-end
         cursor-pointer
       ">
-      <app-keenicon name="abstract-41" class="fs-3x text-primary mb-2"></app-keenicon>
+      <app-keenicon class="fs-3x text-primary mb-2" name="abstract-41"></app-keenicon>
       <span class="fs-5 fw-bold text-gray-800 mb-0">Projects</span>
       <span class="fs-7 text-gray-400">Pending Tasks</span>
     </a>
@@ -62,7 +62,7 @@
         bg-hover-light
         cursor-pointer
       ">
-      <app-keenicon name="briefcase" class="fs-3x text-primary mb-2"></app-keenicon>
+      <app-keenicon class="fs-3x text-primary mb-2" name="briefcase"></app-keenicon>
       <span class="fs-5 fw-bold text-gray-800 mb-0">Customers</span>
       <span class="fs-7 text-gray-400">Latest cases</span>
     </a>
@@ -70,8 +70,8 @@
 </div>
 
 <div class="py-2 text-center border-top">
-  <a routerLink="/crafted/pages/profile" class="btn btn-color-gray-600 btn-active-color-primary">
+  <a class="btn btn-color-gray-600 btn-active-color-primary" routerLink="/crafted/pages/profile">
     View All
-    <app-keenicon name="arrow-right" class="fs-5"></app-keenicon>
+    <app-keenicon class="fs-5" name="arrow-right"></app-keenicon>
   </a>
 </div>

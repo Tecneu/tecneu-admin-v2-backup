@@ -8,13 +8,13 @@
   <div class="card-toolbar">
     <!-- begin::Menu -->
     <button
-      type="button"
       class="btn btn-sm btn-icon btn-color-primary btn-active-light-primary"
-      data-kt-menu-trigger="click"
-      data-kt-menu-placement="bottom-end"
       data-kt-menu-flip="top-end"
+      data-kt-menu-placement="bottom-end"
+      data-kt-menu-trigger="click"
+      type="button"
     >
-      <app-keenicon name="category" class="fs-2"></app-keenicon>
+      <app-keenicon class="fs-2" name="category"></app-keenicon>
     </button>
     <app-dropdown-menu1></app-dropdown-menu1>
     <!-- end::Menu -->
@@ -34,7 +34,7 @@
           <!-- begin::Symbol -->
           <div class="symbol symbol-50px me-3">
             <div class="symbol-label bg-light-info">
-              <app-keenicon name="bucket" class="fs-1 text-info"></app-keenicon>
+              <app-keenicon class="fs-1 text-info" name="bucket"></app-keenicon>
             </div>
           </div>
           <!-- end::Symbol -->
@@ -55,7 +55,7 @@
           <!-- begin::Symbol -->
           <div class="symbol symbol-50px me-3">
             <div class="symbol-label bg-light-danger">
-              <app-keenicon name="abstract-26" class="fs-1 text-danger"></app-keenicon>
+              <app-keenicon class="fs-1 text-danger" name="abstract-26"></app-keenicon>
             </div>
           </div>
           <!-- end::Symbol -->
@@ -80,7 +80,7 @@
           <!-- begin::Symbol -->
           <div class="symbol symbol-50px me-3">
             <div class="symbol-label bg-light-success">
-              <app-keenicon name="basket" class="fs-1 text-success"></app-keenicon>
+              <app-keenicon class="fs-1 text-success" name="basket"></app-keenicon>
             </div>
           </div>
           <!-- end::Symbol -->
@@ -101,7 +101,7 @@
           <!-- begin::Symbol -->
           <div class="symbol symbol-50px me-3">
             <div class="symbol-label bg-light-primary">
-              <app-keenicon name="ecm010.svg" class="fs-1 text-primary"></app-keenicon>
+              <app-keenicon class="fs-1 text-primary" name="ecm010.svg"></app-keenicon>
             </div>
           </div>
           <!-- end::Symbol -->
@@ -123,23 +123,23 @@
   <!-- begin::Chart -->
   <div
     #chartRef
-    class="mixed-widget-6-chart card-rounded-bottom"
     [style.height]="chartHeight"
+    class="mixed-widget-6-chart card-rounded-bottom"
   >
     <apx-chart
-      [series]="chartOptions.series"
       [chart]="chartOptions.chart"
-      [xaxis]="chartOptions.xaxis"
-      [yaxis]="chartOptions.yaxis"
-      [dataLabels]="chartOptions.dataLabels"
-      [stroke]="chartOptions.stroke"
-      [legend]="chartOptions.legend"
-      [fill]="chartOptions.fill"
-      [states]="chartOptions.states"
-      [tooltip]="chartOptions.tooltip"
       [colors]="chartOptions.colors"
+      [dataLabels]="chartOptions.dataLabels"
+      [fill]="chartOptions.fill"
+      [legend]="chartOptions.legend"
       [markers]="chartOptions.markers"
       [plotOptions]="chartOptions.plotOptions"
+      [series]="chartOptions.series"
+      [states]="chartOptions.states"
+      [stroke]="chartOptions.stroke"
+      [tooltip]="chartOptions.tooltip"
+      [xaxis]="chartOptions.xaxis"
+      [yaxis]="chartOptions.yaxis"
     ></apx-chart>
   </div>
   <!-- end::Chart -->

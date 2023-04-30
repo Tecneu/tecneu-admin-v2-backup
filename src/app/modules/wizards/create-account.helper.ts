@@ -34,4 +34,4 @@ const inits: ICreateAccount = {
   saveCard: '1',
 };
 
-export { ICreateAccount, inits };
+export {ICreateAccount, inits};

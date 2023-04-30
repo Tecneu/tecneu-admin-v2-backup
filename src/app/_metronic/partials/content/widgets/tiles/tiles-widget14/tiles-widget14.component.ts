@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-tiles-widget14',
@@ -6,5 +6,7 @@ import { Component, Input } from '@angular/core';
 })
 export class TilesWidget14Component {
   @Input() cssClass = '';
-  constructor() {}
+
+  constructor() {
+  }
 }

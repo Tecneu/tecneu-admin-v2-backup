@@ -1,7 +1,7 @@
-import { Component, HostBinding, OnDestroy, OnInit } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
-import { TranslationService } from '../../../../../../modules/i18n';
-import { AuthService, UserType } from '../../../../../../modules/auth';
+import {Component, HostBinding, OnDestroy, OnInit} from '@angular/core';
+import {Observable, Subscription} from 'rxjs';
+import {TranslationService} from '../../../../../../modules/i18n';
+import {AuthService, UserType} from '../../../../../../modules/auth';
 
 @Component({
   selector: 'app-user-inner',
@@ -20,7 +20,8 @@ export class UserInnerComponent implements OnInit, OnDestroy {
   constructor(
     private auth: AuthService,
     private translationService: TranslationService
-  ) {}
+  ) {
+  }
 
   ngOnInit(): void {
     this.user$ = this.auth.currentUserSubject.asObservable();

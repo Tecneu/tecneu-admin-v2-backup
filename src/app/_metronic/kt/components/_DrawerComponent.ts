@@ -1,13 +1,13 @@
 import {
-  EventHandlerUtil,
-  getUniqueIdWithPrefix,
-  getObjectPropertyValueByKey,
-  stringSnakeToCamel,
-  getAttributeValueByBreakpoint,
-  throttle,
-  getCSS,
   DOMEventHandlerUtil,
   ElementStyleUtil,
+  EventHandlerUtil,
+  getAttributeValueByBreakpoint,
+  getCSS,
+  getObjectPropertyValueByKey,
+  getUniqueIdWithPrefix,
+  stringSnakeToCamel,
+  throttle,
 } from '../_utils/index'
 
 export class DrawerStore {
@@ -84,6 +84,140 @@ class DrawerComponent {
     this._update()
     // Bind Instance
     DrawerStore.set(this.element.id, this)
+  }
+
+  // Static methods
+  public static hasInstace = (elementId: string): boolean => {
+    return DrawerStore.has(elementId)
+  }
+
+  public static getInstance = (elementId: string) => {
+    return DrawerStore.get(elementId)
+  }
+
+  public static hideAll = () => {
+    const oldInstances = DrawerStore.getAllInstances()
+    oldInstances.forEach((dr) => {
+      dr.hide()
+    })
+  }
+
+  public static updateAll = () => {
+    const oldInstances = DrawerStore.getAllInstances()
+    oldInstances.forEach((dr) => {
+      dr.update()
+    })
+  }
+
+  // Create Instances
+  public static createInstances(selector: string): void {
+    const elements = document.body.querySelectorAll(selector)
+    elements.forEach((element) => {
+      const item = element as HTMLElement
+      let drawer = DrawerComponent.getInstance(item.id)
+      if (!drawer) {
+        drawer = new DrawerComponent(item, defaultDrawerOptions)
+      }
+      drawer.element = item
+      drawer.hide()
+    })
+  }
+
+  // Dismiss instances
+  public static handleDismiss = () => {
+    // External drawer toggle handler
+    DOMEventHandlerUtil.on(document.body, '[data-kt-drawer-dismiss="true"]', 'click', () => {
+      /* @ts-ignore */
+      const element = this.closest('[data-kt-drawer="true"]')
+      if (element) {
+        const drawer = DrawerComponent.getInstance(element)
+        if (drawer && drawer.isShown()) {
+          drawer.hide()
+        }
+      }
+    })
+  }
+
+  // Global Initialization
+  public static initGlobalHandlers(): void {
+    // Window Resize Handling
+    window.addEventListener('resize', function () {
+      let timer: number | undefined
+      throttle(
+        timer,
+        () => {
+          // Locate and update Drawer instances on window resize
+          const elements = document.body.querySelectorAll('[data-kt-drawer="true"]')
+          elements.forEach((el) => {
+            const item = el as HTMLElement
+            const instance = DrawerComponent.getInstance(item.id)
+            if (instance) {
+              instance.element = item
+              instance.update()
+            }
+          })
+        },
+        200
+      )
+    })
+  }
+
+  public static bootstrap = () => {
+    DrawerComponent.createInstances('[data-kt-drawer="true"]')
+    DrawerComponent.initGlobalHandlers()
+    DrawerComponent.handleDismiss()
+  }
+
+  public static reinitialization = () => {
+    DrawerComponent.createInstances('[data-kt-drawer="true"]')
+    DrawerComponent.hideAll()
+    DrawerComponent.updateAll()
+    DrawerComponent.handleDismiss()
+  }
+
+  ///////////////////////
+  public toggle = () => {
+    this._toggle()
+  }
+
+  ///////////////////////
+  // ** Public API  ** //
+
+  public show = () => {
+    this._show()
+  }
+
+  public hide = () => {
+    this._hide()
+  }
+
+  public isShown = () => {
+    return this.shown
+  }
+
+  public update = () => {
+    this._update()
+  }
+
+  public goElement = () => {
+    return this.element
+  }
+
+  // Event API
+  public on = (name: string, handler: Function) => {
+    return EventHandlerUtil.on(this.element, name, handler)
+  }
+
+  public one = (name: string, handler: Function) => {
+    return EventHandlerUtil.one(this.element, name, handler)
+  }
+
+  public off = (name: string, handerId: string) => {
+    return EventHandlerUtil.off(this.element, name, handerId)
+  }
+
+  public trigger = (name: string, event: Event) => {
+    return EventHandlerUtil.trigger(this.element, name, event)
   }
 
   private _handlers = () => {
@@ -246,139 +380,6 @@ class DrawerComponent {
     }
 
     return width
-  }
-
-  ///////////////////////
-  // ** Public API  ** //
-  ///////////////////////
-  public toggle = () => {
-    this._toggle()
-  }
-
-  public show = () => {
-    this._show()
-  }
-
-  public hide = () => {
-    this._hide()
-  }
-
-  public isShown = () => {
-    return this.shown
-  }
-
-  public update = () => {
-    this._update()
-  }
-
-  public goElement = () => {
-    return this.element
-  }
-
-  // Event API
-  public on = (name: string, handler: Function) => {
-    return EventHandlerUtil.on(this.element, name, handler)
-  }
-
-  public one = (name: string, handler: Function) => {
-    return EventHandlerUtil.one(this.element, name, handler)
-  }
-
-  public off = (name: string, handerId: string) => {
-    return EventHandlerUtil.off(this.element, name, handerId)
-  }
-
-  public trigger = (name: string, event: Event) => {
-    return EventHandlerUtil.trigger(this.element, name, event)
-  }
-
-  // Static methods
-  public static hasInstace = (elementId: string): boolean => {
-    return DrawerStore.has(elementId)
-  }
-
-  public static getInstance = (elementId: string) => {
-    return DrawerStore.get(elementId)
-  }
-
-  public static hideAll = () => {
-    const oldInstances = DrawerStore.getAllInstances()
-    oldInstances.forEach((dr) => {
-      dr.hide()
-    })
-  }
-
-  public static updateAll = () => {
-    const oldInstances = DrawerStore.getAllInstances()
-    oldInstances.forEach((dr) => {
-      dr.update()
-    })
-  }
-
-  // Create Instances
-  public static createInstances(selector: string): void {
-    const elements = document.body.querySelectorAll(selector)
-    elements.forEach((element) => {
-      const item = element as HTMLElement
-      let drawer = DrawerComponent.getInstance(item.id)
-      if (!drawer) {
-        drawer = new DrawerComponent(item, defaultDrawerOptions)
-      }
-      drawer.element = item
-      drawer.hide()
-    })
-  }
-
-  // Dismiss instances
-  public static handleDismiss = () => {
-    // External drawer toggle handler
-    DOMEventHandlerUtil.on(document.body, '[data-kt-drawer-dismiss="true"]', 'click', () => {
-      /* @ts-ignore */
-      const element = this.closest('[data-kt-drawer="true"]')
-      if (element) {
-        const drawer = DrawerComponent.getInstance(element)
-        if (drawer && drawer.isShown()) {
-          drawer.hide()
-        }
-      }
-    })
-  }
-
-  // Global Initialization
-  public static initGlobalHandlers(): void {
-    // Window Resize Handling
-    window.addEventListener('resize', function () {
-      let timer: number | undefined
-      throttle(
-        timer,
-        () => {
-          // Locate and update Drawer instances on window resize
-          const elements = document.body.querySelectorAll('[data-kt-drawer="true"]')
-          elements.forEach((el) => {
-            const item = el as HTMLElement
-            const instance = DrawerComponent.getInstance(item.id)
-            if (instance) {
-              instance.element = item
-              instance.update()
-            }
-          })
-        },
-        200
-      )
-    })
-  }
-
-  public static bootstrap = () => {
-    DrawerComponent.createInstances('[data-kt-drawer="true"]')
-    DrawerComponent.initGlobalHandlers()
-    DrawerComponent.handleDismiss()
-  }
-
-  public static reinitialization = () => {
-    DrawerComponent.createInstances('[data-kt-drawer="true"]')
-    DrawerComponent.hideAll()
-    DrawerComponent.updateAll()
-    DrawerComponent.handleDismiss()
   }
 }
 

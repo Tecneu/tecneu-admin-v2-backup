@@ -1,7 +1,7 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { ILayout, LayoutType } from '../../core/configs/config';
-import { LayoutService } from '../../core/layout.service';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
+import {Subscription} from 'rxjs';
+import {ILayout, LayoutType} from '../../core/configs/config';
+import {LayoutService} from '../../core/layout.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -9,8 +9,6 @@ import { LayoutService } from '../../core/layout.service';
   styleUrls: ['./toolbar.component.scss'],
 })
 export class ToolbarComponent implements OnInit, OnDestroy {
-  private unsubscribe: Subscription[] = [];
-
   // Public props
   @Input() currentLayoutType: LayoutType | null;
   @Input() appToolbarLayout:
@@ -19,7 +17,6 @@ export class ToolbarComponent implements OnInit, OnDestroy {
     | 'extended'
     | 'reports'
     | 'saas';
-
   // toolbar
   appToolbarDisplay: boolean;
   appToolbarContainer: 'fixed' | 'fluid';
@@ -27,14 +24,15 @@ export class ToolbarComponent implements OnInit, OnDestroy {
   appToolbarFixedDesktop: boolean;
   appToolbarFixedMobile: boolean;
   appPageTitleDisplay: boolean;
-
   // page title
   appPageTitleDirection: string = '';
   appPageTitleCSSClass: string = '';
   appPageTitleBreadcrumb: boolean;
   appPageTitleDescription: boolean;
+  private unsubscribe: Subscription[] = [];
 
-  constructor(private layout: LayoutService) {}
+  constructor(private layout: LayoutService) {
+  }
 
   ngOnInit(): void {
     const subscr = this.layout.layoutConfigSubject

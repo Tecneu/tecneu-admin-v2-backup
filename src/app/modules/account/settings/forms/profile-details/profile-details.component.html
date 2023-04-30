@@ -1,60 +1,60 @@
 <div class="card mb-5 mb-xl-10">
   <div
-    class="card-header border-0 cursor-pointer"
-    role="button"
-    data-bs-toggle="collapse"
-    data-bs-target="#kt_account_profile_details"
-    aria-expanded="true"
     aria-controls="kt_account_profile_details"
+    aria-expanded="true"
+    class="card-header border-0 cursor-pointer"
+    data-bs-target="#kt_account_profile_details"
+    data-bs-toggle="collapse"
+    role="button"
   >
     <div class="card-title m-0">
       <h3 class="fw-bolder m-0">Profile Details</h3>
     </div>
   </div>
-  <div id="kt_account_profile_details" class="collapse show">
-    <form novalidate="" class="form">
+  <div class="collapse show" id="kt_account_profile_details">
+    <form class="form" novalidate="">
       <div class="card-body border-top p-9">
         <div class="row mb-6">
           <label class="col-lg-4 col-form-label fw-bold fs-6">Avatar</label>
           <div class="col-lg-8">
             <div
+              [style.background-image]="'url(./assets/media/avatars/blank.png'"
               class="image-input image-input-outline"
               data-kt-image-input="true"
-              [style.background-image]="'url(./assets/media/avatars/blank.png'"
             >
               <div
-                class="image-input-wrapper w-125px h-125px"
                 [style.background-image]="
                   'url(./assets/media/avatars/300-1.jpg'
                 "
+                class="image-input-wrapper w-125px h-125px"
               ></div>
             </div>
           </div>
         </div>
         <div class="row mb-6">
           <label class="col-lg-4 col-form-label required fw-bold fs-6"
-            >Full Name</label
+          >Full Name</label
           >
           <div class="col-lg-8">
             <div class="row">
               <div class="col-lg-6 fv-row">
                 <input
-                  type="text"
                   class="
                     form-control form-control-lg form-control-solid
                     mb-3 mb-lg-0
                   "
-                  placeholder="First name"
                   name="fName"
+                  placeholder="First name"
+                  type="text"
                   value="Max"
                 />
               </div>
               <div class="col-lg-6 fv-row">
                 <input
-                  type="text"
                   class="form-control form-control-lg form-control-solid"
-                  placeholder="Last name"
                   name="lName"
+                  placeholder="Last name"
+                  type="text"
                   value="Smith"
                 />
               </div>
@@ -63,49 +63,49 @@
         </div>
         <div class="row mb-6">
           <label class="col-lg-4 col-form-label required fw-bold fs-6"
-            >Company</label
+          >Company</label
           >
           <div class="col-lg-8 fv-row">
             <input
-              type="text"
               class="form-control form-control-lg form-control-solid"
-              placeholder="Company name"
               name="company"
+              placeholder="Company name"
+              type="text"
               value="Tecneu"
             />
           </div>
         </div>
         <div class="row mb-6">
           <label class="col-lg-4 col-form-label fw-bold fs-6"
-            ><span class="required">Contact Phone</span></label
+          ><span class="required">Contact Phone</span></label
           >
           <div class="col-lg-8 fv-row">
             <input
-              type="tel"
               class="form-control form-control-lg form-control-solid"
-              placeholder="Phone number"
               name="contactPhone"
+              placeholder="Phone number"
+              type="tel"
               value="044 3276 454 935"
             />
           </div>
         </div>
         <div class="row mb-6">
           <label class="col-lg-4 col-form-label fw-bold fs-6"
-            ><span class="required">Company Site</span></label
+          ><span class="required">Company Site</span></label
           >
           <div class="col-lg-8 fv-row">
             <input
-              type="text"
               class="form-control form-control-lg form-control-solid"
-              placeholder="Company website"
               name="companySite"
+              placeholder="Company website"
+              type="text"
               value="keenthemes.com"
             />
           </div>
         </div>
         <div class="row mb-6">
           <label class="col-lg-4 col-form-label fw-bold fs-6"
-            ><span class="required">Country</span></label
+          ><span class="required">Country</span></label
           >
           <div class="col-lg-8 fv-row">
             <select
@@ -374,7 +374,7 @@
         </div>
         <div class="row mb-6">
           <label class="col-lg-4 col-form-label required fw-bold fs-6"
-            >Language</label
+          >Language</label
           >
           <div class="col-lg-8 fv-row">
             <select
@@ -437,7 +437,7 @@
         </div>
         <div class="row mb-6">
           <label class="col-lg-4 col-form-label required fw-bold fs-6"
-            >Time Zone</label
+          >Time Zone</label
           >
           <div class="col-lg-8 fv-row">
             <select
@@ -611,7 +611,7 @@
         </div>
         <div class="row mb-6">
           <label class="col-lg-4 col-form-label required fw-bold fs-6"
-            >Currency</label
+          >Currency</label
           >
           <div class="col-lg-8 fv-row">
             <select
@@ -631,36 +631,36 @@
         </div>
         <div class="row mb-6">
           <label class="col-lg-4 col-form-label fw-bold fs-6"
-            >Communication</label
+          >Communication</label
           >
           <div class="col-lg-8 fv-row">
             <div class="d-flex align-items-center mt-3">
               <label class="form-check form-check-inline form-check-solid me-5"
-                ><input
-                  class="form-check-input"
-                  name="communication[]"
-                  type="checkbox"
-                /><span class="fw-bold ps-2 fs-6">Correo electrónico</span></label
+              ><input
+                class="form-check-input"
+                name="communication[]"
+                type="checkbox"
+              /><span class="fw-bold ps-2 fs-6">Correo electrónico</span></label
               ><label class="form-check form-check-inline form-check-solid"
-                ><input
-                  class="form-check-input"
-                  name="communication[]"
-                  type="checkbox"
-                /><span class="fw-bold ps-2 fs-6">Phone</span></label
-              >
+            ><input
+              class="form-check-input"
+              name="communication[]"
+              type="checkbox"
+            /><span class="fw-bold ps-2 fs-6">Phone</span></label
+            >
             </div>
           </div>
         </div>
         <div class="row mb-0">
           <label class="col-lg-4 col-form-label fw-bold fs-6"
-            >Allow Marketing</label
+          >Allow Marketing</label
           >
           <div class="col-lg-8 d-flex align-items-center">
             <div class="form-check form-check-solid form-switch fv-row">
               <input
                 class="form-check-input w-45px h-30px"
-                type="checkbox"
                 id="allowmarketing"
+                type="checkbox"
               /><label class="form-check-label"></label>
             </div>
           </div>
@@ -668,14 +668,14 @@
       </div>
       <div class="card-footer d-flex justify-content-end py-6 px-9">
         <button
-          type="button"
-          class="btn btn-primary"
-          [disabled]="isLoading"
           (click)="saveSettings()"
+          [disabled]="isLoading"
+          class="btn btn-primary"
+          type="button"
         >
           <ng-container *ngIf="!isLoading">Save Changes</ng-container>
           <ng-container *ngIf="isLoading">
-            <span clas="indicator-progress" [style.display]="'block'">
+            <span [style.display]="'block'" clas="indicator-progress">
               Por favor, espera...{{ " " }}
               <span
                 class="spinner-border spinner-border-sm align-middle ms-2"

@@ -1,4 +1,4 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import {Component, HostBinding, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-dropdown-menu3',
@@ -9,7 +9,9 @@ export class DropdownMenu3Component implements OnInit {
     'menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-bold w-200px py-3';
   @HostBinding('attr.data-kt-menu') dataKtMenu = 'true';
 
-  constructor() {}
+  constructor() {
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 }

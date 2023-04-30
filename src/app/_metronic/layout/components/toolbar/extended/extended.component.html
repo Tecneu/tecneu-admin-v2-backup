@@ -12,13 +12,13 @@
 
   <!--begin::User-->
   <div class="symbol symbol-circle symbol-35px">
-    <img src="./assets/media/avatars/300-1.jpg" alt="" />
+    <img alt="" src="./assets/media/avatars/300-1.jpg"/>
   </div>
   <!--end::User-->
 
   <!--begin::User-->
   <div class="symbol symbol-circle symbol-35px">
-    <img src="./assets/media/avatars/300-2.jpg" alt="" />
+    <img alt="" src="./assets/media/avatars/300-2.jpg"/>
   </div>
   <!--end::User-->
 
@@ -30,7 +30,7 @@
 
   <!--begin::User-->
   <div class="symbol symbol-circle symbol-35px">
-    <img src="./assets/media/avatars/300-5.jpg" alt="" />
+    <img alt="" src="./assets/media/avatars/300-5.jpg"/>
   </div>
   <!--end::User-->
 
@@ -42,16 +42,16 @@
 
   <!--begin::User-->
   <div class="symbol symbol-circle symbol-35px">
-    <img src="./assets/media/avatars/300-20.jpg" alt="" />
+    <img alt="" src="./assets/media/avatars/300-20.jpg"/>
   </div>
   <!--end::User-->
 </div>
 <!--end::Users-->
 
 <!--begin::Button-->
-<div data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" title="Invite a team member">
-  <a href="#" class="btn btn-sm btn-icon">
-    <app-keenicon name="plus-square" class="fs-2hx text-success"></app-keenicon>
+<div data-bs-placement="top" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Invite a team member">
+  <a class="btn btn-sm btn-icon" href="#">
+    <app-keenicon class="fs-2hx text-success" name="plus-square"></app-keenicon>
   </a>
 </div>
 <!--end::Button-->
@@ -61,9 +61,10 @@
 <div class="d-flex align-items-center overflow-auto">
   <!--begin::Search-->
   <div class="position-relative my-1">
-    <app-keenicon name="magnifier" class="fs-3 text-gray500 position-absolute top-50 translate-middle ps-10"></app-keenicon>
-    <input type="text" class="form-control form-control-sm form-control-solid w-150px ps-10" name="Search Team" value=""
-      placeholder="Search Team" />
+    <app-keenicon class="fs-3 text-gray500 position-absolute top-50 translate-middle ps-10"
+                  name="magnifier"></app-keenicon>
+    <input class="form-control form-control-sm form-control-solid w-150px ps-10" name="Search Team" placeholder="Search Team" type="text"
+           value=""/>
   </div>
   <!--end::Search-->
 
@@ -77,9 +78,9 @@
 
   <!--begin::Select-->
   <select class="form-select form-select-sm w-125px form-select-solid me-6" data-control="select2"
-    data-placeholder="Latest" data-hide-search="true">
+          data-hide-search="true" data-placeholder="Latest">
     <option value=""></option>
-    <option value="1" selected>Latest</option>
+    <option selected value="1">Latest</option>
     <option value="2">In Progress</option>
     <option value="3">Done</option>
   </select>
@@ -87,14 +88,14 @@
 
   <!--begin::Actions-->
   <div class="d-flex align-items-center">
-    <button type="button" class="btn btn-sm btn-icon btn-light-primary me-3" data-bs-toggle="tooltip"
-      data-bs-placement="top" title="Enable grid view">
-      <app-keenicon name="element-11" class="fs-3 text-primary"></app-keenicon>
+    <button class="btn btn-sm btn-icon btn-light-primary me-3" data-bs-placement="top" data-bs-toggle="tooltip"
+            title="Enable grid view" type="button">
+      <app-keenicon class="fs-3 text-primary" name="element-11"></app-keenicon>
     </button>
 
-    <button type="button" class="btn btn-sm btn-icon btn-light" data-bs-toggle="tooltip" data-bs-placement="top"
-      title="Enable row view">
-      <app-keenicon name="row-horizontal" class="fs-3 text-gray400"></app-keenicon>
+    <button class="btn btn-sm btn-icon btn-light" data-bs-placement="top" data-bs-toggle="tooltip" title="Enable row view"
+            type="button">
+      <app-keenicon class="fs-3 text-gray400" name="row-horizontal"></app-keenicon>
     </button>
   </div>
   <!--end::Actions-->

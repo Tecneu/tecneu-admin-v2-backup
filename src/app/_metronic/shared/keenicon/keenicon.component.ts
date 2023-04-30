@@ -16,15 +16,15 @@ export class KeeniconComponent implements OnInit {
   constructor() {
   }
 
+  @HostBinding('style.display')
+  get styleDisplay() {
+    return 'contents';
+  }
+
   ngOnInit() {
     if (this.type === 'duotone') {
       // @ts-ignore
       this.pathsNumber = icons[this.type + '-paths'][this.name] ?? 0;
     }
-  }
-
-  @HostBinding('style.display')
-  get styleDisplay() {
-    return 'contents';
   }
 }

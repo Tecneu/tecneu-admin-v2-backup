@@ -1,4 +1,4 @@
-<div class="card card-custom" [ngClass]="cssClass">
+<div [ngClass]="cssClass" class="card card-custom">
   <!-- Header -->
   <div class="card-header border-0 pt-5">
     <div class="card-title">
@@ -9,17 +9,17 @@
     </div>
     <div class="card-toolbar">
       <div
+        class="dropdown dropdown-inline"
         ngbDropdown
         placement="bottom-right"
-        class="dropdown dropdown-inline"
         title="Quick actions"
       >
-        <a ngbDropdownToggle class="btn btn-clean btn-sm btn-icon">
+        <a class="btn btn-clean btn-sm btn-icon" ngbDropdownToggle>
           <i class="ki ki-bold-more-hor"></i>
         </a>
         <div
-          ngbDropdownMenu
           class="dropdown-menu dropdown-menu-md dropdown-menu-right"
+          ngbDropdownMenu
         >
           <app-dropdown-menu3></app-dropdown-menu3>
         </div>
@@ -29,21 +29,21 @@
   <!-- Body -->
   <div class="card-body d-flex flex-column px-0">
     <!--begin::Chart-->
-    <div id="kt_tiles_widget_1_chart" [style.height]="'height: 125px'">
+    <div [style.height]="'height: 125px'" id="kt_tiles_widget_1_chart">
       <apx-chart
-        [series]="chartOptions.series"
         [chart]="chartOptions.chart"
-        [xaxis]="chartOptions.xaxis"
-        [yaxis]="chartOptions.yaxis"
-        [dataLabels]="chartOptions.dataLabels"
-        [stroke]="chartOptions.stroke"
-        [legend]="chartOptions.legend"
-        [fill]="chartOptions.fill"
-        [states]="chartOptions.states"
-        [tooltip]="chartOptions.tooltip"
         [colors]="chartOptions.colors"
+        [dataLabels]="chartOptions.dataLabels"
+        [fill]="chartOptions.fill"
+        [legend]="chartOptions.legend"
         [markers]="chartOptions.markers"
         [plotOptions]="chartOptions.plotOptions"
+        [series]="chartOptions.series"
+        [states]="chartOptions.states"
+        [stroke]="chartOptions.stroke"
+        [tooltip]="chartOptions.tooltip"
+        [xaxis]="chartOptions.xaxis"
+        [yaxis]="chartOptions.yaxis"
       ></apx-chart>
     </div>
     <!--end::Chart-->
@@ -62,13 +62,13 @@
           </div>
           <div>
             <a
-              href="#"
               class="
                 font-size-h6
                 text-dark-75 text-hover-primary
                 font-weight-bolder
               "
-              >Top Authors</a
+              href="#"
+            >Top Authors</a
             >
             <div class="font-size-sm text-muted font-weight-bold mt-1">
               Ricky Hunt, Sandra Trepp
@@ -102,13 +102,13 @@
           </div>
           <div>
             <a
-              href="#"
               class="
                 font-size-h6
                 text-dark-75 text-hover-primary
                 font-weight-bolder
               "
-              >Bestsellers</a
+              href="#"
+            >Bestsellers</a
             >
             <div class="font-size-sm text-muted font-weight-bold mt-1">
               Pitstop Email Marketing
@@ -142,13 +142,13 @@
           </div>
           <div>
             <a
-              href="#"
               class="
                 font-size-h6
                 text-dark-75 text-hover-primary
                 font-weight-bolder
               "
-              >Top Engagement</a
+              href="#"
+            >Top Engagement</a
             >
             <div class="font-size-sm text-muted font-weight-bold mt-1">
               KT.com solution provider

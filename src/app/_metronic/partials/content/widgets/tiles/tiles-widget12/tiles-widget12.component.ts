@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-tiles-widget12',
@@ -10,7 +10,8 @@ export class TilesWidget12Component implements OnInit {
   @Input() iconColor = 'success';
   svgCSSClass = '';
 
-  constructor() {}
+  constructor() {
+  }
 
   ngOnInit() {
     this.svgCSSClass = `svg-icon--${this.iconColor}`;

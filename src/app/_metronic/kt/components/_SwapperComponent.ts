@@ -1,8 +1,8 @@
 import {
-  getAttributeValueByBreakpoint,
-  stringSnakeToCamel,
-  getObjectPropertyValueByKey,
   EventHandlerUtil,
+  getAttributeValueByBreakpoint,
+  getObjectPropertyValueByKey,
+  stringSnakeToCamel,
   throttle,
 } from '../_utils/index'
 
@@ -77,61 +77,6 @@ class SwapperComponent {
     SwapperStore.set(this.element.id, this)
   }
 
-  private getOption(name: string) {
-    const attr = this.element.getAttribute(`${this.queries.attrQuery}${name}`)
-    if (attr) {
-      let value = getAttributeValueByBreakpoint(attr)
-      if (attr != null && String(value) === 'true') {
-        return true
-      } else if (value !== null && String(value) === 'false') {
-        return false
-      }
-      return value
-    } else {
-      const optionName = stringSnakeToCamel(name)
-      const option = getObjectPropertyValueByKey(this.options, optionName)
-      if (option) {
-        return getAttributeValueByBreakpoint(option)
-      } else {
-        return null
-      }
-    }
-  }
-
-  ///////////////////////
-  // ** Public API  ** //
-  ///////////////////////
-  public update = () => {
-    const parentSelector = this.getOption('parent')?.toString()
-    const mode = this.getOption('mode')
-    const parentElement = parentSelector ? document.querySelector(parentSelector) : null
-
-    if (parentElement && this.element.parentNode !== parentElement) {
-      if (mode === 'prepend') {
-        parentElement.prepend(this.element)
-      } else if (mode === 'append') {
-        parentElement.append(this.element)
-      }
-    }
-  }
-
-  // Event API
-  public on = (name: string, handler: Function) => {
-    return EventHandlerUtil.on(this.element, name, handler)
-  }
-
-  public one = (name: string, handler: Function) => {
-    return EventHandlerUtil.one(this.element, name, handler)
-  }
-
-  public off = (name: string, handlerId: string) => {
-    return EventHandlerUtil.off(this.element, name, handlerId)
-  }
-
-  public trigger = (name: string, event: Event) => {
-    return EventHandlerUtil.trigger(this.element, name, event)
-  }
-
   // Static methods
   public static getInstance = (
     el: HTMLElement,
@@ -144,6 +89,9 @@ class SwapperComponent {
 
     return null
   }
+
+  ///////////////////////
+  // ** Public API  ** //
 
   public static createInstances = (
     selector: string = defaultSwapperQueires.instanseQuery,
@@ -183,6 +131,59 @@ class SwapperComponent {
 
   public static reinitialization = (selector: string = defaultSwapperQueires.instanseQuery) => {
     SwapperComponent.createInstances(selector)
+  }
+
+  ///////////////////////
+  public update = () => {
+    const parentSelector = this.getOption('parent')?.toString()
+    const mode = this.getOption('mode')
+    const parentElement = parentSelector ? document.querySelector(parentSelector) : null
+
+    if (parentElement && this.element.parentNode !== parentElement) {
+      if (mode === 'prepend') {
+        parentElement.prepend(this.element)
+      } else if (mode === 'append') {
+        parentElement.append(this.element)
+      }
+    }
+  }
+
+  // Event API
+  public on = (name: string, handler: Function) => {
+    return EventHandlerUtil.on(this.element, name, handler)
+  }
+
+  public one = (name: string, handler: Function) => {
+    return EventHandlerUtil.one(this.element, name, handler)
+  }
+
+  public off = (name: string, handlerId: string) => {
+    return EventHandlerUtil.off(this.element, name, handlerId)
+  }
+
+  public trigger = (name: string, event: Event) => {
+    return EventHandlerUtil.trigger(this.element, name, event)
+  }
+
+  private getOption(name: string) {
+    const attr = this.element.getAttribute(`${this.queries.attrQuery}${name}`)
+    if (attr) {
+      let value = getAttributeValueByBreakpoint(attr)
+      if (attr != null && String(value) === 'true') {
+        return true
+      } else if (value !== null && String(value) === 'false') {
+        return false
+      }
+      return value
+    } else {
+      const optionName = stringSnakeToCamel(name)
+      const option = getObjectPropertyValueByKey(this.options, optionName)
+      if (option) {
+        return getAttributeValueByBreakpoint(option)
+      } else {
+        return null
+      }
+    }
   }
 }
 

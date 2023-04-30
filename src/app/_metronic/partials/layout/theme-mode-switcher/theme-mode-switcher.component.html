@@ -1,12 +1,12 @@
 <!-- begin::Menu toggle -->
-<div class="btn btn-icon" [ngClass]="toggleBtnClass" data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
-  data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
+<div [ngClass]="toggleBtnClass" class="btn btn-icon" data-kt-menu-attach="parent"
+     data-kt-menu-placement="bottom-end" data-kt-menu-trigger="{default: 'click', lg: 'hover'}">
   <ng-container *ngIf="mode$ | async as mode">
     <ng-container *ngIf="mode === 'dark'">
-      <app-keenicon name="moon" class="fs-2 fs-lg-1 theme-light-hide" [ngClass]="toggleBtnIconClass"></app-keenicon>
+      <app-keenicon [ngClass]="toggleBtnIconClass" class="fs-2 fs-lg-1 theme-light-hide" name="moon"></app-keenicon>
     </ng-container>
     <ng-container *ngIf="mode === 'light'">
-      <app-keenicon name="night-day" class="fs-2 fs-lg-1 theme-dark-hide" [ngClass]="toggleBtnIconClass"></app-keenicon>
+      <app-keenicon [ngClass]="toggleBtnIconClass" class="fs-2 fs-lg-1 theme-dark-hide" name="night-day"></app-keenicon>
     </ng-container>
   </ng-container>
 </div>
@@ -19,9 +19,9 @@
   <ng-container *ngIf="menuMode$ | async as menuMode">
     <!-- begin::Menu item  -->
     <div class='menu-item px-3 my-0'>
-      <a class="menu-link px-3 py-2" [ngClass]="{'active': menuMode === 'light'}" (click)="switchMode('light')">
+      <a (click)="switchMode('light')" [ngClass]="{'active': menuMode === 'light'}" class="menu-link px-3 py-2">
         <span class='menu-icon' data-kt-element='icon'>
-          <app-keenicon name="night-day" class="fs-3"></app-keenicon>
+          <app-keenicon class="fs-3" name="night-day"></app-keenicon>
         </span>
         <span class='menu-title'>Light</span>
       </a>
@@ -30,9 +30,9 @@
 
     <!-- begin::Menu item  -->
     <div class='menu-item px-3 my-0'>
-      <a class="menu-link px-3 py-2" [ngClass]="{'active': menuMode === 'dark'}" (click)="switchMode('dark')">
+      <a (click)="switchMode('dark')" [ngClass]="{'active': menuMode === 'dark'}" class="menu-link px-3 py-2">
         <span class='menu-icon' data-kt-element='icon'>
-          <app-keenicon name="moon" class="fs-3"></app-keenicon>
+          <app-keenicon class="fs-3" name="moon"></app-keenicon>
         </span>
         <span class='menu-title'>Dark</span>
       </a>
@@ -41,9 +41,9 @@
 
     <!-- begin::Menu item  -->
     <div class='menu-item px-3 my-0'>
-      <a class="menu-link px-3 py-2" [ngClass]="{'active': menuMode === 'system'}" (click)="switchMode('system')">
+      <a (click)="switchMode('system')" [ngClass]="{'active': menuMode === 'system'}" class="menu-link px-3 py-2">
         <span class='menu-icon' data-kt-element='icon'>
-          <app-keenicon name="screen" class="fs-3"></app-keenicon>
+          <app-keenicon class="fs-3" name="screen"></app-keenicon>
         </span>
         <span class='menu-title'>System</span>
       </a>

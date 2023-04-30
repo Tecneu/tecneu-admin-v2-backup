@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { EngageWidget10Component } from './engage-widget10.component';
+import {EngageWidget10Component} from './engage-widget10.component';
 
 describe('EngageWidget10Component', () => {
   let component: EngageWidget10Component;
@@ -8,9 +8,9 @@ describe('EngageWidget10Component', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EngageWidget10Component ]
+      declarations: [EngageWidget10Component]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(EngageWidget10Component);
     component = fixture.componentInstance;

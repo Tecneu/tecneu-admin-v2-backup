@@ -1,8 +1,8 @@
 <ng-container *ngIf="appContentContiner">
   <!--begin::Content container-->
-  <div id="kt_app_content_container" class="app-container"
-    [ngClass]="appContentContainerClass + ' ' + contentContainerCSSClass"
-    [ngClass]="{'container-xxl': appContentContiner === 'fixed', 'container-fluid': appContentContiner === 'fluid'}">
+  <div [ngClass]="appContentContainerClass + ' ' + contentContainerCSSClass" [ngClass]="{'container-xxl': appContentContiner === 'fixed', 'container-fluid': appContentContiner === 'fluid'}"
+       class="app-container"
+       id="kt_app_content_container">
     <router-outlet></router-outlet>
   </div>
   <!--end::Content container-->

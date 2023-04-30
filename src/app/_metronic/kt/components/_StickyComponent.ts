@@ -1,15 +1,15 @@
 import {
-  getElementOffset,
-  getScrollTop,
-  getAttributeValueByBreakpoint,
-  getUniqueIdWithPrefix,
-  getObjectPropertyValueByKey,
-  stringSnakeToCamel,
-  getCSS,
   DataUtil,
   ElementAnimateUtil,
   ElementStyleUtil,
   EventHandlerUtil,
+  getAttributeValueByBreakpoint,
+  getCSS,
+  getElementOffset,
+  getObjectPropertyValueByKey,
+  getScrollTop,
+  getUniqueIdWithPrefix,
+  stringSnakeToCamel,
 } from '../_utils/index'
 
 export interface StickyOptions {
@@ -53,6 +53,82 @@ class StickyComponent {
     this.scroll()
 
     DataUtil.set(this.element, 'sticky', this)
+  }
+
+  // Static methods
+  public static hasInstace(element: HTMLElement) {
+    return DataUtil.has(element, 'sticky')
+  }
+
+  public static getInstance(element: HTMLElement): StickyComponent | undefined {
+    if (element !== null && StickyComponent.hasInstace(element)) {
+      const data = DataUtil.get(element, 'sticky')
+      if (data) {
+        return data as StickyComponent
+      }
+    }
+  }
+
+  // Create Instances
+  public static createInstances(selector: string) {
+    const elements = document.body.querySelectorAll(selector)
+    elements.forEach((element) => {
+      const item = element as HTMLElement
+      let sticky = StickyComponent.getInstance(item)
+      if (!sticky) {
+        sticky = new StickyComponent(item, defaultStickyOptions)
+      }
+    })
+  }
+
+  public static createInsance = (
+    selector: string,
+    options: StickyOptions = defaultStickyOptions
+  ): StickyComponent | undefined => {
+    const element = document.body.querySelector(selector)
+    if (!element) {
+      return
+    }
+    const item = element as HTMLElement
+    let sticky = StickyComponent.getInstance(item)
+    if (!sticky) {
+      sticky = new StickyComponent(item, options)
+    }
+    return sticky
+  }
+
+  public static bootstrap(attr: string = '[data-kt-sticky="true"]') {
+    StickyComponent.createInstances(attr)
+  }
+
+  public static reInitialization(attr: string = '[data-kt-sticky="true"]') {
+    StickyComponent.createInstances(attr)
+  }
+
+  public update = () => {
+    if (document.body.hasAttribute(this.attributeName) === true) {
+      this.disable()
+      document.body.removeAttribute(this.attributeName)
+      this.enable(true)
+      document.body.setAttribute(this.attributeName, 'on')
+    }
+  }
+
+  // Event API
+  public on = (name: string, callBack: Function) => {
+    return EventHandlerUtil.on(this.element, name, callBack)
+  }
+
+  public one = (name: string, callback: Function) => {
+    return EventHandlerUtil.one(this.element, name, callback)
+  }
+
+  public off = (name: string, handlerId: string) => {
+    return EventHandlerUtil.off(this.element, name, handlerId)
+  }
+
+  public trigger = (name: string) => {
+    return EventHandlerUtil.trigger(this.element, name)
   }
 
   private scroll = () => {
@@ -203,82 +279,6 @@ class StickyComponent {
         }
       }
     }
-  }
-
-  public update = () => {
-    if (document.body.hasAttribute(this.attributeName) === true) {
-      this.disable()
-      document.body.removeAttribute(this.attributeName)
-      this.enable(true)
-      document.body.setAttribute(this.attributeName, 'on')
-    }
-  }
-
-  // Event API
-  public on = (name: string, callBack: Function) => {
-    return EventHandlerUtil.on(this.element, name, callBack)
-  }
-
-  public one = (name: string, callback: Function) => {
-    return EventHandlerUtil.one(this.element, name, callback)
-  }
-
-  public off = (name: string, handlerId: string) => {
-    return EventHandlerUtil.off(this.element, name, handlerId)
-  }
-
-  public trigger = (name: string) => {
-    return EventHandlerUtil.trigger(this.element, name)
-  }
-
-  // Static methods
-  public static hasInstace(element: HTMLElement) {
-    return DataUtil.has(element, 'sticky')
-  }
-
-  public static getInstance(element: HTMLElement): StickyComponent | undefined {
-    if (element !== null && StickyComponent.hasInstace(element)) {
-      const data = DataUtil.get(element, 'sticky')
-      if (data) {
-        return data as StickyComponent
-      }
-    }
-  }
-
-  // Create Instances
-  public static createInstances(selector: string) {
-    const elements = document.body.querySelectorAll(selector)
-    elements.forEach((element) => {
-      const item = element as HTMLElement
-      let sticky = StickyComponent.getInstance(item)
-      if (!sticky) {
-        sticky = new StickyComponent(item, defaultStickyOptions)
-      }
-    })
-  }
-
-  public static createInsance = (
-    selector: string,
-    options: StickyOptions = defaultStickyOptions
-  ): StickyComponent | undefined => {
-    const element = document.body.querySelector(selector)
-    if (!element) {
-      return
-    }
-    const item = element as HTMLElement
-    let sticky = StickyComponent.getInstance(item)
-    if (!sticky) {
-      sticky = new StickyComponent(item, options)
-    }
-    return sticky
-  }
-
-  public static bootstrap(attr: string = '[data-kt-sticky="true"]') {
-    StickyComponent.createInstances(attr)
-  }
-
-  public static reInitialization(attr: string = '[data-kt-sticky="true"]') {
-    StickyComponent.createInstances(attr)
   }
 }
 

@@ -1,7 +1,7 @@
 <div class="card-header flex-nowrap border-0 pt-9">
   <div class="card-title m-0">
     <div class="symbol symbol-45px w-45px bg-light me-5">
-      <img [src]="image" alt="Metronic" class="p-3" />
+      <img [src]="image" alt="Metronic" class="p-3"/>
     </div>
 
     <a class="fs-4 fw-bold text-hover-primary text-gray-600 m-0 cursor-pointer">
@@ -11,16 +11,16 @@
 
   <div class="card-toolbar m-0">
     <button
-      type="button"
       class="
         btn btn-clean btn-sm btn-icon btn-icon-primary btn-active-light-primary
         me-n3
       "
-      data-kt-menu-trigger="click"
-      data-kt-menu-placement="bottom-end"
       data-kt-menu-flip="top-end"
+      data-kt-menu-placement="bottom-end"
+      data-kt-menu-trigger="click"
+      type="button"
     >
-      <app-keenicon name="category" class="fs-3 text-primary"></app-keenicon>
+      <app-keenicon class="fs-3 text-primary" name="category"></app-keenicon>
     </button>
     <app-dropdown-menu1></app-dropdown-menu1>
   </div>
@@ -31,16 +31,16 @@
 
   <div class="d-flex align-items-center flex-wrap mb-5 mt-auto fs-6">
     <ng-container *ngIf="status === 'up'">
-      <app-keenicon name="arrow-up-right" class="fs-3 me-1 text-success"></app-keenicon>
+      <app-keenicon class="fs-3 me-1 text-success" name="arrow-up-right"></app-keenicon>
     </ng-container>
 
     <ng-container *ngIf="status === 'down'">
-      <app-keenicon name="arr006.svg" class="fs-3 me-1 text-danger"></app-keenicon>
+      <app-keenicon class="fs-3 me-1 text-danger" name="arr006.svg"></app-keenicon>
     </ng-container>
 
     <div
-      class="fw-bolder me-2"
       [ngClass]="status === 'up' ? 'text-success' : 'text-danger'"
+      class="fw-bolder me-2"
     >
       {{ status === "up" ? "+" : "-" }}
       {{ statusValue }}%
@@ -51,7 +51,7 @@
 
   <div class="d-flex align-items-center fw-bold">
     <span class="badge bg-light text-gray-700 px-3 py-2 me-2"
-      >{{ progress }}%</span
+    >{{ progress }}%</span
     >
     <span class="text-gray-400 fs-7">{{ progressType }}</span>
   </div>

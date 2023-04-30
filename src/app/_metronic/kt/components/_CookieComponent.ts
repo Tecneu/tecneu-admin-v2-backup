@@ -1,4 +1,5 @@
 /* eslint-disable no-useless-escape */
+
 // DOCS: https://javascript.info/cookie
 export class CookieComponent {
   /**

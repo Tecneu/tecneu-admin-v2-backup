@@ -1,4 +1,4 @@
-import { Component, HostBinding, Input, OnInit } from '@angular/core';
+import {Component, HostBinding, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-card1',
@@ -13,7 +13,10 @@ export class Card1Component implements OnInit {
   @Input() job: string = '';
   @Input() avgEarnings: string = '';
   @Input() totalEarnings: string = '';
-  constructor() {}
 
-  ngOnInit(): void {}
+  constructor() {
+  }
+
+  ngOnInit(): void {
+  }
 }

@@ -1,21 +1,21 @@
-<div class="card-header border-0" [ngClass]="'bg-' + chartColor">
+<div [ngClass]="'bg-' + chartColor" class="card-header border-0">
   <h3 class="card-title fw-bolder text-white">Sales Progress</h3>
 
   <div class="card-toolbar">
     <!-- begin::Menu  -->
     <button
-      type="button"
+      [ngClass]="'btn-active-color-' + chartColor"
       class="
         btn btn-sm btn-icon btn-color-white btn-active-white
         border-0
         me-n3
       "
-      [ngClass]="'btn-active-color-' + chartColor"
-      data-kt-menu-trigger="click"
-      data-kt-menu-placement="bottom-end"
       data-kt-menu-flip="top-end"
+      data-kt-menu-placement="bottom-end"
+      data-kt-menu-trigger="click"
+      type="button"
     >
-      <app-keenicon name="category" class="fs-2"></app-keenicon>
+      <app-keenicon class="fs-2" name="category"></app-keenicon>
     </button>
     <app-dropdown-menu1></app-dropdown-menu1>
     <!-- end::Menu  -->
@@ -28,24 +28,24 @@
   <!-- begin::Chart  -->
   <div
     #chartRef
-    class="mixed-widget-12-chart card-rounded-bottom"
     [ngClass]="'bg-' + chartColor"
     [style.height]="chartHeight"
+    class="mixed-widget-12-chart card-rounded-bottom"
   >
     <apx-chart
-      [series]="chartOptions.series"
       [chart]="chartOptions.chart"
-      [xaxis]="chartOptions.xaxis"
-      [yaxis]="chartOptions.yaxis"
-      [dataLabels]="chartOptions.dataLabels"
-      [stroke]="chartOptions.stroke"
-      [legend]="chartOptions.legend"
-      [fill]="chartOptions.fill"
-      [states]="chartOptions.states"
-      [tooltip]="chartOptions.tooltip"
       [colors]="chartOptions.colors"
+      [dataLabels]="chartOptions.dataLabels"
+      [fill]="chartOptions.fill"
+      [legend]="chartOptions.legend"
       [markers]="chartOptions.markers"
       [plotOptions]="chartOptions.plotOptions"
+      [series]="chartOptions.series"
+      [states]="chartOptions.states"
+      [stroke]="chartOptions.stroke"
+      [tooltip]="chartOptions.tooltip"
+      [xaxis]="chartOptions.xaxis"
+      [yaxis]="chartOptions.yaxis"
     ></apx-chart>
   </div>
   <!-- end::Chart  -->

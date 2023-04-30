@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {MenuItem} from "../../../../shared/menu/models/menu-item.interface";
+import {Component, OnInit} from '@angular/core';
 import {MENU_ITEMS} from "../../../../shared/menu/data/menu-data";
 
 @Component({
@@ -10,7 +9,8 @@ import {MENU_ITEMS} from "../../../../shared/menu/data/menu-data";
 export class SidebarMenuComponent implements OnInit {
   menuItems = MENU_ITEMS;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

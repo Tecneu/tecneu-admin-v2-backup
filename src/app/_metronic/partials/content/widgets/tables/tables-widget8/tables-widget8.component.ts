@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 type Tabs =
   | 'kt_table_widget_8_tab_1'
@@ -10,9 +10,10 @@ type Tabs =
   templateUrl: './tables-widget8.component.html',
 })
 export class TablesWidget8Component implements OnInit {
-  constructor() {}
-
   activeTab: Tabs = 'kt_table_widget_8_tab_1';
+
+  constructor() {
+  }
 
   setTab(tab: Tabs) {
     this.activeTab = tab;
@@ -22,5 +23,6 @@ export class TablesWidget8Component implements OnInit {
     return tab === this.activeTab ? 'show active' : '';
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 }

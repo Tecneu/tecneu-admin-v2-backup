@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-advance-tables-widget7',
@@ -8,7 +8,8 @@ export class AdvanceTablesWidget7Component {
   @Input() cssClass: '';
   currentTab = 'Day';
 
-  constructor() {}
+  constructor() {
+  }
 
   setCurrentTab(tab: string) {
     this.currentTab = tab;

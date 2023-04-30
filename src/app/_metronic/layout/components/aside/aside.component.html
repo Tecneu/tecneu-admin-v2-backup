@@ -26,15 +26,15 @@
   <!-- begin::Aside toggle -->
   <ng-container *ngIf="asideMinimize">
     <div
-      id="kt_aside_toggle"
+      (click)="minimize()"
       class="btn btn-icon w-auto px-0 btn-active-color-primary aside-toggle"
       data-kt-toggle="true"
+      data-kt-toggle-name="aside-minimize"
       data-kt-toggle-state="active"
       data-kt-toggle-target="body"
-      data-kt-toggle-name="aside-minimize"
-      (click)="minimize()"
+      id="kt_aside_toggle"
     >
-      <app-keenicon name="double-left" class="fs-1 rotate-180"></app-keenicon>
+      <app-keenicon class="fs-1 rotate-180" name="double-left"></app-keenicon>
     </div>
   </ng-container>
   <!-- end::Aside toggler -->
@@ -45,18 +45,16 @@
 <div class="aside-menu flex-column-fluid">
   <div
     #ktAsideScroll
-    id="kt_aside_menu_wrapper"
     class="hover-scroll-overlay-y my-5 my-lg-5"
     data-kt-scroll="true"
     data-kt-scroll-activate="{default: false, lg: true}"
-    data-kt-scroll-height="auto"
     data-kt-scroll-dependencies="#kt_aside_logo, #kt_aside_footer"
-    data-kt-scroll-wrappers="#kt_aside_menu"
+    data-kt-scroll-height="auto"
     data-kt-scroll-offset="0"
+    data-kt-scroll-wrappers="#kt_aside_menu"
+    id="kt_aside_menu_wrapper"
   >
     <div
-      id="#kt_aside_menu"
-      data-kt-menu="true"
       class="
         menu
         menu-column
@@ -66,6 +64,8 @@
         menu-state-bullet-primary
         menu-arrow-gray-500
       "
+      data-kt-menu="true"
+      id="#kt_aside_menu"
     >
       <app-aside-menu id="asideMenu"></app-aside-menu>
     </div>
@@ -76,16 +76,16 @@
 <!-- begin::Footer -->
 <div class="aside-footer flex-column-auto pt-5 pb-7 px-5" id="kt_aside_footer">
   <a
-    target="_blank"
-    class="btn btn-custom btn-primary w-100"
     [href]="appPreviewDocsUrl"
+    class="btn btn-custom btn-primary w-100"
+    data-bs-dismiss-="click"
     data-bs-toggle="tooltip"
     data-bs-trigger="hover"
-    data-bs-dismiss-="click"
     ngbDropdown="Check out the complete documentation with over 100 components"
+    target="_blank"
   >
     <span class="btn-label">Docs & Components</span>
-    <app-keenicon name="document" class="fs-2"></app-keenicon>
+    <app-keenicon class="fs-2" name="document"></app-keenicon>
   </a>
 </div>
 <!-- end::Footer -->

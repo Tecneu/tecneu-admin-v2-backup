@@ -1,20 +1,9 @@
-import {
-  Component,
-  ElementRef,
-  OnDestroy,
-  OnInit,
-  ViewChild,
-} from '@angular/core';
-import { NavigationCancel, NavigationEnd, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
-import { LayoutService } from '../../core/layout.service';
-import { environment } from './../../../../../environments/environment';
-import {
-  MenuComponent,
-  DrawerComponent,
-  ToggleComponent,
-  ScrollComponent,
-} from '../../../kt/components';
+import {Component, ElementRef, OnDestroy, OnInit, ViewChild,} from '@angular/core';
+import {NavigationCancel, NavigationEnd, Router} from '@angular/router';
+import {Subscription} from 'rxjs';
+import {LayoutService} from '../../core/layout.service';
+import {environment} from './../../../../../environments/environment';
+import {DrawerComponent, MenuComponent, ScrollComponent, ToggleComponent,} from '../../../kt/components';
 
 @Component({
   selector: 'app-aside',
@@ -26,10 +15,11 @@ export class AsideComponent implements OnInit, OnDestroy {
   asideMinimize: boolean = false;
   asideMenuCSSClasses: string = '';
   appPreviewDocsUrl: string = environment.appPreviewDocsUrl;
-  @ViewChild('ktAsideScroll', { static: true }) ktAsideScroll: ElementRef;
+  @ViewChild('ktAsideScroll', {static: true}) ktAsideScroll: ElementRef;
   private unsubscribe: Subscription[] = [];
 
-  constructor(private layout: LayoutService, private router: Router) {}
+  constructor(private layout: LayoutService, private router: Router) {
+  }
 
   ngOnInit(): void {
     this.asideTheme = this.layout.getProp('aside.theme') as string;

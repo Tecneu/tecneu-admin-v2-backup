@@ -22,7 +22,8 @@ export class ElementAnimateUtil {
 
     // Create mock done() function if necessary
     if (!complete) {
-      complete = function () {}
+      complete = function () {
+      }
     }
 
     // Animation loop
@@ -105,6 +106,7 @@ export class ElementAnimateUtil {
       document.body.scrollTop = value
     }) //, easing, done
   }
+
   public static scrollTop(offset: number, duration: number) {
     ElementAnimateUtil.scrollTo(null, offset, duration)
   }

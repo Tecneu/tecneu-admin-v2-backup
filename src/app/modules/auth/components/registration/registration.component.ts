@@ -1,11 +1,11 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Subscription, Observable } from 'rxjs';
-import { Router } from '@angular/router';
-import { AuthService } from '../../services/auth.service';
-import { ConfirmPasswordValidator } from './confirm-password.validator';
-import { UserModel } from '../../models/user.model';
-import { first } from 'rxjs/operators';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Observable, Subscription} from 'rxjs';
+import {Router} from '@angular/router';
+import {AuthService} from '../../services/auth.service';
+import {ConfirmPasswordValidator} from './confirm-password.validator';
+import {UserModel} from '../../models/user.model';
+import {first} from 'rxjs/operators';
 
 @Component({
   selector: 'app-registration',
@@ -32,13 +32,13 @@ export class RegistrationComponent implements OnInit, OnDestroy {
     }
   }
 
-  ngOnInit(): void {
-    this.initForm();
-  }
-
   // convenience getter for easy access to form fields
   get f() {
     return this.registrationForm.controls;
+  }
+
+  ngOnInit(): void {
+    this.initForm();
   }
 
   initForm() {

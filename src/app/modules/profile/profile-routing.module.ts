@@ -1,11 +1,11 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { OverviewComponent } from './overview/overview.component';
-import { CampaignsComponent } from './campaigns/campaigns.component';
-import { DocumentsComponent } from './documents/documents.component';
-import { ProjectsComponent } from './projects/projects.component';
-import { ProfileComponent } from './profile.component';
-import { ConnectionsComponent } from './connections/connections.component';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {OverviewComponent} from './overview/overview.component';
+import {CampaignsComponent} from './campaigns/campaigns.component';
+import {DocumentsComponent} from './documents/documents.component';
+import {ProjectsComponent} from './projects/projects.component';
+import {ProfileComponent} from './profile.component';
+import {ConnectionsComponent} from './connections/connections.component';
 
 const routes: Routes = [
   {
@@ -32,8 +32,8 @@ const routes: Routes = [
         path: 'connections',
         component: ConnectionsComponent,
       },
-      { path: '', redirectTo: 'overview', pathMatch: 'full' },
-      { path: '**', redirectTo: 'overview', pathMatch: 'full' },
+      {path: '', redirectTo: 'overview', pathMatch: 'full'},
+      {path: '**', redirectTo: 'overview', pathMatch: 'full'},
     ],
   },
 ];
@@ -42,4 +42,5 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class ProfileRoutingModule {}
+export class ProfileRoutingModule {
+}

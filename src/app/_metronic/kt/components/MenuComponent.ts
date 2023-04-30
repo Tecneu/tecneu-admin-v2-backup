@@ -1,18 +1,18 @@
 import {createPopper, VirtualElement} from '@popperjs/core'
 import {
-  getElementChild,
-  getElementParents,
-  getAttributeValueByBreakpoint,
-  getUniqueIdWithPrefix,
   DataUtil,
+  DOMEventHandlerUtil,
   ElementStyleUtil,
   EventHandlerUtil,
-  insertAfterElement,
-  slideUp,
-  slideDown,
-  DOMEventHandlerUtil,
-  throttle,
+  getAttributeValueByBreakpoint,
+  getElementChild,
+  getElementParents,
   getHighestZindex,
+  getUniqueIdWithPrefix,
+  insertAfterElement,
+  slideDown,
+  slideUp,
+  throttle,
 } from '../_utils/index'
 
 export interface MenuOptions {
@@ -70,6 +70,330 @@ class MenuComponent {
     this._update()
     DataUtil.set(this.element, 'menu', this)
     return this
+  }
+
+  // Get KTMenu instance by element
+  public static getInstance = (element: HTMLElement): MenuComponent | null => {
+    // Element has menu DOM reference in it's DATA storage
+    const elementMenu = DataUtil.get(element, 'menu')
+    if (elementMenu) {
+      return elementMenu as MenuComponent
+    }
+
+    // Element has .menu parent
+    const menu = element.closest('.menu')
+    if (menu) {
+      const menuData = DataUtil.get(menu as HTMLElement, 'menu')
+      if (menuData) {
+        return menuData as MenuComponent
+      }
+    }
+
+    // Element has a parent with DOM reference to .menu in it's DATA storage
+    if (element.classList.contains('menu-link')) {
+      const sub = element.closest('.menu-sub')
+      if (sub) {
+        const subMenu = DataUtil.get(sub as HTMLElement, 'menu')
+        if (subMenu) {
+          return subMenu as MenuComponent
+        }
+      }
+    }
+
+    return null
+  }
+
+  // Hide all dropdowns and skip one if provided
+  public static hideDropdowns = (skip: HTMLElement | undefined) => {
+    const items = document.querySelectorAll<HTMLElement>(
+      '.show.menu-dropdown[data-kt-menu-trigger]'
+    )
+
+    if (items && items.length > 0) {
+      for (let i = 0, len = items.length; i < len; i++) {
+        const item = items[i]
+        const menu = MenuComponent.getInstance(item as HTMLElement)
+
+        if (menu && menu.getItemSubType(item) === 'dropdown') {
+          if (skip) {
+            if (
+              // @ts-ignore
+              menu.getItemSubElement(item).contains(skip) === false &&
+              item.contains(skip) === false &&
+              item !== skip
+            ) {
+              menu.hide(item)
+            }
+          } else {
+            menu.hide(item)
+          }
+        }
+      }
+    }
+  }
+
+  public static updateDropdowns = () => {
+    const items = document.querySelectorAll('.show.menu-dropdown[data-kt-menu-trigger]')
+    if (items && items.length > 0) {
+      for (var i = 0, len = items.length; i < len; i++) {
+        var item = items[i]
+
+        if (DataUtil.has(item as HTMLElement, 'popper')) {
+          // @ts-ignore
+          DataUtil.get(item as HTMLElement, 'popper').forceUpdate()
+        }
+      }
+    }
+  }
+
+  // Global handlers
+  public static createInstances = (selector: string) => {
+    // Initialize menus
+    document.querySelectorAll(selector).forEach((el) => {
+      const menuItem = el as HTMLElement
+      let menuInstance = MenuComponent.getInstance(menuItem)
+      if (!menuInstance) {
+        menuInstance = new MenuComponent(el as HTMLElement, defaultMenuOptions)
+      }
+    })
+  }
+
+  public static initGlobalHandlers = () => {
+    // Dropdown handler
+    document.addEventListener('click', (e) => {
+      const menuItems = document.querySelectorAll('.show.menu-dropdown[data-kt-menu-trigger]')
+      if (menuItems && menuItems.length > 0) {
+        for (let i = 0; i < menuItems.length; i++) {
+          const item = menuItems[i] as HTMLElement
+          const menuObj = MenuComponent.getInstance(item) as MenuComponent
+          if (menuObj && menuObj.getItemSubType(item) === 'dropdown') {
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
+            const menu = menuObj.getElement()
+            const sub = menuObj.getItemSubElement(item) as HTMLElement
+            if (item === e.target || item.contains(e.target as HTMLElement)) {
+              continue
+            }
+
+            if (sub && (sub === e.target || sub.contains(e.target as HTMLElement))) {
+              continue
+            }
+            menuObj.hide(item)
+          }
+        }
+      }
+    })
+
+    // Sub toggle handler
+    DOMEventHandlerUtil.on(
+      document.body,
+      '.menu-item[data-kt-menu-trigger] > .menu-link, [data-kt-menu-trigger]:not(.menu-item):not([data-kt-menu-trigger="auto"])',
+      'click',
+      function (this: HTMLElement, e: Event) {
+        const menu = MenuComponent.getInstance(this) as MenuComponent
+        if (menu) {
+          return menu.click(this, e)
+        }
+      }
+    )
+
+    // // Link handler
+    DOMEventHandlerUtil.on(
+      document.body,
+      '.menu-item:not([data-kt-menu-trigger]) > .menu-link',
+      'click',
+      function (this: HTMLElement, e: Event) {
+        e.stopPropagation()
+        const menu = MenuComponent.getInstance(this)
+        if (menu && menu.link) {
+          return menu.link(this, e)
+        }
+      }
+    )
+
+    // Dismiss handler
+    DOMEventHandlerUtil.on(
+      document.body,
+      '[data-kt-menu-dismiss="true"]',
+      'click',
+      function (this: HTMLElement, e: Event) {
+        const menu = MenuComponent.getInstance(this) as MenuComponent
+        if (menu) {
+          return menu.dismiss(this, e)
+        }
+      }
+    )
+
+    // Mouseover handler
+    DOMEventHandlerUtil.on(
+      document.body,
+      '[data-kt-menu-trigger], .menu-sub',
+      'mouseover',
+      function (this: HTMLElement, e: Event) {
+        const menu = MenuComponent.getInstance(this) as MenuComponent
+        if (menu && menu.getItemSubType(this) === 'dropdown') {
+          return menu.mouseover(this, e)
+        }
+      }
+    )
+
+    // Mouseout handler
+    DOMEventHandlerUtil.on(
+      document.body,
+      '[data-kt-menu-trigger], .menu-sub',
+      'mouseout',
+      function (this: HTMLElement, e: Event) {
+        const menu = MenuComponent.getInstance(this) as MenuComponent
+        if (menu && menu.getItemSubType(this) === 'dropdown') {
+          return menu.mouseout(this, e)
+        }
+      }
+    )
+
+    // Resize handler
+    window.addEventListener('resize', () => {
+      let timer
+      throttle(
+        timer,
+        () => {
+          // Locate and update Drawer instances on window resize
+          const elements = document.querySelectorAll('[data-kt-menu="true"]')
+          elements.forEach((el) => {
+            const menu = MenuComponent.getInstance(el as HTMLElement)
+            if (menu) {
+              menu.update()
+            }
+          })
+        },
+        200
+      )
+    })
+  }
+
+  public static bootstrap = () => {
+    MenuComponent.initGlobalHandlers()
+    MenuComponent.createInstances('[data-kt-menu="true"]')
+  }
+
+  public static reinitialization = () => {
+    MenuComponent.createInstances('[data-kt-menu="true"]')
+  }
+
+  public static createInsance = (
+    selector: string,
+    options: MenuOptions = defaultMenuOptions
+  ): MenuComponent | undefined => {
+    const element = document.body.querySelector(selector)
+    if (!element) {
+      return
+    }
+    const item = element as HTMLElement
+    let menu = MenuComponent.getInstance(item)
+    if (!menu) {
+      menu = new MenuComponent(item, options)
+    }
+    return menu
+  }
+
+  ///////////////////////
+  public click = (element: HTMLElement, e: Event) => {
+    return this._click(element, e)
+  }
+
+  public link = (element: HTMLElement, e: Event) => {
+    return this._link(element, e)
+  }
+
+  public dismiss = (element: HTMLElement, e: Event) => {
+    return this._dismiss(element, e)
+  }
+
+  public mouseover = (element: HTMLElement, e: Event) => {
+    return this._mouseover(element, e as MouseEvent)
+  }
+
+  public mouseout = (element: HTMLElement, e: Event) => {
+    return this._mouseout(element, e as MouseEvent)
+  }
+
+  // General Methods
+  public getItemTriggerType = (item: HTMLElement) => {
+    return this._getItemOption(item, 'trigger')
+  }
+
+  public getItemSubType = (element: HTMLElement) => {
+    return this._getItemSubType(element)
+  }
+
+  public show = (item: HTMLElement) => {
+    return this._show(item)
+  }
+
+  public hide = (item: HTMLElement) => {
+    return this._hide(item)
+  }
+
+  public reset = (item: HTMLElement) => {
+    return this._reset(item)
+  }
+
+  public update = () => {
+    return this._update()
+  }
+
+  public getElement = () => {
+    return this.element
+  }
+
+  public getItemLinkElement = (item: HTMLElement) => {
+    return this._getItemLinkElement(item)
+  }
+
+  public getItemToggleElement = (item: HTMLElement) => {
+    return this._getItemToggleElement(item)
+  }
+
+  public getItemSubElement = (item: HTMLElement) => {
+    return this._getItemSubElement(item)
+  }
+
+  public getItemParentElements = (item: HTMLElement) => {
+    return this._getItemParentElements(item)
+  }
+
+  public isItemSubShown = (item: HTMLElement) => {
+    return this._isItemSubShown(item)
+  }
+
+  public isItemParentShown = (item: HTMLElement) => {
+    return this._isItemParentShown(item)
+  }
+
+  // Event Handlers
+
+  public getTriggerElement = () => {
+    return this.triggerElement
+  }
+
+  public isItemDropdownPermanent = (item: HTMLElement) => {
+    return this._isItemDropdownPermanent(item)
+  }
+
+  // Accordion Mode Methods
+  public hideAccordions = (item: HTMLElement) => {
+    return this._hideAccordions(item)
+  }
+
+  // Event API
+  public on = (name: string, handler: any) => {
+    return EventHandlerUtil.on(this.element, name, handler)
+  }
+
+  public one = (name: string, handler: any) => {
+    return EventHandlerUtil.one(this.element, name, handler)
+  }
+
+  public off = (name: string, handlerId: string) => {
+    return EventHandlerUtil.off(this.element, name, handlerId)
   }
 
   // Set external trigger element
@@ -173,6 +497,9 @@ class MenuComponent {
 
     return null
   }
+
+  ///////////////////////
+  // ** Public API  ** //
 
   // Get item parent elements
   private _getItemParentElements = (item: HTMLElement) => {
@@ -583,7 +910,6 @@ class MenuComponent {
     }
   }
 
-  // Event Handlers
   // Reset item state classes if item sub type changed
   private _reset = (item: HTMLElement) => {
     if (this._hasItemSub(item) === false) {
@@ -605,13 +931,16 @@ class MenuComponent {
   }
 
   // TODO: not done
-  private _destroy = () => {}
+  private _destroy = () => {
+  }
 
   // Update all item state classes if item sub type changed
   private _update = () => {
     const items = this.element.querySelectorAll('.menu-item[data-kt-menu-trigger]')
     items.forEach((el) => this._reset(el as HTMLElement))
   }
+
+  // public static methods
 
   // Hide item sub
   private _hide = (item: HTMLElement) => {
@@ -757,331 +1086,6 @@ class MenuComponent {
         this._toggle(item)
       }
     }
-  }
-
-  ///////////////////////
-  // ** Public API  ** //
-  ///////////////////////
-  public click = (element: HTMLElement, e: Event) => {
-    return this._click(element, e)
-  }
-
-  public link = (element: HTMLElement, e: Event) => {
-    return this._link(element, e)
-  }
-
-  public dismiss = (element: HTMLElement, e: Event) => {
-    return this._dismiss(element, e)
-  }
-
-  public mouseover = (element: HTMLElement, e: Event) => {
-    return this._mouseover(element, e as MouseEvent)
-  }
-
-  public mouseout = (element: HTMLElement, e: Event) => {
-    return this._mouseout(element, e as MouseEvent)
-  }
-
-  // General Methods
-  public getItemTriggerType = (item: HTMLElement) => {
-    return this._getItemOption(item, 'trigger')
-  }
-
-  public getItemSubType = (element: HTMLElement) => {
-    return this._getItemSubType(element)
-  }
-
-  public show = (item: HTMLElement) => {
-    return this._show(item)
-  }
-
-  public hide = (item: HTMLElement) => {
-    return this._hide(item)
-  }
-
-  public reset = (item: HTMLElement) => {
-    return this._reset(item)
-  }
-
-  public update = () => {
-    return this._update()
-  }
-
-  public getElement = () => {
-    return this.element
-  }
-
-  public getItemLinkElement = (item: HTMLElement) => {
-    return this._getItemLinkElement(item)
-  }
-
-  public getItemToggleElement = (item: HTMLElement) => {
-    return this._getItemToggleElement(item)
-  }
-
-  public getItemSubElement = (item: HTMLElement) => {
-    return this._getItemSubElement(item)
-  }
-
-  public getItemParentElements = (item: HTMLElement) => {
-    return this._getItemParentElements(item)
-  }
-
-  public isItemSubShown = (item: HTMLElement) => {
-    return this._isItemSubShown(item)
-  }
-
-  public isItemParentShown = (item: HTMLElement) => {
-    return this._isItemParentShown(item)
-  }
-
-  public getTriggerElement = () => {
-    return this.triggerElement
-  }
-
-  public isItemDropdownPermanent = (item: HTMLElement) => {
-    return this._isItemDropdownPermanent(item)
-  }
-
-  // Accordion Mode Methods
-  public hideAccordions = (item: HTMLElement) => {
-    return this._hideAccordions(item)
-  }
-
-  // Event API
-  public on = (name: string, handler: any) => {
-    return EventHandlerUtil.on(this.element, name, handler)
-  }
-
-  public one = (name: string, handler: any) => {
-    return EventHandlerUtil.one(this.element, name, handler)
-  }
-
-  public off = (name: string, handlerId: string) => {
-    return EventHandlerUtil.off(this.element, name, handlerId)
-  }
-
-  // public static methods
-  // Get KTMenu instance by element
-  public static getInstance = (element: HTMLElement): MenuComponent | null => {
-    // Element has menu DOM reference in it's DATA storage
-    const elementMenu = DataUtil.get(element, 'menu')
-    if (elementMenu) {
-      return elementMenu as MenuComponent
-    }
-
-    // Element has .menu parent
-    const menu = element.closest('.menu')
-    if (menu) {
-      const menuData = DataUtil.get(menu as HTMLElement, 'menu')
-      if (menuData) {
-        return menuData as MenuComponent
-      }
-    }
-
-    // Element has a parent with DOM reference to .menu in it's DATA storage
-    if (element.classList.contains('menu-link')) {
-      const sub = element.closest('.menu-sub')
-      if (sub) {
-        const subMenu = DataUtil.get(sub as HTMLElement, 'menu')
-        if (subMenu) {
-          return subMenu as MenuComponent
-        }
-      }
-    }
-
-    return null
-  }
-
-  // Hide all dropdowns and skip one if provided
-  public static hideDropdowns = (skip: HTMLElement | undefined) => {
-    const items = document.querySelectorAll<HTMLElement>(
-      '.show.menu-dropdown[data-kt-menu-trigger]'
-    )
-
-    if (items && items.length > 0) {
-      for (let i = 0, len = items.length; i < len; i++) {
-        const item = items[i]
-        const menu = MenuComponent.getInstance(item as HTMLElement)
-
-        if (menu && menu.getItemSubType(item) === 'dropdown') {
-          if (skip) {
-            if (
-              // @ts-ignore
-              menu.getItemSubElement(item).contains(skip) === false &&
-              item.contains(skip) === false &&
-              item !== skip
-            ) {
-              menu.hide(item)
-            }
-          } else {
-            menu.hide(item)
-          }
-        }
-      }
-    }
-  }
-
-  public static updateDropdowns = () => {
-    const items = document.querySelectorAll('.show.menu-dropdown[data-kt-menu-trigger]')
-    if (items && items.length > 0) {
-      for (var i = 0, len = items.length; i < len; i++) {
-        var item = items[i]
-
-        if (DataUtil.has(item as HTMLElement, 'popper')) {
-          // @ts-ignore
-          DataUtil.get(item as HTMLElement, 'popper').forceUpdate()
-        }
-      }
-    }
-  }
-
-  // Global handlers
-  public static createInstances = (selector: string) => {
-    // Initialize menus
-    document.querySelectorAll(selector).forEach((el) => {
-      const menuItem = el as HTMLElement
-      let menuInstance = MenuComponent.getInstance(menuItem)
-      if (!menuInstance) {
-        menuInstance = new MenuComponent(el as HTMLElement, defaultMenuOptions)
-      }
-    })
-  }
-
-  public static initGlobalHandlers = () => {
-    // Dropdown handler
-    document.addEventListener('click', (e) => {
-      const menuItems = document.querySelectorAll('.show.menu-dropdown[data-kt-menu-trigger]')
-      if (menuItems && menuItems.length > 0) {
-        for (let i = 0; i < menuItems.length; i++) {
-          const item = menuItems[i] as HTMLElement
-          const menuObj = MenuComponent.getInstance(item) as MenuComponent
-          if (menuObj && menuObj.getItemSubType(item) === 'dropdown') {
-            // eslint-disable-next-line @typescript-eslint/no-unused-vars
-            const menu = menuObj.getElement()
-            const sub = menuObj.getItemSubElement(item) as HTMLElement
-            if (item === e.target || item.contains(e.target as HTMLElement)) {
-              continue
-            }
-
-            if (sub && (sub === e.target || sub.contains(e.target as HTMLElement))) {
-              continue
-            }
-            menuObj.hide(item)
-          }
-        }
-      }
-    })
-
-    // Sub toggle handler
-    DOMEventHandlerUtil.on(
-      document.body,
-      '.menu-item[data-kt-menu-trigger] > .menu-link, [data-kt-menu-trigger]:not(.menu-item):not([data-kt-menu-trigger="auto"])',
-      'click',
-      function (this: HTMLElement, e: Event) {
-        const menu = MenuComponent.getInstance(this) as MenuComponent
-        if (menu) {
-          return menu.click(this, e)
-        }
-      }
-    )
-
-    // // Link handler
-    DOMEventHandlerUtil.on(
-      document.body,
-      '.menu-item:not([data-kt-menu-trigger]) > .menu-link',
-      'click',
-      function (this: HTMLElement, e: Event) {
-        e.stopPropagation()
-        const menu = MenuComponent.getInstance(this)
-        if (menu && menu.link) {
-          return menu.link(this, e)
-        }
-      }
-    )
-
-    // Dismiss handler
-    DOMEventHandlerUtil.on(
-      document.body,
-      '[data-kt-menu-dismiss="true"]',
-      'click',
-      function (this: HTMLElement, e: Event) {
-        const menu = MenuComponent.getInstance(this) as MenuComponent
-        if (menu) {
-          return menu.dismiss(this, e)
-        }
-      }
-    )
-
-    // Mouseover handler
-    DOMEventHandlerUtil.on(
-      document.body,
-      '[data-kt-menu-trigger], .menu-sub',
-      'mouseover',
-      function (this: HTMLElement, e: Event) {
-        const menu = MenuComponent.getInstance(this) as MenuComponent
-        if (menu && menu.getItemSubType(this) === 'dropdown') {
-          return menu.mouseover(this, e)
-        }
-      }
-    )
-
-    // Mouseout handler
-    DOMEventHandlerUtil.on(
-      document.body,
-      '[data-kt-menu-trigger], .menu-sub',
-      'mouseout',
-      function (this: HTMLElement, e: Event) {
-        const menu = MenuComponent.getInstance(this) as MenuComponent
-        if (menu && menu.getItemSubType(this) === 'dropdown') {
-          return menu.mouseout(this, e)
-        }
-      }
-    )
-
-    // Resize handler
-    window.addEventListener('resize', () => {
-      let timer
-      throttle(
-        timer,
-        () => {
-          // Locate and update Drawer instances on window resize
-          const elements = document.querySelectorAll('[data-kt-menu="true"]')
-          elements.forEach((el) => {
-            const menu = MenuComponent.getInstance(el as HTMLElement)
-            if (menu) {
-              menu.update()
-            }
-          })
-        },
-        200
-      )
-    })
-  }
-
-  public static bootstrap = () => {
-    MenuComponent.initGlobalHandlers()
-    MenuComponent.createInstances('[data-kt-menu="true"]')
-  }
-
-  public static reinitialization = () => {
-    MenuComponent.createInstances('[data-kt-menu="true"]')
-  }
-
-  public static createInsance = (
-    selector: string,
-    options: MenuOptions = defaultMenuOptions
-  ): MenuComponent | undefined => {
-    const element = document.body.querySelector(selector)
-    if (!element) {
-      return
-    }
-    const item = element as HTMLElement
-    let menu = MenuComponent.getInstance(item)
-    if (!menu) {
-      menu = new MenuComponent(item, options)
-    }
-    return menu
   }
 }
 

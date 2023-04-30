@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { LayoutService } from '../../_metronic/layout';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {NgForm} from '@angular/forms';
+import {LayoutService} from '../../_metronic/layout';
 
 type Tabs = 'Sidebar' | 'Header' | 'Toolbar';
 
@@ -11,10 +11,12 @@ type Tabs = 'Sidebar' | 'Header' | 'Toolbar';
 export class BuilderComponent implements OnInit {
   activeTab: Tabs = 'Sidebar';
   model: any;
-  @ViewChild('form', { static: true }) form: NgForm;
+  @ViewChild('form', {static: true}) form: NgForm;
   configLoading: boolean = false;
   resetLoading: boolean = false;
-  constructor(private layout: LayoutService) {}
+
+  constructor(private layout: LayoutService) {
+  }
 
   ngOnInit(): void {
     this.model = this.layout.getLayoutConfig(

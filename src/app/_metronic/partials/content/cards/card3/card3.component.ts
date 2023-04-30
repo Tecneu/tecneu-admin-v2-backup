@@ -1,4 +1,4 @@
-import { Component, HostBinding, Input } from '@angular/core';
+import {Component, HostBinding, Input} from '@angular/core';
 
 @Component({
   selector: 'app-card3',
@@ -14,5 +14,6 @@ export class Card3Component {
   @Input() totalEarnings: string = '';
   @HostBinding('class') class = 'card';
 
-  constructor() {}
+  constructor() {
+  }
 }

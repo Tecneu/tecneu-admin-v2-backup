@@ -8,13 +8,13 @@
   <div class="card-toolbar">
     <!-- begin::Menu -->
     <button
-      type="button"
       class="btn btn-sm btn-icon btn-color-primary btn-active-light-primary"
-      data-kt-menu-trigger="click"
-      data-kt-menu-placement="bottom-end"
       data-kt-menu-flip="top-end"
+      data-kt-menu-placement="bottom-end"
+      data-kt-menu-trigger="click"
+      type="button"
     >
-      <app-keenicon name="category" class="fs-2"></app-keenicon>
+      <app-keenicon class="fs-2" name="category"></app-keenicon>
     </button>
     <app-dropdown-menu1></app-dropdown-menu1>
     <!-- end::Menu -->
@@ -25,21 +25,21 @@
 <!-- begin::Body -->
 <div class="card-body d-flex flex-column">
   <div class="flex-grow-1">
-    <div #chartRef class="mixed-widget-4-chart" [style.height]="chartHeight">
+    <div #chartRef [style.height]="chartHeight" class="mixed-widget-4-chart">
       <apx-chart
-        [series]="chartOptions.series"
         [chart]="chartOptions.chart"
-        [xaxis]="chartOptions.xaxis"
-        [yaxis]="chartOptions.yaxis"
-        [dataLabels]="chartOptions.dataLabels"
-        [stroke]="chartOptions.stroke"
-        [legend]="chartOptions.legend"
-        [fill]="chartOptions.fill"
-        [states]="chartOptions.states"
-        [tooltip]="chartOptions.tooltip"
         [colors]="chartOptions.colors"
+        [dataLabels]="chartOptions.dataLabels"
+        [fill]="chartOptions.fill"
+        [legend]="chartOptions.legend"
         [markers]="chartOptions.markers"
         [plotOptions]="chartOptions.plotOptions"
+        [series]="chartOptions.series"
+        [states]="chartOptions.states"
+        [stroke]="chartOptions.stroke"
+        [tooltip]="chartOptions.tooltip"
+        [xaxis]="chartOptions.xaxis"
+        [yaxis]="chartOptions.yaxis"
       ></apx-chart>
     </div>
   </div>
@@ -48,11 +48,11 @@
     <p class="text-center fs-6 pb-5">
       <span class="badge badge-light-danger fs-8">Notes:</span>&nbsp; Current
       sprint requires stakeholders
-      <br />
+      <br/>
       to approve newly amended policies
     </p>
 
-    <a href="#" class="btn w-100 py-3" [ngClass]="'btn-' + chartColor">
+    <a [ngClass]="'btn-' + chartColor" class="btn w-100 py-3" href="#">
       Take Action
     </a>
   </div>

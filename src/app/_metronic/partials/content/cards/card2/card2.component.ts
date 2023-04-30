@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { IconUserModel } from '../icon-user.model';
+import {Component, Input} from '@angular/core';
+import {IconUserModel} from '../icon-user.model';
 
 @Component({
   selector: 'app-card2',
@@ -17,5 +17,6 @@ export class Card2Component {
   @Input() progress: number = 50;
   @Input() users: Array<IconUserModel> = [];
 
-  constructor() {}
+  constructor() {
+  }
 }

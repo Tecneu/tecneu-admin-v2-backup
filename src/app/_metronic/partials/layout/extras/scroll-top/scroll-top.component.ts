@@ -1,12 +1,12 @@
-import { Component, OnInit, OnDestroy, HostBinding } from '@angular/core';
-import { NavigationCancel, NavigationEnd, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import {Component, HostBinding, OnDestroy, OnInit} from '@angular/core';
+import {NavigationCancel, NavigationEnd, Router} from '@angular/router';
+import {Subscription} from 'rxjs';
 import {
-  StickyComponent,
-  ScrollTopComponent,
-  MenuComponent,
-  ToggleComponent,
   DrawerComponent,
+  MenuComponent,
+  ScrollTopComponent,
+  StickyComponent,
+  ToggleComponent,
 } from '../../../../kt/components';
 
 @Component({
@@ -19,7 +19,9 @@ export class LayoutScrollTopComponent implements OnInit, OnDestroy {
   @HostBinding('attr.data-kt-scrolltop') dataKtScrolltop = 'true';
 
   private unsubscribe: Subscription[] = [];
-  constructor(private router: Router) {}
+
+  constructor(private router: Router) {
+  }
 
   ngOnInit(): void {
     this.routingChanges();

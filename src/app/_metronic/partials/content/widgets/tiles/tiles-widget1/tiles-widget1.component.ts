@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { LayoutService } from '../../../../../layout';
+import {Component, Input, OnInit} from '@angular/core';
+import {LayoutService} from '../../../../../layout';
 
 @Component({
   selector: 'app-tiles-widget1',
@@ -17,7 +17,8 @@ export class TilesWidget1Component implements OnInit {
   colorsThemeBaseColor = '';
   colorsThemeLightColor = '';
 
-  constructor(private layout: LayoutService) {}
+  constructor(private layout: LayoutService) {
+  }
 
   setupLayoutProps() {
     this.fontFamily = this.layout.getProp('js.fontFamily') as string;

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-footer',
@@ -9,5 +9,7 @@ export class FooterComponent {
   @Input() appFooterContainerCSSClass: string = '';
 
   currentDateStr: string = new Date().getFullYear().toString();
-  constructor() {}
+
+  constructor() {
+  }
 }

@@ -1,6 +1,6 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {Subscription} from 'rxjs';
 import {
   DrawerComponent,
   MenuComponent,
@@ -9,7 +9,7 @@ import {
   StickyComponent,
   ToggleComponent,
 } from '../../../_metronic/kt/components';
-import { ThemeModeService } from '../../../_metronic/partials/layout/theme-mode-switcher/theme-mode.service';
+import {ThemeModeService} from '../../../_metronic/partials/layout/theme-mode-switcher/theme-mode.service';
 
 @Component({
   selector: 'app-error404',
@@ -19,7 +19,8 @@ import { ThemeModeService } from '../../../_metronic/partials/layout/theme-mode-
 export class Error404Component implements OnInit, OnDestroy {
   private unsubscribe: Subscription[] = [];
 
-  constructor(private router: Router, private modeService: ThemeModeService) {}
+  constructor(private router: Router, private modeService: ThemeModeService) {
+  }
 
   ngOnInit(): void {
     const subscr = this.modeService.mode.asObservable().subscribe((mode) => {

@@ -12,6 +12,7 @@ export class CustomPaginatorComponent implements OnInit, OnChanges {
   @Output() pageChange = new EventEmitter<{ pageIndex: number; pageSize: number }>();
 
   pageIndex = 0;
+  pageNumbers: number[] = [];
 
   constructor() {
   }
@@ -40,8 +41,6 @@ export class CustomPaginatorComponent implements OnInit, OnChanges {
   generateRange(start: number, end: number): number[] {
     return Array.from({length: end - start}, (_, i) => start + i);
   }
-
-  pageNumbers: number[] = [];
 
   calculateNumberOfPages(): number {
     const totalPages = Math.ceil(this.length / this.pageSize);

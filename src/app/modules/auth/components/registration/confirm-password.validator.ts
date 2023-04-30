@@ -1,4 +1,4 @@
-import { AbstractControl } from '@angular/forms';
+import {AbstractControl} from '@angular/forms';
 
 export class ConfirmPasswordValidator {
   /**
@@ -10,7 +10,7 @@ export class ConfirmPasswordValidator {
     const confirmPassword = control.get('cPassword')?.value;
 
     if (password !== confirmPassword) {
-      control.get('cPassword')?.setErrors({ ConfirmPassword: true });
+      control.get('cPassword')?.setErrors({ConfirmPassword: true});
     }
   }
 }

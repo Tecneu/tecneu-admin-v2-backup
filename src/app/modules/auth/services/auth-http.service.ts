@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { UserModel } from '../models/user.model';
-import { environment } from '../../../../environments/environment';
-import { AuthModel } from '../models/auth.model';
+import {Injectable} from '@angular/core';
+import {Observable} from 'rxjs';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {UserModel} from '../models/user.model';
+import {environment} from '../../../../environments/environment';
+import {AuthModel} from '../models/auth.model';
 
 const API_USERS_URL = `${environment.apiBaseUrl}/auth`;
 
@@ -11,7 +11,8 @@ const API_USERS_URL = `${environment.apiBaseUrl}/auth`;
   providedIn: 'root',
 })
 export class AuthHTTPService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   // public methods
   login(email: string, password: string): Observable<any> {

@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { IconUserModel } from '../icon-user.model';
+import {Component, Input, OnInit} from '@angular/core';
+import {IconUserModel} from '../icon-user.model';
 
 @Component({
   selector: 'app-user-list',
@@ -9,7 +9,9 @@ import { IconUserModel } from '../icon-user.model';
 export class UserListComponent implements OnInit {
   @Input() users: Array<IconUserModel> = [];
 
-  constructor() {}
+  constructor() {
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 }

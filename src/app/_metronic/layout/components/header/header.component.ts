@@ -1,9 +1,9 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { NavigationCancel, NavigationEnd, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
-import { LayoutService } from '../../core/layout.service';
-import { MenuComponent } from '../../../kt/components';
-import { ILayout, LayoutType } from '../../core/configs/config';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {NavigationCancel, NavigationEnd, Router} from '@angular/router';
+import {Subscription} from 'rxjs';
+import {LayoutService} from '../../core/layout.service';
+import {MenuComponent} from '../../../kt/components';
+import {ILayout, LayoutType} from '../../core/configs/config';
 
 @Component({
   selector: 'app-header',
@@ -11,26 +11,22 @@ import { ILayout, LayoutType } from '../../core/configs/config';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit, OnDestroy {
-  private unsubscribe: Subscription[] = [];
   // Public props
   currentLayoutType: LayoutType | null;
-
   appHeaderDisplay: boolean;
   appHeaderDefaultFixedDesktop: boolean;
   appHeaderDefaultFixedMobile: boolean;
-
   appHeaderDefaultContainer: 'fixed' | 'fluid';
   headerContainerCssClass: string = '';
   appHeaderDefaultContainerClass: string = '';
-
   appHeaderDefaultStacked: boolean;
-
   // view
   appSidebarDefaultCollapseDesktopEnabled: boolean;
   appSidebarDisplay: boolean;
   appHeaderDefaultContent: string = '';
   appHeaderDefaulMenuDisplay: boolean;
   appPageTitleDisplay: boolean;
+  private unsubscribe: Subscription[] = [];
 
   constructor(private layout: LayoutService, private router: Router) {
     this.routingChanges();

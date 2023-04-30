@@ -1,4 +1,12 @@
-import {DataUtil, DOMEventHandlerUtil, ElementAnimateUtil, ElementStyleUtil, EventHandlerUtil, getElementIndex, getUniqueIdWithPrefix,} from '../_utils/index';
+import {
+  DataUtil,
+  DOMEventHandlerUtil,
+  ElementAnimateUtil,
+  ElementStyleUtil,
+  EventHandlerUtil,
+  getElementIndex,
+  getUniqueIdWithPrefix,
+} from '../_utils/index';
 
 export interface IStepperOptions {
   startIndex: number;
@@ -64,6 +72,126 @@ class StepperComponent {
     // Bind Instance
     DataUtil.set(this.element, 'stepper', this);
   }
+
+  // Static methods
+  public static hasInstace(element: HTMLElement): boolean {
+    return DataUtil.has(element, 'stepper');
+  }
+
+  public static getInstance(
+    element: HTMLElement
+  ): StepperComponent | undefined {
+    if (element !== null && StepperComponent.hasInstace(element)) {
+      const data = DataUtil.get(element, 'stepper');
+      if (data) {
+        return data as StepperComponent;
+      }
+    }
+  }
+
+  // Create Instances
+  public static createInstances(selector: string): void {
+    const elements = document.body.querySelectorAll(selector);
+    elements.forEach((element) => {
+      const item = element as HTMLElement;
+      let stepper = StepperComponent.getInstance(item);
+      if (!stepper) {
+        stepper = new StepperComponent(item, defaultStepperOptions);
+      }
+    });
+  }
+
+  public static createInsance = (
+    element: HTMLElement,
+    options: IStepperOptions = defaultStepperOptions
+  ): StepperComponent | null => {
+    if (!element) {
+      return null;
+    }
+    let stepper = StepperComponent.getInstance(element);
+    if (!stepper) {
+      stepper = new StepperComponent(element, options);
+    }
+    return stepper;
+  };
+
+  public static bootstrap(attr: string = '[data-kt-stepper]') {
+    StepperComponent.createInstances(attr);
+  }
+
+  //   // Plugin API
+  public goto = (index: number) => {
+    return this._goTo(index);
+  };
+
+  public goNext = () => {
+    return this.goto(this.getNextStepIndex());
+  };
+
+  public goPrev = () => {
+    return this.goto(this.getPrevStepIndex());
+  };
+
+  public goFirst = () => {
+    return this.goto(1);
+  };
+
+  public goLast = () => {
+    return this.goto(this.getLastStepIndex());
+  };
+
+  //   ///////////////////////
+  //   // ** Public API  ** //
+  //   ///////////////////////
+
+  public getCurrentStepIndex = () => {
+    return this.currentStepIndex;
+  };
+
+  public getNextStepIndex = () => {
+    if (this.totatStepsNumber >= this.currentStepIndex + 1) {
+      return this.currentStepIndex + 1;
+    } else {
+      return this.totatStepsNumber;
+    }
+  };
+
+  public getPassedStepIndex = () => {
+    return this.passedStepIndex;
+  };
+
+  public getPrevStepIndex = () => {
+    if (this.currentStepIndex - 1 > 1) {
+      return this.currentStepIndex - 1;
+    } else {
+      return 1;
+    }
+  };
+
+  public getElement = (index: number) => {
+    return this.element;
+  };
+
+  // Event API
+  public on = (name: string, handler: Function) => {
+    return EventHandlerUtil.on(this.element, name, handler);
+  };
+
+  public one = (name: string, handler: Function) => {
+    return EventHandlerUtil.one(this.element, name, handler);
+  };
+
+  public off = (name: string, handlerId: string) => {
+    return EventHandlerUtil.off(this.element, name, handlerId);
+  };
+
+  public destroy = () => {
+    console.log('destroy stepper');
+  };
+
+  public trigger = (name: string, event: Event) => {
+    return EventHandlerUtil.trigger(this.element, name, event);
+  };
 
   private _goTo = (index: number) => {
     EventHandlerUtil.trigger(this.element, 'kt.stepper.change');
@@ -229,126 +357,6 @@ class StepperComponent {
   private isBetweenStep = () => {
     return this.isLastStep() === false && this.isFirstStep() === false;
   };
-
-  //   ///////////////////////
-  //   // ** Public API  ** //
-  //   ///////////////////////
-
-  //   // Plugin API
-  public goto = (index: number) => {
-    return this._goTo(index);
-  };
-
-  public goNext = () => {
-    return this.goto(this.getNextStepIndex());
-  };
-
-  public goPrev = () => {
-    return this.goto(this.getPrevStepIndex());
-  };
-
-  public goFirst = () => {
-    return this.goto(1);
-  };
-
-  public goLast = () => {
-    return this.goto(this.getLastStepIndex());
-  };
-
-  public getCurrentStepIndex = () => {
-    return this.currentStepIndex;
-  };
-
-  public getNextStepIndex = () => {
-    if (this.totatStepsNumber >= this.currentStepIndex + 1) {
-      return this.currentStepIndex + 1;
-    } else {
-      return this.totatStepsNumber;
-    }
-  };
-
-  public getPassedStepIndex = () => {
-    return this.passedStepIndex;
-  };
-
-  public getPrevStepIndex = () => {
-    if (this.currentStepIndex - 1 > 1) {
-      return this.currentStepIndex - 1;
-    } else {
-      return 1;
-    }
-  };
-
-  public getElement = (index: number) => {
-    return this.element;
-  };
-
-  // Event API
-  public on = (name: string, handler: Function) => {
-    return EventHandlerUtil.on(this.element, name, handler);
-  };
-
-  public one = (name: string, handler: Function) => {
-    return EventHandlerUtil.one(this.element, name, handler);
-  };
-
-  public off = (name: string, handlerId: string) => {
-    return EventHandlerUtil.off(this.element, name, handlerId);
-  };
-
-  public destroy = () => {
-    console.log('destroy stepper');
-  };
-
-  public trigger = (name: string, event: Event) => {
-    return EventHandlerUtil.trigger(this.element, name, event);
-  };
-
-  // Static methods
-  public static hasInstace(element: HTMLElement): boolean {
-    return DataUtil.has(element, 'stepper');
-  }
-
-  public static getInstance(
-    element: HTMLElement
-  ): StepperComponent | undefined {
-    if (element !== null && StepperComponent.hasInstace(element)) {
-      const data = DataUtil.get(element, 'stepper');
-      if (data) {
-        return data as StepperComponent;
-      }
-    }
-  }
-
-  // Create Instances
-  public static createInstances(selector: string): void {
-    const elements = document.body.querySelectorAll(selector);
-    elements.forEach((element) => {
-      const item = element as HTMLElement;
-      let stepper = StepperComponent.getInstance(item);
-      if (!stepper) {
-        stepper = new StepperComponent(item, defaultStepperOptions);
-      }
-    });
-  }
-
-  public static createInsance = (
-    element: HTMLElement,
-    options: IStepperOptions = defaultStepperOptions
-  ): StepperComponent | null => {
-    if (!element) {
-      return null;
-    }
-    let stepper = StepperComponent.getInstance(element);
-    if (!stepper) {
-      stepper = new StepperComponent(element, options);
-    }
-    return stepper;
-  };
-
-  public static bootstrap(attr: string = '[data-kt-stepper]') {
-    StepperComponent.createInstances(attr);
-  }
 }
 
 export {StepperComponent, defaultStepperOptions};

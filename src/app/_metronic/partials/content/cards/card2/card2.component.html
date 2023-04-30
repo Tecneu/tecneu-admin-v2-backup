@@ -1,18 +1,18 @@
 <a
-  routerLink="/crafted/pages/profile/overview"
   class="card border border-2 border-gray-300 border-hover"
+  routerLink="/crafted/pages/profile/overview"
 >
   <div class="card-header border-0 pt-9">
     <div class="card-title m-0">
       <div class="symbol symbol-50px w-50px bg-light">
-        <img [src]="icon" alt="card2" class="p-3" />
+        <img [src]="icon" alt="card2" class="p-3"/>
       </div>
     </div>
 
     <div class="card-toolbar">
       <span
-        class="badge fw-bolder me-auto px-4 py-3"
         [ngClass]="'badge-light-' + badgeColor"
+        class="badge fw-bolder me-auto px-4 py-3"
       >
         {{ status }}
       </span>
@@ -57,10 +57,10 @@
 
     <div class="h-4px w-100 bg-light mb-5" ngbTooltip="This project completed">
       <div
-        class="rounded h-4px"
         [ngClass]="'bg-' + statusColor"
-        role="progressbar"
         [style.width]="progress + '%'"
+        class="rounded h-4px"
+        role="progressbar"
       ></div>
     </div>
 

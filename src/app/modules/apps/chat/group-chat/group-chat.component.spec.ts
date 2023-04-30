@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { GroupChatComponent } from './group-chat.component';
+import {GroupChatComponent} from './group-chat.component';
 
 describe('GroupChatComponent', () => {
   let component: GroupChatComponent;
@@ -8,9 +8,9 @@ describe('GroupChatComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GroupChatComponent ]
+      declarations: [GroupChatComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

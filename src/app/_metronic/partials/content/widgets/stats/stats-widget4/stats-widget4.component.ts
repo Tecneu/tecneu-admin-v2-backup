@@ -1,6 +1,6 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-import { ApexOptions } from 'ng-apexcharts';
-import { getCSSVariableValue } from '../../../../../kt/_utils';
+import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
+import {ApexOptions} from 'ng-apexcharts';
+import {getCSSVariableValue} from '../../../../../kt/_utils';
 
 @Component({
   selector: 'app-stats-widget4',
@@ -11,7 +11,7 @@ export class StatsWidget4Component implements OnInit {
   @Input() color = '';
   @Input() description = '';
   @Input() change = '';
-  @ViewChild('chartRef', { static: true }) chartRef: ElementRef;
+  @ViewChild('chartRef', {static: true}) chartRef: ElementRef;
   height: number;
 
   chartOptions: any = {};
@@ -19,7 +19,8 @@ export class StatsWidget4Component implements OnInit {
   baseColor: string;
   lightColor: string;
 
-  constructor() {}
+  constructor() {
+  }
 
   ngOnInit(): void {
     this.height = 150;

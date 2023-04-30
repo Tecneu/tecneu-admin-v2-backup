@@ -2,7 +2,7 @@
   <div class="flex-grow-1 card-p pb-0">
     <div class="d-flex flex-stack flex-wrap">
       <div class="me-2">
-        <a href="#" class="text-dark text-hover-primary fw-bolder fs-3">
+        <a class="text-dark text-hover-primary fw-bolder fs-3" href="#">
           Generate Reports
         </a>
 
@@ -11,29 +11,29 @@
         </div>
       </div>
 
-      <div class="fw-bolder fs-3" [ngClass]="'text-' + chartColor">$24,500</div>
+      <div [ngClass]="'text-' + chartColor" class="fw-bolder fs-3">$24,500</div>
     </div>
   </div>
 
   <div
     #chartRef
-    class="mixed-widget-7-chart card-rounded-bottom"
     [style.height]="chartHeight"
+    class="mixed-widget-7-chart card-rounded-bottom"
   >
     <apx-chart
-      [series]="chartOptions.series"
       [chart]="chartOptions.chart"
-      [xaxis]="chartOptions.xaxis"
-      [yaxis]="chartOptions.yaxis"
-      [dataLabels]="chartOptions.dataLabels"
-      [stroke]="chartOptions.stroke"
-      [legend]="chartOptions.legend"
-      [fill]="chartOptions.fill"
-      [states]="chartOptions.states"
-      [tooltip]="chartOptions.tooltip"
       [colors]="chartOptions.colors"
+      [dataLabels]="chartOptions.dataLabels"
+      [fill]="chartOptions.fill"
+      [legend]="chartOptions.legend"
       [markers]="chartOptions.markers"
       [plotOptions]="chartOptions.plotOptions"
+      [series]="chartOptions.series"
+      [states]="chartOptions.states"
+      [stroke]="chartOptions.stroke"
+      [tooltip]="chartOptions.tooltip"
+      [xaxis]="chartOptions.xaxis"
+      [yaxis]="chartOptions.yaxis"
     ></apx-chart>
   </div>
 </div>

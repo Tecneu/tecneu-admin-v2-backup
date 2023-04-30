@@ -1,38 +1,38 @@
 <!-- Search toolbar -->
-<div class="d-flex align-items-center" [ngClass]="toolbarButtonMarginClass">
-  <div class="btn btn-icon btn-active-light-primary position-relative" [ngClass]="toolbarButtonHeightClass"
-    data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end"
-    data-kt-menu-flip="bottom">
-    <app-keenicon name="magnifier" class="" [ngClass]="toolbarButtonIconSizeClass"></app-keenicon>
+<div [ngClass]="toolbarButtonMarginClass" class="d-flex align-items-center">
+  <div [ngClass]="toolbarButtonHeightClass" class="btn btn-icon btn-active-light-primary position-relative"
+       data-kt-menu-attach="parent" data-kt-menu-flip="bottom" data-kt-menu-placement="bottom-end"
+       data-kt-menu-trigger="click">
+    <app-keenicon [ngClass]="toolbarButtonIconSizeClass" class="" name="magnifier"></app-keenicon>
   </div>
   <app-search-result-inner></app-search-result-inner>
 </div>
 
 <!-- Activities -->
-<div class="d-flex align-items-center" [ngClass]="toolbarButtonMarginClass">
+<div [ngClass]="toolbarButtonMarginClass" class="d-flex align-items-center">
   <!-- begin::Drawer toggle -->
-  <div class="btn btn-icon btn-active-light-primary" [ngClass]="toolbarButtonHeightClass" id="kt_activities_toggle">
-    <app-keenicon name="chart-simple" class="" [ngClass]="toolbarButtonIconSizeClass"></app-keenicon>
+  <div [ngClass]="toolbarButtonHeightClass" class="btn btn-icon btn-active-light-primary" id="kt_activities_toggle">
+    <app-keenicon [ngClass]="toolbarButtonIconSizeClass" class="" name="chart-simple"></app-keenicon>
   </div>
   <!-- end::Drawer toggle -->
 </div>
 
 <!-- NOTIFICATIONS -->
-<div class="d-flex align-items-center" [ngClass]="toolbarButtonMarginClass">
-  <div class="btn btn-icon btn-active-light-primary position-relative" [ngClass]="toolbarButtonHeightClass"
-    data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end"
-    data-kt-menu-flip="bottom">
-    <app-keenicon name="element-plus" class="" [ngClass]="toolbarButtonIconSizeClass"></app-keenicon>
+<div [ngClass]="toolbarButtonMarginClass" class="d-flex align-items-center">
+  <div [ngClass]="toolbarButtonHeightClass" class="btn btn-icon btn-active-light-primary position-relative"
+       data-kt-menu-attach="parent" data-kt-menu-flip="bottom" data-kt-menu-placement="bottom-end"
+       data-kt-menu-trigger="click">
+    <app-keenicon [ngClass]="toolbarButtonIconSizeClass" class="" name="element-plus"></app-keenicon>
   </div>
   <app-notifications-inner></app-notifications-inner>
 </div>
 
 <!-- CHAT -->
-<div class="d-flex align-items-center" [ngClass]="toolbarButtonMarginClass">
+<div [ngClass]="toolbarButtonMarginClass" class="d-flex align-items-center">
   <!-- begin::Menu wrapper -->
-  <div class="btn btn-icon btn-active-light-primary position-relative" [ngClass]="toolbarButtonHeightClass"
-    id="kt_drawer_chat_toggle">
-    <app-keenicon name="message-text-2" class="" [ngClass]="toolbarButtonIconSizeClass"></app-keenicon>
+  <div [ngClass]="toolbarButtonHeightClass" class="btn btn-icon btn-active-light-primary position-relative"
+       id="kt_drawer_chat_toggle">
+    <app-keenicon [ngClass]="toolbarButtonIconSizeClass" class="" name="message-text-2"></app-keenicon>
     <span class="
         bullet bullet-dot
         bg-success
@@ -49,26 +49,26 @@
 </div>
 
 <!-- Quick links -->
-<div class="d-flex align-items-center" [ngClass]="toolbarButtonMarginClass">
-  <div class="btn btn-icon btn-active-light-primary" [ngClass]="toolbarButtonHeightClass" data-kt-menu-trigger="click"
-    data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end" data-kt-menu-flip="bottom">
-    <app-keenicon name="element-11" class="" [ngClass]="toolbarButtonIconSizeClass"></app-keenicon>
+<div [ngClass]="toolbarButtonMarginClass" class="d-flex align-items-center">
+  <div [ngClass]="toolbarButtonHeightClass" class="btn btn-icon btn-active-light-primary" data-kt-menu-attach="parent"
+       data-kt-menu-flip="bottom" data-kt-menu-placement="bottom-end" data-kt-menu-trigger="click">
+    <app-keenicon [ngClass]="toolbarButtonIconSizeClass" class="" name="element-11"></app-keenicon>
   </div>
   <app-quick-links-inner></app-quick-links-inner>
 </div>
 
 <!-- begin::Theme mode -->
-<app-theme-mode-switcher class="d-flex align-items-center" [ngClass]="toolbarButtonMarginClass"
-  toggleBtnClass="{`btn-active-light-primary btn-custom ${toolbarButtonHeightClass}`}">
+<app-theme-mode-switcher [ngClass]="toolbarButtonMarginClass" class="d-flex align-items-center"
+                         toggleBtnClass="{`btn-active-light-primary btn-custom ${toolbarButtonHeightClass}`}">
 </app-theme-mode-switcher>
 <!-- end::Theme mode -->
 
 <!-- begin::User -->
-<div class="d-flex align-items-center" [ngClass]="toolbarButtonMarginClass" id="kt_header_user_menu_toggle">
+<div [ngClass]="toolbarButtonMarginClass" class="d-flex align-items-center" id="kt_header_user_menu_toggle">
   <!-- begin::Toggle -->
-  <div class="cursor-pointer symbol" [ngClass]="toolbarUserAvatarHeightClass" data-kt-menu-trigger="click"
-    data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end" data-kt-menu-flip="bottom">
-    <img src="./assets/media/avatars/300-1.jpg" alt="metronic" />
+  <div [ngClass]="toolbarUserAvatarHeightClass" class="cursor-pointer symbol" data-kt-menu-attach="parent"
+       data-kt-menu-flip="bottom" data-kt-menu-placement="bottom-end" data-kt-menu-trigger="click">
+    <img alt="metronic" src="./assets/media/avatars/300-1.jpg"/>
   </div>
   <!-- end::Toggle  -->
   <app-user-inner></app-user-inner>
@@ -84,7 +84,7 @@
         w-md-40px
         h-md-40px
       " id="kt_header_menu_mobile_toggle">
-      <app-keenicon name="text-align-left" class="fs-1"></app-keenicon>
+      <app-keenicon class="fs-1" name="text-align-left"></app-keenicon>
     </div>
   </div>
 </ng-container>

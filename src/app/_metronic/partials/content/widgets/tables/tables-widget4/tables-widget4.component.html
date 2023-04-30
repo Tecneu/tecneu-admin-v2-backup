@@ -8,6 +8,8 @@
     <ul class="nav">
       <li class="nav-item">
         <a
+          (click)="setTab('kt_table_widget_4_tab_1')"
+          [ngClass]="activeClass('kt_table_widget_4_tab_1')"
           class="
             nav-link
             btn btn-sm btn-color-muted btn-active btn-active-light-primary
@@ -15,8 +17,6 @@
             px-4
             me-1
           "
-          [ngClass]="activeClass('kt_table_widget_4_tab_1')"
-          (click)="setTab('kt_table_widget_4_tab_1')"
           data-bs-toggle="tab"
         >
           Month
@@ -24,6 +24,8 @@
       </li>
       <li class="nav-item">
         <a
+          (click)="setTab('kt_table_widget_4_tab_2')"
+          [ngClass]="activeClass('kt_table_widget_4_tab_2')"
           class="
             nav-link
             btn btn-sm btn-color-muted btn-active btn-active-light-primary
@@ -32,14 +34,14 @@
             me-1
           "
           data-bs-toggle="tab"
-          [ngClass]="activeClass('kt_table_widget_4_tab_2')"
-          (click)="setTab('kt_table_widget_4_tab_2')"
         >
           Week
         </a>
       </li>
       <li class="nav-item">
         <a
+          (click)="setTab('kt_table_widget_4_tab_3')"
+          [ngClass]="activeClass('kt_table_widget_4_tab_3')"
           class="
             nav-link
             btn btn-sm btn-color-muted btn-active btn-active-light-primary
@@ -47,8 +49,6 @@
             px-4
           "
           data-bs-toggle="tab"
-          [ngClass]="activeClass('kt_table_widget_4_tab_3')"
-          (click)="setTab('kt_table_widget_4_tab_3')"
         >
           Day
         </a>
@@ -62,8 +62,8 @@
   <div class="tab-content">
     <!-- begin::Tap pane-->
     <div
-      class="tab-pane fade"
       [ngClass]="activeClass('kt_table_widget_4_tab_1')"
+      class="tab-pane fade"
       id="kt_table_widget_4_tab_1"
     >
       <!-- begin::Table container-->
@@ -72,246 +72,246 @@
         <table class="table align-middle gs-0 gy-3">
           <!-- begin::Table head-->
           <thead>
-            <tr>
-              <th class="p-0 w-50px"></th>
-              <th class="p-0 min-w-150px"></th>
-              <th class="p-0 min-w-140px"></th>
-              <th class="p-0 min-w-120px"></th>
-            </tr>
+          <tr>
+            <th class="p-0 w-50px"></th>
+            <th class="p-0 min-w-150px"></th>
+            <th class="p-0 min-w-140px"></th>
+            <th class="p-0 min-w-120px"></th>
+          </tr>
           </thead>
           <!-- end::Table head-->
           <!-- begin::Table body-->
           <tbody>
-            <tr>
-              <td>
-                <div class="symbol symbol-50px">
-                  <img src="./assets/media/avatars/300-14.jpg" alt="" />
+          <tr>
+            <td>
+              <div class="symbol symbol-50px">
+                <img alt="" src="./assets/media/avatars/300-14.jpg"/>
+              </div>
+            </td>
+            <td>
+              <a
+                class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
+                href="#"
+              >
+                Brad Simmons
+              </a>
+              <span class="text-muted fw-bold d-block fs-7"
+              >Movie Creator</span
+              >
+            </td>
+            <td>
+              <span class="text-muted fw-bold d-block fs-7">Rating</span>
+              <div class="rating">
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
                 </div>
-              </td>
-              <td>
-                <a
-                  href="#"
-                  class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
-                >
-                  Brad Simmons
-                </a>
-                <span class="text-muted fw-bold d-block fs-7"
-                  >Movie Creator</span
-                >
-              </td>
-              <td>
-                <span class="text-muted fw-bold d-block fs-7">Rating</span>
-                <div class="rating">
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
                 </div>
-              </td>
-              <td class="text-end">
-                <a href="#" class="btn btn-icon btn-light-twitter btn-sm me-3">
-                  <i class="bi bi-twitter fs-4"></i>
-                </a>
-                <a href="#" class="btn btn-icon btn-light-facebook btn-sm">
-                  <i class="bi bi-facebook fs-4"></i>
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="symbol symbol-50px">
-                  <img src="./assets/media/avatars/300-5.jpg" alt="" />
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
                 </div>
-              </td>
-              <td>
-                <a
-                  href="#"
-                  class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
-                >
-                  Jessie Clarcson
-                </a>
-                <span class="text-muted fw-bold d-block fs-7"
-                  >HTML, CSS Coding</span
-                >
-              </td>
-              <td>
-                <span class="text-muted fw-bold d-block fs-7">Rating</span>
-                <div class="rating">
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
                 </div>
-              </td>
-              <td class="text-end">
-                <a href="#" class="btn btn-icon btn-light-twitter btn-sm me-3">
-                  <i class="bi bi-twitter fs-4"></i>
-                </a>
-                <a href="#" class="btn btn-icon btn-light-facebook btn-sm">
-                  <i class="bi bi-facebook fs-4"></i>
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="symbol symbol-50px">
-                  <img src="./assets/media/avatars/300-20.jpg" alt="" />
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
                 </div>
-              </td>
-              <td>
-                <a
-                  href="#"
-                  class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
-                >
-                  Lebron Wayde
-                </a>
-                <span class="text-muted fw-bold d-block fs-7"
-                  >ReactJS Developer</span
-                >
-              </td>
-              <td>
-                <span class="text-muted fw-bold d-block fs-7">Rating</span>
-                <div class="rating">
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
+              </div>
+            </td>
+            <td class="text-end">
+              <a class="btn btn-icon btn-light-twitter btn-sm me-3" href="#">
+                <i class="bi bi-twitter fs-4"></i>
+              </a>
+              <a class="btn btn-icon btn-light-facebook btn-sm" href="#">
+                <i class="bi bi-facebook fs-4"></i>
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="symbol symbol-50px">
+                <img alt="" src="./assets/media/avatars/300-5.jpg"/>
+              </div>
+            </td>
+            <td>
+              <a
+                class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
+                href="#"
+              >
+                Jessie Clarcson
+              </a>
+              <span class="text-muted fw-bold d-block fs-7"
+              >HTML, CSS Coding</span
+              >
+            </td>
+            <td>
+              <span class="text-muted fw-bold d-block fs-7">Rating</span>
+              <div class="rating">
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
                 </div>
-              </td>
-              <td class="text-end">
-                <a href="#" class="btn btn-icon btn-light-twitter btn-sm me-3">
-                  <i class="bi bi-twitter fs-4"></i>
-                </a>
-                <a href="#" class="btn btn-icon btn-light-facebook btn-sm">
-                  <i class="bi bi-facebook fs-4"></i>
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="symbol symbol-50px">
-                  <img src="./assets/media/avatars/300-23.jpg" alt="" />
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
                 </div>
-              </td>
-              <td>
-                <a
-                  href="#"
-                  class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
-                >
-                  Natali Trump
-                </a>
-                <span class="text-muted fw-bold d-block fs-7"
-                  >UI/UX Designer</span
-                >
-              </td>
-              <td>
-                <span class="text-muted fw-bold d-block fs-7">Rating</span>
-                <div class="rating">
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
                 </div>
-              </td>
-              <td class="text-end">
-                <a href="#" class="btn btn-icon btn-light-twitter btn-sm me-3">
-                  <i class="bi bi-twitter fs-4"></i>
-                </a>
-                <a href="#" class="btn btn-icon btn-light-facebook btn-sm">
-                  <i class="bi bi-facebook fs-4"></i>
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="symbol symbol-50px">
-                  <img src="./assets/media/avatars/300-10.jpg" alt="" />
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
                 </div>
-              </td>
-              <td>
-                <a
-                  href="#"
-                  class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
-                >
-                  Kevin Leonard
-                </a>
-                <span class="text-muted fw-bold d-block fs-7"
-                  >Art Director</span
-                >
-              </td>
-              <td>
-                <span class="text-muted fw-bold d-block fs-7">Rating</span>
-                <div class="rating">
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
                 </div>
-              </td>
-              <td class="text-end">
-                <a href="#" class="btn btn-icon btn-light-twitter btn-sm me-3">
-                  <i class="bi bi-twitter fs-4"></i>
-                </a>
-                <a href="#" class="btn btn-icon btn-light-facebook btn-sm">
-                  <i class="bi bi-facebook fs-4"></i>
-                </a>
-              </td>
-            </tr>
+              </div>
+            </td>
+            <td class="text-end">
+              <a class="btn btn-icon btn-light-twitter btn-sm me-3" href="#">
+                <i class="bi bi-twitter fs-4"></i>
+              </a>
+              <a class="btn btn-icon btn-light-facebook btn-sm" href="#">
+                <i class="bi bi-facebook fs-4"></i>
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="symbol symbol-50px">
+                <img alt="" src="./assets/media/avatars/300-20.jpg"/>
+              </div>
+            </td>
+            <td>
+              <a
+                class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
+                href="#"
+              >
+                Lebron Wayde
+              </a>
+              <span class="text-muted fw-bold d-block fs-7"
+              >ReactJS Developer</span
+              >
+            </td>
+            <td>
+              <span class="text-muted fw-bold d-block fs-7">Rating</span>
+              <div class="rating">
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
+                </div>
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
+                </div>
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
+                </div>
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
+                </div>
+                <div class="rating-label me-2">
+                  <i class="bi bi-star-fill fs-5"></i>
+                </div>
+              </div>
+            </td>
+            <td class="text-end">
+              <a class="btn btn-icon btn-light-twitter btn-sm me-3" href="#">
+                <i class="bi bi-twitter fs-4"></i>
+              </a>
+              <a class="btn btn-icon btn-light-facebook btn-sm" href="#">
+                <i class="bi bi-facebook fs-4"></i>
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="symbol symbol-50px">
+                <img alt="" src="./assets/media/avatars/300-23.jpg"/>
+              </div>
+            </td>
+            <td>
+              <a
+                class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
+                href="#"
+              >
+                Natali Trump
+              </a>
+              <span class="text-muted fw-bold d-block fs-7"
+              >UI/UX Designer</span
+              >
+            </td>
+            <td>
+              <span class="text-muted fw-bold d-block fs-7">Rating</span>
+              <div class="rating">
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
+                </div>
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
+                </div>
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
+                </div>
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
+                </div>
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
+                </div>
+              </div>
+            </td>
+            <td class="text-end">
+              <a class="btn btn-icon btn-light-twitter btn-sm me-3" href="#">
+                <i class="bi bi-twitter fs-4"></i>
+              </a>
+              <a class="btn btn-icon btn-light-facebook btn-sm" href="#">
+                <i class="bi bi-facebook fs-4"></i>
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="symbol symbol-50px">
+                <img alt="" src="./assets/media/avatars/300-10.jpg"/>
+              </div>
+            </td>
+            <td>
+              <a
+                class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
+                href="#"
+              >
+                Kevin Leonard
+              </a>
+              <span class="text-muted fw-bold d-block fs-7"
+              >Art Director</span
+              >
+            </td>
+            <td>
+              <span class="text-muted fw-bold d-block fs-7">Rating</span>
+              <div class="rating">
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
+                </div>
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
+                </div>
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
+                </div>
+                <div class="rating-label me-2">
+                  <i class="bi bi-star-fill fs-5"></i>
+                </div>
+                <div class="rating-label me-2">
+                  <i class="bi bi-star-fill fs-5"></i>
+                </div>
+              </div>
+            </td>
+            <td class="text-end">
+              <a class="btn btn-icon btn-light-twitter btn-sm me-3" href="#">
+                <i class="bi bi-twitter fs-4"></i>
+              </a>
+              <a class="btn btn-icon btn-light-facebook btn-sm" href="#">
+                <i class="bi bi-facebook fs-4"></i>
+              </a>
+            </td>
+          </tr>
           </tbody>
           <!-- end::Table body-->
         </table>
@@ -321,8 +321,8 @@
     <!-- end::Tap pane-->
     <!-- begin::Tap pane-->
     <div
-      class="tab-pane fade"
       [ngClass]="activeClass('kt_table_widget_4_tab_2')"
+      class="tab-pane fade"
       id="kt_table_widget_4_tab_2"
     >
       <!-- begin::Table container-->
@@ -331,200 +331,200 @@
         <table class="table align-middle gs-0 gy-3">
           <!-- begin::Table head-->
           <thead>
-            <tr>
-              <th class="p-0 w-50px"></th>
-              <th class="p-0 min-w-150px"></th>
-              <th class="p-0 min-w-140px"></th>
-              <th class="p-0 min-w-120px"></th>
-            </tr>
+          <tr>
+            <th class="p-0 w-50px"></th>
+            <th class="p-0 min-w-150px"></th>
+            <th class="p-0 min-w-140px"></th>
+            <th class="p-0 min-w-120px"></th>
+          </tr>
           </thead>
           <!-- end::Table head-->
           <!-- begin::Table body-->
           <tbody>
-            <tr>
-              <td>
-                <div class="symbol symbol-50px">
-                  <img src="./assets/media/svg/avatars/043-boy-18.svg" alt="" />
+          <tr>
+            <td>
+              <div class="symbol symbol-50px">
+                <img alt="" src="./assets/media/svg/avatars/043-boy-18.svg"/>
+              </div>
+            </td>
+            <td>
+              <a
+                class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
+                href="#"
+              >
+                Kevin Leonard
+              </a>
+              <span class="text-muted fw-bold d-block fs-7"
+              >Art Director</span
+              >
+            </td>
+            <td>
+              <span class="text-muted fw-bold d-block fs-7">Rating</span>
+              <div class="rating">
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
                 </div>
-              </td>
-              <td>
-                <a
-                  href="#"
-                  class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
-                >
-                  Kevin Leonard
-                </a>
-                <span class="text-muted fw-bold d-block fs-7"
-                  >Art Director</span
-                >
-              </td>
-              <td>
-                <span class="text-muted fw-bold d-block fs-7">Rating</span>
-                <div class="rating">
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
                 </div>
-              </td>
-              <td class="text-end">
-                <a href="#" class="btn btn-icon btn-light-twitter btn-sm me-3">
-                  <i class="bi bi-twitter fs-4"></i>
-                </a>
-                <a href="#" class="btn btn-icon btn-light-facebook btn-sm">
-                  <i class="bi bi-facebook fs-4"></i>
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="symbol symbol-50px">
-                  <img src="./assets/media/svg/avatars/014-girl-7.svg" alt="" />
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
                 </div>
-              </td>
-              <td>
-                <a
-                  href="#"
-                  class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
-                >
-                  Natali Trump
-                </a>
-                <span class="text-muted fw-bold d-block fs-7"
-                  >UI/UX Designer</span
-                >
-              </td>
-              <td>
-                <span class="text-muted fw-bold d-block fs-7">Rating</span>
-                <div class="rating">
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
+                <div class="rating-label me-2">
+                  <i class="bi bi-star-fill fs-5"></i>
                 </div>
-              </td>
-              <td class="text-end">
-                <a href="#" class="btn btn-icon btn-light-twitter btn-sm me-3">
-                  <i class="bi bi-twitter fs-4"></i>
-                </a>
-                <a href="#" class="btn btn-icon btn-light-facebook btn-sm">
-                  <i class="bi bi-facebook fs-4"></i>
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="symbol symbol-50px">
-                  <img src="./assets/media/svg/avatars/018-girl-9.svg" alt="" />
+                <div class="rating-label me-2">
+                  <i class="bi bi-star-fill fs-5"></i>
                 </div>
-              </td>
-              <td>
-                <a
-                  href="#"
-                  class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
-                >
-                  Jessie Clarcson
-                </a>
-                <span class="text-muted fw-bold d-block fs-7"
-                  >HTML, CSS Coding</span
-                >
-              </td>
-              <td>
-                <span class="text-muted fw-bold d-block fs-7">Rating</span>
-                <div class="rating">
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
+              </div>
+            </td>
+            <td class="text-end">
+              <a class="btn btn-icon btn-light-twitter btn-sm me-3" href="#">
+                <i class="bi bi-twitter fs-4"></i>
+              </a>
+              <a class="btn btn-icon btn-light-facebook btn-sm" href="#">
+                <i class="bi bi-facebook fs-4"></i>
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="symbol symbol-50px">
+                <img alt="" src="./assets/media/svg/avatars/014-girl-7.svg"/>
+              </div>
+            </td>
+            <td>
+              <a
+                class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
+                href="#"
+              >
+                Natali Trump
+              </a>
+              <span class="text-muted fw-bold d-block fs-7"
+              >UI/UX Designer</span
+              >
+            </td>
+            <td>
+              <span class="text-muted fw-bold d-block fs-7">Rating</span>
+              <div class="rating">
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
                 </div>
-              </td>
-              <td class="text-end">
-                <a href="#" class="btn btn-icon btn-light-twitter btn-sm me-3">
-                  <i class="bi bi-twitter fs-4"></i>
-                </a>
-                <a href="#" class="btn btn-icon btn-light-facebook btn-sm">
-                  <i class="bi bi-facebook fs-4"></i>
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="symbol symbol-50px">
-                  <img src="./assets/media/svg/avatars/001-boy.svg" alt="" />
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
                 </div>
-              </td>
-              <td>
-                <a
-                  href="#"
-                  class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
-                >
-                  Brad Simmons
-                </a>
-                <span class="text-muted fw-bold d-block fs-7"
-                  >Movie Creator</span
-                >
-              </td>
-              <td>
-                <span class="text-muted fw-bold d-block fs-7">Rating</span>
-                <div class="rating">
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
                 </div>
-              </td>
-              <td class="text-end">
-                <a href="#" class="btn btn-icon btn-light-twitter btn-sm me-3">
-                  <i class="bi bi-twitter fs-4"></i>
-                </a>
-                <a href="#" class="btn btn-icon btn-light-facebook btn-sm">
-                  <i class="bi bi-facebook fs-4"></i>
-                </a>
-              </td>
-            </tr>
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
+                </div>
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
+                </div>
+              </div>
+            </td>
+            <td class="text-end">
+              <a class="btn btn-icon btn-light-twitter btn-sm me-3" href="#">
+                <i class="bi bi-twitter fs-4"></i>
+              </a>
+              <a class="btn btn-icon btn-light-facebook btn-sm" href="#">
+                <i class="bi bi-facebook fs-4"></i>
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="symbol symbol-50px">
+                <img alt="" src="./assets/media/svg/avatars/018-girl-9.svg"/>
+              </div>
+            </td>
+            <td>
+              <a
+                class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
+                href="#"
+              >
+                Jessie Clarcson
+              </a>
+              <span class="text-muted fw-bold d-block fs-7"
+              >HTML, CSS Coding</span
+              >
+            </td>
+            <td>
+              <span class="text-muted fw-bold d-block fs-7">Rating</span>
+              <div class="rating">
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
+                </div>
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
+                </div>
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
+                </div>
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
+                </div>
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
+                </div>
+              </div>
+            </td>
+            <td class="text-end">
+              <a class="btn btn-icon btn-light-twitter btn-sm me-3" href="#">
+                <i class="bi bi-twitter fs-4"></i>
+              </a>
+              <a class="btn btn-icon btn-light-facebook btn-sm" href="#">
+                <i class="bi bi-facebook fs-4"></i>
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="symbol symbol-50px">
+                <img alt="" src="./assets/media/svg/avatars/001-boy.svg"/>
+              </div>
+            </td>
+            <td>
+              <a
+                class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
+                href="#"
+              >
+                Brad Simmons
+              </a>
+              <span class="text-muted fw-bold d-block fs-7"
+              >Movie Creator</span
+              >
+            </td>
+            <td>
+              <span class="text-muted fw-bold d-block fs-7">Rating</span>
+              <div class="rating">
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
+                </div>
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
+                </div>
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
+                </div>
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
+                </div>
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
+                </div>
+              </div>
+            </td>
+            <td class="text-end">
+              <a class="btn btn-icon btn-light-twitter btn-sm me-3" href="#">
+                <i class="bi bi-twitter fs-4"></i>
+              </a>
+              <a class="btn btn-icon btn-light-facebook btn-sm" href="#">
+                <i class="bi bi-facebook fs-4"></i>
+              </a>
+            </td>
+          </tr>
           </tbody>
           <!-- end::Table body-->
         </table>
@@ -534,8 +534,8 @@
     <!-- end::Tap pane-->
     <!-- begin::Tap pane-->
     <div
-      class="tab-pane fade"
       [ngClass]="activeClass('kt_table_widget_4_tab_3')"
+      class="tab-pane fade"
       id="kt_table_widget_4_tab_3"
     >
       <!-- begin::Table container-->
@@ -544,157 +544,157 @@
         <table class="table align-middle gs-0 gy-3">
           <!-- begin::Table head-->
           <thead>
-            <tr>
-              <th class="p-0 w-50px"></th>
-              <th class="p-0 min-w-150px"></th>
-              <th class="p-0 min-w-140px"></th>
-              <th class="p-0 min-w-120px"></th>
-            </tr>
+          <tr>
+            <th class="p-0 w-50px"></th>
+            <th class="p-0 min-w-150px"></th>
+            <th class="p-0 min-w-140px"></th>
+            <th class="p-0 min-w-120px"></th>
+          </tr>
           </thead>
           <!-- end::Table head-->
           <!-- begin::Table body-->
           <tbody>
-            <tr>
-              <td>
-                <div class="symbol symbol-50px">
-                  <img src="./assets/media/svg/avatars/018-girl-9.svg" alt="" />
+          <tr>
+            <td>
+              <div class="symbol symbol-50px">
+                <img alt="" src="./assets/media/svg/avatars/018-girl-9.svg"/>
+              </div>
+            </td>
+            <td>
+              <a
+                class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
+                href="#"
+              >
+                Jessie Clarcson
+              </a>
+              <span class="text-muted fw-bold d-block fs-7"
+              >HTML, CSS Coding</span
+              >
+            </td>
+            <td>
+              <span class="text-muted fw-bold d-block fs-7">Rating</span>
+              <div class="rating">
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
                 </div>
-              </td>
-              <td>
-                <a
-                  href="#"
-                  class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
-                >
-                  Jessie Clarcson
-                </a>
-                <span class="text-muted fw-bold d-block fs-7"
-                  >HTML, CSS Coding</span
-                >
-              </td>
-              <td>
-                <span class="text-muted fw-bold d-block fs-7">Rating</span>
-                <div class="rating">
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
                 </div>
-              </td>
-              <td class="text-end">
-                <a href="#" class="btn btn-icon btn-light-twitter btn-sm me-3">
-                  <i class="bi bi-twitter fs-4"></i>
-                </a>
-                <a href="#" class="btn btn-icon btn-light-facebook btn-sm">
-                  <i class="bi bi-facebook fs-4"></i>
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="symbol symbol-50px">
-                  <img
-                    src="./assets/media/svg/avatars/047-girl-25.svg"
-                    alt=""
-                  />
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
                 </div>
-              </td>
-              <td>
-                <a
-                  href="#"
-                  class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
-                >
-                  Lebron Wayde
-                </a>
-                <span class="text-muted fw-bold d-block fs-7"
-                  >ReactJS Developer</span
-                >
-              </td>
-              <td>
-                <span class="text-muted fw-bold d-block fs-7">Rating</span>
-                <div class="rating">
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
                 </div>
-              </td>
-              <td class="text-end">
-                <a href="#" class="btn btn-icon btn-light-twitter btn-sm me-3">
-                  <i class="bi bi-twitter fs-4"></i>
-                </a>
-                <a href="#" class="btn btn-icon btn-light-facebook btn-sm">
-                  <i class="bi bi-facebook fs-4"></i>
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="symbol symbol-50px">
-                  <img src="./assets/media/svg/avatars/014-girl-7.svg" alt="" />
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
                 </div>
-              </td>
-              <td>
-                <a
-                  href="#"
-                  class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
-                >
-                  Natali Trump
-                </a>
-                <span class="text-muted fw-bold d-block fs-7"
-                  >UI/UX Designer</span
-                >
-              </td>
-              <td>
-                <span class="text-muted fw-bold d-block fs-7">Rating</span>
-                <div class="rating">
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
-                  <div class="rating-label me-2 checked">
-                    <i class="bi bi-star-fill fs-5"></i>
-                  </div>
+              </div>
+            </td>
+            <td class="text-end">
+              <a class="btn btn-icon btn-light-twitter btn-sm me-3" href="#">
+                <i class="bi bi-twitter fs-4"></i>
+              </a>
+              <a class="btn btn-icon btn-light-facebook btn-sm" href="#">
+                <i class="bi bi-facebook fs-4"></i>
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="symbol symbol-50px">
+                <img
+                  alt=""
+                  src="./assets/media/svg/avatars/047-girl-25.svg"
+                />
+              </div>
+            </td>
+            <td>
+              <a
+                class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
+                href="#"
+              >
+                Lebron Wayde
+              </a>
+              <span class="text-muted fw-bold d-block fs-7"
+              >ReactJS Developer</span
+              >
+            </td>
+            <td>
+              <span class="text-muted fw-bold d-block fs-7">Rating</span>
+              <div class="rating">
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
                 </div>
-              </td>
-              <td class="text-end">
-                <a href="#" class="btn btn-icon btn-light-twitter btn-sm me-3">
-                  <i class="bi bi-twitter fs-4"></i>
-                </a>
-                <a href="#" class="btn btn-icon btn-light-facebook btn-sm">
-                  <i class="bi bi-facebook fs-4"></i>
-                </a>
-              </td>
-            </tr>
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
+                </div>
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
+                </div>
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
+                </div>
+                <div class="rating-label me-2">
+                  <i class="bi bi-star-fill fs-5"></i>
+                </div>
+              </div>
+            </td>
+            <td class="text-end">
+              <a class="btn btn-icon btn-light-twitter btn-sm me-3" href="#">
+                <i class="bi bi-twitter fs-4"></i>
+              </a>
+              <a class="btn btn-icon btn-light-facebook btn-sm" href="#">
+                <i class="bi bi-facebook fs-4"></i>
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="symbol symbol-50px">
+                <img alt="" src="./assets/media/svg/avatars/014-girl-7.svg"/>
+              </div>
+            </td>
+            <td>
+              <a
+                class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
+                href="#"
+              >
+                Natali Trump
+              </a>
+              <span class="text-muted fw-bold d-block fs-7"
+              >UI/UX Designer</span
+              >
+            </td>
+            <td>
+              <span class="text-muted fw-bold d-block fs-7">Rating</span>
+              <div class="rating">
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
+                </div>
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
+                </div>
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
+                </div>
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
+                </div>
+                <div class="rating-label me-2 checked">
+                  <i class="bi bi-star-fill fs-5"></i>
+                </div>
+              </div>
+            </td>
+            <td class="text-end">
+              <a class="btn btn-icon btn-light-twitter btn-sm me-3" href="#">
+                <i class="bi bi-twitter fs-4"></i>
+              </a>
+              <a class="btn btn-icon btn-light-facebook btn-sm" href="#">
+                <i class="bi bi-facebook fs-4"></i>
+              </a>
+            </td>
+          </tr>
           </tbody>
           <!-- end::Table body-->
         </table>

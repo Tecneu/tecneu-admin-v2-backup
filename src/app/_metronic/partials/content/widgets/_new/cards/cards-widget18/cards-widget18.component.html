@@ -1,5 +1,5 @@
 <!--begin::Card widget 18-->
-<div class="card card-flush" [ngClass]="cssClass">
+<div [ngClass]="cssClass" class="card card-flush">
   <!--begin::Body-->
   <div class="card-body py-9">
     <!--begin::Row-->
@@ -7,8 +7,8 @@
       <!--begin::Col-->
       <div class="col-sm-6 mb-10 mb-sm-0">
         <!--begin::Image-->
-        <div class="bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-400px min-h-sm-100 h-100"
-          [ngStyle]="{'background-size': '100% 100%', 'background-image': 'url(' + image + ')'}">
+        <div [ngStyle]="{'background-size': '100% 100%', 'background-image': 'url(' + image + ')'}"
+             class="bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-400px min-h-sm-100 h-100">
         </div>
         <!--end::Image-->
       </div>
@@ -40,14 +40,14 @@
               <div class="d-flex align-items-center me-5 me-xl-13">
                 <!--begin::Symbol-->
                 <div class="symbol symbol-30px symbol-circle me-3">
-                  <img src="./assets/media/avatars/300-3.jpg" class="" alt="" />
+                  <img alt="" class="" src="./assets/media/avatars/300-3.jpg"/>
                 </div>
                 <!--end::Symbol-->
 
                 <!--begin::Info-->
                 <div class="m-0">
                   <span class="fw-semibold text-gray-400 d-block fs-8">Manager</span>
-                  <a href="#" class="fw-bold text-gray-800 text-hover-primary fs-7">Robert Fox</a>
+                  <a class="fw-bold text-gray-800 text-hover-primary fs-7" href="#">Robert Fox</a>
                 </div>
                 <!--end::Info-->
               </div>
@@ -58,7 +58,7 @@
                 <!--begin::Symbol-->
                 <div class="symbol symbol-30px symbol-circle me-3">
                   <span class="symbol-label bg-success">
-                    <app-keenicon name="abstract-41" class="fs-5 text-white"></app-keenicon>
+                    <app-keenicon class="fs-5 text-white" name="abstract-41"></app-keenicon>
                   </span>
                 </div>
                 <!--end::Symbol-->
@@ -103,7 +103,7 @@
               <div class="border border-gray-300 border-dashed rounded min-w-100px w-100 py-2 px-4 mb-3">
                 <!--begin::Number-->
                 <span class="fs-6 text-gray-700 fw-bold">$<span class="ms-n1" data-kt-countup="true"
-                    data-kt-countup-value="284,900.00">0</span></span>
+                                                                data-kt-countup-value="284,900.00">0</span></span>
                 <!--end::Number-->
 
                 <!--begin::Label-->
@@ -120,14 +120,14 @@
           <div class="d-flex flex-stack mt-auto bd-highlight">
             <!--begin::Users group-->
             <div class="symbol-group symbol-hover flex-nowrap">
-              <div *ngFor="let card of cards" class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip"
-                [title]="card.name">
+              <div *ngFor="let card of cards" [title]="card.name" class="symbol symbol-35px symbol-circle"
+                   data-bs-toggle="tooltip">
                 <ng-container *ngIf="card.src">
-                  <img alt="Pic" [src]="card.src" />
+                  <img [src]="card.src" alt="Pic"/>
                 </ng-container>
                 <ng-container *ngIf="!card.src">
-                  <span class="symbol-label fw-bold"
-                    [ngClass]="'bg-' + card.state + ' ' + 'text-inverse-' + card.state">{{card.initials}}</span>
+                  <span [ngClass]="'bg-' + card.state + ' ' + 'text-inverse-' + card.state"
+                        class="symbol-label fw-bold">{{card.initials}}</span>
 
                 </ng-container>
               </div>
@@ -135,9 +135,9 @@
             <!--end::Users group-->
 
             <!--begin::Actions-->
-            <a href="#" class="text-primary opacity-75-hover fs-6 fw-semibold">
+            <a class="text-primary opacity-75-hover fs-6 fw-semibold" href="#">
               View Project
-              <app-keenicon name="arr095.svg" class="fs-4 text-gray800 ms-1"></app-keenicon>
+              <app-keenicon class="fs-4 text-gray800 ms-1" name="arr095.svg"></app-keenicon>
             </a>
             <!--end::Actions-->
           </div>

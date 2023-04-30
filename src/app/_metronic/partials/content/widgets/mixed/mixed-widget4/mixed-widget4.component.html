@@ -5,15 +5,15 @@
     <div class="d-flex align-items-center">
       <!-- begin:Image -->
       <div class="symbol symbol-60px me-5">
-        <span class="symbol-label" [ngClass]="'bg-' + color + '-light'">
-          <img [src]="image" class="h-50 align-self-center" alt="" />
+        <span [ngClass]="'bg-' + color + '-light'" class="symbol-label">
+          <img [src]="image" alt="" class="h-50 align-self-center"/>
         </span>
       </div>
       <!-- end:Image -->
 
       <!-- begin:Title -->
       <div class="d-flex flex-column flex-grow-1 my-lg-0 my-2 pr-3">
-        <a href="#" class="text-dark fw-bolder text-hover-primary fs-5">
+        <a class="text-dark fw-bolder text-hover-primary fs-5" href="#">
           {{ title }}
         </a>
 
@@ -26,13 +26,13 @@
     <!-- begin:Menu -->
     <div class="ms-1">
       <button
-        type="button"
         class="btn btn-sm btn-icon btn-color-primary btn-active-light-primary"
-        data-kt-menu-trigger="click"
-        data-kt-menu-placement="bottom-end"
         data-kt-menu-flip="top-end"
+        data-kt-menu-placement="bottom-end"
+        data-kt-menu-trigger="click"
+        type="button"
       >
-        <app-keenicon name="category" class="fs-2"></app-keenicon>
+        <app-keenicon class="fs-2" name="category"></app-keenicon>
       </button>
       <app-dropdown-menu1></app-dropdown-menu1>
     </div>
@@ -46,10 +46,10 @@
 
     <div class="progress h-5px w-100">
       <div
-        class="progress-bar"
         [ngClass]="'bg-' + color"
-        role="progressbar"
         [style.width]="progress"
+        class="progress-bar"
+        role="progressbar"
       ></div>
     </div>
   </div>
@@ -61,39 +61,39 @@
 
     <div class="d-flex">
       <a
-        href="#"
         class="symbol symbol-35px me-2"
         data-bs-toggle="tooltip"
+        href="#"
         title="Ana Stone"
       >
-        <img src="./assets/media/avatars/300-6.jpg" alt="" />
+        <img alt="" src="./assets/media/avatars/300-6.jpg"/>
       </a>
 
       <a
-        href="#"
         class="symbol symbol-35px me-2"
         data-bs-toggle="tooltip"
+        href="#"
         title="Mark Larson"
       >
-        <img src="./assets/media/avatars/300-5.jpg" alt="" />
+        <img alt="" src="./assets/media/avatars/300-5.jpg"/>
       </a>
 
       <a
-        href="#"
         class="symbol symbol-35px me-2"
         data-bs-toggle="tooltip"
+        href="#"
         title="Sam Harris"
       >
-        <img src="./assets/media/avatars/300-9.jpg" alt="" />
+        <img alt="" src="./assets/media/avatars/300-9.jpg"/>
       </a>
 
       <a
-        href="#"
         class="symbol symbol-35px"
         data-bs-toggle="tooltip"
+        href="#"
         title="Alice Micto"
       >
-        <img src="./assets/media/avatars/300-10.jpg" alt="" />
+        <img alt="" src="./assets/media/avatars/300-10.jpg"/>
       </a>
     </div>
   </div>

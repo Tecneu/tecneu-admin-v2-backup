@@ -1,5 +1,5 @@
-<form class="form w-100" novalidate="novalidate" id="kt_login_signup_form" [formGroup]="registrationForm"
-  (ngSubmit)="submit()">
+<form (ngSubmit)="submit()" [formGroup]="registrationForm" class="form w-100" id="kt_login_signup_form"
+      novalidate="novalidate">
   <!--begin::Heading-->
   <div class="text-center mb-11">
     <!--begin::Title-->
@@ -21,9 +21,9 @@
     <!--begin::Col-->
     <div class="col-md-6">
       <!--begin::Google link--->
-      <a href="#"
-        class="btn btn-flex btn-outline btn-text-gray-700 btn-active-color-primary bg-state-light flex-center text-nowrap w-100">
-        <img alt="Logo" src="./assets/media/svg/brand-logos/google-icon.svg" class="h-15px me-3" />
+      <a class="btn btn-flex btn-outline btn-text-gray-700 btn-active-color-primary bg-state-light flex-center text-nowrap w-100"
+         href="#">
+        <img alt="Logo" class="h-15px me-3" src="./assets/media/svg/brand-logos/google-icon.svg"/>
         Iniciar sesión con Google
       </a>
       <!--end::Google link--->
@@ -33,10 +33,10 @@
     <!--begin::Col-->
     <div class="col-md-6">
       <!--begin::Google link--->
-      <a href="#"
-        class="btn btn-flex btn-outline btn-text-gray-700 btn-active-color-primary bg-state-light flex-center text-nowrap w-100">
-        <img alt="Logo" src="./assets/media/svg/brand-logos/apple-black.svg" class="theme-light-show h-15px me-3" />
-        <img alt="Logo" src="./assets/media/svg/brand-logos/apple-black-dark.svg" class="theme-dark-show h-15px me-3" />
+      <a class="btn btn-flex btn-outline btn-text-gray-700 btn-active-color-primary bg-state-light flex-center text-nowrap w-100"
+         href="#">
+        <img alt="Logo" class="theme-light-show h-15px me-3" src="./assets/media/svg/brand-logos/apple-black.svg"/>
+        <img alt="Logo" class="theme-dark-show h-15px me-3" src="./assets/media/svg/brand-logos/apple-black-dark.svg"/>
         Iniciar sesión con Apple
       </a>
       <!--end::Google link--->
@@ -63,109 +63,110 @@
   <!--begin::Form group-->
   <div class="fv-row mb-8">
     <label class="form-label fw-bolder text-dark fs-6">Fullname</label>
-    <input class="form-control bg-transparent" type="text" name="fullname" formControlName="fullname"
-      placeholder="Fullname" autocomplete="off" [ngClass]="{
+    <input [ngClass]="{
         'is-invalid': registrationForm.controls['fullname'].invalid,
         'is-valid': registrationForm.controls['fullname'].valid
-      }" />
-    <ng-container [ngTemplateOutlet]="formError" [ngTemplateOutletContext]="{
+      }" autocomplete="off" class="form-control bg-transparent" formControlName="fullname"
+           name="fullname" placeholder="Fullname" type="text"/>
+    <ng-container [ngTemplateOutletContext]="{
         validation: 'required',
         message: 'Fullname is required',
         control: registrationForm.controls['fullname']
-      }"></ng-container>
-    <ng-container [ngTemplateOutlet]="formError" [ngTemplateOutletContext]="{
+      }" [ngTemplateOutlet]="formError"></ng-container>
+    <ng-container [ngTemplateOutletContext]="{
         validation: 'minlength',
         message: 'Fullname should have at least 3 symbols',
         control: registrationForm.controls['fullname']
-      }"></ng-container>
-    <ng-container [ngTemplateOutlet]="formError" [ngTemplateOutletContext]="{
+      }" [ngTemplateOutlet]="formError"></ng-container>
+    <ng-container [ngTemplateOutletContext]="{
         validation: 'maxLength',
         message: 'Fullname should have maximum 100 symbols',
         control: registrationForm.controls['fullname']
-      }"></ng-container>
+      }" [ngTemplateOutlet]="formError"></ng-container>
   </div>
   <!--end::Form group-->
 
   <!--begin::Form group-->
   <div class="fv-row mb-8">
     <label class="form-label fw-bolder text-dark fs-6">Correo electrónico</label>
-    <input class="form-control bg-transparent" type="email" placeholder="Correo electrónico" name="email" formControlName="email"
-      autocomplete="off" [ngClass]="{
+    <input [ngClass]="{
         'is-invalid': registrationForm.controls['email'].invalid,
         'is-valid': registrationForm.controls['email'].valid
-      }" />
-    <ng-container [ngTemplateOutlet]="formError" [ngTemplateOutletContext]="{
+      }" autocomplete="off" class="form-control bg-transparent" formControlName="email"
+           name="email"
+           placeholder="Correo electrónico" type="email"/>
+    <ng-container [ngTemplateOutletContext]="{
         validation: 'required',
         message: 'Email is required',
         control: registrationForm.controls['email']
-      }"></ng-container>
-    <ng-container [ngTemplateOutlet]="formError" [ngTemplateOutletContext]="{
+      }" [ngTemplateOutlet]="formError"></ng-container>
+    <ng-container [ngTemplateOutletContext]="{
         validation: 'email',
         message: 'Email is invalid',
         control: registrationForm.controls['email']
-      }"></ng-container>
-    <ng-container [ngTemplateOutlet]="formError" [ngTemplateOutletContext]="{
+      }" [ngTemplateOutlet]="formError"></ng-container>
+    <ng-container [ngTemplateOutletContext]="{
         validation: 'minlength',
         message: 'Email should have at least 3 symbols',
         control: registrationForm.controls['email']
-      }"></ng-container>
-    <ng-container [ngTemplateOutlet]="formError" [ngTemplateOutletContext]="{
+      }" [ngTemplateOutlet]="formError"></ng-container>
+    <ng-container [ngTemplateOutletContext]="{
         validation: 'maxLength',
         message: 'Email should have maximum 360 symbols',
         control: registrationForm.controls['email']
-      }"></ng-container>
+      }" [ngTemplateOutlet]="formError"></ng-container>
   </div>
   <!--end::Form group-->
 
   <!--begin::Form group-->
   <div class="fv-row mb-8">
     <label class="form-label fw-bolder text-dark fs-6">Contraseña</label>
-    <input class="form-control bg-transparent" type="password" placeholder="Contraseña" name="password"
-      formControlName="password" autocomplete="off" [ngClass]="{
+    <input [ngClass]="{
         'is-invalid': registrationForm.controls['password'].invalid,
         'is-valid': registrationForm.controls['password'].valid
-      }" />
-    <ng-container [ngTemplateOutlet]="formError" [ngTemplateOutletContext]="{
+      }" autocomplete="off" class="form-control bg-transparent" formControlName="password"
+           name="password" placeholder="Contraseña" type="password"/>
+    <ng-container [ngTemplateOutletContext]="{
         validation: 'required',
         message: 'Password is required',
         control: registrationForm.controls['password']
-      }"></ng-container>
-    <ng-container [ngTemplateOutlet]="formError" [ngTemplateOutletContext]="{
+      }" [ngTemplateOutlet]="formError"></ng-container>
+    <ng-container [ngTemplateOutletContext]="{
         validation: 'minlength',
         message: 'Password should have at least 3 symbols',
         control: registrationForm.controls['password']
-      }"></ng-container>
-    <ng-container [ngTemplateOutlet]="formError" [ngTemplateOutletContext]="{
+      }" [ngTemplateOutlet]="formError"></ng-container>
+    <ng-container [ngTemplateOutletContext]="{
         validation: 'maxLength',
         message: 'Password should have maximum 100 symbols',
         control: registrationForm.controls['password']
-      }"></ng-container>
+      }" [ngTemplateOutlet]="formError"></ng-container>
   </div>
   <!--end::Form group-->
 
   <!--begin::Form group-->
   <div class="fv-row mb-8">
     <label class="form-label fw-bolder text-dark fs-6">Confirmar contraseña</label>
-    <input class="form-control bg-transparent" type="password" placeholder="Confirm password" name="cPassword"
-      autocomplete="off" formControlName="cPassword" [ngClass]="{
+    <input [ngClass]="{
         'is-invalid': registrationForm.controls['cPassword'].invalid,
         'is-valid': registrationForm.controls['cPassword'].valid
-      }" />
-    <ng-container [ngTemplateOutlet]="formError" [ngTemplateOutletContext]="{
+      }" autocomplete="off" class="form-control bg-transparent" formControlName="cPassword"
+           name="cPassword" placeholder="Confirm password" type="password"/>
+    <ng-container [ngTemplateOutletContext]="{
         validation: 'required',
         message: 'Confirmar contraseña is required',
         control: registrationForm.controls['cPassword']
-      }"></ng-container>
-    <ng-container [ngTemplateOutlet]="formError" [ngTemplateOutletContext]="{
+      }" [ngTemplateOutlet]="formError"></ng-container>
+    <ng-container [ngTemplateOutletContext]="{
         validation: 'minlength',
         message: 'Confirmar contraseña should have at least 3 symbols',
         control: registrationForm.controls['cPassword']
-      }"></ng-container>
-    <ng-container [ngTemplateOutlet]="formError" [ngTemplateOutletContext]="{
+      }" [ngTemplateOutlet]="formError"></ng-container>
+    <ng-container [ngTemplateOutletContext]="{
         validation: 'maxLength',
         message: 'Confirmar contraseña should have maximum 100 symbols',
         control: registrationForm.controls['cPassword']
-      }"></ng-container>
+      }" [ngTemplateOutlet]="formError"></ng-container>
     <ng-container *ngIf="
         registrationForm.controls['cPassword'].errors &&
         registrationForm.controls['cPassword'].errors.ConfirmPassword
@@ -182,10 +183,10 @@
   <!--begin::Form group-->
   <div class="fv-row mb-8">
     <label class="form-check form-check-inline">
-      <input id="kt_login_toc_agree" type="checkbox" formControlName="agree" name="agree" class="form-check-input" />
-      <span for="kt_login_toc_agree" class="form-check-label fw-semibold text-gray-700 fs-base ms-1">
-        I Accept the&nbsp;<a href="https://keenthemes.com/metronic/?page=faq" target="_blank"
-          class="ms-1 link-primary">Terms</a>.
+      <input class="form-check-input" formControlName="agree" id="kt_login_toc_agree" name="agree" type="checkbox"/>
+      <span class="form-check-label fw-semibold text-gray-700 fs-base ms-1" for="kt_login_toc_agree">
+        I Accept the&nbsp;<a class="ms-1 link-primary" href="https://keenthemes.com/metronic/?page=faq"
+                             target="_blank">Terms</a>.
       </span>
     </label>
   </div>
@@ -193,14 +194,14 @@
 
   <!--begin::Form group-->
   <div class="d-grid mb-10">
-    <button type="submit" id="kt_sign_up_submit" [disabled]="
+    <button [disabled]="
         registrationForm.invalid || !registrationForm.controls['agree'].value
-      " class="btn btn-primary">
+      " class="btn btn-primary" id="kt_sign_up_submit" type="submit">
       <ng-container *ngIf="(isLoading$ | async) === false">
         <span class="indicator-label">Submit</span>
       </ng-container>
       <ng-container *ngIf="isLoading$ | async">
-        <span class="indicator-progress" [style.display]="'block'">
+        <span [style.display]="'block'" class="indicator-progress">
           Por favor, espera...
           <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
         </span>
@@ -213,7 +214,7 @@
   <div class="text-gray-500 text-center fw-semibold fs-6">
     Already have an Account?
 
-    <a routerLink="/auth/login" class="link-primary fw-semibold">
+    <a class="link-primary fw-semibold" routerLink="/auth/login">
       Sign in
     </a>
   </div>

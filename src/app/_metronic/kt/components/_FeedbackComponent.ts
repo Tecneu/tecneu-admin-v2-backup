@@ -2,8 +2,8 @@ import {
   DataUtil,
   ElementStyleUtil,
   EventHandlerUtil,
-  getUniqueIdWithPrefix,
   getAttributeValueByBreakpoint,
+  getUniqueIdWithPrefix,
 } from '../_utils/index'
 
 export interface FeedbackOptions {
@@ -37,45 +37,24 @@ class FeedbackComponent {
     DataUtil.set(this.element, 'feedback', this)
   }
 
-  private _handlers = () => {
-    this.element.addEventListener('click', (e: Event) => {
-      e.preventDefault()
-      this._go()
-    })
+  // Create Instances
+  public static createInstances(selector: string) {
+    throw new Error('not implemented')
   }
 
-  private _go = () => {}
-
-  private showPopup = () => {
-    this.element = document.createElement('DIV')
-
-    this.element.classList.add('feedback feedback-popup')
-    this.element.innerHTML = this.options.content || ''
-
-    if (this.options.placement === 'top-center') {
-      this.setPopupTopCenterPosition()
-    }
-
-    document.body.appendChild(this.element)
-    this.element.classList.add('feedback-shown')
-    this.shown = true
+  // Static methods
+  public static hasInstace(element: HTMLElement) {
+    throw new Error('not implemented')
   }
 
-  private setPopupTopCenterPosition = () => {
-    const width = getAttributeValueByBreakpoint(this.options.width?.toString() || '0')
-    const height = ElementStyleUtil.get(this.element, 'height')
-    this.element.classList.add('feedback-top-center')
-    ElementStyleUtil.set(this.element, 'width', width)
-    ElementStyleUtil.set(this.element, 'left', '50%')
-    ElementStyleUtil.set(this.element, 'top', '-' + height)
+  public static getInstance(element: HTMLElement) {
+    throw new Error('not implemented')
   }
 
-  private hidePopup = () => {
-    this.element.remove()
+  public static bootstrap(attr: string = '[data-Feedback]') {
+    throw new Error('not implemented')
   }
 
-  ///////////////////////
-  // ** Public API  ** //
   ///////////////////////
   public show = () => {
     if (EventHandlerUtil.trigger(this.element, 'kt.feedback.show') === false) {
@@ -90,6 +69,9 @@ class FeedbackComponent {
 
     return this
   }
+
+  ///////////////////////
+  // ** Public API  ** //
 
   public hide = () => {
     if (EventHandlerUtil.trigger(this.element, 'kt.feedback.hide') === false) {
@@ -130,22 +112,42 @@ class FeedbackComponent {
     return EventHandlerUtil.trigger(this.element, name, event)
   }
 
-  // Create Instances
-  public static createInstances(selector: string) {
-    throw new Error('not implemented')
+  private _handlers = () => {
+    this.element.addEventListener('click', (e: Event) => {
+      e.preventDefault()
+      this._go()
+    })
   }
 
-  // Static methods
-  public static hasInstace(element: HTMLElement) {
-    throw new Error('not implemented')
+  private _go = () => {
   }
 
-  public static getInstance(element: HTMLElement) {
-    throw new Error('not implemented')
+  private showPopup = () => {
+    this.element = document.createElement('DIV')
+
+    this.element.classList.add('feedback feedback-popup')
+    this.element.innerHTML = this.options.content || ''
+
+    if (this.options.placement === 'top-center') {
+      this.setPopupTopCenterPosition()
+    }
+
+    document.body.appendChild(this.element)
+    this.element.classList.add('feedback-shown')
+    this.shown = true
   }
 
-  public static bootstrap(attr: string = '[data-Feedback]') {
-    throw new Error('not implemented')
+  private setPopupTopCenterPosition = () => {
+    const width = getAttributeValueByBreakpoint(this.options.width?.toString() || '0')
+    const height = ElementStyleUtil.get(this.element, 'height')
+    this.element.classList.add('feedback-top-center')
+    ElementStyleUtil.set(this.element, 'width', width)
+    ElementStyleUtil.set(this.element, 'left', '50%')
+    ElementStyleUtil.set(this.element, 'top', '-' + height)
+  }
+
+  private hidePopup = () => {
+    this.element.remove()
   }
 }
 

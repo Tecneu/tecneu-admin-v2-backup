@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { DrawerChatComponent } from './drawer-chat.component';
+import {DrawerChatComponent} from './drawer-chat.component';
 
 describe('DrawerChatComponent', () => {
   let component: DrawerChatComponent;
@@ -8,9 +8,9 @@ describe('DrawerChatComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DrawerChatComponent ]
+      declarations: [DrawerChatComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

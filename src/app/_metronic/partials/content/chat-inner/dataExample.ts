@@ -87,7 +87,7 @@ const defaultUserInfos: Array<UserInfoModel> = [
   },
   {
     name: 'Melody Macy',
-    initials: { label: 'M', state: 'danger' },
+    initials: {label: 'M', state: 'danger'},
     email: 'melody@altbox.com',
     position: 'Marketing Analytic',
     online: true,
@@ -115,7 +115,7 @@ const defaultUserInfos: Array<UserInfoModel> = [
   },
   {
     name: 'Mikaela Collins',
-    initials: { label: 'M', state: 'warning' },
+    initials: {label: 'M', state: 'warning'},
     email: 'mikaela@pexcom.com',
     position: 'Head Of Marketing',
     online: true,
@@ -130,14 +130,14 @@ const defaultUserInfos: Array<UserInfoModel> = [
 
   {
     name: 'Olivia Wild',
-    initials: { label: 'O', state: 'danger' },
+    initials: {label: 'O', state: 'danger'},
     email: 'olivia@corpmail.com',
     position: 'System Admin',
     online: true,
   },
   {
     name: 'Neil Owen',
-    initials: { label: 'N', state: 'primary' },
+    initials: {label: 'N', state: 'primary'},
     email: 'owen.neil@gmail.com',
     position: 'Account Manager',
     online: true,
@@ -151,7 +151,7 @@ const defaultUserInfos: Array<UserInfoModel> = [
   },
   {
     name: 'Emma Bold',
-    initials: { label: 'E', state: 'danger' },
+    initials: {label: 'E', state: 'danger'},
     email: 'emma@intenso.com',
     position: 'Corporate Finance',
     online: true,
@@ -165,7 +165,7 @@ const defaultUserInfos: Array<UserInfoModel> = [
   },
   {
     name: 'Robert Doe',
-    initials: { label: 'A', state: 'info' },
+    initials: {label: 'A', state: 'info'},
     email: 'robert@benko.com',
     position: 'Marketing Executive',
     online: true,
@@ -179,7 +179,7 @@ const defaultUserInfos: Array<UserInfoModel> = [
   },
   {
     name: 'Lucy Kunic',
-    initials: { label: 'L', state: 'success' },
+    initials: {label: 'L', state: 'success'},
     email: 'lucy.m@fentech.com',
     position: 'SEO Master',
     online: true,

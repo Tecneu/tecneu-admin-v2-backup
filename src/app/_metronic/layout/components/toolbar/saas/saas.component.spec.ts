@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { SaasComponent } from './saas.component';
+import {SaasComponent} from './saas.component';
 
 describe('SaasComponent', () => {
   let component: SaasComponent;
@@ -8,9 +8,9 @@ describe('SaasComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SaasComponent ]
+      declarations: [SaasComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(SaasComponent);
     component = fixture.componentInstance;

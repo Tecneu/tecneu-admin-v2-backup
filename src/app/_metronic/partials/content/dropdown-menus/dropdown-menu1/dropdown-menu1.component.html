@@ -11,9 +11,9 @@
     <div>
       <select
         class="form-select form-select-solid"
+        data-allow-clear="true"
         data-kt-select2="true"
         data-placeholder="Select option"
-        data-allow-clear="true"
       >
         <option></option>
         <option selected value="1">Approved</option>
@@ -31,7 +31,7 @@
       <label
         class="form-check form-check-sm form-check-custom form-check-solid me-5"
       >
-        <input class="form-check-input" type="checkbox" value="1" />
+        <input class="form-check-input" type="checkbox" value="1"/>
         <span class="form-check-label">Author</span>
       </label>
 
@@ -40,9 +40,9 @@
       >
         <input
           class="form-check-input"
+          defaultChecked="{true}"
           type="checkbox"
           value="2"
-          defaultChecked="{true}"
         />
         <span class="form-check-label">Customer</span>
       </label>
@@ -59,10 +59,10 @@
     >
       <input
         class="form-check-input"
+        defaultChecked="{true}"
+        name="notifications"
         type="checkbox"
         value=""
-        name="notifications"
-        defaultChecked="{true}"
       />
       <label class="form-check-label">Enabled</label>
     </div>
@@ -70,17 +70,17 @@
 
   <div class="d-flex justify-content-end">
     <button
-      type="reset"
       class="btn btn-sm btn-light btn-active-light-primary me-2"
       data-kt-menu-dismiss="true"
+      type="reset"
     >
       Reset
     </button>
 
     <button
-      type="submit"
       class="btn btn-sm btn-primary"
       data-kt-menu-dismiss="true"
+      type="submit"
     >
       Apply
     </button>

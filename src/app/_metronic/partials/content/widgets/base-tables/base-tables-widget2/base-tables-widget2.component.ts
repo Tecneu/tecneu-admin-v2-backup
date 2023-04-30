@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-base-tables-widget2',
@@ -9,7 +9,8 @@ export class BaseTablesWidget2Component implements OnInit {
   currentTab: string;
   @Input() cssClass: string;
 
-  constructor() {}
+  constructor() {
+  }
 
   ngOnInit(): void {
     this.currentTab = this.TABS[2];

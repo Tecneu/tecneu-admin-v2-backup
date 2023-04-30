@@ -1,18 +1,13 @@
-import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
-import { BehaviorSubject } from 'rxjs';
+import {Injectable} from '@angular/core';
+import {environment} from 'src/environments/environment';
+import {BehaviorSubject} from 'rxjs';
 import * as objectPath from 'object-path';
-import {
-  LayoutType,
-  ILayout,
-  CSSClassesType,
-  HTMLAttributesType,
-} from './configs/config';
-import { DarkHeaderConfig } from './configs/dark-header.config';
-import { DarkSidebarConfig } from './configs/dark-sidebar.config';
-import { LightHeaderConfig } from './configs/light-header.config';
-import { LightSidebarConfig } from './configs/light-sidebar.config';
-import { ActivatedRoute } from '@angular/router';
+import {CSSClassesType, HTMLAttributesType, ILayout, LayoutType,} from './configs/config';
+import {DarkHeaderConfig} from './configs/dark-header.config';
+import {DarkSidebarConfig} from './configs/dark-sidebar.config';
+import {LightHeaderConfig} from './configs/light-header.config';
+import {LightSidebarConfig} from './configs/light-sidebar.config';
+import {ActivatedRoute} from '@angular/router';
 
 const LAYOUT_CONFIG_LOCAL_STORAGE_KEY = `${environment.appVersion}-layoutConfig`;
 const BASE_LAYOUT_TYPE_LOCAL_STORAGE_KEY = `${environment.appVersion}-baseLayoutType`;
@@ -70,7 +65,8 @@ export class LayoutService {
   private attrs: BehaviorSubject<HTMLAttributesType> =
     new BehaviorSubject<HTMLAttributesType>(getEmptyHTMLAttributes());
 
-  constructor(private activatedRoute: ActivatedRoute) {}
+  constructor(private activatedRoute: ActivatedRoute) {
+  }
 
   getProp(path: string, config?: ILayout): string | boolean | undefined | Object {
     if (config) {
@@ -81,7 +77,7 @@ export class LayoutService {
   }
 
   setCSSClass(path: string, classesInStr: string) {
-    const updatedCssClasses = { ...this.classes.value };
+    const updatedCssClasses = {...this.classes.value};
     const cssClasses = updatedCssClasses[path];
     if (!cssClasses) {
       updatedCssClasses[path] = [];
@@ -118,7 +114,7 @@ export class LayoutService {
   }
 
   setHTMLAttribute(path: string, attrKey: string, attrValue: string | boolean) {
-    const updatedAttributes = { ...this.attrs.value };
+    const updatedAttributes = {...this.attrs.value};
     const attributesObj = updatedAttributes[path];
     if (!attributesObj) {
       updatedAttributes[path] = {};

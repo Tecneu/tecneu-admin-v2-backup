@@ -1,7 +1,7 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { ILayout, LayoutType } from '../../core/configs/config';
-import { LayoutService } from '../../core/layout.service';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Subscription} from 'rxjs';
+import {ILayout} from '../../core/configs/config';
+import {LayoutService} from '../../core/layout.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -9,8 +9,6 @@ import { LayoutService } from '../../core/layout.service';
   styleUrls: ['./sidebar.component.scss'],
 })
 export class SidebarComponent implements OnInit, OnDestroy {
-  private unsubscribe: Subscription[] = [];
-
   // public props
   appSidebarDisplay: boolean;
   appSidebarDefaultFixedDesktop: boolean;
@@ -24,21 +22,20 @@ export class SidebarComponent implements OnInit, OnDestroy {
   appSidebarDefaultCollapseDesktopDefault: boolean;
   appSidebarDefaultCollapseMobileEnabled: boolean;
   appSidebarDefaultCollapseMobileDefault: boolean;
-
   appSidebarDefaultPushHeader: boolean;
   appSidebarDefaultPushToolbar: boolean;
   appSidebarDefaultPushFooter: boolean;
-
   appSidebarDefaultStacked: boolean;
-
   // logo
   appSidebarDefaultMinimizeDefault: boolean;
   toggleButtonClass: string;
   toggleEnabled: boolean;
   toggleType: string;
   toggleState: string;
+  private unsubscribe: Subscription[] = [];
 
-  constructor(private layout: LayoutService) {}
+  constructor(private layout: LayoutService) {
+  }
 
   ngOnInit(): void {
     const subscr = this.layout.layoutConfigSubject

@@ -1,14 +1,14 @@
 <ng-container *ngIf="title$ | async as title">
   <!-- begin::Title -->
-  <h1 class="page-heading d-flex text-dark fw-bold fs-3 my-0"
-    [ngClass]="{'flex-column justify-content-center': appPageTitleDirection, 'align-items-center': !appPageTitleDirection}">
+  <h1 [ngClass]="{'flex-column justify-content-center': appPageTitleDirection, 'align-items-center': !appPageTitleDirection}"
+      class="page-heading d-flex text-dark fw-bold fs-3 my-0">
     {{ title }}
     <ng-container *ngIf="appPageTitleDescription">
       <ng-container *ngIf="description$ | async as description">
 
 
         <!--begin::Description-->
-        <span class="page-desc text-muted fs-7 fw-semibold" [ngClass]="{'pt-2': appPageTitleDirection === 'column'}">
+        <span [ngClass]="{'pt-2': appPageTitleDirection === 'column'}" class="page-desc text-muted fs-7 fw-semibold">
           <ng-container *ngIf="appPageTitleDirection === 'row'">
             <!--begin::Separator-->
             <span class="h-20px border-1 border-gray-300 border-start ms-3 mx-2"></span>
@@ -33,13 +33,13 @@
         </ng-container>
         <!--begin::Breadcrumb-->
 
-        <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0"
-          [ngClass]="{'pt-1': appPageTitleDirection === 'column'}">
-          <li *ngFor="let bc of _bc" class="breadcrumb-item"
-            [ngClass]="!bc.isSeparator && bc.isActive ? 'text-dark' : ''"
-            [ngClass]="!bc.isSeparator && !bc.isActive ? 'text-muted' : ''">
+        <ul [ngClass]="{'pt-1': appPageTitleDirection === 'column'}"
+            class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0">
+          <li *ngFor="let bc of _bc" [ngClass]="!bc.isSeparator && bc.isActive ? 'text-dark' : ''"
+              [ngClass]="!bc.isSeparator && !bc.isActive ? 'text-muted' : ''"
+              class="breadcrumb-item">
             <ng-container *ngIf="!bc.isSeparator">
-              <a class="text-muted text-hover-primary" [routerLink]="bc.path">
+              <a [routerLink]="bc.path" class="text-muted text-hover-primary">
                 {{ bc.title }}
               </a>
             </ng-container>

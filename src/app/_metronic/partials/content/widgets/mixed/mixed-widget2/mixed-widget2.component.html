@@ -1,19 +1,19 @@
-<div class="card-header border-0 py-5" [ngClass]="'bg-' + chartColor">
+<div [ngClass]="'bg-' + chartColor" class="card-header border-0 py-5">
   <h3 class="card-title fw-bolder text-white">Sales Statistics</h3>
   <div class="card-toolbar">
     <!-- begin::Menu -->
     <button
-      type="button"
       class="
         btn btn-sm btn-icon btn-color-white btn-active-white btn-active-color-
         border-0
         me-n3
       "
-      data-kt-menu-trigger="click"
-      data-kt-menu-placement="bottom-end"
       data-kt-menu-flip="top-end"
+      data-kt-menu-placement="bottom-end"
+      data-kt-menu-trigger="click"
+      type="button"
     >
-      <app-keenicon name="category" class="fs-2"></app-keenicon>
+      <app-keenicon class="fs-2" name="category"></app-keenicon>
     </button>
     <app-dropdown-menu1></app-dropdown-menu1>
     <!-- end::Menu -->
@@ -25,23 +25,23 @@
   <!-- begin::Chart -->
   <div
     #chartRef
-    class="mixed-widget-2-chart card-rounded-bottom"
     [ngClass]="'bg-' + chartColor"
+    class="mixed-widget-2-chart card-rounded-bottom"
   >
     <apx-chart
-      [series]="chartOptions.series"
       [chart]="chartOptions.chart"
-      [xaxis]="chartOptions.xaxis"
-      [yaxis]="chartOptions.yaxis"
-      [dataLabels]="chartOptions.dataLabels"
-      [stroke]="chartOptions.stroke"
-      [legend]="chartOptions.legend"
-      [fill]="chartOptions.fill"
-      [states]="chartOptions.states"
-      [tooltip]="chartOptions.tooltip"
       [colors]="chartOptions.colors"
+      [dataLabels]="chartOptions.dataLabels"
+      [fill]="chartOptions.fill"
+      [legend]="chartOptions.legend"
       [markers]="chartOptions.markers"
       [plotOptions]="chartOptions.plotOptions"
+      [series]="chartOptions.series"
+      [states]="chartOptions.states"
+      [stroke]="chartOptions.stroke"
+      [tooltip]="chartOptions.tooltip"
+      [xaxis]="chartOptions.xaxis"
+      [yaxis]="chartOptions.yaxis"
     ></apx-chart>
   </div>
   <!-- end::Chart -->
@@ -51,14 +51,14 @@
     <div class="row g-0">
       <!-- begin::Col -->
       <div class="col bg-light-warning px-6 py-8 rounded-2 me-7 mb-7">
-        <app-keenicon name="chart-simple" class="fs-3x text-warning d-block my-2"></app-keenicon>
-        <a href="#" class="text-warning fw-bold fs-6"> Weekly Sales </a>
+        <app-keenicon class="fs-3x text-warning d-block my-2" name="chart-simple"></app-keenicon>
+        <a class="text-warning fw-bold fs-6" href="#"> Weekly Sales </a>
       </div>
       <!-- end::Col -->
       <!-- begin::Col -->
       <div class="col bg-light-primary px-6 py-8 rounded-2 mb-7">
-        <app-keenicon name="briefcase" class="fs-3x text-primary d-block my-2"></app-keenicon>
-        <a href="#" class="text-primary fw-bold fs-6"> New Projects </a>
+        <app-keenicon class="fs-3x text-primary d-block my-2" name="briefcase"></app-keenicon>
+        <a class="text-primary fw-bold fs-6" href="#"> New Projects </a>
       </div>
       <!-- end::Col -->
     </div>
@@ -67,14 +67,14 @@
     <div class="row g-0">
       <!-- begin::Col -->
       <div class="col bg-light-danger px-6 py-8 rounded-2 me-7">
-        <app-keenicon name="abstract-26" class="fs-3x text-danger d-block my-2"></app-keenicon>
-        <a href="#" class="text-danger fw-bold fs-6 mt-2"> Item Orders </a>
+        <app-keenicon class="fs-3x text-danger d-block my-2" name="abstract-26"></app-keenicon>
+        <a class="text-danger fw-bold fs-6 mt-2" href="#"> Item Orders </a>
       </div>
       <!-- end::Col -->
       <!-- begin::Col -->
       <div class="col bg-light-success px-6 py-8 rounded-2">
-        <app-keenicon name="sms" class="fs-3x text-success d-block my-2"></app-keenicon>
-        <a href="#" class="text-success fw-bold fs-6 mt-2"> Bug Reports </a>
+        <app-keenicon class="fs-3x text-success d-block my-2" name="sms"></app-keenicon>
+        <a class="text-success fw-bold fs-6 mt-2" href="#"> Bug Reports </a>
       </div>
       <!-- end::Col -->
     </div>

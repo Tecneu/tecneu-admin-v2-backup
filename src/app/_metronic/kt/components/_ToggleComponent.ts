@@ -48,6 +48,91 @@ class ToggleComponent {
     DataUtil.set(this.element, 'toggle', this);
   }
 
+  // Static methods
+  public static getInstance = (el: HTMLElement) => {
+    const toggleElement = DataUtil.get(el, 'toggle');
+    if (toggleElement) {
+      return toggleElement;
+    }
+
+    return null;
+  };
+
+  public static createInstances = (selector: string) => {
+    const elements = document.body.querySelectorAll<HTMLElement>(selector);
+    elements.forEach((el) => {
+      let toggleObj = ToggleComponent.getInstance(el);
+      if (!toggleObj) {
+        toggleObj = new ToggleComponent(el, defaultToggleOptions);
+
+        // Add a class to prevent sidebar hover effect after toggle click
+        // @ts-ignore
+        toggleObj.on("kt.toggle.change", function () {
+          // Set animation state
+          el.closest('#kt_app_sidebar')?.classList.add("animating");
+
+          // Wait till animation finishes
+          setTimeout(function () {
+            // Remove animation state
+            el.closest('#kt_app_sidebar')?.classList.remove("animating");
+          }, 300);
+        });
+      }
+    });
+  };
+
+  public static reinitialization = () => {
+    ToggleComponent.createInstances('[data-kt-toggle]');
+  };
+
+  public static bootstrap = () => {
+    ToggleComponent.createInstances('[data-kt-toggle]');
+  };
+
+  // Plugin API
+  public toggle = () => {
+    return this._toggle();
+  };
+
+  ///////////////////////
+  // ** Public API  ** //
+  ///////////////////////
+
+  // Plugin API
+
+  public enable = () => {
+    return this._enable();
+  };
+
+  public disable = () => {
+    return this._disable();
+  };
+
+  public isEnabled = () => {
+    return this._isEnabled();
+  };
+
+  public goElement = () => {
+    return this.element;
+  };
+
+  // Event API
+  public on = (name: string, handler: Function) => {
+    return EventHandlerUtil.on(this.element, name, handler);
+  };
+
+  public one = (name: string, handler: Function) => {
+    return EventHandlerUtil.one(this.element, name, handler);
+  };
+
+  public off = (name: string, handlerId: string) => {
+    return EventHandlerUtil.off(this.element, name, handlerId);
+  };
+
+  public trigger = (name: string, event?: Event) => {
+    return EventHandlerUtil.trigger(this.element, name, event);
+  };
+
   private _handlers = () => {
     this.element.addEventListener('click', (e: Event) => {
       e.preventDefault();
@@ -128,90 +213,6 @@ class ToggleComponent {
     return (
       String(this.target.getAttribute(this.attribute)).toLowerCase() === 'on'
     );
-  };
-
-  ///////////////////////
-  // ** Public API  ** //
-  ///////////////////////
-
-  // Plugin API
-  // Plugin API
-  public toggle = () => {
-    return this._toggle();
-  };
-
-  public enable = () => {
-    return this._enable();
-  };
-
-  public disable = () => {
-    return this._disable();
-  };
-
-  public isEnabled = () => {
-    return this._isEnabled();
-  };
-
-  public goElement = () => {
-    return this.element;
-  };
-
-  // Event API
-  public on = (name: string, handler: Function) => {
-    return EventHandlerUtil.on(this.element, name, handler);
-  };
-
-  public one = (name: string, handler: Function) => {
-    return EventHandlerUtil.one(this.element, name, handler);
-  };
-
-  public off = (name: string, handlerId: string) => {
-    return EventHandlerUtil.off(this.element, name, handlerId);
-  };
-
-  public trigger = (name: string, event?: Event) => {
-    return EventHandlerUtil.trigger(this.element, name, event);
-  };
-
-  // Static methods
-  public static getInstance = (el: HTMLElement) => {
-    const toggleElement = DataUtil.get(el, 'toggle');
-    if (toggleElement) {
-      return toggleElement;
-    }
-
-    return null;
-  };
-
-  public static createInstances = (selector: string) => {
-    const elements = document.body.querySelectorAll<HTMLElement>(selector);
-    elements.forEach((el) => {
-      let toggleObj = ToggleComponent.getInstance(el);
-      if (!toggleObj) {
-        toggleObj = new ToggleComponent(el, defaultToggleOptions);
-
-        // Add a class to prevent sidebar hover effect after toggle click
-        // @ts-ignore
-        toggleObj.on("kt.toggle.change", function () {
-          // Set animation state
-          el.closest('#kt_app_sidebar')?.classList.add("animating");
-
-          // Wait till animation finishes
-          setTimeout(function () {
-            // Remove animation state
-            el.closest('#kt_app_sidebar')?.classList.remove("animating");
-          }, 300);
-        });
-      }
-    });
-  };
-
-  public static reinitialization = () => {
-    ToggleComponent.createInstances('[data-kt-toggle]');
-  };
-
-  public static bootstrap = () => {
-    ToggleComponent.createInstances('[data-kt-toggle]');
   };
 }
 

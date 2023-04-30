@@ -1,4 +1,4 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import {Component, HostBinding, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-private-chat',
@@ -8,7 +8,9 @@ import { Component, HostBinding, OnInit } from '@angular/core';
 export class PrivateChatComponent implements OnInit {
   @HostBinding('class') class = 'd-flex flex-column flex-lg-row';
 
-  constructor() {}
+  constructor() {
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 }

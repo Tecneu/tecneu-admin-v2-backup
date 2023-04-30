@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { OverviewComponent } from './overview/overview.component';
-import { AccountComponent } from './account.component';
-import { SettingsComponent } from './settings/settings.component';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {OverviewComponent} from './overview/overview.component';
+import {AccountComponent} from './account.component';
+import {SettingsComponent} from './settings/settings.component';
 
 const routes: Routes = [
   {
@@ -17,8 +17,8 @@ const routes: Routes = [
         path: 'settings',
         component: SettingsComponent,
       },
-      { path: '', redirectTo: 'overview', pathMatch: 'full' },
-      { path: '**', redirectTo: 'overview', pathMatch: 'full' },
+      {path: '', redirectTo: 'overview', pathMatch: 'full'},
+      {path: '**', redirectTo: 'overview', pathMatch: 'full'},
     ],
   },
 ];
@@ -27,4 +27,5 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class AccountRoutingModule {}
+export class AccountRoutingModule {
+}

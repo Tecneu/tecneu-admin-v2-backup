@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-lists-widget26',
@@ -8,13 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class ListsWidget26Component implements OnInit {
   rows: Array<{ description: string }>;
 
-  constructor() {}
+  constructor() {
+  }
 
   ngOnInit(): void {
     this.rows = [
-      { description: 'Avg. Client Rating' },
-      { description: 'Instagram Followers' },
-      { description: 'Google Ads CPC' },
+      {description: 'Avg. Client Rating'},
+      {description: 'Instagram Followers'},
+      {description: 'Google Ads CPC'},
     ];
   }
 }

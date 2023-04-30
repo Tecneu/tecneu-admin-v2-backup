@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import {Injectable} from '@angular/core';
+import {BehaviorSubject} from 'rxjs';
 
 export interface PageLink {
   title: string;
@@ -25,7 +25,8 @@ export class PageInfoService {
     Array<PageLink>
   >([]);
 
-  constructor() {}
+  constructor() {
+  }
 
   public setTitle(_title: string) {
     this.title.next(_title);

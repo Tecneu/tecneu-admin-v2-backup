@@ -1,10 +1,10 @@
-import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Subscription, Observable } from 'rxjs';
-import { first } from 'rxjs/operators';
-import { UserModel } from '../../models/user.model';
-import { AuthService } from '../../services/auth.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Observable, Subscription} from 'rxjs';
+import {first} from 'rxjs/operators';
+import {UserModel} from '../../models/user.model';
+import {AuthService} from '../../services/auth.service';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -38,16 +38,16 @@ export class LoginComponent implements OnInit, OnDestroy {
     }
   }
 
+  // convenience getter for easy access to form fields
+  get f() {
+    return this.loginForm.controls;
+  }
+
   ngOnInit(): void {
     this.initForm();
     // get return url from route parameters or default to '/'
     this.returnUrl =
       this.route.snapshot.queryParams['returnUrl'.toString()] || '/';
-  }
-
-  // convenience getter for easy access to form fields
-  get f() {
-    return this.loginForm.controls;
   }
 
   initForm() {

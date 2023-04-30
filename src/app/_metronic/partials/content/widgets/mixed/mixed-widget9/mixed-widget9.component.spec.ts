@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { MixedWidget9Component } from './mixed-widget9.component';
+import {MixedWidget9Component} from './mixed-widget9.component';
 
 describe('MixedWidget9Component', () => {
   let component: MixedWidget9Component;
@@ -8,9 +8,9 @@ describe('MixedWidget9Component', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MixedWidget9Component ]
+      declarations: [MixedWidget9Component]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

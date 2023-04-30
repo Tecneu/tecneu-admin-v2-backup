@@ -1,13 +1,5 @@
-import {
-  ChangeDetectorRef,
-  Component,
-  ElementRef,
-  Input,
-  OnInit,
-  ViewChild,
-} from '@angular/core';
-import * as ApexCharts from 'apexcharts';
-import { getCSSVariableValue } from '../../../../../../kt/_utils';
+import {ChangeDetectorRef, Component, ElementRef, Input, OnInit, ViewChild,} from '@angular/core';
+import {getCSSVariableValue} from '../../../../../../kt/_utils';
 
 @Component({
   selector: 'app-new-charts-widget8',
@@ -26,7 +18,8 @@ export class NewChartsWidget8Component implements OnInit {
   chart2Options: any = {};
   hadDelay: boolean = false;
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  constructor(private cdr: ChangeDetectorRef) {
+  }
 
   ngOnInit(): void {
     this.setupCharts();

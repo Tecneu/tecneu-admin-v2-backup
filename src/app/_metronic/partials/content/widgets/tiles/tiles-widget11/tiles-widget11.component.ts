@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-tiles-widget11',
@@ -10,7 +10,8 @@ export class TilesWidget11Component implements OnInit {
   @Input() baseColor = 'success';
   textInverseCSSClass = '';
 
-  constructor() {}
+  constructor() {
+  }
 
   ngOnInit() {
     this.cssClass = `bg-${this.baseColor} ${this.cssClass}`;

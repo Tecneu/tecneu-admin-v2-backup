@@ -1,14 +1,16 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { ILayout, LayoutType } from './configs/config';
-import { LayoutService } from './layout.service';
+import {Injectable} from '@angular/core';
+import {BehaviorSubject} from 'rxjs';
+import {ILayout, LayoutType} from './configs/config';
+import {LayoutService} from './layout.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LayoutInitService {
   private config = new BehaviorSubject<ILayout | null>(null);
-  constructor(private layout: LayoutService) {}
+
+  constructor(private layout: LayoutService) {
+  }
 
   reInitProps(layoutType?: LayoutType) {
     this.layout.reInitProps();
@@ -17,13 +19,13 @@ export class LayoutInitService {
       : this.layout.getBaseLayoutTypeFromRouteOrLocalStorage();
     const config = this.layout.getLayoutConfig(currentLayoutType);
     this.layout.currentLayoutTypeSubject.next(currentLayoutType)
-    this.config.next({ ...config });
+    this.config.next({...config});
 
     // init base layout
     this.initLayoutSettings(currentLayoutType, config);
     this.initToolbarSettings(config);
     this.initWidthSettings(config);
-    this.layout.layoutConfigSubject.next({ ...this.config.value });
+    this.layout.layoutConfigSubject.next({...this.config.value});
   }
 
   setBaseLayoutType(layoutType: LayoutType) {
@@ -73,7 +75,7 @@ export class LayoutInitService {
           ...content,
           ...footer,
         };
-        this.config.next({ ...config, ...updatedApp });
+        this.config.next({...config, ...updatedApp});
       }
     }
   }
@@ -84,8 +86,8 @@ export class LayoutInitService {
       const toolbar = config.app?.toolbar;
       if (toolbar) {
         toolbar.display = false;
-        const updatedApp = { ...config.app, ...toolbar };
-        this.config.next({ ...config, ...updatedApp });
+        const updatedApp = {...config.app, ...toolbar};
+        this.config.next({...config, ...updatedApp});
       }
       return;
     }
@@ -94,8 +96,8 @@ export class LayoutInitService {
     if (pageTitle) {
       pageTitle.description = false;
       pageTitle.breadCrumb = true;
-      const updatedApp = { ...config.app, ...pageTitle };
-      this.config.next({ ...config, ...updatedApp });
+      const updatedApp = {...config.app, ...pageTitle};
+      this.config.next({...config, ...updatedApp});
     }
   }
 
@@ -128,6 +130,6 @@ export class LayoutInitService {
       ...content,
       ...footer,
     };
-    this.config.next({ ...this.config.value, ...updatedApp });
+    this.config.next({...this.config.value, ...updatedApp});
   }
 }

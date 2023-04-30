@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { ThemeModeComponent } from '../../../kt/layout';
+import {Injectable} from '@angular/core';
+import {BehaviorSubject} from 'rxjs';
+import {ThemeModeComponent} from '../../../kt/layout';
 
 export type ThemeModeType = 'dark' | 'light' | 'system';
 const systemMode = ThemeModeComponent.getSystemMode() as 'light' | 'dark';
@@ -50,7 +50,8 @@ export class ThemeModeService {
       getThemeModeFromLocalStorage(themeMenuModeLSKey)
     );
 
-  constructor() {}
+  constructor() {
+  }
 
   public updateMode(_mode: ThemeModeType) {
     const updatedMode = _mode === 'system' ? systemMode : _mode;

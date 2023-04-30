@@ -1,8 +1,8 @@
 <div class="card-body my-3">
   <a
-    href="#"
-    class="card-title fw-bolder fs-5 mb-3 d-block"
     [ngClass]="'text-' + color"
+    class="card-title fw-bolder fs-5 mb-3 d-block"
+    href="#"
   >
     {{ description }}
   </a>
@@ -13,11 +13,11 @@
     <span class="fw-bold text-muted fs-7">{{ title }}</span>
   </div>
 
-  <div class="`progress h-7px bg-opacity-50 mt-7" [ngClass]="'bg-' + color">
+  <div [ngClass]="'bg-' + color" class="`progress h-7px bg-opacity-50 mt-7">
     <div
-      class="progress-bar"
       [ngClass]="' bg-' + color"
       [style.width]="progress"
+      class="progress-bar"
       role="progressbar"
     ></div>
   </div>

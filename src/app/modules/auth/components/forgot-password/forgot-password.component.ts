@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Observable, Subscription } from 'rxjs';
-import { AuthService } from '../../services/auth.service';
-import { first } from 'rxjs/operators';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Observable, Subscription} from 'rxjs';
+import {AuthService} from '../../services/auth.service';
+import {first} from 'rxjs/operators';
 
 enum ErrorStates {
   NotSubmitted,
@@ -27,13 +27,13 @@ export class ForgotPasswordComponent implements OnInit {
     this.isLoading$ = this.authService.isLoading$;
   }
 
-  ngOnInit(): void {
-    this.initForm();
-  }
-
   // convenience getter for easy access to form fields
   get f() {
     return this.forgotPasswordForm.controls;
+  }
+
+  ngOnInit(): void {
+    this.initForm();
   }
 
   initForm() {

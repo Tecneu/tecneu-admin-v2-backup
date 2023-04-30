@@ -15,26 +15,26 @@
       <span class="text-gray-400 fw-bold">Oct 8 - Oct 26 2021</span>
     </div>
 
-    <div class="fw-bolder fs-3" [ngClass]="'fs-3 text-' + chartColor">
+    <div [ngClass]="'fs-3 text-' + chartColor" class="fw-bolder fs-3">
       $15,300
     </div>
   </div>
 
-  <div #chartRef class="mixed-widget-10-chart" [style.height]="chartHeight">
+  <div #chartRef [style.height]="chartHeight" class="mixed-widget-10-chart">
     <apx-chart
-      [series]="chartOptions.series"
       [chart]="chartOptions.chart"
-      [xaxis]="chartOptions.xaxis"
-      [yaxis]="chartOptions.yaxis"
-      [dataLabels]="chartOptions.dataLabels"
-      [stroke]="chartOptions.stroke"
-      [legend]="chartOptions.legend"
-      [fill]="chartOptions.fill"
-      [states]="chartOptions.states"
-      [tooltip]="chartOptions.tooltip"
       [colors]="chartOptions.colors"
+      [dataLabels]="chartOptions.dataLabels"
+      [fill]="chartOptions.fill"
+      [legend]="chartOptions.legend"
       [markers]="chartOptions.markers"
       [plotOptions]="chartOptions.plotOptions"
+      [series]="chartOptions.series"
+      [states]="chartOptions.states"
+      [stroke]="chartOptions.stroke"
+      [tooltip]="chartOptions.tooltip"
+      [xaxis]="chartOptions.xaxis"
+      [yaxis]="chartOptions.yaxis"
     ></apx-chart>
   </div>
 </div>

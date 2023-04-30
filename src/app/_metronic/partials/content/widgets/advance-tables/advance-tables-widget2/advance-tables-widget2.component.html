@@ -4,45 +4,45 @@
     <h3 class="card-title align-items-start flex-column">
       <span class="card-label font-weight-bolder text-dark">New Arrivals</span>
       <span class="text-muted mt-3 font-weight-bold font-size-sm"
-        >More than 400+ new members</span
+      >More than 400+ new members</span
       >
     </h3>
     <div class="card-toolbar">
       <ul class="nav nav-pills nav-pills-sm nav-dark-75">
         <li
-          class="nav-item"
           (click)="setCurrentTab('Month')"
           [style.cursor]="'pointer'"
+          class="nav-item"
         >
           <a
-            class="nav-link py-2 px-4"
             [class.active]="currentTab === 'Month'"
+            class="nav-link py-2 px-4"
             data-toggle="tab"
-            >Month</a
+          >Month</a
           >
         </li>
         <li
-          class="nav-item"
           (click)="setCurrentTab('Week')"
           [style.cursor]="'pointer'"
+          class="nav-item"
         >
           <a
-            class="nav-link py-2 px-4"
             [class.active]="currentTab === 'Week'"
+            class="nav-link py-2 px-4"
             data-toggle="tab"
-            >Week</a
+          >Week</a
           >
         </li>
         <li
-          class="nav-item"
           (click)="setCurrentTab('Day')"
           [style.cursor]="'pointer'"
+          class="nav-item"
         >
           <a
-            class="nav-link py-2 px-4"
             [class.active]="currentTab === 'Day'"
+            class="nav-link py-2 px-4"
             data-toggle="tab"
-            >Day</a
+          >Day</a
           >
         </li>
       </ul>
@@ -54,301 +54,301 @@
     <div class="table-responsive">
       <table class="table table-borderless table-vertical-center">
         <thead>
-          <tr>
-            <th class="p-0" [style.min-width]="'50px'"></th>
-            <th class="p-0" [style.min-width]="'200px'"></th>
-            <th class="p-0" [style.min-width]="'100px'"></th>
-            <th class="p-0" [style.min-width]="'125px'"></th>
-            <th class="p-0" [style.min-width]="'110px'"></th>
-            <th class="p-0" [style.min-width]="'150px'"></th>
-          </tr>
+        <tr>
+          <th [style.min-width]="'50px'" class="p-0"></th>
+          <th [style.min-width]="'200px'" class="p-0"></th>
+          <th [style.min-width]="'100px'" class="p-0"></th>
+          <th [style.min-width]="'125px'" class="p-0"></th>
+          <th [style.min-width]="'110px'" class="p-0"></th>
+          <th [style.min-width]="'150px'" class="p-0"></th>
+        </tr>
         </thead>
         <tbody>
-          <tr>
-            <td class="pl-0 py-4">
-              <div class="symbol symbol-50 symbol-light mr-1">
+        <tr>
+          <td class="pl-0 py-4">
+            <div class="symbol symbol-50 symbol-light mr-1">
                 <span class="symbol-label">
                   <img
                     alt=""
-                    src="./assets/media/svg/brand-logos/plurk.svg"
                     class="h-50 align-self-center"
+                    src="./assets/media/svg/brand-logos/plurk.svg"
                   />
                 </span>
-              </div>
-            </td>
-            <td class="pl-0">
+            </div>
+          </td>
+          <td class="pl-0">
+            <a
+              class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg cursor-pointer"
+            >Sant Outstanding</a
+            >
+            <div>
+              <span class="font-weight-bolder">Correo electrónico:</span>&nbsp;
               <a
-                class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg cursor-pointer"
-                >Sant Outstanding</a
+                class="text-muted font-weight-bold text-hover-primary cursor-pointer"
+              >bprow@bnc.cc</a
               >
-              <div>
-                <span class="font-weight-bolder">Correo electrónico:</span>&nbsp;
-                <a
-                  class="text-muted font-weight-bold text-hover-primary cursor-pointer"
-                  >bprow@bnc.cc</a
-                >
-              </div>
-            </td>
-            <td class="text-right">
+            </div>
+          </td>
+          <td class="text-right">
               <span
                 class="text-dark-75 font-weight-bolder d-block font-size-lg"
               >
                 $2,000,000
               </span>
-              <span class="text-muted font-weight-bold">
+            <span class="text-muted font-weight-bold">
                 Paid
               </span>
-            </td>
-            <td class="text-right">
+          </td>
+          <td class="text-right">
               <span class="text-muted font-weight-500">
                 ReactJs, HTML
               </span>
-            </td>
-            <td class="text-right">
+          </td>
+          <td class="text-right">
               <span class="label label-lg label-light-primary label-inline"
-                >Approved</span
+              >Approved</span
               >
-            </td>
-            <td class="text-right pr-0">
-              <a class="btn btn-icon btn-light btn-sm cursor-pointer">
-                <app-keenicon name="switch" class="fs-md text-primary"></app-keenicon>
-              </a>
-              <a class="btn btn-icon btn-light btn-sm mx-3 cursor-pointer">
-                <app-keenicon name="pencil" class="fs-md text-primary"></app-keenicon>
-              </a>
-              <a class="btn btn-icon btn-light btn-sm cursor-pointer">
-                <app-keenicon name="trash" class=" svg-icon-md text-primary"></app-keenicon>
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td class="pl-0 py-4">
-              <div class="symbol symbol-50 symbol-light">
+          </td>
+          <td class="text-right pr-0">
+            <a class="btn btn-icon btn-light btn-sm cursor-pointer">
+              <app-keenicon class="fs-md text-primary" name="switch"></app-keenicon>
+            </a>
+            <a class="btn btn-icon btn-light btn-sm mx-3 cursor-pointer">
+              <app-keenicon class="fs-md text-primary" name="pencil"></app-keenicon>
+            </a>
+            <a class="btn btn-icon btn-light btn-sm cursor-pointer">
+              <app-keenicon class=" svg-icon-md text-primary" name="trash"></app-keenicon>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="pl-0 py-4">
+            <div class="symbol symbol-50 symbol-light">
                 <span class="symbol-label">
                   <img
                     alt=""
-                    src="./assets/media/svg/brand-logos/telegram.svg"
                     class="h-50 align-self-center"
+                    src="./assets/media/svg/brand-logos/telegram.svg"
                   />
                 </span>
-              </div>
-            </td>
-            <td class="pl-0">
+            </div>
+          </td>
+          <td class="pl-0">
+            <a
+              class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg cursor-pointer"
+            >Application Development</a
+            >
+            <div>
+              <span class="font-weight-bolder">Correo electrónico:</span>&nbsp;
               <a
-                class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg cursor-pointer"
-                >Application Development</a
+                class="text-muted font-weight-bold text-hover-primary cursor-pointer"
+              >app@dev.com</a
               >
-              <div>
-                <span class="font-weight-bolder">Correo electrónico:</span>&nbsp;
-                <a
-                  class="text-muted font-weight-bold text-hover-primary cursor-pointer"
-                  >app@dev.com</a
-                >
-              </div>
-            </td>
-            <td class="text-right">
+            </div>
+          </td>
+          <td class="text-right">
               <span
                 class="text-dark-75 font-weight-bolder d-block font-size-lg"
               >
                 $4,600,000
               </span>
-              <span class="text-muted font-weight-bold">
+            <span class="text-muted font-weight-bold">
                 Paid
               </span>
-            </td>
-            <td class="text-right">
+          </td>
+          <td class="text-right">
               <span class="text-muted font-weight-500">
                 Python, MySQL
               </span>
-            </td>
-            <td class="text-right">
+          </td>
+          <td class="text-right">
               <span class="label label-lg label-light-warning label-inline"
-                >In Progress</span
+              >In Progress</span
               >
-            </td>
-            <td class="text-right pr-0">
-              <a class="btn btn-icon btn-light btn-sm cursor-pointer">
-                <app-keenicon name="switch" class="fs-md text-primary"></app-keenicon>
-              </a>
-              <a class="btn btn-icon btn-light btn-sm mx-3 cursor-pointer">
-                <app-keenicon name="pencil" class="fs-md text-primary"></app-keenicon>
-              </a>
-              <a class="btn btn-icon btn-light btn-sm cursor-pointer">
-                <app-keenicon name="trash" class=" svg-icon-md text-primary"></app-keenicon>
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td class="pl-0 py-4">
-              <div class="symbol symbol-50 symbol-light">
+          </td>
+          <td class="text-right pr-0">
+            <a class="btn btn-icon btn-light btn-sm cursor-pointer">
+              <app-keenicon class="fs-md text-primary" name="switch"></app-keenicon>
+            </a>
+            <a class="btn btn-icon btn-light btn-sm mx-3 cursor-pointer">
+              <app-keenicon class="fs-md text-primary" name="pencil"></app-keenicon>
+            </a>
+            <a class="btn btn-icon btn-light btn-sm cursor-pointer">
+              <app-keenicon class=" svg-icon-md text-primary" name="trash"></app-keenicon>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="pl-0 py-4">
+            <div class="symbol symbol-50 symbol-light">
                 <span class="symbol-label">
                   <img
                     alt=""
-                    src="./assets/media/svg/misc/puzzle.svg"
                     class="h-50 align-self-center"
+                    src="./assets/media/svg/misc/puzzle.svg"
                   />
                 </span>
-              </div>
-            </td>
-            <td class="pl-0">
+            </div>
+          </td>
+          <td class="pl-0">
+            <a
+              class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg cursor-pointer"
+            >Payrol Application</a
+            >
+            <div>
+              <span class="font-weight-bolder">Correo electrónico:</span>&nbsp;
               <a
-                class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg cursor-pointer"
-                >Payrol Application</a
+                class="text-muted font-weight-bold text-hover-primary cursor-pointer"
+              >company@dev.com</a
               >
-              <div>
-                <span class="font-weight-bolder">Correo electrónico:</span>&nbsp;
-                <a
-                  class="text-muted font-weight-bold text-hover-primary cursor-pointer"
-                  >company@dev.com</a
-                >
-              </div>
-            </td>
-            <td class="text-right">
+            </div>
+          </td>
+          <td class="text-right">
               <span
                 class="text-dark-75 font-weight-bolder d-block font-size-lg"
               >
                 $560,000
               </span>
-              <span class="text-muted font-weight-bold">
+            <span class="text-muted font-weight-bold">
                 Paid
               </span>
-            </td>
-            <td class="text-right">
+          </td>
+          <td class="text-right">
               <span class="text-muted font-weight-500">
                 Laravel, Metronic
               </span>
-            </td>
-            <td class="text-right">
+          </td>
+          <td class="text-right">
               <span class="label label-lg label-light-success label-inline"
-                >Success</span
+              >Success</span
               >
-            </td>
-            <td class="text-right pr-0">
-              <a class="btn btn-icon btn-light btn-sm cursor-pointer">
-                <app-keenicon name="switch" class="fs-md text-primary"></app-keenicon>
-              </a>
-              <a class="btn btn-icon btn-light btn-sm mx-3 cursor-pointer">
-                <app-keenicon name="pencil" class="fs-md text-primary"></app-keenicon>
-              </a>
-              <a class="btn btn-icon btn-light btn-sm cursor-pointer">
-                <app-keenicon name="trash" class=" svg-icon-md text-primary"></app-keenicon>
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td class="pl-0 py-4">
-              <div class="symbol symbol-50 symbol-light">
+          </td>
+          <td class="text-right pr-0">
+            <a class="btn btn-icon btn-light btn-sm cursor-pointer">
+              <app-keenicon class="fs-md text-primary" name="switch"></app-keenicon>
+            </a>
+            <a class="btn btn-icon btn-light btn-sm mx-3 cursor-pointer">
+              <app-keenicon class="fs-md text-primary" name="pencil"></app-keenicon>
+            </a>
+            <a class="btn btn-icon btn-light btn-sm cursor-pointer">
+              <app-keenicon class=" svg-icon-md text-primary" name="trash"></app-keenicon>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="pl-0 py-4">
+            <div class="symbol symbol-50 symbol-light">
                 <span class="symbol-label">
                   <img
                     alt=""
-                    src="./assets/media/svg/brand-logos/bebo.svg"
                     class="h-50 align-self-center"
+                    src="./assets/media/svg/brand-logos/bebo.svg"
                   />
                 </span>
-              </div>
-            </td>
-            <td class="pl-0">
+            </div>
+          </td>
+          <td class="pl-0">
+            <a
+              class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg cursor-pointer"
+            >HR Management System</a
+            >
+            <div>
+              <span class="font-weight-bolder">Correo electrónico:</span>&nbsp;
               <a
-                class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg cursor-pointer"
-                >HR Management System</a
+                class="text-muted font-weight-bold text-hover-primary cursor-pointer"
+              >hr@demo.com</a
               >
-              <div>
-                <span class="font-weight-bolder">Correo electrónico:</span>&nbsp;
-                <a
-                  class="text-muted font-weight-bold text-hover-primary cursor-pointer"
-                  >hr@demo.com</a
-                >
-              </div>
-            </td>
-            <td class="text-right">
+            </div>
+          </td>
+          <td class="text-right">
               <span
                 class="text-dark-75 font-weight-bolder d-block font-size-lg"
               >
                 $57,000
               </span>
-              <span class="text-muted font-weight-bold">
+            <span class="text-muted font-weight-bold">
                 Paid
               </span>
-            </td>
-            <td class="text-right">
+          </td>
+          <td class="text-right">
               <span class="text-muted font-weight-bold">
                 AngularJS, C#
               </span>
-            </td>
-            <td class="text-right">
+          </td>
+          <td class="text-right">
               <span class="label label-lg label-light-danger label-inline"
-                >Rejected</span
+              >Rejected</span
               >
-            </td>
-            <td class="text-right pr-0">
-              <a class="btn btn-icon btn-light btn-sm cursor-pointer">
-                <app-keenicon name="switch" class="fs-md text-primary"></app-keenicon>
-              </a>
-              <a class="btn btn-icon btn-light btn-sm mx-3 cursor-pointer">
-                <app-keenicon name="pencil" class="fs-md text-primary"></app-keenicon>
-              </a>
-              <a class="btn btn-icon btn-light btn-sm cursor-pointer">
-                <app-keenicon name="trash" class=" svg-icon-md text-primary"></app-keenicon>
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td class="pl-0 py-4">
-              <div class="symbol symbol-50 symbol-light">
+          </td>
+          <td class="text-right pr-0">
+            <a class="btn btn-icon btn-light btn-sm cursor-pointer">
+              <app-keenicon class="fs-md text-primary" name="switch"></app-keenicon>
+            </a>
+            <a class="btn btn-icon btn-light btn-sm mx-3 cursor-pointer">
+              <app-keenicon class="fs-md text-primary" name="pencil"></app-keenicon>
+            </a>
+            <a class="btn btn-icon btn-light btn-sm cursor-pointer">
+              <app-keenicon class=" svg-icon-md text-primary" name="trash"></app-keenicon>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="pl-0 py-4">
+            <div class="symbol symbol-50 symbol-light">
                 <span class="symbol-label">
                   <img
                     alt=""
-                    src="./assets/media/svg/brand-logos/kickstarter.svg"
                     class="h-50 align-self-center"
+                    src="./assets/media/svg/brand-logos/kickstarter.svg"
                   />
                 </span>
-              </div>
-            </td>
-            <td class="pl-0">
+            </div>
+          </td>
+          <td class="pl-0">
+            <a
+              class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg cursor-pointer"
+            >KTR Mobile Application</a
+            >
+            <div>
+              <span class="font-weight-bolder">Correo electrónico:</span>&nbsp;
               <a
-                class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg cursor-pointer"
-                >KTR Mobile Application</a
+                class="text-muted font-weight-bold text-hover-primary cursor-pointer"
+              >ktr@demo.com</a
               >
-              <div>
-                <span class="font-weight-bolder">Correo electrónico:</span>&nbsp;
-                <a
-                  class="text-muted font-weight-bold text-hover-primary cursor-pointer"
-                  >ktr@demo.com</a
-                >
-              </div>
-            </td>
-            <td class="text-right">
+            </div>
+          </td>
+          <td class="text-right">
               <span
                 class="text-dark-75 font-weight-bolder d-block font-size-lg"
               >
                 $45,200,000
               </span>
-              <span class="text-muted font-weight-bold">
+            <span class="text-muted font-weight-bold">
                 Paid
               </span>
-            </td>
-            <td class="text-right">
+          </td>
+          <td class="text-right">
               <span class="text-muted font-weight-500">
                 ReactJS, Ruby
               </span>
-            </td>
-            <td class="text-right">
+          </td>
+          <td class="text-right">
               <span class="label label-lg label-light-warning label-inline"
-                >In Progress</span
+              >In Progress</span
               >
-            </td>
-            <td class="text-right pr-0">
-              <a class="btn btn-icon btn-light btn-sm cursor-pointer">
-                <app-keenicon name="switch" class="fs-md text-primary"></app-keenicon>
-              </a>
-              <a class="btn btn-icon btn-light btn-sm mx-3 cursor-pointer">
-                <app-keenicon name="pencil" class="fs-md text-primary"></app-keenicon>
-              </a>
-              <a class="btn btn-icon btn-light btn-sm cursor-pointer">
-                <app-keenicon name="trash" class=" svg-icon-md text-primary"></app-keenicon>
-              </a>
-            </td>
-          </tr>
+          </td>
+          <td class="text-right pr-0">
+            <a class="btn btn-icon btn-light btn-sm cursor-pointer">
+              <app-keenicon class="fs-md text-primary" name="switch"></app-keenicon>
+            </a>
+            <a class="btn btn-icon btn-light btn-sm mx-3 cursor-pointer">
+              <app-keenicon class="fs-md text-primary" name="pencil"></app-keenicon>
+            </a>
+            <a class="btn btn-icon btn-light btn-sm cursor-pointer">
+              <app-keenicon class=" svg-icon-md text-primary" name="trash"></app-keenicon>
+            </a>
+          </td>
+        </tr>
         </tbody>
       </table>
     </div>

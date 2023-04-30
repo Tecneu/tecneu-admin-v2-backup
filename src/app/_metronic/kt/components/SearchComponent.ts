@@ -1,16 +1,16 @@
 import {
-  EventHandlerUtil,
   DataUtil,
-  getBreakpoint,
+  EventHandlerUtil,
   getAttributeValueByBreakpoint,
-  stringSnakeToCamel,
+  getBreakpoint,
   getObjectPropertyValueByKey,
   getViewPort,
   isVisibleElement,
+  stringSnakeToCamel,
   throttle,
 } from '../_utils/index'
 
-import {MenuComponent, defaultMenuOptions} from './MenuComponent'
+import {defaultMenuOptions, MenuComponent} from './MenuComponent'
 
 export interface ISearchOptions {
   minLength: number // Miniam text lenght to query search
@@ -95,6 +95,215 @@ class SearchComponent {
     this.handlers()
 
     DataUtil.set(this.element, this.queries.componentName, this)
+  }
+
+  // Static methods
+  public static getInstance = (
+    el: HTMLElement,
+    componentName: string = defaultSearchQueires.componentName
+  ) => {
+    const Search = DataUtil.get(el, componentName)
+    if (Search) {
+      return Search as SearchComponent
+    }
+
+    return null
+  }
+
+  public static createInstances = (
+    selector: string = defaultSearchQueires.instanseQuery,
+    options: ISearchOptions = defaultSearchOptions,
+    queries: ISearchQueries = defaultSearchQueires
+  ) => {
+    const elements = document.body.querySelectorAll(selector)
+    elements.forEach((el) => {
+      const item = el as HTMLElement
+      let Search = SearchComponent.getInstance(item)
+      if (!Search) {
+        Search = new SearchComponent(item, options, queries)
+      }
+    })
+  }
+
+  public static createInsance = (
+    selector: string = defaultSearchQueires.instanseQuery,
+    options: ISearchOptions = defaultSearchOptions,
+    queries: ISearchQueries = defaultSearchQueires
+  ): SearchComponent | undefined => {
+    const element = document.body.querySelector(selector)
+    if (!element) {
+      return
+    }
+    const item = element as HTMLElement
+    let Search = SearchComponent.getInstance(item)
+    if (!Search) {
+      Search = new SearchComponent(item, options, queries)
+    }
+    return Search
+  }
+
+  public static bootstrap = (selector: string = defaultSearchQueires.instanseQuery) => {
+    SearchComponent.createInstances(selector)
+  }
+
+  public static reinitialization = (selector: string = defaultSearchQueires.instanseQuery) => {
+    SearchComponent.createInstances(selector)
+  }
+
+  // Update
+  public update = () => {
+    // Handle responsive form
+    if (this.layout === 'menu') {
+      let responsiveFormMode = this.getResponsiveFormMode()
+
+      if (responsiveFormMode === 'on' && !this.contentElement.contains(this.formElement)) {
+        this.contentElement.prepend(this.formElement)
+        this.formElement.classList.remove('d-none')
+      } else if (responsiveFormMode === 'off' && this.contentElement.contains(this.formElement)) {
+        this.element.prepend(this.formElement)
+        this.formElement.classList.add('d-none')
+      }
+    }
+  }
+
+  // Show menu
+  public show = () => {
+    if (this.menuObject) {
+      this.update()
+
+      this.menuObject.show(this.element)
+    }
+  }
+
+  // Hide menu
+  public hide = () => {
+    if (this.menuObject) {
+      this.update()
+
+      this.menuObject.hide(this.element)
+    }
+  }
+
+  ///////////////////////
+  // ** Public API  ** //
+  ///////////////////////
+
+  // Search
+  public search = () => {
+    if (!this.processing) {
+      // Show search spinner
+      if (this.spinnerElement) {
+        this.spinnerElement.classList.remove('d-none')
+      }
+
+      // Hide search clear button
+      if (this.clearElement) {
+        this.clearElement.classList.add('d-none')
+      }
+
+      // Hide search toolbar
+      if (this.toolbarElement) {
+        this.toolbarElement.classList.add('d-none')
+      }
+
+      // Focus input
+      this.inputElement.focus()
+
+      this.processing = true
+      EventHandlerUtil.trigger(this.element, 'kt.search.process', this)
+    }
+  }
+
+  // Complete
+  public complete = () => {
+    if (this.spinnerElement) {
+      this.spinnerElement.classList.add('d-none')
+    }
+
+    // Show search toolbar
+    if (this.clearElement) {
+      this.clearElement.classList.remove('d-none')
+    }
+
+    if (this.inputElement.value.length === 0) {
+      this.clear()
+    }
+
+    // Focus input
+    this.inputElement.focus()
+
+    this.show()
+
+    this.processing = false
+  }
+
+  // Clear
+  public clear = () => {
+    if (EventHandlerUtil.trigger(this.element, 'kt.search.clear') === false) {
+      return
+    }
+
+    // Clear and focus input
+    this.inputElement.value = ''
+    this.inputElement.focus()
+
+    // Hide clear icon
+    if (this.clearElement) {
+      this.clearElement.classList.add('d-none')
+    }
+
+    // Show search toolbar
+    if (this.toolbarElement) {
+      this.toolbarElement.classList.remove('d-none')
+    }
+
+    // Hide menu
+    if (this.getOption('show-on-focus') === false) {
+      this.hide()
+    }
+
+    EventHandlerUtil.trigger(this.element, 'kt.search.cleared')
+  }
+
+  public isProcessing = () => {
+    return this.processing
+  }
+
+  public getQuery = () => {
+    return this.inputElement.value
+  }
+
+  public getMenu = () => {
+    return this.menuObject
+  }
+
+  public getFormElement = () => {
+    return this.formElement
+  }
+
+  public getInputElement(): HTMLInputElement {
+    return this.inputElement
+  }
+
+  public getContentElement(): HTMLElement {
+    return this.contentElement
+  }
+
+  public getElement(): HTMLElement {
+    return this.element
+  }
+
+  // Event API
+  public on = (name: string, handler: Function) => {
+    return EventHandlerUtil.on(this.element, name, handler)
+  }
+
+  public one = (name: string, handler: Function) => {
+    return EventHandlerUtil.one(this.element, name, handler)
+  }
+
+  public off = (name: string, handlerId: string) => {
+    return EventHandlerUtil.off(this.element, name, handlerId)
   }
 
   private _getElement = (name: string) => {
@@ -266,213 +475,6 @@ class SearchComponent {
       )
     })
   }
-
-  ///////////////////////
-  // ** Public API  ** //
-  ///////////////////////
-  // Update
-  public update = () => {
-    // Handle responsive form
-    if (this.layout === 'menu') {
-      let responsiveFormMode = this.getResponsiveFormMode()
-
-      if (responsiveFormMode === 'on' && !this.contentElement.contains(this.formElement)) {
-        this.contentElement.prepend(this.formElement)
-        this.formElement.classList.remove('d-none')
-      } else if (responsiveFormMode === 'off' && this.contentElement.contains(this.formElement)) {
-        this.element.prepend(this.formElement)
-        this.formElement.classList.add('d-none')
-      }
-    }
-  }
-
-  // Show menu
-  public show = () => {
-    if (this.menuObject) {
-      this.update()
-
-      this.menuObject.show(this.element)
-    }
-  }
-
-  // Hide menu
-  public hide = () => {
-    if (this.menuObject) {
-      this.update()
-
-      this.menuObject.hide(this.element)
-    }
-  }
-
-  // Search
-  public search = () => {
-    if (!this.processing) {
-      // Show search spinner
-      if (this.spinnerElement) {
-        this.spinnerElement.classList.remove('d-none')
-      }
-
-      // Hide search clear button
-      if (this.clearElement) {
-        this.clearElement.classList.add('d-none')
-      }
-
-      // Hide search toolbar
-      if (this.toolbarElement) {
-        this.toolbarElement.classList.add('d-none')
-      }
-
-      // Focus input
-      this.inputElement.focus()
-
-      this.processing = true
-      EventHandlerUtil.trigger(this.element, 'kt.search.process', this)
-    }
-  }
-
-  // Complete
-  public complete = () => {
-    if (this.spinnerElement) {
-      this.spinnerElement.classList.add('d-none')
-    }
-
-    // Show search toolbar
-    if (this.clearElement) {
-      this.clearElement.classList.remove('d-none')
-    }
-
-    if (this.inputElement.value.length === 0) {
-      this.clear()
-    }
-
-    // Focus input
-    this.inputElement.focus()
-
-    this.show()
-
-    this.processing = false
-  }
-
-  // Clear
-  public clear = () => {
-    if (EventHandlerUtil.trigger(this.element, 'kt.search.clear') === false) {
-      return
-    }
-
-    // Clear and focus input
-    this.inputElement.value = ''
-    this.inputElement.focus()
-
-    // Hide clear icon
-    if (this.clearElement) {
-      this.clearElement.classList.add('d-none')
-    }
-
-    // Show search toolbar
-    if (this.toolbarElement) {
-      this.toolbarElement.classList.remove('d-none')
-    }
-
-    // Hide menu
-    if (this.getOption('show-on-focus') === false) {
-      this.hide()
-    }
-
-    EventHandlerUtil.trigger(this.element, 'kt.search.cleared')
-  }
-
-  public isProcessing = () => {
-    return this.processing
-  }
-
-  public getQuery = () => {
-    return this.inputElement.value
-  }
-
-  public getMenu = () => {
-    return this.menuObject
-  }
-
-  public getFormElement = () => {
-    return this.formElement
-  }
-
-  public getInputElement(): HTMLInputElement {
-    return this.inputElement
-  }
-
-  public getContentElement(): HTMLElement {
-    return this.contentElement
-  }
-
-  public getElement(): HTMLElement {
-    return this.element
-  }
-
-  // Event API
-  public on = (name: string, handler: Function) => {
-    return EventHandlerUtil.on(this.element, name, handler)
-  }
-
-  public one = (name: string, handler: Function) => {
-    return EventHandlerUtil.one(this.element, name, handler)
-  }
-
-  public off = (name: string, handlerId: string) => {
-    return EventHandlerUtil.off(this.element, name, handlerId)
-  }
-
-  // Static methods
-  public static getInstance = (
-    el: HTMLElement,
-    componentName: string = defaultSearchQueires.componentName
-  ) => {
-    const Search = DataUtil.get(el, componentName)
-    if (Search) {
-      return Search as SearchComponent
-    }
-
-    return null
-  }
-
-  public static createInstances = (
-    selector: string = defaultSearchQueires.instanseQuery,
-    options: ISearchOptions = defaultSearchOptions,
-    queries: ISearchQueries = defaultSearchQueires
-  ) => {
-    const elements = document.body.querySelectorAll(selector)
-    elements.forEach((el) => {
-      const item = el as HTMLElement
-      let Search = SearchComponent.getInstance(item)
-      if (!Search) {
-        Search = new SearchComponent(item, options, queries)
-      }
-    })
-  }
-
-  public static createInsance = (
-    selector: string = defaultSearchQueires.instanseQuery,
-    options: ISearchOptions = defaultSearchOptions,
-    queries: ISearchQueries = defaultSearchQueires
-  ): SearchComponent | undefined => {
-    const element = document.body.querySelector(selector)
-    if (!element) {
-      return
-    }
-    const item = element as HTMLElement
-    let Search = SearchComponent.getInstance(item)
-    if (!Search) {
-      Search = new SearchComponent(item, options, queries)
-    }
-    return Search
-  }
-
-  public static bootstrap = (selector: string = defaultSearchQueires.instanseQuery) => {
-    SearchComponent.createInstances(selector)
-  }
-
-  public static reinitialization = (selector: string = defaultSearchQueires.instanseQuery) => {
-    SearchComponent.createInstances(selector)
-  }
 }
+
 export {SearchComponent, defaultSearchOptions, defaultSearchQueires}

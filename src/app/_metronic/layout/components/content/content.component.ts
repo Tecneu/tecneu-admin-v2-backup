@@ -1,6 +1,7 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { NavigationCancel, NavigationEnd, Router } from '@angular/router';
-import { Subscription } from 'rxjs/internal/Subscription';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
+import {NavigationCancel, NavigationEnd, Router} from '@angular/router';
+import {Subscription} from 'rxjs/internal/Subscription';
+
 // import { DrawerComponent } from '../../../kt/components';
 @Component({
   selector: 'app-content',
@@ -14,7 +15,8 @@ export class ContentComponent implements OnInit, OnDestroy {
 
   private unsubscribe: Subscription[] = [];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+  }
 
   ngOnInit(): void {
     this.routingChanges();

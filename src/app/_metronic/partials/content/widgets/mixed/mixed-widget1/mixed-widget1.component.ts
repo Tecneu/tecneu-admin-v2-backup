@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-mixed-widget1',
@@ -6,5 +6,7 @@ import { Component, Input } from '@angular/core';
 })
 export class MixedWidget1Component {
   @Input() color: string = '';
-  constructor() {}
+
+  constructor() {
+  }
 }

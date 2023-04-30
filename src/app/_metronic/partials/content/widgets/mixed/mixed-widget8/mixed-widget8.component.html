@@ -9,13 +9,13 @@
   <div class="card-toolbar">
     <!-- begin::Menu -->
     <button
-      type="button"
       class="btn btn-sm btn-icon btn-color-primary btn-active-light-primary"
-      data-kt-menu-trigger="click"
-      data-kt-menu-placement="bottom-end"
       data-kt-menu-flip="top-end"
+      data-kt-menu-placement="bottom-end"
+      data-kt-menu-trigger="click"
+      type="button"
     >
-      <app-keenicon name="category" class="fs-2"></app-keenicon>
+      <app-keenicon class="fs-2" name="category"></app-keenicon>
     </button>
     <app-dropdown-menu1></app-dropdown-menu1>
     <!-- end::Menu -->
@@ -28,23 +28,23 @@
   <!-- begin::Chart -->
   <div
     #chartRef
-    class="mixed-widget-5-chart card-rounded-top"
     [style.height]="chartHeight"
+    class="mixed-widget-5-chart card-rounded-top"
   >
     <apx-chart
-      [series]="chartOptions.series"
       [chart]="chartOptions.chart"
-      [xaxis]="chartOptions.xaxis"
-      [yaxis]="chartOptions.yaxis"
-      [dataLabels]="chartOptions.dataLabels"
-      [stroke]="chartOptions.stroke"
-      [legend]="chartOptions.legend"
-      [fill]="chartOptions.fill"
-      [states]="chartOptions.states"
-      [tooltip]="chartOptions.tooltip"
       [colors]="chartOptions.colors"
+      [dataLabels]="chartOptions.dataLabels"
+      [fill]="chartOptions.fill"
+      [legend]="chartOptions.legend"
       [markers]="chartOptions.markers"
       [plotOptions]="chartOptions.plotOptions"
+      [series]="chartOptions.series"
+      [states]="chartOptions.states"
+      [stroke]="chartOptions.stroke"
+      [tooltip]="chartOptions.tooltip"
+      [xaxis]="chartOptions.xaxis"
+      [yaxis]="chartOptions.yaxis"
     ></apx-chart>
   </div>
   <!-- end::Chart -->
@@ -59,9 +59,9 @@
         <div class="symbol symbol-50px me-3">
           <div class="symbol-label bg-light">
             <img
-              src="./assets/media/svg/brand-logos/plurk.svg"
               alt=""
               class="h-50"
+              src="./assets/media/svg/brand-logos/plurk.svg"
             />
           </div>
         </div>
@@ -69,7 +69,7 @@
 
         <!-- begin::Title -->
         <div>
-          <a href="#" class="fs-6 text-gray-800 text-hover-primary fw-bolder">
+          <a class="fs-6 text-gray-800 text-hover-primary fw-bolder" href="#">
             Top Authors
           </a>
           <div class="fs-7 text-muted fw-bold mt-1">
@@ -94,9 +94,9 @@
         <div class="symbol symbol-50px me-3">
           <div class="symbol-label bg-light">
             <img
-              src="./assets/media/svg/brand-logos/figma-1.svg"
               alt=""
               class="h-50"
+              src="./assets/media/svg/brand-logos/figma-1.svg"
             />
           </div>
         </div>
@@ -104,7 +104,7 @@
 
         <!-- begin::Title -->
         <div>
-          <a href="#" class="fs-6 text-gray-800 text-hover-primary fw-bolder">
+          <a class="fs-6 text-gray-800 text-hover-primary fw-bolder" href="#">
             Top Sales
           </a>
           <div class="fs-7 text-muted fw-bold mt-1">PitStop Emails</div>
@@ -127,9 +127,9 @@
         <div class="symbol symbol-50px me-3">
           <div class="symbol-label bg-light">
             <img
-              src="./assets/media/svg/brand-logos/vimeo.svg"
               alt=""
               class="h-50"
+              src="./assets/media/svg/brand-logos/vimeo.svg"
             />
           </div>
         </div>
@@ -137,7 +137,7 @@
 
         <!-- begin::Title -->
         <div class="py-1">
-          <a href="#" class="fs-6 text-gray-800 text-hover-primary fw-bolder">
+          <a class="fs-6 text-gray-800 text-hover-primary fw-bolder" href="#">
             Top Engagement
           </a>
 

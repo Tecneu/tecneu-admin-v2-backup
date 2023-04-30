@@ -1,14 +1,14 @@
 <div class="card-body p-0">
   <div class="d-flex flex-stack card-p flex-grow-1">
     <span
-      class="symbol symbol-50px"
       [ngClass]="'symbol-light-' + color + ' me-2'"
+      class="symbol symbol-50px"
     >
       <span class="symbol-label">
         <span
           [inlineSVG]="svgIcon"
-          class="svg-icon fs-2x"
           [ngClass]="'svg-icon-' + color"
+          class="svg-icon fs-2x"
         ></span>
       </span>
     </span>
@@ -22,23 +22,23 @@
 
   <div
     #chartRef
-    class="statistics-widget-3-chart card-rounded-bottom"
     [style.height]="'150px'"
+    class="statistics-widget-3-chart card-rounded-bottom"
   >
     <apx-chart
-      [series]="chartOptions.series"
       [chart]="chartOptions.chart"
-      [xaxis]="chartOptions.xaxis"
-      [yaxis]="chartOptions.yaxis"
-      [dataLabels]="chartOptions.dataLabels"
-      [stroke]="chartOptions.stroke"
-      [legend]="chartOptions.legend"
-      [fill]="chartOptions.fill"
-      [states]="chartOptions.states"
-      [tooltip]="chartOptions.tooltip"
       [colors]="chartOptions.colors"
+      [dataLabels]="chartOptions.dataLabels"
+      [fill]="chartOptions.fill"
+      [legend]="chartOptions.legend"
       [markers]="chartOptions.markers"
       [plotOptions]="chartOptions.plotOptions"
+      [series]="chartOptions.series"
+      [states]="chartOptions.states"
+      [stroke]="chartOptions.stroke"
+      [tooltip]="chartOptions.tooltip"
+      [xaxis]="chartOptions.xaxis"
+      [yaxis]="chartOptions.yaxis"
     ></apx-chart>
   </div>
 </div>

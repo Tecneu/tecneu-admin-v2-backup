@@ -1,14 +1,14 @@
 <div
-  id="kt_drawer_chat"
   class="bg-body"
   data-kt-drawer="true"
-  data-kt-drawer-name="chat"
   data-kt-drawer-activate="true"
-  data-kt-drawer-overlay="true"
-  data-kt-drawer-width="{default:'300px', 'md': '500px'}"
-  data-kt-drawer-direction="end"
-  data-kt-drawer-toggle="#kt_drawer_chat_toggle"
   data-kt-drawer-close="#kt_drawer_chat_close"
+  data-kt-drawer-direction="end"
+  data-kt-drawer-name="chat"
+  data-kt-drawer-overlay="true"
+  data-kt-drawer-toggle="#kt_drawer_chat_toggle"
+  data-kt-drawer-width="{default:'300px', 'md': '500px'}"
+  id="kt_drawer_chat"
 >
   <div class="card w-100 rounded-0" id="kt_drawer_chat_messenger">
     <div class="card-header pe-5" id="kt_drawer_chat_messenger_header">
@@ -24,7 +24,7 @@
               lh-1
               cursor-pointer
             "
-            >Brian Cox</a
+          >Brian Cox</a
           >
           <div class="mb-0 lh-1">
             <span
@@ -38,9 +38,9 @@
         <div class="me-2">
           <button
             class="btn btn-sm btn-icon btn-active-light-primary"
-            data-kt-menu-trigger="click"
-            data-kt-menu-placement="bottom-end"
             data-kt-menu-flip="top-end"
+            data-kt-menu-placement="bottom-end"
+            data-kt-menu-trigger="click"
           >
             <i class="bi bi-three-dots fs-3"></i>
           </button>
@@ -50,7 +50,7 @@
           id="kt_drawer_chat_close"
         >
           <span class="svg-icon fs-2"></span>
-          <app-keenicon name="cross" class="fs-2"></app-keenicon>
+          <app-keenicon class="fs-2" name="cross"></app-keenicon>
         </div>
       </div>
     </div>

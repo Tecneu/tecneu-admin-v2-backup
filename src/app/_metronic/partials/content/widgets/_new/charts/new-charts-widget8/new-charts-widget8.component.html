@@ -1,5 +1,5 @@
 <!--begin::Chart widget 8-->
-<div class="card card-flush" [ngClass]="cssClass">
+<div [ngClass]="cssClass" class="card card-flush">
   <!--begin::Header-->
   <div class="card-header pt-5">
     <!--begin::Title-->
@@ -14,14 +14,14 @@
       <ul class="nav" id="kt_chart_widget_8_tabs">
 
         <li class="nav-item">
-          <a class="nav-link btn btn-sm btn-color-muted btn-active btn-active-light fw-bold px-4 me-1"
-            [ngClass]="{'active': tab === 'Week'}" data-bs-toggle="tab" (click)="setTab('Week')"
-            id="kt_chart_widget_8_month_toggle">Week</a>
+          <a (click)="setTab('Week')"
+             [ngClass]="{'active': tab === 'Week'}" class="nav-link btn btn-sm btn-color-muted btn-active btn-active-light fw-bold px-4 me-1" data-bs-toggle="tab"
+             id="kt_chart_widget_8_month_toggle">Week</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link btn btn-sm btn-color-muted btn-active btn-active-light fw-bold px-4 me-1"
-            [ngClass]="{'active': tab === 'Month'}" data-bs-toggle="tab" (click)="setTab('Month')"
-            id="kt_chart_widget_8_week_toggle">Month</a>
+          <a (click)="setTab('Month')"
+             [ngClass]="{'active': tab === 'Month'}" class="nav-link btn btn-sm btn-color-muted btn-active btn-active-light fw-bold px-4 me-1" data-bs-toggle="tab"
+             id="kt_chart_widget_8_week_toggle">Month</a>
         </li>
 
       </ul>
@@ -35,8 +35,8 @@
     <!--begin::Tab content-->
     <div class="tab-content">
       <!--begin::Tab pane-->
-      <div class="tab-pane fade" [ngClass]="{'active show': tab === 'Week'}" id="kt_chart_widget_8_week_tab"
-        role="tabpanel">
+      <div [ngClass]="{'active show': tab === 'Week'}" class="tab-pane fade" id="kt_chart_widget_8_week_tab"
+           role="tabpanel">
         <!--begin::Statistics-->
         <div class="mb-5">
           <!--begin::Statistics-->
@@ -46,7 +46,7 @@
             <span class="fs-3x fw-bold text-gray-800 me-2 lh-1 ls-n2">18,89</span>
 
             <span class="badge badge-light-success fs-base">
-              <app-keenicon name="arrow-up" class="fs-5 text-success ms-n1"></app-keenicon>
+              <app-keenicon class="fs-5 text-success ms-n1" name="arrow-up"></app-keenicon>
               4,8%
             </span>
           </div>
@@ -59,13 +59,14 @@
         <!--end::Statistics-->
 
         <!--begin::Chart-->
-        <div id="kt_chart_widget_8_week_chart" class="ms-n5 min-h-auto" [ngStyle]="{'height': chartHeight}">
+        <div [ngStyle]="{'height': chartHeight}" class="ms-n5 min-h-auto" id="kt_chart_widget_8_week_chart">
           <ng-container *ngIf="hadDelay">
-            <apx-chart [series]="chart1Options.series" [chart]="chart1Options.chart"
-              [xaxis]="chart1Options.xaxis" [yaxis]="chart1Options.yaxis" [dataLabels]="chart1Options.dataLabels"
-              [stroke]="chart1Options.stroke" [legend]="chart1Options.legend" [fill]="chart1Options.fill"
-              [states]="chart1Options.states" [tooltip]="chart1Options.tooltip" [colors]="chart1Options.colors"
-              [markers]="chart1Options.markers" [plotOptions]="chart1Options.plotOptions"></apx-chart>
+            <apx-chart [chart]="chart1Options.chart" [colors]="chart1Options.colors"
+                       [dataLabels]="chart1Options.dataLabels" [fill]="chart1Options.fill"
+                       [legend]="chart1Options.legend"
+                       [markers]="chart1Options.markers" [plotOptions]="chart1Options.plotOptions" [series]="chart1Options.series"
+                       [states]="chart1Options.states" [stroke]="chart1Options.stroke" [tooltip]="chart1Options.tooltip"
+                       [xaxis]="chart1Options.xaxis" [yaxis]="chart1Options.yaxis"></apx-chart>
           </ng-container>
 
 
@@ -163,8 +164,8 @@
       <!--end::Tab pane-->
 
       <!--begin::Tab pane-->
-      <div class="tab-pane fade" [ngClass]="{'active show': tab === 'Month'}" id="kt_chart_widget_8_month_tab"
-        role="tabpanel">
+      <div [ngClass]="{'active show': tab === 'Month'}" class="tab-pane fade" id="kt_chart_widget_8_month_tab"
+           role="tabpanel">
         <!--begin::Statistics-->
         <div class="mb-5">
           <!--begin::Statistics-->
@@ -174,7 +175,7 @@
             <span class="fs-3x fw-bold text-gray-800 me-2 lh-1 ls-n2">8,55</span>
 
             <span class="badge badge-light-success fs-base">
-              <app-keenicon name="arrow-up" class="fs-5 text-success ms-n1"></app-keenicon>
+              <app-keenicon class="fs-5 text-success ms-n1" name="arrow-up"></app-keenicon>
               2.2%
             </span>
 
@@ -188,14 +189,15 @@
         <!--end::Statistics-->
 
         <!--begin::Chart-->
-        <div id="kt_chart_widget_8_month_chart" class="ms-n5 min-h-auto" [ngStyle]="{'height': chartHeight}">
+        <div [ngStyle]="{'height': chartHeight}" class="ms-n5 min-h-auto" id="kt_chart_widget_8_month_chart">
           <ng-container *ngIf="hadDelay">
 
-            <apx-chart #monthChart [series]="chart2Options.series" [chart]="chart2Options.chart"
-              [xaxis]="chart2Options.xaxis" [yaxis]="chart2Options.yaxis" [dataLabels]="chart2Options.dataLabels"
-              [stroke]="chart2Options.stroke" [legend]="chart2Options.legend" [fill]="chart2Options.fill"
-              [states]="chart2Options.states" [tooltip]="chart2Options.tooltip" [colors]="chart2Options.colors"
-              [markers]="chart2Options.markers" [plotOptions]="chart2Options.plotOptions"></apx-chart>
+            <apx-chart #monthChart [chart]="chart2Options.chart" [colors]="chart2Options.colors"
+                       [dataLabels]="chart2Options.dataLabels" [fill]="chart2Options.fill"
+                       [legend]="chart2Options.legend"
+                       [markers]="chart2Options.markers" [plotOptions]="chart2Options.plotOptions" [series]="chart2Options.series"
+                       [states]="chart2Options.states" [stroke]="chart2Options.stroke" [tooltip]="chart2Options.tooltip"
+                       [xaxis]="chart2Options.xaxis" [yaxis]="chart2Options.yaxis"></apx-chart>
 
           </ng-container>
 

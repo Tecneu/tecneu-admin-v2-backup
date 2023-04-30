@@ -1,6 +1,7 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { BehaviorSubject, Subscription } from 'rxjs';
-import { ICreateAccount, inits } from '../create-account.helper';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {BehaviorSubject, Subscription} from 'rxjs';
+import {ICreateAccount, inits} from '../create-account.helper';
+
 @Component({
   selector: 'app-horizontal',
   templateUrl: './horizontal.component.html',
@@ -15,13 +16,15 @@ export class HorizontalComponent implements OnInit, OnDestroy {
   );
   private unsubscribe: Subscription[] = [];
 
-  constructor() {}
+  constructor() {
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   updateAccount = (part: Partial<ICreateAccount>, isFormValid: boolean) => {
     const currentAccount = this.account$.value;
-    const updatedAccount = { ...currentAccount, ...part };
+    const updatedAccount = {...currentAccount, ...part};
     this.account$.next(updatedAccount);
     this.isCurrentFormValid$.next(isFormValid);
   };

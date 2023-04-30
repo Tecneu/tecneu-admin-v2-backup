@@ -1,5 +1,5 @@
-import { ElementRef, Injectable } from '@angular/core';
-import { animate, AnimationBuilder, style } from '@angular/animations';
+import {ElementRef, Injectable} from '@angular/core';
+import {animate, AnimationBuilder, style} from '@angular/animations';
 
 @Injectable({
   providedIn: 'root',
@@ -14,7 +14,8 @@ export class SplashScreenService {
    *
    * @param animationBuilder: AnimationBuilder
    */
-  constructor(private animationBuilder: AnimationBuilder) {}
+  constructor(private animationBuilder: AnimationBuilder) {
+  }
 
   /**
    * Init
@@ -34,7 +35,7 @@ export class SplashScreenService {
     }
 
     const player = this.animationBuilder
-      .build([style({ opacity: '1' }), animate(800, style({ opacity: '0' }))])
+      .build([style({opacity: '1'}), animate(800, style({opacity: '0'}))])
       .create(this.el.nativeElement);
 
     player.onDone(() => {

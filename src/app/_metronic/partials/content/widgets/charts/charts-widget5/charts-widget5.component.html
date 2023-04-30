@@ -26,11 +26,11 @@
 </div>
 
 <div class="card-body">
-  <div #chartRef id="kt_charts_widget_5_chart" [style.height]="'350px'">
-    <apx-chart [series]="chartOptions.series" [chart]="chartOptions.chart" [xaxis]="chartOptions.xaxis"
-      [yaxis]="chartOptions.yaxis" [dataLabels]="chartOptions.dataLabels" [stroke]="chartOptions.stroke"
-      [legend]="chartOptions.legend" [fill]="chartOptions.fill" [states]="chartOptions.states"
-      [tooltip]="chartOptions.tooltip" [colors]="chartOptions.colors" [markers]="chartOptions.markers"
-      [plotOptions]="chartOptions.plotOptions"></apx-chart>
+  <div #chartRef [style.height]="'350px'" id="kt_charts_widget_5_chart">
+    <apx-chart [chart]="chartOptions.chart" [colors]="chartOptions.colors" [dataLabels]="chartOptions.dataLabels"
+               [fill]="chartOptions.fill" [legend]="chartOptions.legend" [markers]="chartOptions.markers"
+               [plotOptions]="chartOptions.plotOptions" [series]="chartOptions.series" [states]="chartOptions.states"
+               [stroke]="chartOptions.stroke" [tooltip]="chartOptions.tooltip" [xaxis]="chartOptions.xaxis"
+               [yaxis]="chartOptions.yaxis"></apx-chart>
   </div>
 </div>

@@ -1,5 +1,5 @@
 <!--begin::Card widget 7-->
-<div class="card card-flush" [ngClass]="cssClass">
+<div [ngClass]="cssClass" class="card card-flush">
   <!--begin::Header-->
   <div class="card-header pt-5">
     <!--begin::Title-->
@@ -24,20 +24,20 @@
 
     <!--begin::Users group-->
     <div class="symbol-group symbol-hover flex-nowrap">
-      <div *ngFor="let item of items" class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip"
-        [title]="item.name">
+      <div *ngFor="let item of items" [title]="item.name" class="symbol symbol-35px symbol-circle"
+           data-bs-toggle="tooltip">
         <ng-container *ngIf="item.src">
-          <img alt="Pic" [src]="item.src" />
+          <img [src]="item.src" alt="Pic"/>
         </ng-container>
         <ng-container *ngIf="!item.src">
-          <span class="symbol-label fw-bold"
-            [ngClass]="'bg-' + item.state + ' ' + 'text-inverse-' + item.state">{{item.initials}}</span>
+          <span [ngClass]="'bg-' + item.state + ' ' + 'text-inverse-' + item.state"
+                class="symbol-label fw-bold">{{item.initials}}</span>
         </ng-container>
 
       </div>
-      <a href="#" class="symbol symbol-35px symbol-circle">
-        <span class="symbol-label fs-8 fw-bold" [ngClass]="'bg-' + labelColor"
-          [ngClass]="'text-' + textColor">+42</span>
+      <a class="symbol symbol-35px symbol-circle" href="#">
+        <span [ngClass]="'bg-' + labelColor" [ngClass]="'text-' + textColor"
+              class="symbol-label fs-8 fw-bold">+42</span>
       </a>
     </div>
     <!--end::Users group-->

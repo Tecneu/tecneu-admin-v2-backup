@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { getCSSVariableValue } from '../../../../../kt/_utils';
+import {Component, Input, OnInit} from '@angular/core';
+import {getCSSVariableValue} from '../../../../../kt/_utils';
+
 @Component({
   selector: 'app-mixed-widget9',
   templateUrl: './mixed-widget9.component.html',
@@ -9,7 +10,8 @@ export class MixedWidget9Component implements OnInit {
   @Input() chartHeight: string;
   chartOptions: any = {};
 
-  constructor() {}
+  constructor() {
+  }
 
   ngOnInit(): void {
     this.chartOptions = getChartOptions(this.chartHeight, this.chartColor);

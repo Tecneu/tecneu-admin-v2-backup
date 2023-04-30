@@ -1,5 +1,4 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
-import { LayoutService } from '../../../../../layout';
+import {Component, HostBinding, OnInit} from '@angular/core';
 
 export type NotificationsTabsType =
   | 'kt_topbar_notifications_1'
@@ -18,9 +17,12 @@ export class NotificationsInnerComponent implements OnInit {
   activeTabId: NotificationsTabsType = 'kt_topbar_notifications_2';
   alerts: Array<AlertModel> = defaultAlerts;
   logs: Array<LogModel> = defaultLogs;
-  constructor() {}
 
-  ngOnInit(): void {}
+  constructor() {
+  }
+
+  ngOnInit(): void {
+  }
 
   setActiveTabId(tabId: NotificationsTabsType) {
     this.activeTabId = tabId;
@@ -95,8 +97,8 @@ interface LogModel {
 }
 
 const defaultLogs: Array<LogModel> = [
-  { code: '200 OK', state: 'success', message: 'New order', time: 'Just now' },
-  { code: '500 ERR', state: 'danger', message: 'New customer', time: '2 hrs' },
+  {code: '200 OK', state: 'success', message: 'New order', time: 'Just now'},
+  {code: '500 ERR', state: 'danger', message: 'New customer', time: '2 hrs'},
   {
     code: '200 OK',
     state: 'success',
@@ -151,5 +153,5 @@ const defaultLogs: Array<LogModel> = [
     message: 'Withdrawal process',
     time: 'Sep 10',
   },
-  { code: '500 ERR', state: 'danger', message: 'Mail tasks', time: 'Dec 10' },
+  {code: '500 ERR', state: 'danger', message: 'Mail tasks', time: 'Dec 10'},
 ];

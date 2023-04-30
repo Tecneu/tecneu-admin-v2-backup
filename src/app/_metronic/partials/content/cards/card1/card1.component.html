@@ -3,14 +3,14 @@
     <div class="symbol symbol-75px symbol-circle">
       <ng-container *ngIf="color">
         <span
-          class="symbol-label fs-5 fw-bolder"
           [ngClass]="'bg-light-' + color + ' text-' + color"
+          class="symbol-label fs-5 fw-bolder"
         >
           {{ name.charAt(0) }}
         </span>
       </ng-container>
       <ng-container *ngIf="!color && avatar">
-        <img alt="Pic" [src]="avatar" />
+        <img [src]="avatar" alt="Pic"/>
       </ng-container>
 
       <ng-container *ngIf="online">

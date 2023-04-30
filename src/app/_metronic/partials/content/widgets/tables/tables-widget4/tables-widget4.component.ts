@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 type Tabs =
   | 'kt_table_widget_4_tab_1'
@@ -12,6 +12,9 @@ type Tabs =
 export class TablesWidget4Component {
   activeTab: Tabs = 'kt_table_widget_4_tab_1';
 
+  constructor() {
+  }
+
   setTab(tab: Tabs) {
     this.activeTab = tab;
   }
@@ -19,6 +22,4 @@ export class TablesWidget4Component {
   activeClass(tab: Tabs) {
     return tab === this.activeTab ? 'show active' : '';
   }
-
-  constructor() {}
 }

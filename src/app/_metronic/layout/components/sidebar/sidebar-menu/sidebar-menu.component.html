@@ -1,14 +1,14 @@
 <!--begin::Menu wrapper-->
-<div id="kt_app_sidebar_menu_wrapper" class="app-sidebar-wrapper hover-scroll-overlay-y my-5" data-kt-scroll="true"
-     data-kt-scroll-activate="true" data-kt-scroll-height="auto"
-     data-kt-scroll-dependencies="#kt_app_sidebar_logo, #kt_app_sidebar_footer"
-     data-kt-scroll-wrappers="#kt_app_sidebar_menu" data-kt-scroll-offset="5px" data-kt-scroll-save-state="true">
+<div class="app-sidebar-wrapper hover-scroll-overlay-y my-5" data-kt-scroll="true" data-kt-scroll-activate="true"
+     data-kt-scroll-dependencies="#kt_app_sidebar_logo, #kt_app_sidebar_footer" data-kt-scroll-height="auto"
+     data-kt-scroll-offset="5px"
+     data-kt-scroll-save-state="true" data-kt-scroll-wrappers="#kt_app_sidebar_menu" id="kt_app_sidebar_menu_wrapper">
   <!--begin::Menu-->
-  <div class="menu menu-column menu-rounded menu-sub-indention px-3" id="#kt_app_sidebar_menu" data-kt-menu="true"
-       data-kt-menu-expand="false">
+  <div class="menu menu-column menu-rounded menu-sub-indention px-3" data-kt-menu="true" data-kt-menu-expand="false"
+       id="#kt_app_sidebar_menu">
     <!-- Dynamic menu items -->
     <ng-container *ngFor="let menuItem of menuItems">
-      <app-recursive-menu-item [menuItem]="menuItem" [depth]="0"></app-recursive-menu-item>
+      <app-recursive-menu-item [depth]="0" [menuItem]="menuItem"></app-recursive-menu-item>
     </ng-container>
   </div>
   <!--end::Menu-->

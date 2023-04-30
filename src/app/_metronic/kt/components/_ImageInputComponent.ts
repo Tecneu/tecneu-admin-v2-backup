@@ -1,6 +1,7 @@
-import {EventHandlerUtil, DataUtil, getUniqueIdWithPrefix, getCSS} from '../_utils/index'
+import {DataUtil, EventHandlerUtil, getCSS, getUniqueIdWithPrefix} from '../_utils/index'
 
-export interface IImageInputOptions {}
+export interface IImageInputOptions {
+}
 
 export interface IImageInputQueries {
   componentName: string
@@ -58,6 +59,86 @@ class ImageInputComponent {
     this.handlers()
 
     DataUtil.set(this.element, this.queries.componentName, this)
+  }
+
+  // Static methods
+  public static getInstance = (
+    el: HTMLElement,
+    componentName: string = defaultImageInputQueires.componentName
+  ): ImageInputComponent | undefined => {
+    const ImageInput = DataUtil.get(el, componentName)
+    if (ImageInput) {
+      return ImageInput as ImageInputComponent
+    }
+  }
+
+  public static createInstances = (
+    selector: string = defaultImageInputQueires.instanseQuery,
+    options: IImageInputOptions = defaultImageInputOptions,
+    queries: IImageInputQueries = defaultImageInputQueires
+  ) => {
+    const elements = document.body.querySelectorAll(selector)
+    elements.forEach((el) => {
+      const item = el as HTMLElement
+      let ImageInput = ImageInputComponent.getInstance(item)
+      if (!ImageInput) {
+        ImageInput = new ImageInputComponent(item, options, queries)
+      }
+    })
+  }
+
+  public static createInsance = (
+    selector: string = defaultImageInputQueires.instanseQuery,
+    options: IImageInputOptions = defaultImageInputOptions,
+    queries: IImageInputQueries = defaultImageInputQueires
+  ): ImageInputComponent | undefined => {
+    const element = document.body.querySelector(selector)
+    if (!element) {
+      return
+    }
+    const item = element as HTMLElement
+    let ImageInput = ImageInputComponent.getInstance(item)
+    if (!ImageInput) {
+      ImageInput = new ImageInputComponent(item, options, queries)
+    }
+    return ImageInput
+  }
+
+  public static bootstrap = (selector: string = defaultImageInputQueires.instanseQuery) => {
+    ImageInputComponent.createInstances(selector)
+  }
+
+  ///////////////////////
+  // ** Public API  ** //
+
+  public static reinitialization = (selector: string = defaultImageInputQueires.instanseQuery) => {
+    ImageInputComponent.createInstances(selector)
+  }
+
+  ///////////////////////
+  public getInputElement(): HTMLInputElement | null {
+    return this.inputElement
+  }
+
+  public getElement(): HTMLElement {
+    return this.element
+  }
+
+  // Event API
+  public on = (name: string, handler: Function) => {
+    return EventHandlerUtil.on(this.element, name, handler)
+  }
+
+  public one = (name: string, handler: Function) => {
+    return EventHandlerUtil.one(this.element, name, handler)
+  }
+
+  public off = (name: string, handlerId: string) => {
+    return EventHandlerUtil.off(this.element, name, handlerId)
+  }
+
+  public trigger = (name: string, event: Event) => {
+    return EventHandlerUtil.trigger(this.element, name, event)
   }
 
   private handlers(): void {
@@ -146,84 +227,6 @@ class ImageInputComponent {
     // Fire removed event
     EventHandlerUtil.trigger(this.element, 'kt.imageinput.removed', e)
   }
-
-  ///////////////////////
-  // ** Public API  ** //
-  ///////////////////////
-  public getInputElement(): HTMLInputElement | null {
-    return this.inputElement
-  }
-
-  public getElement(): HTMLElement {
-    return this.element
-  }
-
-  // Event API
-  public on = (name: string, handler: Function) => {
-    return EventHandlerUtil.on(this.element, name, handler)
-  }
-
-  public one = (name: string, handler: Function) => {
-    return EventHandlerUtil.one(this.element, name, handler)
-  }
-
-  public off = (name: string, handlerId: string) => {
-    return EventHandlerUtil.off(this.element, name, handlerId)
-  }
-
-  public trigger = (name: string, event: Event) => {
-    return EventHandlerUtil.trigger(this.element, name, event)
-  }
-
-  // Static methods
-  public static getInstance = (
-    el: HTMLElement,
-    componentName: string = defaultImageInputQueires.componentName
-  ): ImageInputComponent | undefined => {
-    const ImageInput = DataUtil.get(el, componentName)
-    if (ImageInput) {
-      return ImageInput as ImageInputComponent
-    }
-  }
-
-  public static createInstances = (
-    selector: string = defaultImageInputQueires.instanseQuery,
-    options: IImageInputOptions = defaultImageInputOptions,
-    queries: IImageInputQueries = defaultImageInputQueires
-  ) => {
-    const elements = document.body.querySelectorAll(selector)
-    elements.forEach((el) => {
-      const item = el as HTMLElement
-      let ImageInput = ImageInputComponent.getInstance(item)
-      if (!ImageInput) {
-        ImageInput = new ImageInputComponent(item, options, queries)
-      }
-    })
-  }
-
-  public static createInsance = (
-    selector: string = defaultImageInputQueires.instanseQuery,
-    options: IImageInputOptions = defaultImageInputOptions,
-    queries: IImageInputQueries = defaultImageInputQueires
-  ): ImageInputComponent | undefined => {
-    const element = document.body.querySelector(selector)
-    if (!element) {
-      return
-    }
-    const item = element as HTMLElement
-    let ImageInput = ImageInputComponent.getInstance(item)
-    if (!ImageInput) {
-      ImageInput = new ImageInputComponent(item, options, queries)
-    }
-    return ImageInput
-  }
-
-  public static bootstrap = (selector: string = defaultImageInputQueires.instanseQuery) => {
-    ImageInputComponent.createInstances(selector)
-  }
-
-  public static reinitialization = (selector: string = defaultImageInputQueires.instanseQuery) => {
-    ImageInputComponent.createInstances(selector)
-  }
 }
+
 export {ImageInputComponent, defaultImageInputOptions, defaultImageInputQueires}

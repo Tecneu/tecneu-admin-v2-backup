@@ -47,9 +47,6 @@ export class PaginatedItemListComponent implements OnInit, OnDestroy {
   query: string;
 
   show_profit: boolean = false;
-
-  private unsubscribe: Subscription[] = []; // Read more: → https://brianflove.com/2016/12/11/anguar-2-unsubscribe-observables/
-
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   formatPercent = new Intl.NumberFormat('en-US', {
     style: 'percent',
@@ -62,6 +59,7 @@ export class PaginatedItemListComponent implements OnInit, OnDestroy {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2
   });
+  private unsubscribe: Subscription[] = []; // Read more: → https://brianflove.com/2016/12/11/anguar-2-unsubscribe-observables/
 
   constructor(private amazonItemsService: AmazonService,
               private router: Router,

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { LayoutService } from '../../core/layout.service';
+import {Component, OnInit} from '@angular/core';
+import {LayoutService} from '../../core/layout.service';
 
 @Component({
   selector: 'app-topbar',
@@ -13,7 +13,8 @@ export class TopbarComponent implements OnInit {
   toolbarButtonIconSizeClass = 'svg-icon-1';
   headerLeft: string = 'menu';
 
-  constructor(private layout: LayoutService) {}
+  constructor(private layout: LayoutService) {
+  }
 
   ngOnInit(): void {
     this.headerLeft = this.layout.getProp('header.left') as string;

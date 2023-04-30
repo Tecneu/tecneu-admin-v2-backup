@@ -1,7 +1,7 @@
 <div class="card-body d-flex flex-column p-0">
   <div class="d-flex flex-stack flex-grow-1 card-p">
     <div class="d-flex flex-column me-2">
-      <a href="#" class="text-dark text-hover-primary fw-bolder fs-3">
+      <a class="text-dark text-hover-primary fw-bolder fs-3" href="#">
         {{ title }}
       </a>
 
@@ -12,9 +12,9 @@
 
     <span class="symbol symbol-50px">
       <span
-        class="symbol-label fs-5 fw-bolder"
         [ngClass]="'bg-light-' + color"
         [ngClass]="'text-' + color"
+        class="symbol-label fs-5 fw-bolder"
       >
         {{ change }}
       </span>
@@ -23,24 +23,24 @@
 
   <div
     #chartRef
-    class="statistics-widget-3-chart card-rounded-bottom"
     [style.height]="'150px'"
+    class="statistics-widget-3-chart card-rounded-bottom"
   >
     <apx-chart
-      type="area"
-      [series]="chartOptions.series"
       [chart]="chartOptions.chart"
-      [xaxis]="chartOptions.xaxis"
-      [yaxis]="chartOptions.yaxis"
-      [dataLabels]="chartOptions.dataLabels"
-      [stroke]="chartOptions.stroke"
-      [legend]="chartOptions.legend"
-      [fill]="chartOptions.fill"
-      [states]="chartOptions.states"
-      [tooltip]="chartOptions.tooltip"
       [colors]="chartOptions.colors"
+      [dataLabels]="chartOptions.dataLabels"
+      [fill]="chartOptions.fill"
+      [legend]="chartOptions.legend"
       [markers]="chartOptions.markers"
       [plotOptions]="chartOptions.plotOptions"
+      [series]="chartOptions.series"
+      [states]="chartOptions.states"
+      [stroke]="chartOptions.stroke"
+      [tooltip]="chartOptions.tooltip"
+      [xaxis]="chartOptions.xaxis"
+      [yaxis]="chartOptions.yaxis"
+      type="area"
     ></apx-chart>
   </div>
 </div>

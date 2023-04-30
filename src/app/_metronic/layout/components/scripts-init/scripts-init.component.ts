@@ -1,18 +1,17 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ResolveEnd, Router } from '@angular/router';
-import { filter } from 'rxjs/operators';
-import { Observable, Subscription } from 'rxjs';
-import { LayoutService } from '../../core/layout.service';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {ResolveEnd, Router} from '@angular/router';
+import {filter} from 'rxjs/operators';
+import {Subscription} from 'rxjs';
+import {LayoutService} from '../../core/layout.service';
 import {
-  ToggleComponent,
-  ScrollTopComponent,
   DrawerComponent,
-  StickyComponent,
   MenuComponent,
   ScrollComponent,
+  ScrollTopComponent,
+  StickyComponent,
+  ToggleComponent,
 } from '../../../kt/components';
-import { PageInfoService } from '../../core/page-info.service';
-import { ILayout } from '../../core/configs/config';
+import {PageInfoService} from '../../core/page-info.service';
 
 @Component({
   selector: 'app-scripts-init',
@@ -20,6 +19,7 @@ import { ILayout } from '../../core/configs/config';
 })
 export class ScriptsInitComponent implements OnInit, OnDestroy {
   private unsubscribe: Subscription[] = [];
+
   constructor(
     private layout: LayoutService,
     private pageInfo: PageInfoService,

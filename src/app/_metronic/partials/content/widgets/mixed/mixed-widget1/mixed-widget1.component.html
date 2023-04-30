@@ -1,24 +1,24 @@
 <div class="card-body p-0">
   <!-- begin::Header -->
-  <div class="px-9 pt-7 card-rounded h-275px w-100" [ngClass]="'bg-' + color">
+  <div [ngClass]="'bg-' + color" class="px-9 pt-7 card-rounded h-275px w-100">
     <!-- begin::Heading -->
     <div class="d-flex flex-stack">
       <h3 class="m-0 text-white fw-bolder fs-3">Sales Summary</h3>
       <div class="ms-1">
         <!-- begin::Menu -->
         <button
-          type="button"
+          [ngClass]="'btn-active-color-' + color"
           class="
             btn btn-sm btn-icon btn-color-white btn-active-white
             border-0
             me-n3
           "
-          [ngClass]="'btn-active-color-' + color"
-          data-kt-menu-trigger="click"
-          data-kt-menu-placement="bottom-end"
           data-kt-menu-flip="top-end"
+          data-kt-menu-placement="bottom-end"
+          data-kt-menu-trigger="click"
+          type="button"
         >
-          <app-keenicon name="category" class="fs-2"></app-keenicon>
+          <app-keenicon class="fs-2" name="category"></app-keenicon>
         </button>
         <app-dropdown-menu1></app-dropdown-menu1>
         <!-- end::Menu -->
@@ -35,6 +35,7 @@
   <!-- end::Header -->
   <!-- begin::Items -->
   <div
+    [style.margin-top]="'-100px'"
     class="
       shadow-xs
       card-rounded
@@ -46,14 +47,13 @@
       z-index-1
       bg-body
     "
-    [style.margin-top]="'-100px'"
   >
     <!-- begin::Item -->
     <div class="d-flex align-items-center mb-6">
       <!-- begin::Symbol -->
       <div class="symbol symbol-45px w-40px me-5">
         <span class="symbol-label bg-lighten">
-          <app-keenicon name="document" class="fs-1"></app-keenicon>
+          <app-keenicon class="fs-1" name="document"></app-keenicon>
         </span>
       </div>
       <!-- end::Symbol -->
@@ -61,7 +61,7 @@
       <div class="d-flex align-items-center flex-wrap w-100">
         <!-- begin::Title -->
         <div class="mb-1 pe-3 flex-grow-1">
-          <a href="#" class="fs-5 text-gray-800 text-hover-primary fw-bolder">
+          <a class="fs-5 text-gray-800 text-hover-primary fw-bolder" href="#">
             Sales
           </a>
           <div class="text-gray-400 fw-bold fs-7">100 Regions</div>
@@ -70,7 +70,7 @@
         <!-- begin::Label -->
         <div class="d-flex align-items-center">
           <div class="fw-bolder fs-5 text-gray-800 pe-1">$2,5b</div>
-          <app-keenicon name="arrow-up" class="fs-5 text-success ms-1"></app-keenicon>
+          <app-keenicon class="fs-5 text-success ms-1" name="arrow-up"></app-keenicon>
         </div>
         <!-- end::Label -->
       </div>
@@ -82,7 +82,7 @@
       <!-- begin::Symbol -->
       <div class="symbol symbol-45px w-40px me-5">
         <span class="symbol-label bg-lighten">
-          <app-keenicon name="category" class="fs-1"></app-keenicon>
+          <app-keenicon class="fs-1" name="category"></app-keenicon>
         </span>
       </div>
       <!-- end::Symbol -->
@@ -90,7 +90,7 @@
       <div class="d-flex align-items-center flex-wrap w-100">
         <!-- begin::Title -->
         <div class="mb-1 pe-3 flex-grow-1">
-          <a href="#" class="fs-5 text-gray-800 text-hover-primary fw-bolder">
+          <a class="fs-5 text-gray-800 text-hover-primary fw-bolder" href="#">
             Revenue
           </a>
           <div class="text-gray-400 fw-bold fs-7">Quarter 2/3</div>
@@ -99,7 +99,7 @@
         <!-- begin::Label -->
         <div class="d-flex align-items-center">
           <div class="fw-bolder fs-5 text-gray-800 pe-1">$1,7b</div>
-          <app-keenicon name="category" class="fs-5 text-danger ms-1"></app-keenicon>
+          <app-keenicon class="fs-5 text-danger ms-1" name="category"></app-keenicon>
         </div>
         <!-- end::Label -->
       </div>
@@ -111,7 +111,7 @@
       <!-- begin::Symbol -->
       <div class="symbol symbol-45px w-40px me-5">
         <span class="symbol-label bg-lighten">
-          <app-keenicon name="elc005.svg" class="fs-1"></app-keenicon>
+          <app-keenicon class="fs-1" name="elc005.svg"></app-keenicon>
         </span>
       </div>
       <!-- end::Symbol -->
@@ -119,7 +119,7 @@
       <div class="d-flex align-items-center flex-wrap w-100">
         <!-- begin::Title -->
         <div class="mb-1 pe-3 flex-grow-1">
-          <a href="#" class="fs-5 text-gray-800 text-hover-primary fw-bolder">
+          <a class="fs-5 text-gray-800 text-hover-primary fw-bolder" href="#">
             Growth
           </a>
           <div class="text-gray-400 fw-bold fs-7">80% Rate</div>
@@ -128,7 +128,7 @@
         <!-- begin::Label -->
         <div class="d-flex align-items-center">
           <div class="fw-bolder fs-5 text-gray-800 pe-1">$8,8m</div>
-          <app-keenicon name="arrow-up" class="fs-5 text-success ms-1"></app-keenicon>
+          <app-keenicon class="fs-5 text-success ms-1" name="arrow-up"></app-keenicon>
         </div>
         <!-- end::Label -->
       </div>
@@ -140,7 +140,7 @@
       <!-- begin::Symbol -->
       <div class="symbol symbol-45px w-40px me-5">
         <span class="symbol-label bg-lighten">
-          <app-keenicon name="document" class="fs-1"></app-keenicon>
+          <app-keenicon class="fs-1" name="document"></app-keenicon>
         </span>
       </div>
       <!-- end::Symbol -->
@@ -148,7 +148,7 @@
       <div class="d-flex align-items-center flex-wrap w-100">
         <!-- begin::Title -->
         <div class="mb-1 pe-3 flex-grow-1">
-          <a href="#" class="fs-5 text-gray-800 text-hover-primary fw-bolder">
+          <a class="fs-5 text-gray-800 text-hover-primary fw-bolder" href="#">
             Dispute
           </a>
           <div class="text-gray-400 fw-bold fs-7">3090 Refunds</div>
@@ -157,7 +157,7 @@
         <!-- begin::Label -->
         <div class="d-flex align-items-center">
           <div class="fw-bolder fs-5 text-gray-800 pe-1">$270m</div>
-          <app-keenicon name="arrow-down" class="fs-5 text-danger ms-1"></app-keenicon>
+          <app-keenicon class="fs-5 text-danger ms-1" name="arrow-down"></app-keenicon>
         </div>
         <!-- end::Label -->
       </div>

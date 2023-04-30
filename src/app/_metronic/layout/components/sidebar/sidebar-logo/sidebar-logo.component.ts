@@ -1,7 +1,7 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { LayoutType } from '../../../core/configs/config';
-import { LayoutService } from '../../../core/layout.service';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
+import {Subscription} from 'rxjs';
+import {LayoutType} from '../../../core/configs/config';
+import {LayoutService} from '../../../core/layout.service';
 
 @Component({
   selector: 'app-sidebar-logo',
@@ -9,16 +9,16 @@ import { LayoutService } from '../../../core/layout.service';
   styleUrls: ['./sidebar-logo.component.scss'],
 })
 export class SidebarLogoComponent implements OnInit, OnDestroy {
-  private unsubscribe: Subscription[] = [];
   @Input() toggleButtonClass: string = '';
   @Input() toggleEnabled: boolean;
   @Input() toggleType: string = '';
   @Input() toggleState: string = '';
   currentLayoutType: LayoutType | null;
-
   toggleAttr: string;
+  private unsubscribe: Subscription[] = [];
 
-  constructor(private layout: LayoutService) {}
+  constructor(private layout: LayoutService) {
+  }
 
   ngOnInit(): void {
     this.toggleAttr = `app-sidebar-${this.toggleType}`;

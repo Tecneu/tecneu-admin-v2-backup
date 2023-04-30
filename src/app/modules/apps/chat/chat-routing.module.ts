@@ -1,9 +1,9 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { ChatComponent } from './chat.component';
-import { DrawerChatComponent } from './drawer-chat/drawer-chat.component';
-import { GroupChatComponent } from './group-chat/group-chat.component';
-import { PrivateChatComponent } from './private-chat/private-chat.component';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {ChatComponent} from './chat.component';
+import {DrawerChatComponent} from './drawer-chat/drawer-chat.component';
+import {GroupChatComponent} from './group-chat/group-chat.component';
+import {PrivateChatComponent} from './private-chat/private-chat.component';
 
 const routes: Routes = [
   {
@@ -23,8 +23,8 @@ const routes: Routes = [
         component: DrawerChatComponent,
       },
 
-      { path: '', redirectTo: 'private-chat', pathMatch: 'full' },
-      { path: '**', redirectTo: 'private-chat', pathMatch: 'full' },
+      {path: '', redirectTo: 'private-chat', pathMatch: 'full'},
+      {path: '**', redirectTo: 'private-chat', pathMatch: 'full'},
     ],
   },
 ];
@@ -33,4 +33,5 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class ChatRoutingModule {}
+export class ChatRoutingModule {
+}

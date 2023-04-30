@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-stats-widget1',
@@ -9,5 +9,6 @@ export class StatsWidget1Component {
   @Input() time = '';
   @Input() description = '';
 
-  constructor() {}
+  constructor() {
+  }
 }

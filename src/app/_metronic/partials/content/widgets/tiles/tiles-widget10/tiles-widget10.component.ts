@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-tiles-widget10',
@@ -8,5 +8,6 @@ export class TilesWidget10Component {
   @Input() cssClass = '';
   @Input() widgetHeight = '130px';
 
-  constructor() {}
+  constructor() {
+  }
 }

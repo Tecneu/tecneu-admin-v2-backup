@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-base-tables-widget1',
@@ -10,7 +10,8 @@ export class BaseTablesWidget1Component implements OnInit {
   @Input() cssClass: string;
   @Input() progressWidth = '';
 
-  constructor() {}
+  constructor() {
+  }
 
   ngOnInit(): void {
     if (!this.progressWidth) {

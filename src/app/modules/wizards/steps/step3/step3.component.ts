@@ -1,7 +1,7 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Subscription } from 'rxjs';
-import { ICreateAccount } from '../../create-account.helper';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Subscription} from 'rxjs';
+import {ICreateAccount} from '../../create-account.helper';
 
 @Component({
   selector: 'app-step3',
@@ -17,7 +17,8 @@ export class Step3Component implements OnInit, OnDestroy {
 
   private unsubscribe: Subscription[] = [];
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder) {
+  }
 
   ngOnInit() {
     this.initForm();

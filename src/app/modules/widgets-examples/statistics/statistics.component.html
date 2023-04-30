@@ -2,43 +2,43 @@
 <div class="row g-5 g-xl-8">
   <div class="col-xl-4">
     <app-stats-widget1
+      [ngStyle]="{
+        'background-position': 'right top',
+        'background-size': '30% auto',
+        'background-image': 'url(./assets/media/svg/shapes/abstract-4.svg)'
+      }"
       class="card bgi-no-repeat card-xl-stretch mb-xl-8"
-      title="Meeting Schedule"
-      time="3:30PM - 4:20PM"
       description="Create a headline that is informative<br/>and will capture readers"
-      [ngStyle]="{
-        'background-position': 'right top',
-        'background-size': '30% auto',
-        'background-image': 'url(./assets/media/svg/shapes/abstract-4.svg)'
-      }"
-    ></app-stats-widget1>
-  </div>
-
-  <div class="col-xl-4">
-    <app-stats-widget1
-      class="card bgi-no-repeat card-xl-stretch mb-xl-8"
+      time="3:30PM - 4:20PM"
       title="Meeting Schedule"
-      time="03 May 2020"
-      description="Great blog posts don’t just happen Even the best bloggers need it"
-      [ngStyle]="{
-        'background-position': 'right top',
-        'background-size': '30% auto',
-        'background-image': 'url(./assets/media/svg/shapes/abstract-4.svg)'
-      }"
     ></app-stats-widget1>
   </div>
 
   <div class="col-xl-4">
     <app-stats-widget1
-      class="card bgi-no-repeat card-xl-stretch mb-5 mb-xl-8"
-      title="UI Conference"
-      time="10AM Jan, 2021"
-      description="AirWays - A Front-end solution for airlines build with ReactJS"
       [ngStyle]="{
         'background-position': 'right top',
         'background-size': '30% auto',
         'background-image': 'url(./assets/media/svg/shapes/abstract-4.svg)'
       }"
+      class="card bgi-no-repeat card-xl-stretch mb-xl-8"
+      description="Great blog posts don’t just happen Even the best bloggers need it"
+      time="03 May 2020"
+      title="Meeting Schedule"
+    ></app-stats-widget1>
+  </div>
+
+  <div class="col-xl-4">
+    <app-stats-widget1
+      [ngStyle]="{
+        'background-position': 'right top',
+        'background-size': '30% auto',
+        'background-image': 'url(./assets/media/svg/shapes/abstract-4.svg)'
+      }"
+      class="card bgi-no-repeat card-xl-stretch mb-5 mb-xl-8"
+      description="AirWays - A Front-end solution for airlines build with ReactJS"
+      time="10AM Jan, 2021"
+      title="UI Conference"
     ></app-stats-widget1>
   </div>
 </div>
@@ -48,28 +48,28 @@
 <div class="row g-5 g-xl-8">
   <div class="col-xl-4">
     <app-stats-widget2
-      class="card card-xl-stretch mb-xl-8"
       avatar="./assets/media/svg/avatars/029-boy-11.svg"
-      title="Arthur Goldstain"
-      description="System & Software Architect"
-    ></app-stats-widget2>
-  </div>
-
-  <div class="col-xl-4">
-    <app-stats-widget2
       class="card card-xl-stretch mb-xl-8"
-      avatar="./assets/media/svg/avatars/014-girl-7.svg"
-      title="Lisa Bold"
-      description="Marketing & Fanance Manager"
+      description="System & Software Architect"
+      title="Arthur Goldstain"
     ></app-stats-widget2>
   </div>
 
   <div class="col-xl-4">
     <app-stats-widget2
-      class="card card-xl-stretch mb-5 mb-xl-8"
+      avatar="./assets/media/svg/avatars/014-girl-7.svg"
+      class="card card-xl-stretch mb-xl-8"
+      description="Marketing & Fanance Manager"
+      title="Lisa Bold"
+    ></app-stats-widget2>
+  </div>
+
+  <div class="col-xl-4">
+    <app-stats-widget2
       avatar="./assets/media/svg/avatars/004-boy-1.svg"
-      title="Nick Stone"
+      class="card card-xl-stretch mb-5 mb-xl-8"
       description="Customer Support Team"
+      title="Nick Stone"
     ></app-stats-widget2>
   </div>
 </div>
@@ -79,31 +79,31 @@
 <div class="row g-5 g-xl-8">
   <div class="col-xl-4">
     <app-stats-widget3
+      change="+100"
       class="card card-xl-stretch mb-xl-8"
       color="success"
-      change="+100"
-      title="Weekly Sales"
       description="Your Weekly Sales Chart"
+      title="Weekly Sales"
     ></app-stats-widget3>
   </div>
 
   <div class="col-xl-4">
     <app-stats-widget3
+      change="-260"
       class="card card-xl-stretch mb-xl-8"
       color="danger"
-      change="-260"
-      title="Authors Progress"
       description="Marketplace Authors Chart"
+      title="Authors Progress"
     ></app-stats-widget3>
   </div>
 
   <div class="col-xl-4">
     <app-stats-widget3
+      change="+180"
       class="card card-xl-stretch mb-5 mb-xl-8"
       color="primary"
-      change="+180"
-      title="Sales Progress"
       description="Marketplace Sales Chart"
+      title="Sales Progress"
     ></app-stats-widget3>
   </div>
 </div>
@@ -113,31 +113,31 @@
 <div class="row g-5 g-xl-8">
   <div class="col-xl-4">
     <app-stats-widget4
-      svgIcon="./assets/media/icons/duotune/ecommerce/basket"
+      change="+256"
       class="card card-xl-stretch mb-xl-8"
       color="info"
-      change="+256"
       description="Sales Change"
+      svgIcon="./assets/media/icons/duotune/ecommerce/basket"
     ></app-stats-widget4>
   </div>
 
   <div class="col-xl-4">
     <app-stats-widget4
-      svgIcon="./assets/media/icons/duotune/general/element-11"
+      change="750$"
       class="card card-xl-stretch mb-xl-8"
       color="success"
-      change="750$"
       description="Weekly Income"
+      svgIcon="./assets/media/icons/duotune/general/element-11"
     ></app-stats-widget4>
   </div>
 
   <div class="col-xl-4">
     <app-stats-widget4
-      svgIcon="./assets/media/icons/duotune/general/element-11"
+      change="+6.6K"
       class="card card-xl-stretch mb-5 mb-xl-8"
       color="primary"
-      change="+6.6K"
       description="New Users"
+      svgIcon="./assets/media/icons/duotune/general/element-11"
     ></app-stats-widget4>
   </div>
 </div>
@@ -147,34 +147,34 @@
 <div class="row g-5 g-xl-8">
   <div class="col-xl-4">
     <app-stats-widget5
-      svgIcon="./assets/media/icons/duotune/ecommerce/basket"
       class="card bg-danger hoverable card-xl-stretch mb-xl-8"
       color="danger"
-      iconColor="white"
-      title="Shopping Cart"
       description="Lands, Houses, Ranchos, Farms"
+      iconColor="white"
+      svgIcon="./assets/media/icons/duotune/ecommerce/basket"
+      title="Shopping Cart"
     ></app-stats-widget5>
   </div>
 
   <div class="col-xl-4">
     <app-stats-widget5
-      svgIcon="./assets/media/icons/duotune/ecommerce/cheque"
       class="card bg-primary hoverable card-xl-stretch mb-xl-8"
       color="primary"
-      iconColor="white"
-      title="Appartments"
       description="Flats, Shared Rooms, Duplex"
+      iconColor="white"
+      svgIcon="./assets/media/icons/duotune/ecommerce/cheque"
+      title="Appartments"
     ></app-stats-widget5>
   </div>
 
   <div class="col-xl-4">
     <app-stats-widget5
-      svgIcon="./assets/media/icons/duotune/graphs/chart-simple-3"
       class="card bg-success hoverable card-xl-stretch mb-5 mb-xl-8"
       color="success"
-      iconColor="white"
-      title="Sales Stats"
       description="50% Increased for FY20"
+      iconColor="white"
+      svgIcon="./assets/media/icons/duotune/graphs/chart-simple-3"
+      title="Sales Stats"
     ></app-stats-widget5>
   </div>
 </div>
@@ -184,45 +184,45 @@
 <div class="row g-5 g-xl-8">
   <div class="col-xl-3">
     <app-stats-widget5
-      svgIcon="./assets/media/icons/duotune/general/chart-simple"
       class="card bg-body hoverable card-xl-stretch mb-xl-8"
       color="white"
-      iconColor="primary"
-      title="500M$"
       description="SAP UI Progress"
+      iconColor="primary"
+      svgIcon="./assets/media/icons/duotune/general/chart-simple"
+      title="500M$"
     ></app-stats-widget5>
   </div>
 
   <div class="col-xl-3">
     <app-stats-widget5
-      svgIcon="./assets/media/icons/duotune/ecommerce/cheque"
       class="card bg-dark hoverable card-xl-stretch mb-xl-8"
       color="dark"
-      iconColor="white"
-      title="+3000"
       description="New Customers"
+      iconColor="white"
+      svgIcon="./assets/media/icons/duotune/ecommerce/cheque"
+      title="+3000"
     ></app-stats-widget5>
   </div>
 
   <div class="col-xl-3">
     <app-stats-widget5
-      svgIcon="./assets/media/icons/duotune/finance/briefcase"
       class="card bg-warning hoverable card-xl-stretch mb-xl-8"
       color="warning"
-      iconColor="white"
-      title="$50,000"
       description="Milestone Reached"
+      iconColor="white"
+      svgIcon="./assets/media/icons/duotune/finance/briefcase"
+      title="$50,000"
     ></app-stats-widget5>
   </div>
 
   <div class="col-xl-3">
     <app-stats-widget5
-      svgIcon="./assets/media/icons/duotune/graphs/chart-pie-simple"
       class="card bg-info hoverable card-xl-stretch mb-5 mb-xl-8"
       color="info"
-      iconColor="white"
-      title="$50,000"
       description="Milestone Reached"
+      iconColor="white"
+      svgIcon="./assets/media/icons/duotune/graphs/chart-pie-simple"
+      title="$50,000"
     ></app-stats-widget5>
   </div>
 </div>
@@ -232,11 +232,11 @@
 <div class="row g-5 g-xl-8">
   <div class="col-xl-4">
     <app-stats-widget6
+      [progress]="'50%'"
       class="card bg-light-success card-xl-stretch mb-xl-8"
       color="success"
-      title="Avarage"
       description="Project Progress"
-      [progress]="'50%'"
+      title="Avarage"
     ></app-stats-widget6>
   </div>
 
@@ -244,9 +244,9 @@
     <app-stats-widget6
       class="card bg-light-warning card-xl-stretch mb-xl-8"
       color="warning"
-      title="48k Goal"
       description="Company Finance"
       progress="15%"
+      title="48k Goal"
     ></app-stats-widget6>
   </div>
 
@@ -254,9 +254,9 @@
     <app-stats-widget6
       class="card bg-light-primary card-xl-stretch mb-xl-8"
       color="primary"
-      title="400k Impressions"
       description="Marketing Analysis"
       progress="76%"
+      title="400k Impressions"
     ></app-stats-widget6>
   </div>
 </div>

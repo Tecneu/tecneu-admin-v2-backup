@@ -7,13 +7,13 @@
   </h3>
   <div
     class="card-toolbar"
-    data-bs-toggle="tooltip"
     data-bs-placement="top"
+    data-bs-toggle="tooltip"
     data-bs-trigger="hover"
     title="Click to add a user"
   >
-    <a href="#" class="btn btn-sm btn-light-primary">
-      <app-keenicon name="plus" class="fs-3"></app-keenicon>
+    <a class="btn btn-sm btn-light-primary" href="#">
+      <app-keenicon class="fs-3" name="plus"></app-keenicon>
       New Member
     </a>
   </div>
@@ -29,456 +29,456 @@
     >
       <!-- begin::Table head -->
       <thead>
-        <tr class="fw-bolder text-muted">
-          <th class="w-25px">
-            <div
-              class="
+      <tr class="fw-bolder text-muted">
+        <th class="w-25px">
+          <div
+            class="
                 form-check form-check-sm form-check-custom form-check-solid
               "
-            >
-              <input
-                class="form-check-input"
-                type="checkbox"
-                value="1"
-                data-kt-check="true"
-                data-kt-check-target=".widget-9-check"
-              />
-            </div>
-          </th>
-          <th class="min-w-150px">Authors</th>
-          <th class="min-w-140px">Company</th>
-          <th class="min-w-120px">Progress</th>
-          <th class="min-w-100px text-end">Actions</th>
-        </tr>
+          >
+            <input
+              class="form-check-input"
+              data-kt-check="true"
+              data-kt-check-target=".widget-9-check"
+              type="checkbox"
+              value="1"
+            />
+          </div>
+        </th>
+        <th class="min-w-150px">Authors</th>
+        <th class="min-w-140px">Company</th>
+        <th class="min-w-120px">Progress</th>
+        <th class="min-w-100px text-end">Actions</th>
+      </tr>
       </thead>
       <!-- end::Table head -->
       <!-- begin::Table body -->
       <tbody>
-        <tr>
-          <td>
-            <div
-              class="
+      <tr>
+        <td>
+          <div
+            class="
                 form-check form-check-sm form-check-custom form-check-solid
               "
-            >
-              <input
-                class="form-check-input widget-9-check"
-                type="checkbox"
-                value="1"
-              />
+          >
+            <input
+              class="form-check-input widget-9-check"
+              type="checkbox"
+              value="1"
+            />
+          </div>
+        </td>
+        <td>
+          <div class="d-flex align-items-center">
+            <div class="symbol symbol-45px me-5">
+              <img alt="" src="./assets/media/avatars/300-14.jpg"/>
             </div>
-          </td>
-          <td>
-            <div class="d-flex align-items-center">
-              <div class="symbol symbol-45px me-5">
-                <img src="./assets/media/avatars/300-14.jpg" alt="" />
-              </div>
-              <div class="d-flex justify-content-start flex-column">
-                <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">
-                  Ana Simmons
-                </a>
-                <span class="text-muted fw-bold text-muted d-block fs-7">
+            <div class="d-flex justify-content-start flex-column">
+              <a class="text-dark fw-bolder text-hover-primary fs-6" href="#">
+                Ana Simmons
+              </a>
+              <span class="text-muted fw-bold text-muted d-block fs-7">
                   HTML, JS, ReactJS
                 </span>
-              </div>
             </div>
-          </td>
-          <td>
-            <a
-              href="#"
-              class="text-dark fw-bolder text-hover-primary d-block fs-6"
-            >
-              Intertico
-            </a>
-            <span class="text-muted fw-bold text-muted d-block fs-7">
+          </div>
+        </td>
+        <td>
+          <a
+            class="text-dark fw-bolder text-hover-primary d-block fs-6"
+            href="#"
+          >
+            Intertico
+          </a>
+          <span class="text-muted fw-bold text-muted d-block fs-7">
               Web, UI/UX Design
             </span>
-          </td>
-          <td class="text-end">
-            <div class="d-flex flex-column w-100 me-2">
-              <div class="d-flex flex-stack mb-2">
-                <span class="text-muted me-2 fs-7 fw-bold">50%</span>
-              </div>
-              <div class="progress h-6px w-100">
-                <div
-                  class="progress-bar bg-primary"
-                  role="progressbar"
-                  [style.width]="'50%'"
-                ></div>
-              </div>
+        </td>
+        <td class="text-end">
+          <div class="d-flex flex-column w-100 me-2">
+            <div class="d-flex flex-stack mb-2">
+              <span class="text-muted me-2 fs-7 fw-bold">50%</span>
             </div>
-          </td>
-          <td>
-            <div class="d-flex justify-content-end flex-shrink-0">
-              <a
-                href="#"
-                class="
-                  btn btn-icon btn-bg-light btn-active-color-primary btn-sm
-                  me-1
-                "
-              >
-                <app-keenicon name="switch" class="fs-3"></app-keenicon>
-              </a>
-              <a
-                href="#"
-                class="
-                  btn btn-icon btn-bg-light btn-active-color-primary btn-sm
-                  me-1
-                "
-              >
-                <app-keenicon name="pencil" class="fs-3"></app-keenicon>
-              </a>
-              <a
-                href="#"
-                class="
-                  btn btn-icon btn-bg-light btn-active-color-primary btn-sm
-                "
-              >
-                <app-keenicon name="trash" class="fs-3"></app-keenicon>
-              </a>
+            <div class="progress h-6px w-100">
+              <div
+                [style.width]="'50%'"
+                class="progress-bar bg-primary"
+                role="progressbar"
+              ></div>
             </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div
+          </div>
+        </td>
+        <td>
+          <div class="d-flex justify-content-end flex-shrink-0">
+            <a
               class="
+                  btn btn-icon btn-bg-light btn-active-color-primary btn-sm
+                  me-1
+                "
+              href="#"
+            >
+              <app-keenicon class="fs-3" name="switch"></app-keenicon>
+            </a>
+            <a
+              class="
+                  btn btn-icon btn-bg-light btn-active-color-primary btn-sm
+                  me-1
+                "
+              href="#"
+            >
+              <app-keenicon class="fs-3" name="pencil"></app-keenicon>
+            </a>
+            <a
+              class="
+                  btn btn-icon btn-bg-light btn-active-color-primary btn-sm
+                "
+              href="#"
+            >
+              <app-keenicon class="fs-3" name="trash"></app-keenicon>
+            </a>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div
+            class="
                 form-check form-check-sm form-check-custom form-check-solid
               "
-            >
-              <input
-                class="form-check-input widget-9-check"
-                type="checkbox"
-                value="1"
-              />
+          >
+            <input
+              class="form-check-input widget-9-check"
+              type="checkbox"
+              value="1"
+            />
+          </div>
+        </td>
+        <td>
+          <div class="d-flex align-items-center">
+            <div class="symbol symbol-45px me-5">
+              <img alt="" src="./assets/media/avatars/300-2.jpg"/>
             </div>
-          </td>
-          <td>
-            <div class="d-flex align-items-center">
-              <div class="symbol symbol-45px me-5">
-                <img src="./assets/media/avatars/300-2.jpg" alt="" />
-              </div>
-              <div class="d-flex justify-content-start flex-column">
-                <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">
-                  Jessie Clarcson
-                </a>
-                <span class="text-muted fw-bold text-muted d-block fs-7">
+            <div class="d-flex justify-content-start flex-column">
+              <a class="text-dark fw-bolder text-hover-primary fs-6" href="#">
+                Jessie Clarcson
+              </a>
+              <span class="text-muted fw-bold text-muted d-block fs-7">
                   C#, ASP.NET, MS SQL
                 </span>
-              </div>
             </div>
-          </td>
-          <td>
-            <a
-              href="#"
-              class="text-dark fw-bolder text-hover-primary d-block fs-6"
-            >
-              Agoda
-            </a>
-            <span class="text-muted fw-bold text-muted d-block fs-7">
+          </div>
+        </td>
+        <td>
+          <a
+            class="text-dark fw-bolder text-hover-primary d-block fs-6"
+            href="#"
+          >
+            Agoda
+          </a>
+          <span class="text-muted fw-bold text-muted d-block fs-7">
               Houses &amp; Hotels
             </span>
-          </td>
-          <td class="text-end">
-            <div class="d-flex flex-column w-100 me-2">
-              <div class="d-flex flex-stack mb-2">
-                <span class="text-muted me-2 fs-7 fw-bold">70%</span>
-              </div>
-              <div class="progress h-6px w-100">
-                <div
-                  class="progress-bar bg-danger"
-                  role="progressbar"
-                  [style.width]="'70%'"
-                ></div>
-              </div>
+        </td>
+        <td class="text-end">
+          <div class="d-flex flex-column w-100 me-2">
+            <div class="d-flex flex-stack mb-2">
+              <span class="text-muted me-2 fs-7 fw-bold">70%</span>
             </div>
-          </td>
-          <td>
-            <div class="d-flex justify-content-end flex-shrink-0">
-              <a
-                href="#"
-                class="
-                  btn btn-icon btn-bg-light btn-active-color-primary btn-sm
-                  me-1
-                "
-              >
-                <app-keenicon name="switch" class="fs-3"></app-keenicon>
-              </a>
-              <a
-                href="#"
-                class="
-                  btn btn-icon btn-bg-light btn-active-color-primary btn-sm
-                  me-1
-                "
-              >
-                <app-keenicon name="pencil" class="fs-3"></app-keenicon>
-              </a>
-              <a
-                href="#"
-                class="
-                  btn btn-icon btn-bg-light btn-active-color-primary btn-sm
-                "
-              >
-                <app-keenicon name="trash" class="fs-3"></app-keenicon>
-              </a>
+            <div class="progress h-6px w-100">
+              <div
+                [style.width]="'70%'"
+                class="progress-bar bg-danger"
+                role="progressbar"
+              ></div>
             </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div
+          </div>
+        </td>
+        <td>
+          <div class="d-flex justify-content-end flex-shrink-0">
+            <a
               class="
+                  btn btn-icon btn-bg-light btn-active-color-primary btn-sm
+                  me-1
+                "
+              href="#"
+            >
+              <app-keenicon class="fs-3" name="switch"></app-keenicon>
+            </a>
+            <a
+              class="
+                  btn btn-icon btn-bg-light btn-active-color-primary btn-sm
+                  me-1
+                "
+              href="#"
+            >
+              <app-keenicon class="fs-3" name="pencil"></app-keenicon>
+            </a>
+            <a
+              class="
+                  btn btn-icon btn-bg-light btn-active-color-primary btn-sm
+                "
+              href="#"
+            >
+              <app-keenicon class="fs-3" name="trash"></app-keenicon>
+            </a>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div
+            class="
                 form-check form-check-sm form-check-custom form-check-solid
               "
-            >
-              <input
-                class="form-check-input widget-9-check"
-                type="checkbox"
-                value="1"
-              />
+          >
+            <input
+              class="form-check-input widget-9-check"
+              type="checkbox"
+              value="1"
+            />
+          </div>
+        </td>
+        <td>
+          <div class="d-flex align-items-center">
+            <div class="symbol symbol-45px me-5">
+              <img alt="" src="./assets/media/avatars/300-5.jpg"/>
             </div>
-          </td>
-          <td>
-            <div class="d-flex align-items-center">
-              <div class="symbol symbol-45px me-5">
-                <img src="./assets/media/avatars/300-5.jpg" alt="" />
-              </div>
-              <div class="d-flex justify-content-start flex-column">
-                <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">
-                  Lebron Wayde
-                </a>
-                <span class="text-muted fw-bold text-muted d-block fs-7">
+            <div class="d-flex justify-content-start flex-column">
+              <a class="text-dark fw-bolder text-hover-primary fs-6" href="#">
+                Lebron Wayde
+              </a>
+              <span class="text-muted fw-bold text-muted d-block fs-7">
                   PHP, Laravel, VueJS
                 </span>
-              </div>
             </div>
-          </td>
-          <td>
+          </div>
+        </td>
+        <td>
+          <a
+            class="text-dark fw-bolder text-hover-primary d-block fs-6"
+            href="#"
+          >
+            RoadGee
+          </a>
+          <span class="text-muted fw-bold text-muted d-block fs-7"
+          >Transportation</span
+          >
+        </td>
+        <td class="text-end">
+          <div class="d-flex flex-column w-100 me-2">
+            <div class="d-flex flex-stack mb-2">
+              <span class="text-muted me-2 fs-7 fw-bold">60%</span>
+            </div>
+            <div class="progress h-6px w-100">
+              <div
+                [style.width]="'60%'"
+                class="progress-bar bg-success"
+                role="progressbar"
+              ></div>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="d-flex justify-content-end flex-shrink-0">
             <a
-              href="#"
-              class="text-dark fw-bolder text-hover-primary d-block fs-6"
-            >
-              RoadGee
-            </a>
-            <span class="text-muted fw-bold text-muted d-block fs-7"
-              >Transportation</span
-            >
-          </td>
-          <td class="text-end">
-            <div class="d-flex flex-column w-100 me-2">
-              <div class="d-flex flex-stack mb-2">
-                <span class="text-muted me-2 fs-7 fw-bold">60%</span>
-              </div>
-              <div class="progress h-6px w-100">
-                <div
-                  class="progress-bar bg-success"
-                  role="progressbar"
-                  [style.width]="'60%'"
-                ></div>
-              </div>
-            </div>
-          </td>
-          <td>
-            <div class="d-flex justify-content-end flex-shrink-0">
-              <a
-                href="#"
-                class="
-                  btn btn-icon btn-bg-light btn-active-color-primary btn-sm
-                  me-1
-                "
-              >
-                <app-keenicon name="switch" class="fs-3"></app-keenicon>
-              </a>
-              <a
-                href="#"
-                class="
-                  btn btn-icon btn-bg-light btn-active-color-primary btn-sm
-                  me-1
-                "
-              >
-                <app-keenicon name="pencil" class="fs-3"></app-keenicon>
-              </a>
-              <a
-                href="#"
-                class="
-                  btn btn-icon btn-bg-light btn-active-color-primary btn-sm
-                "
-              >
-                <app-keenicon name="trash" class="fs-3"></app-keenicon>
-              </a>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div
               class="
+                  btn btn-icon btn-bg-light btn-active-color-primary btn-sm
+                  me-1
+                "
+              href="#"
+            >
+              <app-keenicon class="fs-3" name="switch"></app-keenicon>
+            </a>
+            <a
+              class="
+                  btn btn-icon btn-bg-light btn-active-color-primary btn-sm
+                  me-1
+                "
+              href="#"
+            >
+              <app-keenicon class="fs-3" name="pencil"></app-keenicon>
+            </a>
+            <a
+              class="
+                  btn btn-icon btn-bg-light btn-active-color-primary btn-sm
+                "
+              href="#"
+            >
+              <app-keenicon class="fs-3" name="trash"></app-keenicon>
+            </a>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div
+            class="
                 form-check form-check-sm form-check-custom form-check-solid
               "
-            >
-              <input
-                class="form-check-input widget-9-check"
-                type="checkbox"
-                value="1"
-              />
+          >
+            <input
+              class="form-check-input widget-9-check"
+              type="checkbox"
+              value="1"
+            />
+          </div>
+        </td>
+        <td>
+          <div class="d-flex align-items-center">
+            <div class="symbol symbol-45px me-5">
+              <img alt="" src="./assets/media/avatars/300-20.jpg"/>
             </div>
-          </td>
-          <td>
-            <div class="d-flex align-items-center">
-              <div class="symbol symbol-45px me-5">
-                <img src="./assets/media/avatars/300-20.jpg" alt="" />
-              </div>
-              <div class="d-flex justify-content-start flex-column">
-                <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">
-                  Natali Goodwin
-                </a>
-                <span class="text-muted fw-bold text-muted d-block fs-7">
+            <div class="d-flex justify-content-start flex-column">
+              <a class="text-dark fw-bolder text-hover-primary fs-6" href="#">
+                Natali Goodwin
+              </a>
+              <span class="text-muted fw-bold text-muted d-block fs-7">
                   Python, PostgreSQL, ReactJS
                 </span>
-              </div>
             </div>
-          </td>
-          <td>
+          </div>
+        </td>
+        <td>
+          <a
+            class="text-dark fw-bolder text-hover-primary d-block fs-6"
+            href="#"
+          >
+            The Hill
+          </a>
+          <span class="text-muted fw-bold text-muted d-block fs-7"
+          >Insurance</span
+          >
+        </td>
+        <td class="text-end">
+          <div class="d-flex flex-column w-100 me-2">
+            <div class="d-flex flex-stack mb-2">
+              <span class="text-muted me-2 fs-7 fw-bold">50%</span>
+            </div>
+            <div class="progress h-6px w-100">
+              <div
+                [style.width]="'50%'"
+                class="progress-bar bg-warning"
+                role="progressbar"
+              ></div>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="d-flex justify-content-end flex-shrink-0">
             <a
-              href="#"
-              class="text-dark fw-bolder text-hover-primary d-block fs-6"
-            >
-              The Hill
-            </a>
-            <span class="text-muted fw-bold text-muted d-block fs-7"
-              >Insurance</span
-            >
-          </td>
-          <td class="text-end">
-            <div class="d-flex flex-column w-100 me-2">
-              <div class="d-flex flex-stack mb-2">
-                <span class="text-muted me-2 fs-7 fw-bold">50%</span>
-              </div>
-              <div class="progress h-6px w-100">
-                <div
-                  class="progress-bar bg-warning"
-                  role="progressbar"
-                  [style.width]="'50%'"
-                ></div>
-              </div>
-            </div>
-          </td>
-          <td>
-            <div class="d-flex justify-content-end flex-shrink-0">
-              <a
-                href="#"
-                class="
-                  btn btn-icon btn-bg-light btn-active-color-primary btn-sm
-                  me-1
-                "
-              >
-                <app-keenicon name="switch" class="fs-3"></app-keenicon>
-              </a>
-              <a
-                href="#"
-                class="
-                  btn btn-icon btn-bg-light btn-active-color-primary btn-sm
-                  me-1
-                "
-              >
-                <app-keenicon name="pencil" class="fs-3"></app-keenicon>
-              </a>
-              <a
-                href="#"
-                class="
-                  btn btn-icon btn-bg-light btn-active-color-primary btn-sm
-                "
-              >
-                <app-keenicon name="trash" class="fs-3"></app-keenicon>
-              </a>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div
               class="
+                  btn btn-icon btn-bg-light btn-active-color-primary btn-sm
+                  me-1
+                "
+              href="#"
+            >
+              <app-keenicon class="fs-3" name="switch"></app-keenicon>
+            </a>
+            <a
+              class="
+                  btn btn-icon btn-bg-light btn-active-color-primary btn-sm
+                  me-1
+                "
+              href="#"
+            >
+              <app-keenicon class="fs-3" name="pencil"></app-keenicon>
+            </a>
+            <a
+              class="
+                  btn btn-icon btn-bg-light btn-active-color-primary btn-sm
+                "
+              href="#"
+            >
+              <app-keenicon class="fs-3" name="trash"></app-keenicon>
+            </a>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div
+            class="
                 form-check form-check-sm form-check-custom form-check-solid
               "
-            >
-              <input
-                class="form-check-input widget-9-check"
-                type="checkbox"
-                value="1"
-              />
+          >
+            <input
+              class="form-check-input widget-9-check"
+              type="checkbox"
+              value="1"
+            />
+          </div>
+        </td>
+        <td>
+          <div class="d-flex align-items-center">
+            <div class="symbol symbol-45px me-5">
+              <img alt="" src="./assets/media/avatars/300-23.jpg"/>
             </div>
-          </td>
-          <td>
-            <div class="d-flex align-items-center">
-              <div class="symbol symbol-45px me-5">
-                <img src="./assets/media/avatars/300-23.jpg" alt="" />
-              </div>
-              <div class="d-flex justify-content-start flex-column">
-                <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">
-                  Kevin Leonard
-                </a>
-                <span class="text-muted fw-bold text-muted d-block fs-7">
+            <div class="d-flex justify-content-start flex-column">
+              <a class="text-dark fw-bolder text-hover-primary fs-6" href="#">
+                Kevin Leonard
+              </a>
+              <span class="text-muted fw-bold text-muted d-block fs-7">
                   HTML, JS, ReactJS
                 </span>
-              </div>
             </div>
-          </td>
-          <td>
+          </div>
+        </td>
+        <td>
+          <a
+            class="text-dark fw-bolder text-hover-primary d-block fs-6"
+            href="#"
+          >
+            RoadGee
+          </a>
+          <span class="text-muted fw-bold text-muted d-block fs-7"
+          >Art Director</span
+          >
+        </td>
+        <td class="text-end">
+          <div class="d-flex flex-column w-100 me-2">
+            <div class="d-flex flex-stack mb-2">
+              <span class="text-muted me-2 fs-7 fw-bold">90%</span>
+            </div>
+            <div class="progress h-6px w-100">
+              <div
+                [style.width]="'90%'"
+                class="progress-bar bg-info"
+                role="progressbar"
+              ></div>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="d-flex justify-content-end flex-shrink-0">
             <a
+              class="
+                  btn btn-icon btn-bg-light btn-active-color-primary btn-sm
+                  me-1
+                "
               href="#"
-              class="text-dark fw-bolder text-hover-primary d-block fs-6"
             >
-              RoadGee
+              <app-keenicon class="fs-3" name="switch"></app-keenicon>
             </a>
-            <span class="text-muted fw-bold text-muted d-block fs-7"
-              >Art Director</span
+            <a
+              class="
+                  btn btn-icon btn-bg-light btn-active-color-primary btn-sm
+                  me-1
+                "
+              href="#"
             >
-          </td>
-          <td class="text-end">
-            <div class="d-flex flex-column w-100 me-2">
-              <div class="d-flex flex-stack mb-2">
-                <span class="text-muted me-2 fs-7 fw-bold">90%</span>
-              </div>
-              <div class="progress h-6px w-100">
-                <div
-                  class="progress-bar bg-info"
-                  role="progressbar"
-                  [style.width]="'90%'"
-                ></div>
-              </div>
-            </div>
-          </td>
-          <td>
-            <div class="d-flex justify-content-end flex-shrink-0">
-              <a
-                href="#"
-                class="
-                  btn btn-icon btn-bg-light btn-active-color-primary btn-sm
-                  me-1
-                "
-              >
-                <app-keenicon name="switch" class="fs-3"></app-keenicon>
-              </a>
-              <a
-                href="#"
-                class="
-                  btn btn-icon btn-bg-light btn-active-color-primary btn-sm
-                  me-1
-                "
-              >
-                <app-keenicon name="pencil" class="fs-3"></app-keenicon>
-              </a>
-              <a
-                href="#"
-                class="
+              <app-keenicon class="fs-3" name="pencil"></app-keenicon>
+            </a>
+            <a
+              class="
                   btn btn-icon btn-bg-light btn-active-color-primary btn-sm
                 "
-              >
-                <app-keenicon name="trash" class="fs-3"></app-keenicon>
-              </a>
-            </div>
-          </td>
-        </tr>
+              href="#"
+            >
+              <app-keenicon class="fs-3" name="trash"></app-keenicon>
+            </a>
+          </div>
+        </td>
+      </tr>
       </tbody>
       <!-- end::Table body -->
     </table>

@@ -1,5 +1,5 @@
-import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
-import { BehaviorSubject, Subscription } from 'rxjs';
+import {ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
+import {BehaviorSubject, Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-sign-in-method',
@@ -19,7 +19,8 @@ export class SignInMethodComponent implements OnInit, OnDestroy {
     this.unsubscribe.push(loadingSubscr);
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   toggleEmailForm(show: boolean) {
     this.showChangeEmailForm = show;

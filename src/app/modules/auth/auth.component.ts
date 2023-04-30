@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 
 // const BODY_CLASSES = ['bgi-size-cover', 'bgi-position-center', 'bgi-no-repeat'];
 
@@ -11,7 +11,8 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 export class AuthComponent implements OnInit, OnDestroy {
   today: Date = new Date();
 
-  constructor() {}
+  constructor() {
+  }
 
   ngOnInit(): void {
     // BODY_CLASSES.forEach((c) => document.body.classList.add(c));

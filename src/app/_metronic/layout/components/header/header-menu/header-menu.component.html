@@ -1,6 +1,6 @@
 <!-- Dashboard -->
 <div class="menu-item me-lg-1">
-  <a class="menu-link py-3" routerLinkActive="active menu-here" routerLink="/dashboard">
+  <a class="menu-link py-3" routerLink="/dashboard" routerLinkActive="active menu-here">
     <span class="menu-title"
           translate="MENU.DASHBOARD"></span>
   </a>
@@ -8,7 +8,7 @@
 
 <!-- Layout Builder -->
 <div class="menu-item me-lg-1">
-  <a class="menu-link py-3" routerLinkActive="active menu-here" routerLink="/builder">
+  <a class="menu-link py-3" routerLink="/builder" routerLinkActive="active menu-here">
     <span class="menu-title">Layout
       Builder
     </span>
@@ -17,8 +17,8 @@
 
 <!-- Crafted -->
 <div class="menu-item menu-lg-down-accordion me-lg-1 menu-dropdown"
-     data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start">
-  <span class="menu-link py-3" [ngClass]="calculateMenuItemCssClass('/crafted')">
+     data-kt-menu-placement="bottom-start" data-kt-menu-trigger="{default: 'click', lg: 'hover'}">
+  <span [ngClass]="calculateMenuItemCssClass('/crafted')" class="menu-link py-3">
     <span class="menu-title">Crafted</span>
     <span class="menu-arrow d-lg-none"></span>
   </span>
@@ -27,9 +27,9 @@
       py-lg-4
       w-lg-225px
     " data-kt-menu-dismiss="true" data-popper-placement="bottom-start">
-    <div class="menu-item menu-lg-down-accordion me-lg-1" data-kt-menu-trigger="{default:'click', lg: 'hover'}"
-         data-kt-menu-placement="right-start">
-      <span class="menu-link py-3" [ngClass]="calculateMenuItemCssClass('/crafted/pages')">
+    <div class="menu-item menu-lg-down-accordion me-lg-1" data-kt-menu-placement="right-start"
+         data-kt-menu-trigger="{default:'click', lg: 'hover'}">
+      <span [ngClass]="calculateMenuItemCssClass('/crafted/pages')" class="menu-link py-3">
         <span class="menu-icon"><i
           class="bi fs-3 bi-archive"></i></span>
         <span class="menu-title">Pages</span>
@@ -44,9 +44,9 @@
           py-lg-4
           w-lg-225px
         " data-kt-menu-dismiss="true">
-        <div class="menu-item menu-lg-down-accordion me-lg-1" data-kt-menu-trigger="{default:'click', lg: 'hover'}"
-             data-kt-menu-placement="right-start">
-          <span class="menu-link py-3" [ngClass]="calculateMenuItemCssClass('/crafted/pages/profile')">
+        <div class="menu-item menu-lg-down-accordion me-lg-1" data-kt-menu-placement="right-start"
+             data-kt-menu-trigger="{default:'click', lg: 'hover'}">
+          <span [ngClass]="calculateMenuItemCssClass('/crafted/pages/profile')" class="menu-link py-3">
             <span
               class="menu-bullet">
               <span class="bullet bullet-dot"></span>
@@ -65,7 +65,7 @@
               w-lg-225px
             " data-kt-menu-dismiss="true">
             <div class="menu-item me-lg-1">
-              <a class="menu-link py-3" routerLinkActive="active" routerLink="/crafted/pages/profile/overview">
+              <a class="menu-link py-3" routerLink="/crafted/pages/profile/overview" routerLinkActive="active">
                 <span
                   class="menu-bullet">
                   <span class="bullet bullet-dot"></span>
@@ -76,7 +76,7 @@
               </a>
             </div>
             <div class="menu-item me-lg-1">
-              <a class="menu-link py-3" routerLinkActive="active" routerLink="/crafted/pages/profile/projects">
+              <a class="menu-link py-3" routerLink="/crafted/pages/profile/projects" routerLinkActive="active">
                 <span
                   class="menu-bullet">
                   <span class="bullet bullet-dot"></span>
@@ -88,7 +88,7 @@
             </div>
 
             <div class="menu-item me-lg-1">
-              <a class="menu-link py-3" routerLinkActive="active" routerLink="/crafted/pages/profile/campaigns">
+              <a class="menu-link py-3" routerLink="/crafted/pages/profile/campaigns" routerLinkActive="active">
                 <span
                   class="menu-bullet">
                   <span class="bullet bullet-dot"></span>
@@ -100,7 +100,7 @@
             </div>
 
             <div class="menu-item me-lg-1">
-              <a class="menu-link py-3" routerLinkActive="active" routerLink="/crafted/pages/profile/documents">
+              <a class="menu-link py-3" routerLink="/crafted/pages/profile/documents" routerLinkActive="active">
                 <span
                   class="menu-bullet">
                   <span class="bullet bullet-dot"></span>
@@ -112,7 +112,7 @@
             </div>
 
             <div class="menu-item me-lg-1">
-              <a class="menu-link py-3" routerLinkActive="active" routerLink="/crafted/pages/profile/connections">
+              <a class="menu-link py-3" routerLink="/crafted/pages/profile/connections" routerLinkActive="active">
                 <span
                   class="menu-bullet">
                   <span class="bullet bullet-dot"></span>
@@ -124,9 +124,9 @@
             </div>
           </div>
         </div>
-        <div class="menu-item menu-lg-down-accordion me-lg-1" data-kt-menu-trigger="{default:'click', lg: 'hover'}"
-             data-kt-menu-placement="right-start">
-          <span class="menu-link py-3" [ngClass]="calculateMenuItemCssClass('/crafted/pages/wizards')">
+        <div class="menu-item menu-lg-down-accordion me-lg-1" data-kt-menu-placement="right-start"
+             data-kt-menu-trigger="{default:'click', lg: 'hover'}">
+          <span [ngClass]="calculateMenuItemCssClass('/crafted/pages/wizards')" class="menu-link py-3">
             <span
               class="menu-bullet">
               <span class="bullet bullet-dot"></span>
@@ -145,7 +145,7 @@
               w-lg-225px
             " data-kt-menu-dismiss="true">
             <div class="menu-item me-lg-1">
-              <a class="menu-link py-3" routerLinkActive="active" routerLink="/crafted/pages/wizards/horizontal">
+              <a class="menu-link py-3" routerLink="/crafted/pages/wizards/horizontal" routerLinkActive="active">
                 <span
                   class="menu-bullet">
                   <span class="bullet bullet-dot"></span>
@@ -156,7 +156,7 @@
               </a>
             </div>
             <div class="menu-item me-lg-1">
-              <a class="menu-link py-3" routerLinkActive="active" routerLink="/crafted/pages/wizards/vertical">
+              <a class="menu-link py-3" routerLink="/crafted/pages/wizards/vertical" routerLinkActive="active">
                 <span
                   class="menu-bullet">
                   <span class="bullet bullet-dot"></span>
@@ -170,9 +170,9 @@
         </div>
       </div>
     </div>
-    <div class="menu-item menu-lg-down-accordion me-lg-1" data-kt-menu-trigger="{default:'click', lg: 'hover'}"
-         data-kt-menu-placement="right-start">
-      <span class="menu-link py-3" [ngClass]="calculateMenuItemCssClass('/crafted/account')">
+    <div class="menu-item menu-lg-down-accordion me-lg-1" data-kt-menu-placement="right-start"
+         data-kt-menu-trigger="{default:'click', lg: 'hover'}">
+      <span [ngClass]="calculateMenuItemCssClass('/crafted/account')" class="menu-link py-3">
         <span class="menu-icon"><i
           class="bi fs-3 bi-person"></i></span>
         <span class="menu-title"
@@ -189,7 +189,7 @@
           w-lg-225px
         " data-kt-menu-dismiss="true">
         <div class="menu-item me-lg-1">
-          <a class="menu-link py-3" routerLinkActive="active" routerLink="/crafted/account/overview">
+          <a class="menu-link py-3" routerLink="/crafted/account/overview" routerLinkActive="active">
             <span
               class="menu-bullet">
               <span class="bullet bullet-dot"></span>
@@ -200,7 +200,7 @@
           </a>
         </div>
         <div class="menu-item me-lg-1">
-          <a class="menu-link py-3" routerLinkActive="active" routerLink="/crafted/account/settings">
+          <a class="menu-link py-3" routerLink="/crafted/account/settings" routerLinkActive="active">
             <span
               class="menu-bullet">
               <span class="bullet bullet-dot"></span>
@@ -212,9 +212,9 @@
         </div>
       </div>
     </div>
-    <div class="menu-item menu-lg-down-accordion me-lg-1" data-kt-menu-trigger="{default:'click', lg: 'hover'}"
-         data-kt-menu-placement="right-start">
-      <span class="menu-link py-3" [ngClass]="calculateMenuItemCssClass('/error')">
+    <div class="menu-item menu-lg-down-accordion me-lg-1" data-kt-menu-placement="right-start"
+         data-kt-menu-trigger="{default:'click', lg: 'hover'}">
+      <span [ngClass]="calculateMenuItemCssClass('/error')" class="menu-link py-3">
         <span class="menu-icon"><i
           class="bi fs-3 bi-sticky"></i></span>
         <span class="menu-title" data-link="/error">Errors</span>
@@ -230,7 +230,7 @@
           w-lg-225px
         " data-kt-menu-dismiss="true">
         <div class="menu-item me-lg-1">
-          <a class="menu-link py-3" routerLinkActive="active" routerLink="/error/404">
+          <a class="menu-link py-3" routerLink="/error/404" routerLinkActive="active">
             <span class="menu-bullet">
               <span
                 class="bullet bullet-dot"></span>
@@ -239,7 +239,7 @@
           </a>
         </div>
         <div class="menu-item me-lg-1">
-          <a class="menu-link py-3" routerLinkActive="active" routerLink="/error/500">
+          <a class="menu-link py-3" routerLink="/error/500" routerLinkActive="active">
             <span class="menu-bullet">
               <span
                 class="bullet bullet-dot"></span>
@@ -249,9 +249,9 @@
         </div>
       </div>
     </div>
-    <div class="menu-item menu-lg-down-accordion me-lg-1" data-kt-menu-trigger="{default:'click', lg: 'hover'}"
-         data-kt-menu-placement="right-start">
-      <span class="menu-link py-3" [ngClass]="calculateMenuItemCssClass('/crafted/widgets')">
+    <div class="menu-item menu-lg-down-accordion me-lg-1" data-kt-menu-placement="right-start"
+         data-kt-menu-trigger="{default:'click', lg: 'hover'}">
+      <span [ngClass]="calculateMenuItemCssClass('/crafted/widgets')" class="menu-link py-3">
         <span class="menu-icon"><i
           class="bi fs-3 bi-layers"></i></span>
         <span class="menu-title"
@@ -268,7 +268,7 @@
           w-lg-225px
         " data-kt-menu-dismiss="true">
         <div class="menu-item me-lg-1">
-          <a class="menu-link py-3" routerLinkActive="active" routerLink="/crafted/widgets/lists">
+          <a class="menu-link py-3" routerLink="/crafted/widgets/lists" routerLinkActive="active">
             <span
               class="menu-bullet">
               <span class="bullet bullet-dot"></span>
@@ -279,7 +279,7 @@
           </a>
         </div>
         <div class="menu-item me-lg-1">
-          <a class="menu-link py-3" routerLinkActive="active" routerLink="/crafted/widgets/statistics">
+          <a class="menu-link py-3" routerLink="/crafted/widgets/statistics" routerLinkActive="active">
             <span
               class="menu-bullet">
               <span class="bullet bullet-dot"></span>
@@ -290,7 +290,7 @@
           </a>
         </div>
         <div class="menu-item me-lg-1">
-          <a class="menu-link py-3" routerLinkActive="active" routerLink="/crafted/widgets/charts">
+          <a class="menu-link py-3" routerLink="/crafted/widgets/charts" routerLinkActive="active">
             <span
               class="menu-bullet">
               <span class="bullet bullet-dot"></span>
@@ -301,7 +301,7 @@
           </a>
         </div>
         <div class="menu-item me-lg-1">
-          <a class="menu-link py-3" routerLinkActive="active" routerLink="/crafted/widgets/mixed">
+          <a class="menu-link py-3" routerLink="/crafted/widgets/mixed" routerLinkActive="active">
             <span
               class="menu-bullet">
               <span class="bullet bullet-dot"></span>
@@ -312,7 +312,7 @@
           </a>
         </div>
         <div class="menu-item me-lg-1">
-          <a class="menu-link py-3" routerLinkActive="active" routerLink="/crafted/widgets/tables">
+          <a class="menu-link py-3" routerLink="/crafted/widgets/tables" routerLinkActive="active">
             <span
               class="menu-bullet">
               <span class="bullet bullet-dot"></span>
@@ -323,7 +323,7 @@
           </a>
         </div>
         <div class="menu-item me-lg-1">
-          <a class="menu-link py-3" routerLinkActive="active" routerLink="/crafted/widgets/feeds">
+          <a class="menu-link py-3" routerLink="/crafted/widgets/feeds" routerLinkActive="active">
             <span
               class="menu-bullet">
               <span class="bullet bullet-dot"></span>
@@ -339,17 +339,18 @@
 </div>
 
 <!-- Apps -->
-<div class="menu-item menu-lg-down-accordion me-lg-1" data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
-  data-kt-menu-placement="bottom-start">
-  <span class="menu-link py-3" [ngClass]="calculateMenuItemCssClass('/apps')">
+<div class="menu-item menu-lg-down-accordion me-lg-1" data-kt-menu-placement="bottom-start"
+     data-kt-menu-trigger="{default: 'click', lg: 'hover'}">
+  <span [ngClass]="calculateMenuItemCssClass('/apps')" class="menu-link py-3">
     <span class="menu-title">Apps</span>
     <span class="menu-arrow d-lg-none"></span>
   </span>
-  <div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-rounded-0 py-lg-4 w-lg-225px" data-kt-menu-dismiss="true">
-    <div class="menu-item menu-lg-down-accordion me-lg-1" data-kt-menu-trigger="{default:'click', lg: 'hover'}"
-      data-kt-menu-placement="right-start">
-      <span class="menu-link py-3" [ngClass]="calculateMenuItemCssClass('/apps/chat')"><span class="menu-icon">
-        <app-keenicon name="element-plus" class="fs-md- text-white"></app-keenicon>
+  <div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-rounded-0 py-lg-4 w-lg-225px"
+       data-kt-menu-dismiss="true">
+    <div class="menu-item menu-lg-down-accordion me-lg-1" data-kt-menu-placement="right-start"
+         data-kt-menu-trigger="{default:'click', lg: 'hover'}">
+      <span [ngClass]="calculateMenuItemCssClass('/apps/chat')" class="menu-link py-3"><span class="menu-icon">
+        <app-keenicon class="fs-md- text-white" name="element-plus"></app-keenicon>
       </span>
       <span class="menu-title" data-link="/apps/chat">Chat</span><span class="menu-arrow"></span></span>
       <div class="
@@ -361,18 +362,18 @@
           w-lg-225px
         " data-kt-menu-dismiss="true">
         <div class="menu-item me-lg-1">
-          <a class="menu-link py-3" routerLinkActive="active" routerLink="/apps/chat/private-chat"><span
-              class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Private
+          <a class="menu-link py-3" routerLink="/apps/chat/private-chat" routerLinkActive="active"><span
+            class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Private
               Chat</span></a>
         </div>
         <div class="menu-item me-lg-1">
-          <a class="menu-link py-3" routerLinkActive="active" routerLink="/apps/chat/group-chat"><span
-              class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Group
+          <a class="menu-link py-3" routerLink="/apps/chat/group-chat" routerLinkActive="active"><span
+            class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Group
               Chart</span></a>
         </div>
         <div class="menu-item me-lg-1">
-          <a class="menu-link py-3" routerLinkActive="active" routerLink="/apps/chat/drawer-chat"><span
-              class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Drawer
+          <a class="menu-link py-3" routerLink="/apps/chat/drawer-chat" routerLinkActive="active"><span
+            class="menu-bullet"><span class="bullet bullet-dot"></span></span><span class="menu-title">Drawer
               Chart</span></a>
         </div>
       </div>
@@ -380,167 +381,167 @@
   </div>
 </div>
 
-  <!-- MegaMenu -->
-<div class="menu-item menu-lg-down-accordion me-lg-1" data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
-       data-kt-menu-placement="bottom-start">
+<!-- MegaMenu -->
+<div class="menu-item menu-lg-down-accordion me-lg-1" data-kt-menu-placement="bottom-start"
+     data-kt-menu-trigger="{default: 'click', lg: 'hover'}">
     <span class="menu-link py-3">
       <span class="menu-title">Mega menu</span>
       <span class="menu-arrow d-lg-none"></span>
     </span>
-    <div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown p-0 w-100 w-lg-850px">
-      <!--begin:Dashboards menu-->
-      <div class="menu-active-bg pt-1 pb-3 px-3 py-lg-6 px-lg-6" data-kt-menu-dismiss="true">
-        <!--begin:Row-->
-        <div class="row">
-          <!--begin:Col-->
-          <div class="col-lg-6">
-            <!--begin:Row-->
-            <div class="row">
-              <!--begin:Col-->
-              <div class="col-lg-6 mb-3">
-                <!--begin:Heading-->
-                <h4 class="fs-6 fs-lg-4 text-gray-800 fw-bold mt-3 mb-3 ms-4">Layouts</h4>
-                <!--end:Heading-->
-                <!--begin:Menu item-->
-                <div class="menu-item p-0 m-0">
-                  <!--begin:Menu link-->
-                  <a (click)="setBaseLayoutType('light-sidebar')" class="menu-link">
+  <div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown p-0 w-100 w-lg-850px">
+    <!--begin:Dashboards menu-->
+    <div class="menu-active-bg pt-1 pb-3 px-3 py-lg-6 px-lg-6" data-kt-menu-dismiss="true">
+      <!--begin:Row-->
+      <div class="row">
+        <!--begin:Col-->
+        <div class="col-lg-6">
+          <!--begin:Row-->
+          <div class="row">
+            <!--begin:Col-->
+            <div class="col-lg-6 mb-3">
+              <!--begin:Heading-->
+              <h4 class="fs-6 fs-lg-4 text-gray-800 fw-bold mt-3 mb-3 ms-4">Layouts</h4>
+              <!--end:Heading-->
+              <!--begin:Menu item-->
+              <div class="menu-item p-0 m-0">
+                <!--begin:Menu link-->
+                <a (click)="setBaseLayoutType('light-sidebar')" class="menu-link">
                     <span class="menu-bullet">
                       <span class="bullet bullet-dot bg-gray-300i h-6px w-6px"></span>
                     </span>
-                    <span class="menu-title">Light Sidebar</span>
-                  </a>
-                  <!--end:Menu link-->
-                </div>
-                <!--end:Menu item-->
-                <!--begin:Menu item-->
-                <div class="menu-item p-0 m-0">
-                  <!--begin:Menu link-->
-                  <a (click)="setBaseLayoutType('dark-sidebar')" class="menu-link">
-                    <span class="menu-bullet">
-                      <span class="bullet bullet-dot bg-gray-300i h-6px w-6px"></span>
-                    </span>
-                    <span class="menu-title">Dark Sidebar</span>
-                  </a>
-                  <!--end:Menu link-->
-                </div>
-                <!--end:Menu item-->
-                <!--begin:Menu item-->
-                <div class="menu-item p-0 m-0">
-                  <!--begin:Menu link-->
-                  <a (click)="setBaseLayoutType('light-header')" class="menu-link">
-                    <span class="menu-bullet">
-                      <span class="bullet bullet-dot bg-gray-300i h-6px w-6px"></span>
-                    </span>
-                    <span class="menu-title">Light Header</span>
-                  </a>
-                  <!--end:Menu link-->
-                </div>
-                <!--end:Menu item-->
-                <!--begin:Menu item-->
-                <div class="menu-item p-0 m-0">
-                  <!--begin:Menu link-->
-                  <a (click)="setBaseLayoutType('dark-header')" class="menu-link">
-                    <span class="menu-bullet">
-                      <span class="bullet bullet-dot bg-gray-300i h-6px w-6px"></span>
-                    </span>
-                    <span class="menu-title">Dark Header</span>
-                  </a>
-                  <!--end:Menu link-->
-                </div>
-                <!--end:Menu item-->
+                  <span class="menu-title">Light Sidebar</span>
+                </a>
+                <!--end:Menu link-->
               </div>
-              <!--end:Col-->
-              <!--begin:Col-->
-              <div class="col-lg-6 mb-3">
-                <!--begin:Heading-->
-                <h4 class="fs-6 fs-lg-4 text-gray-800 fw-bold mt-3 mb-3 ms-4">Toolbars</h4>
-                <!--end:Heading-->
-                <!--begin:Menu item-->
-                <div class="menu-item p-0 m-0">
-                  <!--begin:Menu link-->
-                  <a (click)="setToolbar('classic')" class="menu-link">
+              <!--end:Menu item-->
+              <!--begin:Menu item-->
+              <div class="menu-item p-0 m-0">
+                <!--begin:Menu link-->
+                <a (click)="setBaseLayoutType('dark-sidebar')" class="menu-link">
                     <span class="menu-bullet">
                       <span class="bullet bullet-dot bg-gray-300i h-6px w-6px"></span>
                     </span>
-                    <span class="menu-title">Classic</span>
-                  </a>
-                  <!--end:Menu link-->
-                </div>
-                <!--end:Menu item-->
-                <!--begin:Menu item-->
-                <div class="menu-item p-0 m-0">
-                  <!--begin:Menu link-->
-                  <a (click)="setToolbar('saas')" class="menu-link">
-                    <span class="menu-bullet">
-                      <span class="bullet bullet-dot bg-gray-300i h-6px w-6px"></span>
-                    </span>
-                    <span class="menu-title">SaaS</span>
-                  </a>
-                  <!--end:Menu link-->
-                </div>
-                <!--end:Menu item-->
-                <!--begin:Menu item-->
-                <div class="menu-item p-0 m-0">
-                  <!--begin:Menu link-->
-                  <a (click)="setToolbar('accounting')" class="menu-link">
-                    <span class="menu-bullet">
-                      <span class="bullet bullet-dot bg-gray-300i h-6px w-6px"></span>
-                    </span>
-                    <span class="menu-title">Accounting</span>
-                  </a>
-                  <!--end:Menu link-->
-                </div>
-                <!--end:Menu item-->
-                <!--begin:Menu item-->
-                <div class="menu-item p-0 m-0">
-                  <!--begin:Menu link-->
-                  <a (click)="setToolbar('extended')" class="menu-link">
-                    <span class="menu-bullet">
-                      <span class="bullet bullet-dot bg-gray-300i h-6px w-6px"></span>
-                    </span>
-                    <span class="menu-title">Extended</span>
-                  </a>
-                  <!--end:Menu link-->
-                </div>
-                <!--end:Menu item-->
-                <!--begin:Menu item-->
-                <div class="menu-item p-0 m-0">
-                  <!--begin:Menu link-->
-                  <a (click)="setToolbar('reports')" class="menu-link">
-                    <span class="menu-bullet">
-                      <span class="bullet bullet-dot bg-gray-300i h-6px w-6px"></span>
-                    </span>
-                    <span class="menu-title">Reports</span>
-                  </a>
-                  <!--end:Menu link-->
-                </div>
-                <!--end:Menu item-->
+                  <span class="menu-title">Dark Sidebar</span>
+                </a>
+                <!--end:Menu link-->
               </div>
-              <!--end:Col-->
+              <!--end:Menu item-->
+              <!--begin:Menu item-->
+              <div class="menu-item p-0 m-0">
+                <!--begin:Menu link-->
+                <a (click)="setBaseLayoutType('light-header')" class="menu-link">
+                    <span class="menu-bullet">
+                      <span class="bullet bullet-dot bg-gray-300i h-6px w-6px"></span>
+                    </span>
+                  <span class="menu-title">Light Header</span>
+                </a>
+                <!--end:Menu link-->
+              </div>
+              <!--end:Menu item-->
+              <!--begin:Menu item-->
+              <div class="menu-item p-0 m-0">
+                <!--begin:Menu link-->
+                <a (click)="setBaseLayoutType('dark-header')" class="menu-link">
+                    <span class="menu-bullet">
+                      <span class="bullet bullet-dot bg-gray-300i h-6px w-6px"></span>
+                    </span>
+                  <span class="menu-title">Dark Header</span>
+                </a>
+                <!--end:Menu link-->
+              </div>
+              <!--end:Menu item-->
             </div>
-            <!--end:Row-->
-            <div class="separator separator-dashed mx-lg-5 mt-2 mb-6"></div>
-            <!--begin:Layout Builder-->
-            <div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mb-5 mb-lg-0 mx-lg-5">
-              <div class="d-flex flex-column me-5">
-                <div class="fs-6 fw-bold text-gray-800">Layout Builder</div>
-                <div class="fs-7 fw-semibold text-muted">Customize view</div>
+            <!--end:Col-->
+            <!--begin:Col-->
+            <div class="col-lg-6 mb-3">
+              <!--begin:Heading-->
+              <h4 class="fs-6 fs-lg-4 text-gray-800 fw-bold mt-3 mb-3 ms-4">Toolbars</h4>
+              <!--end:Heading-->
+              <!--begin:Menu item-->
+              <div class="menu-item p-0 m-0">
+                <!--begin:Menu link-->
+                <a (click)="setToolbar('classic')" class="menu-link">
+                    <span class="menu-bullet">
+                      <span class="bullet bullet-dot bg-gray-300i h-6px w-6px"></span>
+                    </span>
+                  <span class="menu-title">Classic</span>
+                </a>
+                <!--end:Menu link-->
               </div>
-              <a routerLink="/builder" class="btn btn-sm btn-primary fw-bold">Try
-                Builder</a>
+              <!--end:Menu item-->
+              <!--begin:Menu item-->
+              <div class="menu-item p-0 m-0">
+                <!--begin:Menu link-->
+                <a (click)="setToolbar('saas')" class="menu-link">
+                    <span class="menu-bullet">
+                      <span class="bullet bullet-dot bg-gray-300i h-6px w-6px"></span>
+                    </span>
+                  <span class="menu-title">SaaS</span>
+                </a>
+                <!--end:Menu link-->
+              </div>
+              <!--end:Menu item-->
+              <!--begin:Menu item-->
+              <div class="menu-item p-0 m-0">
+                <!--begin:Menu link-->
+                <a (click)="setToolbar('accounting')" class="menu-link">
+                    <span class="menu-bullet">
+                      <span class="bullet bullet-dot bg-gray-300i h-6px w-6px"></span>
+                    </span>
+                  <span class="menu-title">Accounting</span>
+                </a>
+                <!--end:Menu link-->
+              </div>
+              <!--end:Menu item-->
+              <!--begin:Menu item-->
+              <div class="menu-item p-0 m-0">
+                <!--begin:Menu link-->
+                <a (click)="setToolbar('extended')" class="menu-link">
+                    <span class="menu-bullet">
+                      <span class="bullet bullet-dot bg-gray-300i h-6px w-6px"></span>
+                    </span>
+                  <span class="menu-title">Extended</span>
+                </a>
+                <!--end:Menu link-->
+              </div>
+              <!--end:Menu item-->
+              <!--begin:Menu item-->
+              <div class="menu-item p-0 m-0">
+                <!--begin:Menu link-->
+                <a (click)="setToolbar('reports')" class="menu-link">
+                    <span class="menu-bullet">
+                      <span class="bullet bullet-dot bg-gray-300i h-6px w-6px"></span>
+                    </span>
+                  <span class="menu-title">Reports</span>
+                </a>
+                <!--end:Menu link-->
+              </div>
+              <!--end:Menu item-->
             </div>
-            <!--end:Layout Builder-->
+            <!--end:Col-->
           </div>
-          <!--end:Col-->
-          <!--begin:Col-->
-          <div class="col-lg-6 mb-3 py-lg-3 pe-lg-8 d-flex align-items-center">
-            <img src="./assets/media/stock/900x600/45.jpg" class="rounded mw-100" alt="">
+          <!--end:Row-->
+          <div class="separator separator-dashed mx-lg-5 mt-2 mb-6"></div>
+          <!--begin:Layout Builder-->
+          <div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mb-5 mb-lg-0 mx-lg-5">
+            <div class="d-flex flex-column me-5">
+              <div class="fs-6 fw-bold text-gray-800">Layout Builder</div>
+              <div class="fs-7 fw-semibold text-muted">Customize view</div>
+            </div>
+            <a class="btn btn-sm btn-primary fw-bold" routerLink="/builder">Try
+              Builder</a>
           </div>
-          <!--end:Col-->
+          <!--end:Layout Builder-->
         </div>
-        <!--end:Row-->
+        <!--end:Col-->
+        <!--begin:Col-->
+        <div class="col-lg-6 mb-3 py-lg-3 pe-lg-8 d-flex align-items-center">
+          <img alt="" class="rounded mw-100" src="./assets/media/stock/900x600/45.jpg">
+        </div>
+        <!--end:Col-->
       </div>
-      <!--end:Dashboards menu-->
+      <!--end:Row-->
     </div>
+    <!--end:Dashboards menu-->
   </div>
+</div>

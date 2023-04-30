@@ -1,50 +1,50 @@
-<div class="card card-custom" [ngClass]="cssClass">
+<div [ngClass]="cssClass" class="card card-custom">
   <!-- Header -->
   <div class="card-header border-0 pt-5">
     <h3 class="card-title align-items-start flex-column">
       <span class="card-label font-weight-bolder text-dark"
-        >Trending Items</span
+      >Trending Items</span
       >
       <span class="text-muted mt-3 font-weight-bold font-size-sm"
-        >More than 400+ new members</span
+      >More than 400+ new members</span
       >
     </h3>
     <div class="card-toolbar">
       <ul class="nav nav-pills nav-pills-sm nav-dark-75">
         <li
-          class="nav-item"
           (click)="setCurrentTab(TABS[0])"
           [style.cursor]="'pointer'"
+          class="nav-item"
         >
           <a
-            class="nav-link py-2 px-4"
             [class.active]="currentTab === TABS[0]"
+            class="nav-link py-2 px-4"
             data-toggle="tab"
-            >Month</a
+          >Month</a
           >
         </li>
         <li
-          class="nav-item"
           (click)="setCurrentTab(TABS[1])"
           [style.cursor]="'pointer'"
+          class="nav-item"
         >
           <a
-            class="nav-link py-2 px-4"
             [class.active]="currentTab === TABS[1]"
+            class="nav-link py-2 px-4"
             data-toggle="tab"
-            >Week</a
+          >Week</a
           >
         </li>
         <li
-          class="nav-item"
           (click)="setCurrentTab(TABS[2])"
           [style.cursor]="'pointer'"
+          class="nav-item"
         >
           <a
-            class="nav-link py-2 px-4"
             [class.active]="currentTab === TABS[2]"
+            class="nav-link py-2 px-4"
             data-toggle="tab"
-            >Day</a
+          >Day</a
           >
         </li>
       </ul>
@@ -55,92 +55,92 @@
     <div class="tab-content mt-5" id="myTabTables6">
       <!--begin::Tap pane-->
       <div
-        class="tab-pane fade"
         [class.active]="currentTab === TABS[0]"
         [class.show]="currentTab === TABS[0]"
+        aria-labelledby="kt_tab_pane_6_1"
+        class="tab-pane fade"
         id="kt_tab_pane_6_1"
         role="tabpanel"
-        aria-labelledby="kt_tab_pane_6_1"
       >
         <!--begin::Table-->
         <div class="table-responsive">
           <table class="table table-borderless table-vertical-center">
             <thead>
-              <tr>
-                <th class="p-0 w-50px"></th>
-                <th class="p-0" [ngClass]="progressWidth"></th>
-                <th class="p-0 min-w-100px"></th>
-                <th class="p-0 min-w-40px"></th>
-              </tr>
+            <tr>
+              <th class="p-0 w-50px"></th>
+              <th [ngClass]="progressWidth" class="p-0"></th>
+              <th class="p-0 min-w-100px"></th>
+              <th class="p-0 min-w-40px"></th>
+            </tr>
             </thead>
             <tbody>
-              <tr>
-                <th class="pl-0 py-5">
-                  <div class="symbol symbol-50 symbol-light mr-2">
+            <tr>
+              <th class="pl-0 py-5">
+                <div class="symbol symbol-50 symbol-light mr-2">
                     <span class="symbol-label">
                       <span
                         [inlineSVG]="'./assets/media/svg/brand-logos/bebo.svg'"
                         class="svg-icon h-50 align-self-center"
                       ></span>
                     </span>
-                  </div>
-                </th>
-                <td class="py-6 pl-0">
-                  <a
-                    href="#"
-                    class="
+                </div>
+              </th>
+              <td class="py-6 pl-0">
+                <a
+                  class="
                       text-dark
                       font-weight-bolder
                       text-hover-primary
                       mb-1
                       font-size-lg
                     "
-                    >Active Customers</a
-                  >
-                  <span class="text-muted font-weight-bold d-block"
-                    >Best Customers</span
-                  >
-                </td>
-                <td>
-                  <div class="d-flex flex-column w-100 mr-2">
-                    <div
-                      class="
+                  href="#"
+                >Active Customers</a
+                >
+                <span class="text-muted font-weight-bold d-block"
+                >Best Customers</span
+                >
+              </td>
+              <td>
+                <div class="d-flex flex-column w-100 mr-2">
+                  <div
+                    class="
                         d-flex
                         align-items-center
                         justify-content-between
                         mb-2
                       "
-                    >
+                  >
                       <span
                         class="text-muted mr-2 font-size-sm font-weight-bold"
                       >
                         71%
                       </span>
-                      <span class="text-muted font-size-sm font-weight-bold">
+                    <span class="text-muted font-size-sm font-weight-bold">
                         Progress
                       </span>
-                    </div>
-                    <div class="progress progress-xs w-100">
-                      <div
-                        class="progress-bar bg-danger"
-                        role="progressbar"
-                        style="width: 71%"
-                        aria-valuenow="50"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
                   </div>
-                </td>
-                <td class="text-right pr-0">
-                  <a href="#" class="btn btn-icon btn-light btn-sm">
-                    <app-keenicon name="arrow-right" class="fs-md text-success"></app-keenicon>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <th class="pl-0 py-5">
-                  <div class="symbol symbol-50 symbol-light mr-2">
+                  <div class="progress progress-xs w-100">
+                    <div
+                      aria-valuemax="100"
+                      aria-valuemin="0"
+                      aria-valuenow="50"
+                      class="progress-bar bg-danger"
+                      role="progressbar"
+                      style="width: 71%"
+                    ></div>
+                  </div>
+                </div>
+              </td>
+              <td class="text-right pr-0">
+                <a class="btn btn-icon btn-light btn-sm" href="#">
+                  <app-keenicon class="fs-md text-success" name="arrow-right"></app-keenicon>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <th class="pl-0 py-5">
+                <div class="symbol symbol-50 symbol-light mr-2">
                     <span class="symbol-label">
                       <span
                         [inlineSVG]="
@@ -149,253 +149,253 @@
                         class="svg-icon h-50 align-self-center"
                       ></span>
                     </span>
-                  </div>
-                </th>
-                <td class="pl-0">
-                  <a
-                    href="#"
-                    class="
+                </div>
+              </th>
+              <td class="pl-0">
+                <a
+                  class="
                       text-dark
                       font-weight-bolder
                       text-hover-primary
                       mb-1
                       font-size-lg
                     "
-                    >Bestseller Theme</a
-                  >
-                  <span class="text-muted font-weight-bold d-block"
-                    >Amazing Templates</span
-                  >
-                </td>
-                <td>
-                  <div class="d-flex flex-column w-100 mr-2">
-                    <div
-                      class="
+                  href="#"
+                >Bestseller Theme</a
+                >
+                <span class="text-muted font-weight-bold d-block"
+                >Amazing Templates</span
+                >
+              </td>
+              <td>
+                <div class="d-flex flex-column w-100 mr-2">
+                  <div
+                    class="
                         d-flex
                         align-items-center
                         justify-content-between
                         mb-2
                       "
-                    >
+                  >
                       <span
                         class="text-muted mr-2 font-size-sm font-weight-bold"
                       >
                         50%
                       </span>
-                      <span class="text-muted font-size-sm font-weight-bold">
+                    <span class="text-muted font-size-sm font-weight-bold">
                         Progress
                       </span>
-                    </div>
-                    <div class="progress progress-xs w-100">
-                      <div
-                        class="progress-bar bg-info"
-                        role="progressbar"
-                        style="width: 50%"
-                        aria-valuenow="50"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
                   </div>
-                </td>
-                <td class="text-right pr-0">
-                  <a href="#" class="btn btn-icon btn-light btn-sm">
-                    <app-keenicon name="arrow-right" class="fs-md text-success"></app-keenicon>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td class="pl-0 py-5">
-                  <div class="symbol symbol-50 symbol-light mr-2">
+                  <div class="progress progress-xs w-100">
+                    <div
+                      aria-valuemax="100"
+                      aria-valuemin="0"
+                      aria-valuenow="50"
+                      class="progress-bar bg-info"
+                      role="progressbar"
+                      style="width: 50%"
+                    ></div>
+                  </div>
+                </div>
+              </td>
+              <td class="text-right pr-0">
+                <a class="btn btn-icon btn-light btn-sm" href="#">
+                  <app-keenicon class="fs-md text-success" name="arrow-right"></app-keenicon>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td class="pl-0 py-5">
+                <div class="symbol symbol-50 symbol-light mr-2">
                     <span class="symbol-label">
                       <span
                         [inlineSVG]="'./assets/media/svg/brand-logos/plurk.svg'"
                         class="svg-icon h-50 align-self-center"
                       ></span>
                     </span>
-                  </div>
-                </td>
-                <td class="pl-0">
-                  <a
-                    href="#"
-                    class="
+                </div>
+              </td>
+              <td class="pl-0">
+                <a
+                  class="
                       text-dark
                       font-weight-bolder
                       text-hover-primary
                       mb-1
                       font-size-lg
                     "
-                    >Top Authors</a
-                  >
-                  <span class="text-muted font-weight-bold d-block"
-                    >Successful Fellas</span
-                  >
-                </td>
-                <td>
-                  <div class="d-flex flex-column w-100 mr-2">
-                    <div
-                      class="
+                  href="#"
+                >Top Authors</a
+                >
+                <span class="text-muted font-weight-bold d-block"
+                >Successful Fellas</span
+                >
+              </td>
+              <td>
+                <div class="d-flex flex-column w-100 mr-2">
+                  <div
+                    class="
                         d-flex
                         align-items-center
                         justify-content-between
                         mb-2
                       "
-                    >
+                  >
                       <span
                         class="text-muted mr-2 font-size-sm font-weight-bold"
                       >
                         65%
                       </span>
-                      <span class="text-muted font-size-sm font-weight-bold">
+                    <span class="text-muted font-size-sm font-weight-bold">
                         Progress
                       </span>
-                    </div>
-                    <div class="progress progress-xs w-100">
-                      <div
-                        class="progress-bar bg-danger"
-                        role="progressbar"
-                        style="width: 65%"
-                        aria-valuenow="50"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
                   </div>
-                </td>
-                <td class="text-right pr-0">
-                  <a href="#" class="btn btn-icon btn-light btn-sm">
-                    <app-keenicon name="arrow-right" class="fs-md text-success"></app-keenicon>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <th class="pl-0 py-5">
-                  <div class="symbol symbol-50 symbol-light mr-2">
+                  <div class="progress progress-xs w-100">
+                    <div
+                      aria-valuemax="100"
+                      aria-valuemin="0"
+                      aria-valuenow="50"
+                      class="progress-bar bg-danger"
+                      role="progressbar"
+                      style="width: 65%"
+                    ></div>
+                  </div>
+                </div>
+              </td>
+              <td class="text-right pr-0">
+                <a class="btn btn-icon btn-light btn-sm" href="#">
+                  <app-keenicon class="fs-md text-success" name="arrow-right"></app-keenicon>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <th class="pl-0 py-5">
+                <div class="symbol symbol-50 symbol-light mr-2">
                     <span class="symbol-label">
                       <span
                         [inlineSVG]="'./assets/media/svg/brand-logos/telegram.svg'"
                         class="svg-icon h-50 align-self-center"
                       ></span>
                     </span>
-                  </div>
-                </th>
-                <td class="pl-0">
-                  <a
-                    href="#"
-                    class="
+                </div>
+              </th>
+              <td class="pl-0">
+                <a
+                  class="
                       text-dark
                       font-weight-bolder
                       text-hover-primary
                       mb-1
                       font-size-lg
                     "
-                    >Popular Authors</a
-                  >
-                  <span class="text-muted font-weight-bold d-block"
-                    >Most Successful</span
-                  >
-                </td>
-                <td>
-                  <div class="d-flex flex-column w-100 mr-2">
-                    <div
-                      class="
+                  href="#"
+                >Popular Authors</a
+                >
+                <span class="text-muted font-weight-bold d-block"
+                >Most Successful</span
+                >
+              </td>
+              <td>
+                <div class="d-flex flex-column w-100 mr-2">
+                  <div
+                    class="
                         d-flex
                         align-items-center
                         justify-content-between
                         mb-2
                       "
-                    >
+                  >
                       <span
                         class="text-muted mr-2 font-size-sm font-weight-bold"
                       >
                         83%
                       </span>
-                      <span class="text-muted font-size-sm font-weight-bold">
+                    <span class="text-muted font-size-sm font-weight-bold">
                         Progress
                       </span>
-                    </div>
-                    <div class="progress progress-xs w-100">
-                      <div
-                        class="progress-bar bg-success"
-                        role="progressbar"
-                        style="width: 83%"
-                        aria-valuenow="50"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
                   </div>
-                </td>
-                <td class="text-right pr-0">
-                  <a href="#" class="btn btn-icon btn-light btn-sm">
-                    <app-keenicon name="arrow-right" class="fs-md text-success"></app-keenicon>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <th class="pl-0 py-5">
-                  <div class="symbol symbol-50 symbol-light mr-2">
+                  <div class="progress progress-xs w-100">
+                    <div
+                      aria-valuemax="100"
+                      aria-valuemin="0"
+                      aria-valuenow="50"
+                      class="progress-bar bg-success"
+                      role="progressbar"
+                      style="width: 83%"
+                    ></div>
+                  </div>
+                </div>
+              </td>
+              <td class="text-right pr-0">
+                <a class="btn btn-icon btn-light btn-sm" href="#">
+                  <app-keenicon class="fs-md text-success" name="arrow-right"></app-keenicon>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <th class="pl-0 py-5">
+                <div class="symbol symbol-50 symbol-light mr-2">
                     <span class="symbol-label">
                       <span
                         [inlineSVG]="'./assets/media/svg/misc/puzzle.svg'"
                         class="svg-icon h-50 align-self-center"
                       ></span>
                     </span>
-                  </div>
-                </th>
-                <td class="pl-0">
-                  <a
-                    href="#"
-                    class="
+                </div>
+              </th>
+              <td class="pl-0">
+                <a
+                  class="
                       text-dark
                       font-weight-bolder
                       text-hover-primary
                       mb-1
                       font-size-lg
                     "
-                    >New Users</a
-                  >
-                  <span class="text-muted font-weight-bold d-block"
-                    >Awesome Users</span
-                  >
-                </td>
-                <td>
-                  <div class="d-flex flex-column w-100 mr-2">
-                    <div
-                      class="
+                  href="#"
+                >New Users</a
+                >
+                <span class="text-muted font-weight-bold d-block"
+                >Awesome Users</span
+                >
+              </td>
+              <td>
+                <div class="d-flex flex-column w-100 mr-2">
+                  <div
+                    class="
                         d-flex
                         align-items-center
                         justify-content-between
                         mb-2
                       "
-                    >
+                  >
                       <span
                         class="text-muted mr-2 font-size-sm font-weight-bold"
                       >
                         47%
                       </span>
-                      <span class="text-muted font-size-sm font-weight-bold">
+                    <span class="text-muted font-size-sm font-weight-bold">
                         Progress
                       </span>
-                    </div>
-                    <div class="progress progress-xs w-100">
-                      <div
-                        class="progress-bar bg-primary"
-                        role="progressbar"
-                        style="width: 47%"
-                        aria-valuenow="50"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
                   </div>
-                </td>
-                <td class="text-right pr-0">
-                  <a href="#" class="btn btn-icon btn-light btn-sm">
-                    <app-keenicon name="arrow-right" class="fs-md text-success"></app-keenicon>
-                  </a>
-                </td>
-              </tr>
+                  <div class="progress progress-xs w-100">
+                    <div
+                      aria-valuemax="100"
+                      aria-valuemin="0"
+                      aria-valuenow="50"
+                      class="progress-bar bg-primary"
+                      role="progressbar"
+                      style="width: 47%"
+                    ></div>
+                  </div>
+                </div>
+              </td>
+              <td class="text-right pr-0">
+                <a class="btn btn-icon btn-light btn-sm" href="#">
+                  <app-keenicon class="fs-md text-success" name="arrow-right"></app-keenicon>
+                </a>
+              </td>
+            </tr>
             </tbody>
           </table>
         </div>
@@ -405,284 +405,284 @@
 
       <!--begin::Tap pane-->
       <div
-        class="tab-pane fade"
         [class.active]="currentTab === TABS[1]"
         [class.show]="currentTab === TABS[1]"
+        aria-labelledby="kt_tab_pane_6_2"
+        class="tab-pane fade"
         id="kt_tab_pane_6_2"
         role="tabpanel"
-        aria-labelledby="kt_tab_pane_6_2"
       >
         <!--begin::Table-->
         <div class="table-responsive">
           <table class="table table-borderless table-vertical-center">
             <thead>
-              <tr>
-                <th class="p-0 w-50px"></th>
-                <th class="p-0" [ngClass]="progressWidth"></th>
-                <th class="p-0 min-w-100px"></th>
-                <th class="p-0 min-w-40px"></th>
-              </tr>
+            <tr>
+              <th class="p-0 w-50px"></th>
+              <th [ngClass]="progressWidth" class="p-0"></th>
+              <th class="p-0 min-w-100px"></th>
+              <th class="p-0 min-w-40px"></th>
+            </tr>
             </thead>
             <tbody>
-              <tr>
-                <th class="pl-0 py-5">
-                  <div class="symbol symbol-50 symbol-light mr-2">
+            <tr>
+              <th class="pl-0 py-5">
+                <div class="symbol symbol-50 symbol-light mr-2">
                     <span class="symbol-label">
                       <span
                         [inlineSVG]="'./assets/media/svg/brand-logos/telegram.svg'"
                         class="svg-icon h-50 align-self-center"
                       ></span>
                     </span>
-                  </div>
-                </th>
-                <td class="pl-0">
-                  <a
-                    href="#"
-                    class="
+                </div>
+              </th>
+              <td class="pl-0">
+                <a
+                  class="
                       text-dark
                       font-weight-bolder
                       text-hover-primary
                       mb-1
                       font-size-lg
                     "
-                    >Popular Authors</a
-                  >
-                  <span class="text-muted font-weight-bold d-block"
-                    >Most Successful</span
-                  >
-                </td>
-                <td>
-                  <div class="d-flex flex-column w-100 mr-2">
-                    <div
-                      class="
+                  href="#"
+                >Popular Authors</a
+                >
+                <span class="text-muted font-weight-bold d-block"
+                >Most Successful</span
+                >
+              </td>
+              <td>
+                <div class="d-flex flex-column w-100 mr-2">
+                  <div
+                    class="
                         d-flex
                         align-items-center
                         justify-content-between
                         mb-2
                       "
-                    >
+                  >
                       <span
                         class="text-muted mr-2 font-size-sm font-weight-bold"
                       >
                         83%
                       </span>
-                      <span class="text-muted font-size-sm font-weight-bold">
+                    <span class="text-muted font-size-sm font-weight-bold">
                         Progress
                       </span>
-                    </div>
-                    <div class="progress progress-xs w-100">
-                      <div
-                        class="progress-bar bg-success"
-                        role="progressbar"
-                        style="width: 83%"
-                        aria-valuenow="50"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
                   </div>
-                </td>
-                <td class="text-right pr-0">
-                  <a href="#" class="btn btn-icon btn-light btn-sm">
-                    <app-keenicon name="arrow-right" class="fs-md text-success"></app-keenicon>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <th class="pl-0 py-5">
-                  <div class="symbol symbol-50 symbol-light mr-2">
+                  <div class="progress progress-xs w-100">
+                    <div
+                      aria-valuemax="100"
+                      aria-valuemin="0"
+                      aria-valuenow="50"
+                      class="progress-bar bg-success"
+                      role="progressbar"
+                      style="width: 83%"
+                    ></div>
+                  </div>
+                </div>
+              </td>
+              <td class="text-right pr-0">
+                <a class="btn btn-icon btn-light btn-sm" href="#">
+                  <app-keenicon class="fs-md text-success" name="arrow-right"></app-keenicon>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <th class="pl-0 py-5">
+                <div class="symbol symbol-50 symbol-light mr-2">
                     <span class="symbol-label">
                       <span
                         [inlineSVG]="'./assets/media/svg/misc/puzzle.svg'"
                         class="svg-icon h-50 align-self-center"
                       ></span>
                     </span>
-                  </div>
-                </th>
-                <td class="pl-0">
-                  <a
-                    href="#"
-                    class="
+                </div>
+              </th>
+              <td class="pl-0">
+                <a
+                  class="
                       text-dark
                       font-weight-bolder
                       text-hover-primary
                       mb-1
                       font-size-lg
                     "
-                    >New Users</a
-                  >
-                  <span class="text-muted font-weight-bold d-block"
-                    >Awesome Users</span
-                  >
-                </td>
-                <td>
-                  <div class="d-flex flex-column w-100 mr-2">
-                    <div
-                      class="
+                  href="#"
+                >New Users</a
+                >
+                <span class="text-muted font-weight-bold d-block"
+                >Awesome Users</span
+                >
+              </td>
+              <td>
+                <div class="d-flex flex-column w-100 mr-2">
+                  <div
+                    class="
                         d-flex
                         align-items-center
                         justify-content-between
                         mb-2
                       "
-                    >
+                  >
                       <span
                         class="text-muted mr-2 font-size-sm font-weight-bold"
                       >
                         47%
                       </span>
-                      <span class="text-muted font-size-sm font-weight-bold">
+                    <span class="text-muted font-size-sm font-weight-bold">
                         Progress
                       </span>
-                    </div>
-                    <div class="progress progress-xs w-100">
-                      <div
-                        class="progress-bar bg-primary"
-                        role="progressbar"
-                        style="width: 47%"
-                        aria-valuenow="50"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
                   </div>
-                </td>
-                <td class="text-right pr-0">
-                  <a href="#" class="btn btn-icon btn-light btn-sm">
-                    <app-keenicon name="arrow-right" class="fs-md text-success"></app-keenicon>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <th class="pl-0 py-5">
-                  <div class="symbol symbol-50 symbol-light mr-2">
+                  <div class="progress progress-xs w-100">
+                    <div
+                      aria-valuemax="100"
+                      aria-valuemin="0"
+                      aria-valuenow="50"
+                      class="progress-bar bg-primary"
+                      role="progressbar"
+                      style="width: 47%"
+                    ></div>
+                  </div>
+                </div>
+              </td>
+              <td class="text-right pr-0">
+                <a class="btn btn-icon btn-light btn-sm" href="#">
+                  <app-keenicon class="fs-md text-success" name="arrow-right"></app-keenicon>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <th class="pl-0 py-5">
+                <div class="symbol symbol-50 symbol-light mr-2">
                     <span class="symbol-label">
                       <span
                         [inlineSVG]="'./assets/media/svg/brand-logos/bebo.svg'"
                         class="svg-icon h-50 align-self-center"
                       ></span>
                     </span>
-                  </div>
-                </th>
-                <td class="py-6 pl-0">
-                  <a
-                    href="#"
-                    class="
+                </div>
+              </th>
+              <td class="py-6 pl-0">
+                <a
+                  class="
                       text-dark
                       font-weight-bolder
                       text-hover-primary
                       mb-1
                       font-size-lg
                     "
-                    >Active Customers</a
-                  >
-                  <span class="text-muted font-weight-bold d-block"
-                    >Best Customers</span
-                  >
-                </td>
-                <td>
-                  <div class="d-flex flex-column w-100 mr-2">
-                    <div
-                      class="
+                  href="#"
+                >Active Customers</a
+                >
+                <span class="text-muted font-weight-bold d-block"
+                >Best Customers</span
+                >
+              </td>
+              <td>
+                <div class="d-flex flex-column w-100 mr-2">
+                  <div
+                    class="
                         d-flex
                         align-items-center
                         justify-content-between
                         mb-2
                       "
-                    >
+                  >
                       <span
                         class="text-muted mr-2 font-size-sm font-weight-bold"
                       >
                         71%
                       </span>
-                      <span class="text-muted font-size-sm font-weight-bold">
+                    <span class="text-muted font-size-sm font-weight-bold">
                         Progress
                       </span>
-                    </div>
-                    <div class="progress progress-xs w-100">
-                      <div
-                        class="progress-bar bg-danger"
-                        role="progressbar"
-                        style="width: 71%"
-                        aria-valuenow="50"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
                   </div>
-                </td>
-                <td class="text-right pr-0">
-                  <a href="#" class="btn btn-icon btn-light btn-sm">
-                    <app-keenicon name="arrow-right" class="fs-md text-success"></app-keenicon>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td class="pl-0 py-5">
-                  <div class="symbol symbol-50 symbol-light mr-2">
+                  <div class="progress progress-xs w-100">
+                    <div
+                      aria-valuemax="100"
+                      aria-valuemin="0"
+                      aria-valuenow="50"
+                      class="progress-bar bg-danger"
+                      role="progressbar"
+                      style="width: 71%"
+                    ></div>
+                  </div>
+                </div>
+              </td>
+              <td class="text-right pr-0">
+                <a class="btn btn-icon btn-light btn-sm" href="#">
+                  <app-keenicon class="fs-md text-success" name="arrow-right"></app-keenicon>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td class="pl-0 py-5">
+                <div class="symbol symbol-50 symbol-light mr-2">
                     <span class="symbol-label">
                       <span
                         [inlineSVG]="'./assets/media/svg/brand-logos/plurk.svg'"
                         class="svg-icon h-50 align-self-center"
                       ></span>
                     </span>
-                  </div>
-                </td>
-                <td class="pl-0">
-                  <a
-                    href="#"
-                    class="
+                </div>
+              </td>
+              <td class="pl-0">
+                <a
+                  class="
                       text-dark
                       font-weight-bolder
                       text-hover-primary
                       mb-1
                       font-size-lg
                     "
-                    >Top Authors</a
-                  >
-                  <span class="text-muted font-weight-bold d-block"
-                    >Successful Fellas</span
-                  >
-                </td>
-                <td>
-                  <div class="d-flex flex-column w-100 mr-2">
-                    <div
-                      class="
+                  href="#"
+                >Top Authors</a
+                >
+                <span class="text-muted font-weight-bold d-block"
+                >Successful Fellas</span
+                >
+              </td>
+              <td>
+                <div class="d-flex flex-column w-100 mr-2">
+                  <div
+                    class="
                         d-flex
                         align-items-center
                         justify-content-between
                         mb-2
                       "
-                    >
+                  >
                       <span
                         class="text-muted mr-2 font-size-sm font-weight-bold"
                       >
                         65%
                       </span>
-                      <span class="text-muted font-size-sm font-weight-bold">
+                    <span class="text-muted font-size-sm font-weight-bold">
                         Progress
                       </span>
-                    </div>
-                    <div class="progress progress-xs w-100">
-                      <div
-                        class="progress-bar bg-danger"
-                        role="progressbar"
-                        style="width: 65%"
-                        aria-valuenow="50"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
                   </div>
-                </td>
-                <td class="text-right pr-0">
-                  <a href="#" class="btn btn-icon btn-light btn-sm">
-                    <app-keenicon name="arrow-right" class="fs-md text-success"></app-keenicon>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <th class="pl-0 py-5">
-                  <div class="symbol symbol-50 symbol-light mr-2">
+                  <div class="progress progress-xs w-100">
+                    <div
+                      aria-valuemax="100"
+                      aria-valuemin="0"
+                      aria-valuenow="50"
+                      class="progress-bar bg-danger"
+                      role="progressbar"
+                      style="width: 65%"
+                    ></div>
+                  </div>
+                </div>
+              </td>
+              <td class="text-right pr-0">
+                <a class="btn btn-icon btn-light btn-sm" href="#">
+                  <app-keenicon class="fs-md text-success" name="arrow-right"></app-keenicon>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <th class="pl-0 py-5">
+                <div class="symbol symbol-50 symbol-light mr-2">
                     <span class="symbol-label">
                       <span
                         [inlineSVG]="
@@ -691,61 +691,61 @@
                         class="svg-icon h-50 align-self-center"
                       ></span>
                     </span>
-                  </div>
-                </th>
-                <td class="pl-0">
-                  <a
-                    href="#"
-                    class="
+                </div>
+              </th>
+              <td class="pl-0">
+                <a
+                  class="
                       text-dark
                       font-weight-bolder
                       text-hover-primary
                       mb-1
                       font-size-lg
                     "
-                    >Bestseller Theme</a
-                  >
-                  <span class="text-muted font-weight-bold d-block"
-                    >Amazing Templates</span
-                  >
-                </td>
-                <td>
-                  <div class="d-flex flex-column w-100 mr-2">
-                    <div
-                      class="
+                  href="#"
+                >Bestseller Theme</a
+                >
+                <span class="text-muted font-weight-bold d-block"
+                >Amazing Templates</span
+                >
+              </td>
+              <td>
+                <div class="d-flex flex-column w-100 mr-2">
+                  <div
+                    class="
                         d-flex
                         align-items-center
                         justify-content-between
                         mb-2
                       "
-                    >
+                  >
                       <span
                         class="text-muted mr-2 font-size-sm font-weight-bold"
                       >
                         50%
                       </span>
-                      <span class="text-muted font-size-sm font-weight-bold">
+                    <span class="text-muted font-size-sm font-weight-bold">
                         Progress
                       </span>
-                    </div>
-                    <div class="progress progress-xs w-100">
-                      <div
-                        class="progress-bar bg-info"
-                        role="progressbar"
-                        style="width: 50%"
-                        aria-valuenow="50"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
                   </div>
-                </td>
-                <td class="text-right pr-0">
-                  <a href="#" class="btn btn-icon btn-light btn-sm">
-                    <app-keenicon name="arrow-right" class="fs-md text-success"></app-keenicon>
-                  </a>
-                </td>
-              </tr>
+                  <div class="progress progress-xs w-100">
+                    <div
+                      aria-valuemax="100"
+                      aria-valuemin="0"
+                      aria-valuenow="50"
+                      class="progress-bar bg-info"
+                      role="progressbar"
+                      style="width: 50%"
+                    ></div>
+                  </div>
+                </div>
+              </td>
+              <td class="text-right pr-0">
+                <a class="btn btn-icon btn-light btn-sm" href="#">
+                  <app-keenicon class="fs-md text-success" name="arrow-right"></app-keenicon>
+                </a>
+              </td>
+            </tr>
             </tbody>
           </table>
         </div>
@@ -755,284 +755,284 @@
 
       <!--begin::Tap pane-->
       <div
-        class="tab-pane fade"
         [class.active]="currentTab === TABS[2]"
         [class.show]="currentTab === TABS[2]"
+        aria-labelledby="kt_tab_pane_6_3"
+        class="tab-pane fade"
         id="kt_tab_pane_6_3"
         role="tabpanel"
-        aria-labelledby="kt_tab_pane_6_3"
       >
         <!--begin::Table-->
         <div class="table-responsive">
           <table class="table table-borderless table-vertical-center">
             <thead>
-              <tr>
-                <th class="p-0 w-50px"></th>
-                <th class="p-0" [ngClass]="progressWidth"></th>
-                <th class="p-0 min-w-100px"></th>
-                <th class="p-0 min-w-40px"></th>
-              </tr>
+            <tr>
+              <th class="p-0 w-50px"></th>
+              <th [ngClass]="progressWidth" class="p-0"></th>
+              <th class="p-0 min-w-100px"></th>
+              <th class="p-0 min-w-40px"></th>
+            </tr>
             </thead>
             <tbody>
-              <tr>
-                <td class="pl-0 py-5">
-                  <div class="symbol symbol-50 symbol-light mr-2">
+            <tr>
+              <td class="pl-0 py-5">
+                <div class="symbol symbol-50 symbol-light mr-2">
                     <span class="symbol-label">
                       <span
                         [inlineSVG]="'./assets/media/svg/brand-logos/plurk.svg'"
                         class="svg-icon h-50 align-self-center"
                       ></span>
                     </span>
-                  </div>
-                </td>
-                <td class="pl-0">
-                  <a
-                    href="#"
-                    class="
+                </div>
+              </td>
+              <td class="pl-0">
+                <a
+                  class="
                       text-dark
                       font-weight-bolder
                       text-hover-primary
                       mb-1
                       font-size-lg
                     "
-                    >Top Authors</a
-                  >
-                  <span class="text-muted font-weight-bold d-block"
-                    >Successful Fellas</span
-                  >
-                </td>
-                <td>
-                  <div class="d-flex flex-column w-100 mr-2">
-                    <div
-                      class="
+                  href="#"
+                >Top Authors</a
+                >
+                <span class="text-muted font-weight-bold d-block"
+                >Successful Fellas</span
+                >
+              </td>
+              <td>
+                <div class="d-flex flex-column w-100 mr-2">
+                  <div
+                    class="
                         d-flex
                         align-items-center
                         justify-content-between
                         mb-2
                       "
-                    >
+                  >
                       <span
                         class="text-muted mr-2 font-size-sm font-weight-bold"
                       >
                         65%
                       </span>
-                      <span class="text-muted font-size-sm font-weight-bold">
+                    <span class="text-muted font-size-sm font-weight-bold">
                         Progress
                       </span>
-                    </div>
-                    <div class="progress progress-xs w-100">
-                      <div
-                        class="progress-bar bg-danger"
-                        role="progressbar"
-                        style="width: 65%"
-                        aria-valuenow="50"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
                   </div>
-                </td>
-                <td class="text-right pr-0">
-                  <a href="#" class="btn btn-icon btn-light btn-sm">
-                    <app-keenicon name="arrow-right" class="fs-md text-success"></app-keenicon>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <th class="pl-0 py-5">
-                  <div class="symbol symbol-50 symbol-light mr-2">
+                  <div class="progress progress-xs w-100">
+                    <div
+                      aria-valuemax="100"
+                      aria-valuemin="0"
+                      aria-valuenow="50"
+                      class="progress-bar bg-danger"
+                      role="progressbar"
+                      style="width: 65%"
+                    ></div>
+                  </div>
+                </div>
+              </td>
+              <td class="text-right pr-0">
+                <a class="btn btn-icon btn-light btn-sm" href="#">
+                  <app-keenicon class="fs-md text-success" name="arrow-right"></app-keenicon>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <th class="pl-0 py-5">
+                <div class="symbol symbol-50 symbol-light mr-2">
                     <span class="symbol-label">
                       <span
                         [inlineSVG]="'./assets/media/svg/brand-logos/telegram.svg'"
                         class="svg-icon h-50 align-self-center"
                       ></span>
                     </span>
-                  </div>
-                </th>
-                <td class="pl-0">
-                  <a
-                    href="#"
-                    class="
+                </div>
+              </th>
+              <td class="pl-0">
+                <a
+                  class="
                       text-dark
                       font-weight-bolder
                       text-hover-primary
                       mb-1
                       font-size-lg
                     "
-                    >Popular Authors</a
-                  >
-                  <span class="text-muted font-weight-bold d-block"
-                    >Most Successful</span
-                  >
-                </td>
-                <td>
-                  <div class="d-flex flex-column w-100 mr-2">
-                    <div
-                      class="
+                  href="#"
+                >Popular Authors</a
+                >
+                <span class="text-muted font-weight-bold d-block"
+                >Most Successful</span
+                >
+              </td>
+              <td>
+                <div class="d-flex flex-column w-100 mr-2">
+                  <div
+                    class="
                         d-flex
                         align-items-center
                         justify-content-between
                         mb-2
                       "
-                    >
+                  >
                       <span
                         class="text-muted mr-2 font-size-sm font-weight-bold"
                       >
                         83%
                       </span>
-                      <span class="text-muted font-size-sm font-weight-bold">
+                    <span class="text-muted font-size-sm font-weight-bold">
                         Progress
                       </span>
-                    </div>
-                    <div class="progress progress-xs w-100">
-                      <div
-                        class="progress-bar bg-success"
-                        role="progressbar"
-                        style="width: 83%"
-                        aria-valuenow="50"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
                   </div>
-                </td>
-                <td class="text-right pr-0">
-                  <a href="#" class="btn btn-icon btn-light btn-sm">
-                    <app-keenicon name="arrow-right" class="fs-md text-success"></app-keenicon>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <th class="pl-0 py-5">
-                  <div class="symbol symbol-50 symbol-light mr-2">
+                  <div class="progress progress-xs w-100">
+                    <div
+                      aria-valuemax="100"
+                      aria-valuemin="0"
+                      aria-valuenow="50"
+                      class="progress-bar bg-success"
+                      role="progressbar"
+                      style="width: 83%"
+                    ></div>
+                  </div>
+                </div>
+              </td>
+              <td class="text-right pr-0">
+                <a class="btn btn-icon btn-light btn-sm" href="#">
+                  <app-keenicon class="fs-md text-success" name="arrow-right"></app-keenicon>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <th class="pl-0 py-5">
+                <div class="symbol symbol-50 symbol-light mr-2">
                     <span class="symbol-label">
                       <span
                         [inlineSVG]="'./assets/media/svg/misc/puzzle.svg'"
                         class="svg-icon h-50 align-self-center"
                       ></span>
                     </span>
-                  </div>
-                </th>
-                <td class="pl-0">
-                  <a
-                    href="#"
-                    class="
+                </div>
+              </th>
+              <td class="pl-0">
+                <a
+                  class="
                       text-dark
                       font-weight-bolder
                       text-hover-primary
                       mb-1
                       font-size-lg
                     "
-                    >New Users</a
-                  >
-                  <span class="text-muted font-weight-bold d-block"
-                    >Awesome Users</span
-                  >
-                </td>
-                <td>
-                  <div class="d-flex flex-column w-100 mr-2">
-                    <div
-                      class="
+                  href="#"
+                >New Users</a
+                >
+                <span class="text-muted font-weight-bold d-block"
+                >Awesome Users</span
+                >
+              </td>
+              <td>
+                <div class="d-flex flex-column w-100 mr-2">
+                  <div
+                    class="
                         d-flex
                         align-items-center
                         justify-content-between
                         mb-2
                       "
-                    >
+                  >
                       <span
                         class="text-muted mr-2 font-size-sm font-weight-bold"
                       >
                         47%
                       </span>
-                      <span class="text-muted font-size-sm font-weight-bold">
+                    <span class="text-muted font-size-sm font-weight-bold">
                         Progress
                       </span>
-                    </div>
-                    <div class="progress progress-xs w-100">
-                      <div
-                        class="progress-bar bg-primary"
-                        role="progressbar"
-                        style="width: 47%"
-                        aria-valuenow="50"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
                   </div>
-                </td>
-                <td class="text-right pr-0">
-                  <a href="#" class="btn btn-icon btn-light btn-sm">
-                    <app-keenicon name="arrow-right" class="fs-md text-success"></app-keenicon>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <th class="pl-0 py-5">
-                  <div class="symbol symbol-50 symbol-light mr-2">
+                  <div class="progress progress-xs w-100">
+                    <div
+                      aria-valuemax="100"
+                      aria-valuemin="0"
+                      aria-valuenow="50"
+                      class="progress-bar bg-primary"
+                      role="progressbar"
+                      style="width: 47%"
+                    ></div>
+                  </div>
+                </div>
+              </td>
+              <td class="text-right pr-0">
+                <a class="btn btn-icon btn-light btn-sm" href="#">
+                  <app-keenicon class="fs-md text-success" name="arrow-right"></app-keenicon>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <th class="pl-0 py-5">
+                <div class="symbol symbol-50 symbol-light mr-2">
                     <span class="symbol-label">
                       <span
                         [inlineSVG]="'./assets/media/svg/brand-logos/bebo.svg'"
                         class="svg-icon h-50 align-self-center"
                       ></span>
                     </span>
-                  </div>
-                </th>
-                <td class="py-6 pl-0">
-                  <a
-                    href="#"
-                    class="
+                </div>
+              </th>
+              <td class="py-6 pl-0">
+                <a
+                  class="
                       text-dark
                       font-weight-bolder
                       text-hover-primary
                       mb-1
                       font-size-lg
                     "
-                    >Active Customers</a
-                  >
-                  <span class="text-muted font-weight-bold d-block"
-                    >Best Customers</span
-                  >
-                </td>
-                <td>
-                  <div class="d-flex flex-column w-100 mr-2">
-                    <div
-                      class="
+                  href="#"
+                >Active Customers</a
+                >
+                <span class="text-muted font-weight-bold d-block"
+                >Best Customers</span
+                >
+              </td>
+              <td>
+                <div class="d-flex flex-column w-100 mr-2">
+                  <div
+                    class="
                         d-flex
                         align-items-center
                         justify-content-between
                         mb-2
                       "
-                    >
+                  >
                       <span
                         class="text-muted mr-2 font-size-sm font-weight-bold"
                       >
                         71%
                       </span>
-                      <span class="text-muted font-size-sm font-weight-bold">
+                    <span class="text-muted font-size-sm font-weight-bold">
                         Progress
                       </span>
-                    </div>
-                    <div class="progress progress-xs w-100">
-                      <div
-                        class="progress-bar bg-danger"
-                        role="progressbar"
-                        style="width: 71%"
-                        aria-valuenow="50"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
                   </div>
-                </td>
-                <td class="text-right pr-0">
-                  <a href="#" class="btn btn-icon btn-light btn-sm">
-                    <app-keenicon name="arrow-right" class="fs-md text-success"></app-keenicon>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <th class="pl-0 py-5">
-                  <div class="symbol symbol-50 symbol-light mr-2">
+                  <div class="progress progress-xs w-100">
+                    <div
+                      aria-valuemax="100"
+                      aria-valuemin="0"
+                      aria-valuenow="50"
+                      class="progress-bar bg-danger"
+                      role="progressbar"
+                      style="width: 71%"
+                    ></div>
+                  </div>
+                </div>
+              </td>
+              <td class="text-right pr-0">
+                <a class="btn btn-icon btn-light btn-sm" href="#">
+                  <app-keenicon class="fs-md text-success" name="arrow-right"></app-keenicon>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <th class="pl-0 py-5">
+                <div class="symbol symbol-50 symbol-light mr-2">
                     <span class="symbol-label">
                       <span
                         [inlineSVG]="
@@ -1041,61 +1041,61 @@
                         class="svg-icon h-50 align-self-center"
                       ></span>
                     </span>
-                  </div>
-                </th>
-                <td class="pl-0">
-                  <a
-                    href="#"
-                    class="
+                </div>
+              </th>
+              <td class="pl-0">
+                <a
+                  class="
                       text-dark
                       font-weight-bolder
                       text-hover-primary
                       mb-1
                       font-size-lg
                     "
-                    >Bestseller Theme</a
-                  >
-                  <span class="text-muted font-weight-bold d-block"
-                    >Amazing Templates</span
-                  >
-                </td>
-                <td>
-                  <div class="d-flex flex-column w-100 mr-2">
-                    <div
-                      class="
+                  href="#"
+                >Bestseller Theme</a
+                >
+                <span class="text-muted font-weight-bold d-block"
+                >Amazing Templates</span
+                >
+              </td>
+              <td>
+                <div class="d-flex flex-column w-100 mr-2">
+                  <div
+                    class="
                         d-flex
                         align-items-center
                         justify-content-between
                         mb-2
                       "
-                    >
+                  >
                       <span
                         class="text-muted mr-2 font-size-sm font-weight-bold"
                       >
                         50%
                       </span>
-                      <span class="text-muted font-size-sm font-weight-bold">
+                    <span class="text-muted font-size-sm font-weight-bold">
                         Progress
                       </span>
-                    </div>
-                    <div class="progress progress-xs w-100">
-                      <div
-                        class="progress-bar bg-info"
-                        role="progressbar"
-                        style="width: 50%"
-                        aria-valuenow="50"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
                   </div>
-                </td>
-                <td class="text-right pr-0">
-                  <a href="#" class="btn btn-icon btn-light btn-sm">
-                    <app-keenicon name="arrow-right" class="fs-md text-success"></app-keenicon>
-                  </a>
-                </td>
-              </tr>
+                  <div class="progress progress-xs w-100">
+                    <div
+                      aria-valuemax="100"
+                      aria-valuemin="0"
+                      aria-valuenow="50"
+                      class="progress-bar bg-info"
+                      role="progressbar"
+                      style="width: 50%"
+                    ></div>
+                  </div>
+                </div>
+              </td>
+              <td class="text-right pr-0">
+                <a class="btn btn-icon btn-light btn-sm" href="#">
+                  <app-keenicon class="fs-md text-success" name="arrow-right"></app-keenicon>
+                </a>
+              </td>
+            </tr>
             </tbody>
           </table>
         </div>

@@ -6,13 +6,13 @@
     <div class="d-flex align-items-center flex-grow-1">
       <!--begin::Avatar-->
       <div class="symbol symbol-45px me-5">
-        <img src="./assets/media/avatars/300-13.jpg" alt="" />
+        <img alt="" src="./assets/media/avatars/300-13.jpg"/>
       </div>
       <!--end::Avatar-->
 
       <!--begin::Info-->
       <div class="d-flex flex-column">
-        <a href="#" class="text-gray-800 text-hover-primary fs-6 fw-bolder">
+        <a class="text-gray-800 text-hover-primary fs-6 fw-bolder" href="#">
           Mat Dillon
         </a>
         <span class="text-gray-400 fw-bold">Last month</span>
@@ -24,13 +24,13 @@
     <!--begin::Menu-->
     <div class="my-0">
       <button
-        type="button"
         class="btn btn-sm btn-icon btn-color-primary btn-active-light-primary"
-        data-kt-menu-trigger="click"
-        data-kt-menu-placement="bottom-end"
         data-kt-menu-flip="top-end"
+        data-kt-menu-placement="bottom-end"
+        data-kt-menu-trigger="click"
+        type="button"
       >
-        <app-keenicon name="category" class="fs-2"></app-keenicon>
+        <app-keenicon class="fs-2" name="category"></app-keenicon>
       </button>
       <app-dropdown-menu1></app-dropdown-menu1>
     </div>
@@ -50,10 +50,10 @@
     <!--begin::Video-->
     <div class="mb-5">
       <iframe
-        title="widget11-video"
+        allowFullScreen="true"
         class="embed-responsive-item rounded h-300px w-100"
         src="https://www.youtube.com/embed/qIHXpnASPAA"
-        allowFullScreen="true"
+        title="widget11-video"
       ></iframe>
     </div>
     <!--end::Video-->
@@ -61,27 +61,27 @@
     <!--begin::Toolbar-->
     <div class="d-flex align-items-center mb-5">
       <a
-        href="#"
         class="
           btn btn-sm btn-light btn-color-muted btn-active-light-success
           px-4
           py-2
           me-4
         "
+        href="#"
       >
-        <app-keenicon name="element-plus" class="fs-3"></app-keenicon>
+        <app-keenicon class="fs-3" name="element-plus"></app-keenicon>
         189
       </a>
 
       <a
-        href="#"
         class="
           btn btn-sm btn-light btn-color-muted btn-active-light-danger
           px-4
           py-2
         "
+        href="#"
       >
-        <app-keenicon name="heart" class="fs-2"></app-keenicon>
+        <app-keenicon class="fs-2" name="heart"></app-keenicon>
         229
       </a>
     </div>
@@ -98,17 +98,17 @@
     <textarea
       class="form-control border-0 p-0 pe-10 resize-none min-h-25px"
       data-kt-autosize="true"
-      rows="{1}"
       placeholder="Reply.."
+      rows="{1}"
     ></textarea>
 
     <div class="position-absolute top-0 end-0 me-n5">
       <span class="btn btn-icon btn-sm btn-active-color-primary pe-0 me-2">
-        <app-keenicon name="paper-clip" class="fs-3 mb-3"></app-keenicon>
+        <app-keenicon class="fs-3 mb-3" name="paper-clip"></app-keenicon>
       </span>
 
       <span class="btn btn-icon btn-sm btn-active-color-primary ps-0">
-        <app-keenicon name="geolocation" class="fs-3 mb-3"></app-keenicon>
+        <app-keenicon class="fs-3 mb-3" name="geolocation"></app-keenicon>
       </span>
     </div>
   </form>

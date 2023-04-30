@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-engage-widget10',
@@ -7,7 +7,9 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class EngageWidget10Component implements OnInit {
   @Input() cssClass: string = ''
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

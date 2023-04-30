@@ -1,8 +1,8 @@
 // Localization is based on '@ngx-translate/core';
 // Please be familiar with official documentations first → https://github.com/ngx-translate/core
 
-import { Injectable } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import {Injectable} from '@angular/core';
+import {TranslateService} from '@ngx-translate/core';
 
 export interface Locale {
   lang: string;

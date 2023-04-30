@@ -1,15 +1,9 @@
-import {
-  Component,
-  OnInit,
-  ViewChild,
-  ElementRef,
-  OnDestroy,
-} from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
-import { LayoutService } from './core/layout.service';
-import { LayoutInitService } from './core/layout-init.service';
-import { ILayout, LayoutType } from './core/configs/config';
+import {Component, ElementRef, OnDestroy, OnInit, ViewChild,} from '@angular/core';
+import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
+import {Subscription} from 'rxjs';
+import {LayoutService} from './core/layout.service';
+import {LayoutInitService} from './core/layout-init.service';
+import {ILayout, LayoutType} from './core/configs/config';
 
 @Component({
   selector: 'app-layout',
@@ -17,11 +11,10 @@ import { ILayout, LayoutType } from './core/configs/config';
   styleUrls: ['./layout.component.scss'],
 })
 export class LayoutComponent implements OnInit, OnDestroy {
-  private unsubscribe: Subscription[] = [];
-
-  // Public variables
   // page
   pageContainerCSSClasses: string;
+
+  // Public variables
   // header
   appHeaderDefaultClass: string = '';
   appHeaderDisplay: boolean;
@@ -39,7 +32,6 @@ export class LayoutComponent implements OnInit, OnDestroy {
   appToolbarStickyAttributes: { [attrName: string]: string } = {};
   appToolbarMinimizeEnabled: boolean;
   appToolbarMinimizeAttributes: { [attrName: string]: string } = {};
-
   // content
   appContentContiner?: 'fixed' | 'fluid';
   appContentContainerClass: string;
@@ -52,7 +44,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
   appSidebarDisplay: boolean;
   appSidebarDefaultStickyEnabled: boolean;
   appSidebarDefaultStickyAttributes: { [attrName: string]: string } = {};
-  @ViewChild('ktSidebar', { static: true }) ktSidebar: ElementRef;
+  @ViewChild('ktSidebar', {static: true}) ktSidebar: ElementRef;
   /// sidebar panel
   appSidebarPanelDisplay: boolean;
   // footer
@@ -62,13 +54,12 @@ export class LayoutComponent implements OnInit, OnDestroy {
   appFooterContainerCSSClass: string = '';
   appFooterFixedDesktop: boolean;
   appFooterFixedMobile: boolean;
-
   // scrolltop
   scrolltopDisplay: boolean;
-
-  @ViewChild('ktAside', { static: true }) ktAside: ElementRef;
-  @ViewChild('ktHeaderMobile', { static: true }) ktHeaderMobile: ElementRef;
-  @ViewChild('ktHeader', { static: true }) ktHeader: ElementRef;
+  @ViewChild('ktAside', {static: true}) ktAside: ElementRef;
+  @ViewChild('ktHeaderMobile', {static: true}) ktHeaderMobile: ElementRef;
+  @ViewChild('ktHeader', {static: true}) ktHeader: ElementRef;
+  private unsubscribe: Subscription[] = [];
 
   constructor(
     private initService: LayoutInitService,

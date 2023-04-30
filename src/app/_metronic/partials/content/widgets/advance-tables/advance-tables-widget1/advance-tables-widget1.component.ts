@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-advance-tables-widget1',
@@ -6,5 +6,7 @@ import { Component, Input } from '@angular/core';
 })
 export class AdvanceTablesWidget1Component {
   @Input() cssClass: '';
-  constructor() {}
+
+  constructor() {
+  }
 }

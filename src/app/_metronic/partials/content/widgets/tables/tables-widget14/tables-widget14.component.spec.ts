@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { TablesWidget14Component } from './tables-widget14.component';
+import {TablesWidget14Component} from './tables-widget14.component';
 
 describe('TablesWidget14Component', () => {
   let component: TablesWidget14Component;
@@ -8,9 +8,9 @@ describe('TablesWidget14Component', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TablesWidget14Component ]
+      declarations: [TablesWidget14Component]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
