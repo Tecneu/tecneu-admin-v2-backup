@@ -41,6 +41,7 @@ import { ExtendedComponent } from './components/toolbar/extended/extended.compon
 import { ReportsComponent } from './components/toolbar/reports/reports.component';
 import { SaasComponent } from './components/toolbar/saas/saas.component';
 import {SharedModule} from "../shared/shared.module";
+import { RecursiveMenuItemComponent } from './components/sidebar/recursive-menu-item/recursive-menu-item.component';
 
 const routes: Routes = [
   {
@@ -74,6 +75,7 @@ const routes: Routes = [
     ExtendedComponent,
     ReportsComponent,
     SaasComponent,
+    RecursiveMenuItemComponent,
   ],
   imports: [
     CommonModule,
