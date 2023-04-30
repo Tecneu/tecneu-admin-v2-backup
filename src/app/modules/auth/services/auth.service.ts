@@ -46,9 +46,8 @@ export class AuthService implements OnDestroy {
   login(email: string, password: string): Observable<UserType> {
     this.isLoadingSubject.next(true);
     return this.authHttpService.login(email, password).pipe(
-      map((auth: AuthModel) => {
-        const result = this.setAuthFromLocalStorage(auth);
-        return result;
+      map((auth) => {
+        return this.setAuthFromLocalStorage(auth);
       }),
       switchMap(() => this.getUserByToken()),
       catchError((err) => {
@@ -115,7 +114,8 @@ export class AuthService implements OnDestroy {
 
   // private methods
   private setAuthFromLocalStorage(auth: AuthModel): boolean {
-    // store auth authToken/refreshToken/epiresIn in local storage to keep user logged in between page refreshes
+    // Almacenar el token de autenticación (authToken), permisos del usuario (permissions) y tiempo de expiración (expires_in)
+    // en el almacenamiento local (local storage) para mantener al usuario conectado entre actualizaciones de página.
     if (auth && auth.access_token) {
       localStorage.setItem(this.authLocalStorageToken, JSON.stringify(auth));
       return true;
@@ -130,11 +130,25 @@ export class AuthService implements OnDestroy {
         return undefined;
       }
 
-      const authData = JSON.parse(lsValue);
-      return authData;
+      return JSON.parse(lsValue);
     } catch (error) {
       console.error(error);
       return undefined;
     }
+  }
+
+  // Esta función verifica si el usuario actual tiene un permiso específico
+  // Si coincide con cualquier privilegio del listado entonces se dara acceso
+  hasPermission(permissionName: string, validPrivileges: string[]): boolean {
+    const currentUser = this.getAuthFromLocalStorage();
+    if (!currentUser || !currentUser.permissions) {
+      return false;
+    }
+
+    const permissions = currentUser.getPermissionsDecrypted();
+
+    const permission = permissions.find(p => p.permission_name === permissionName && validPrivileges.includes(p.privilege));
+
+    return !!permission;
   }
 }

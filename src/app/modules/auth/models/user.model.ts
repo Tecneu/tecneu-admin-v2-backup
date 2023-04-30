@@ -20,12 +20,6 @@ export class UserModel extends AuthModel {
     seller_name: string;
   };
 
-  permissions: {
-    permission_name: string;
-    privilege: string;
-    tags: string[];
-  }[];
-
   roles: string[];
   date_created: Date;
   last_updated: Date;
