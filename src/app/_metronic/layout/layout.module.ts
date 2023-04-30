@@ -33,13 +33,16 @@ import {ReportsComponent} from './components/toolbar/reports/reports.component';
 import {SaasComponent} from './components/toolbar/saas/saas.component';
 import {SharedModule} from "../shared/shared.module";
 import {RecursiveMenuItemComponent} from './components/sidebar/recursive-menu-item/recursive-menu-item.component';
+import {PermissionsGuard} from "../../guards/permissions.guard";
+import {Error403Component} from "../../modules/errors/error403/error403.component";
 
 const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
+    canActivateChild: [PermissionsGuard],
     children: Routing,
-  },
+  }
 ];
 
 @NgModule({

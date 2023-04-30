@@ -1,4 +1,4 @@
 export interface Permissions {
-  permission_name: string;
-  valid_privileges: string[];
+  permissionName: string;
+  validPrivileges: string[];
 }

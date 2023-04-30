@@ -12,8 +12,15 @@ const routes: Routes = [
       {
         path: 'items',
         component: PaginatedItemListComponent,
+        data: {
+          permissions: [
+            {
+              permissionName: 'amazon_items',
+              validPrivileges: ['read', 'readWrite']
+            }
+          ]
+        }
       },
-
       {path: '', redirectTo: 'items', pathMatch: 'full'},
       {path: '**', redirectTo: 'items', pathMatch: 'full'},
     ],

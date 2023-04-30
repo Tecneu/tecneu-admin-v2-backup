@@ -36,6 +36,7 @@ export class UserModel extends AuthModel {
     this.image = user.image || './assets/media/avatars/blank.png';
     this.default_warehouse_id = user.default_warehouse_id || '';
     this.contact_information = user.contact_information || '';
+    this.permissions = user.permissions || '';
   }
 }
 

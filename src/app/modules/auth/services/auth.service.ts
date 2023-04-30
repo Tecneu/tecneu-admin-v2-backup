@@ -71,9 +71,15 @@ export class AuthService implements OnDestroy {
       return of(undefined);
     }
 
+    // const currentUser = this.getAuthFromLocalStorage();
+    // if (currentUser && currentUser.token_date && new Date().getTime() - new Date(currentUser.token_date).getTime() <= 5 * 60 * 1000) {
+    //   return new Observable<UserType>((observer) => observer.next(currentUser as UserType)); // CORREGIR
+    // }
     this.isLoadingSubject.next(true);
     return this.authHttpService.getUserByToken(auth.access_token).pipe(
-      map((user: UserType) => {
+      map((userJson: any) => {
+        const user = new UserModel();
+        user.setUser(userJson);
         if (user) {
           this.currentUserSubject.next(user);
         } else {
@@ -135,20 +141,5 @@ export class AuthService implements OnDestroy {
       console.error(error);
       return undefined;
     }
-  }
-
-  // Esta función verifica si el usuario actual tiene un permiso específico
-  // Si coincide con cualquier privilegio del listado entonces se dara acceso
-  hasPermission(permissionName: string, validPrivileges: string[]): boolean {
-    const currentUser = this.getAuthFromLocalStorage();
-    if (!currentUser || !currentUser.permissions) {
-      return false;
-    }
-
-    const permissions = currentUser.getPermissionsDecrypted();
-
-    const permission = permissions.find(p => p.permission_name === permissionName && validPrivileges.includes(p.privilege));
-
-    return !!permission;
   }
 }
