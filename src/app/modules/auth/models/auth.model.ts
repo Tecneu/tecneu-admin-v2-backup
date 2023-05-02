@@ -14,10 +14,23 @@ export class AuthModel {
     return JSON.parse(bytes.toString(CryptoJS.enc.Utf8)) as DecryptedPermissions[];
   }
 
+  // hasPermission(requiredPermission: RequiredPermission): boolean {
+  //   const permissions = this.getPermissionsDecrypted();
+  //
+  //   const permission = permissions.find(p => p.permission_name === requiredPermission.permissionName && requiredPermission.validPrivileges?.includes(p.privilege));
+  //
+  //   return !!permission;
+  // }
   hasPermission(requiredPermission: RequiredPermission): boolean {
     const permissions = this.getPermissionsDecrypted();
 
-    const permission = permissions.find(p => p.permission_name === requiredPermission.permissionName && requiredPermission.validPrivileges?.includes(p.privilege));
+    const permission = permissions.find(p => {
+      const hasPermissionName = p.permission_name === requiredPermission.permissionName;
+      const hasValidPrivilege = !requiredPermission.validPrivileges || requiredPermission.validPrivileges.some(privilege => privilege === p.privilege);
+      const hasValidTag = !requiredPermission.tags || requiredPermission.tags.some(tag => p.tags && p.tags.includes(tag));
+
+      return hasPermissionName && ((!requiredPermission.validPrivileges && hasValidTag) || (!requiredPermission.tags && hasValidPrivilege) || (hasValidPrivilege && hasValidTag));
+    });
 
     return !!permission;
   }

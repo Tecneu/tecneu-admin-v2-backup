@@ -3,9 +3,9 @@ import {BehaviorSubject, Observable, of, Subscription} from 'rxjs';
 import {catchError, finalize, map, switchMap} from 'rxjs/operators';
 import {UserModel} from '../models/user.model';
 import {AuthModel} from '../models/auth.model';
-import {environment} from 'src/environments/environment';
 import {Router} from '@angular/router';
 import {AuthHTTPService} from "./auth-http.service";
+import {AuthLocalStorageService} from "./auth-local-storage.service";
 
 export type UserType = UserModel | undefined;
 
@@ -20,10 +20,10 @@ export class AuthService implements OnDestroy {
   isLoadingSubject: BehaviorSubject<boolean>;
   // private fields
   private unsubscribe: Subscription[] = []; // Read more: → https://brianflove.com/2016/12/11/anguar-2-unsubscribe-observables/
-  private authLocalStorageToken = `${environment.appVersion}-${environment.USERDATA_KEY}`;
 
   constructor(
     private authHttpService: AuthHTTPService,
+    private authLocalStorageService: AuthLocalStorageService,
     private router: Router
   ) {
     this.isLoadingSubject = new BehaviorSubject<boolean>(false);
@@ -59,14 +59,14 @@ export class AuthService implements OnDestroy {
   }
 
   logout() {
-    localStorage.removeItem(this.authLocalStorageToken);
+    this.authLocalStorageService.removeToken();
     this.router.navigate(['/auth/login'], {
       queryParams: {},
     });
   }
 
   getUserByToken(): Observable<UserType> {
-    const auth = this.getAuthFromLocalStorage();
+    const auth = this.authLocalStorageService.getAuthFromLocalStorage();
     if (!auth || !auth.access_token) {
       return of(undefined);
     }
@@ -123,23 +123,10 @@ export class AuthService implements OnDestroy {
     // Almacenar el token de autenticación (authToken), permisos del usuario (permissions) y tiempo de expiración (expires_in)
     // en el almacenamiento local (local storage) para mantener al usuario conectado entre actualizaciones de página.
     if (auth && auth.access_token) {
-      localStorage.setItem(this.authLocalStorageToken, JSON.stringify(auth));
+      this.authLocalStorageService.setToken(JSON.stringify(auth));
+      // localStorage.setItem(this.authLocalStorageToken, JSON.stringify(auth));
       return true;
     }
     return false;
-  }
-
-  private getAuthFromLocalStorage(): AuthModel | undefined {
-    try {
-      const lsValue = localStorage.getItem(this.authLocalStorageToken);
-      if (!lsValue) {
-        return undefined;
-      }
-
-      return JSON.parse(lsValue);
-    } catch (error) {
-      console.error(error);
-      return undefined;
-    }
   }
 }

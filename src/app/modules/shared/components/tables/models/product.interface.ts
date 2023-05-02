@@ -1,14 +1,19 @@
 export interface Product {
-  id: number;
   imageUrl: string;
   productName: string;
-  technology: string;
+  productId: string;
+  stock: number;
+  stockDetail?: string;
   price: number;
-  priceStatus: string;
-  deposit: number;
-  depositStatus: string;
-  agent: string;
-  agentRole: string;
-  status: string;
+  totalCostOfSales: {
+    COGS: number;
+    shippingFee: number;
+    commissionFee: number;
+    others?: number;
+  };
+  // profit: {
+  //   grossProfit: number;
+  //   grossProfitMargin: number;
+  // };
 }
 

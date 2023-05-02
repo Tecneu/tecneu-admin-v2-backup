@@ -176,7 +176,7 @@ export function getMenuItems(translate: (key: string) => string): MenuItem[] {
     },
     {
       type: 'separator',
-      label: 'Tecneu'
+      label: 'Items'
     },
     {
       type: 'link',

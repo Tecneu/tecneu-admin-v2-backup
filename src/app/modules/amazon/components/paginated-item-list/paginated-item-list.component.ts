@@ -1,23 +1,13 @@
-import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
-import {AuthService, UserType} from "../../../auth";
+import {ChangeDetectorRef, Component, OnInit, ViewChild} from '@angular/core';
+import {AuthService} from "../../../auth";
 import {UntypedFormBuilder, UntypedFormControl, UntypedFormGroup} from "@angular/forms";
-import {FlatTreeControl} from '@angular/cdk/tree';
-import {
-  CostAndProfitsByProduct,
-  IAmazonItem,
-  Image,
-  Image2,
-  ItemsTreeDataInterface,
-  Summary
-} from "../../models/get-amazon-items.interface";
-import {Subscription} from "rxjs";
+import {IAmazonItem, Image, Image2, ItemsTreeDataInterface, Summary} from "../../models/get-amazon-items.interface";
 import {MatPaginator} from "@angular/material/paginator";
 import {AmazonService} from "../../services/amazon.service";
 import {Router} from "@angular/router";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {MatDialog} from "@angular/material/dialog";
 import {ArrayUtilsService} from "../../../../services/array-utils.service";
-import {ArrayDataSource} from "@angular/cdk/collections";
 import {SyncResultsDialogComponent} from "../../../../shared/dialogs/sync-results-dialog/sync-results-dialog.component";
 import {Product} from "../../../shared/components/tables/models/product.interface";
 
@@ -26,89 +16,14 @@ import {Product} from "../../../shared/components/tables/models/product.interfac
   templateUrl: './paginated-item-list.component.html',
   styleUrls: ['./paginated-item-list.component.scss']
 })
-export class PaginatedItemListComponent implements OnInit, OnDestroy {
-
-  products: Product[] = [
-    {
-      id: 1,
-      productName: "Sant Extreanet Solution",
-      imageUrl: "./assets/media/stock/600x400/img-26.jpg",
-      technology: "HTML, JS, ReactJS",
-      price: 2790,
-      priceStatus: 'Paid',
-      deposit: 520,
-      depositStatus: 'Rejected',
-      agent: "Bradly Beal",
-      agentRole: 'Insurance',
-      status: "Approved",
-    },
-    {
-      id: 2,
-      productName: "Telegram Development",
-      imageUrl: "./assets/media/stock/600x400/img-3.jpg",
-      technology: "C#, ASP.NET, MS SQL",
-      price: 4790,
-      priceStatus: 'Paid',
-      deposit: 240,
-      depositStatus: 'Rejected',
-      agent: "Chris Thompson",
-      agentRole: 'NBA Player',
-      status: "In Progress",
-    },
-    {
-      id: 3,
-      productName: "Payroll Application",
-      imageUrl: "./assets/media/stock/600x400/img-9.jpg",
-      technology: "PHP, Laravel, VueJS",
-      price: 4390,
-      priceStatus: 'Paid',
-      deposit: 593,
-      depositStatus: 'Rejected',
-      agent: "Zoey McGee",
-      agentRole: 'Ruby Developer',
-      status: "Success",
-    },
-    {
-      id: 4,
-      productName: "HR Management System",
-      imageUrl: "./assets/media/stock/600x400/img-18.jpg",
-      technology: "Python, PostgreSQL, ReactJS",
-      price: 7990,
-      priceStatus: 'Paid',
-      deposit: 980,
-      depositStatus: 'Rejected',
-      agent: "Brandon Ingram",
-      agentRole: 'Insurance',
-      status: "Rejected",
-    },
-    {
-      id: 5,
-      productName: "Telegram Mobile",
-      imageUrl: "./assets/media/stock/600x400/img-8.jpg",
-      technology: "HTML, JS, ReactJS",
-      price: 5790,
-      priceStatus: 'Paid',
-      deposit: 750,
-      depositStatus: 'Rejected',
-      agent: "Natali Trump",
-      agentRole: 'Insurance',
-      status: "Approved",
-    },
-  ];
-
-  currentUser: UserType;
+export class PaginatedItemListComponent implements OnInit {
   isSpinnerVisible = true;
   isSpinnerOverlayVisible = false;
 
   options: UntypedFormGroup;
   hideRequiredControl = new UntypedFormControl(false);
   floatLabelControl = new UntypedFormControl('auto');
-
-  treeControl = new FlatTreeControl<ItemsTreeDataInterface>(
-    node => node.level, node => node.expandable);
-
-  // dataSources: ArrayDataSource<ItemsTreeDataInterface>[] = [];
-  dataSources: ArrayDataSource<ItemsTreeDataInterface>[] = [];
+  products: Product[] = [];
   itemsTreeData: ItemsTreeDataInterface[][] = [];
   limit = 100;
   offset = 0;
@@ -117,33 +32,19 @@ export class PaginatedItemListComponent implements OnInit, OnDestroy {
 
   show_profit: boolean = false;
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
-  formatPercent = new Intl.NumberFormat('en-US', {
-    style: 'percent',
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2
-  });
-  formatCurrency = new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2
-  });
-  private unsubscribe: Subscription[] = []; // Read more: → https://brianflove.com/2016/12/11/anguar-2-unsubscribe-observables/
 
   constructor(private amazonItemsService: AmazonService,
               private router: Router,
               fb: UntypedFormBuilder,
               public snackBar: MatSnackBar,
               public dialog: MatDialog,
-              // private scrollDispatcher: ScrollDispatcher,
               private arrayUtils: ArrayUtilsService,
-              private authService: AuthService) {
-    const subscr = this.authService.currentUser$.subscribe((user) => {
-      if (!user) return;
-      this.currentUser = user;
-      // this.show_profit = this.currentUser.permissions?.find(permission => permission.permission_name === 'tecneu_items')?.tags?.includes('show_profit') || false;
-    });
-    this.unsubscribe.push(subscr);
+              private authService: AuthService,
+              private changeDetector: ChangeDetectorRef) {
+    this.show_profit = this.authService.currentUserValue?.hasPermission({
+      permissionName: 'tecneu_items',
+      tags: ['show_profit']
+    }) ?? false;
 
     this.options = fb.group({
       hideRequired: this.hideRequiredControl,
@@ -165,19 +66,9 @@ export class PaginatedItemListComponent implements OnInit, OnDestroy {
     return null;
   }
 
-  shouldRender(dataSourceIndex: number, node: ItemsTreeDataInterface) {
-    const parent = this.getParentNode(dataSourceIndex, node);
-    return !parent || parent.isExpanded;
-  }
-
   async ngOnInit() {
-    // Quitar tooltips de botones de paginator
-    const paginatorIntl = this.paginator?._intl;
-    paginatorIntl.nextPageLabel = '';
-    paginatorIntl.previousPageLabel = '';
-
     await this.getAndSetItems(this.offset, this.limit, undefined);
-    this.isSpinnerVisible = false;
+    // this.isSpinnerVisible = false;
   }
 
   pageChangeEvent = async ($event: any) => {
@@ -216,7 +107,7 @@ export class PaginatedItemListComponent implements OnInit, OnDestroy {
     return new Promise((resolve) => {
       this.amazonItemsService.getAmazonItems(offset, limit, query).subscribe(
         async (response) => {
-          this.dataSources = [];
+          this.products = [];
           this.itemsTreeData = [];
 
           this.total = response.paging.total;
@@ -225,20 +116,43 @@ export class PaginatedItemListComponent implements OnInit, OnDestroy {
             product.summaries = [product.summaries.find(summary => summary.marketplaceId === 'A1AM78C64UM0Y8') || {} as Summary];
             product.images = [product.images.find(images => images.marketplaceId === 'A1AM78C64UM0Y8') || {} as Image];
 
-            const itemTreeData: ItemsTreeDataInterface[] = [{
-              product,
-              costs_and_profits: this.getCostsAndProfitsByProduct(product),
-              level: 0,
-              expandable: true,
-            }];
-            this.itemsTreeData.push(itemTreeData);
-            this.dataSources.push(new ArrayDataSource(itemTreeData));
+            console.log('quantity: ' + product.fulfillment_availability?.quantity);
+
+            this.products.push({
+              imageUrl: this.getThumbMainImage(product.images[0]?.images),
+              productName: product.summaries[0]?.itemName,
+              productId: product.asin,
+              stock: product.fulfillment_availability?.quantity,
+              price: product.buying_price?.listing_price?.amount,
+              totalCostOfSales: {
+                COGS: this.getProductCost(product),
+                shippingFee: product.buying_price?.shipping?.amount,
+                commissionFee: product.total_fees_estimate?.amount
+              },
+            });
           });
-          // console.log(response);
+          // Agrega esta línea para indicarle a Angular que detecte los cambios
+          this.changeDetector.detectChanges();
           resolve(response);
         },
         (err) => this.openSnackBar(err.messageError, 'Cerrar', 'notif-error'));
     });
+  }
+
+  getProductCost(item: IAmazonItem): number {
+    let productCost = 0;
+
+    item?.tecneu_item_relationships?.forEach(relationship => {
+      if (relationship.tecneu_item?.variations && relationship.tecneu_item?.variations.length > 0) {
+        const variationCost = relationship.tecneu_item?.variations?.find(variation => String(variation._id) === String(relationship.tecneu_item_variation_id))?.cost ?? 0;
+        productCost += (variationCost * relationship.quantity);
+      } else {
+        const tecneuItemCost = relationship?.tecneu_item?.cost ?? 0;
+        productCost += (tecneuItemCost * relationship.quantity);
+      }
+    });
+
+    return productCost;
   }
 
   openSnackBar(message: string, action: string, panelClass: string) {
@@ -281,69 +195,7 @@ export class PaginatedItemListComponent implements OnInit, OnDestroy {
     return thumbImage?.link || '';
   }
 
-  getCostsAndProfitsByProduct(item: IAmazonItem): CostAndProfitsByProduct {
-    // console.log(item);
-    let productCost = 0;
-    // let product_price = 0;
-
-    item?.tecneu_item_relationships?.forEach(relationship => {
-      if (relationship.tecneu_item?.variations && relationship.tecneu_item?.variations.length > 0) {
-        const variationCost = relationship.tecneu_item?.variations?.find(variation => String(variation._id) === String(relationship.tecneu_item_variation_id))?.cost || 0;
-        productCost += (variationCost * relationship.quantity);
-      } else {
-        productCost += ((relationship?.tecneu_item?.cost || 0) * relationship.quantity);
-      }
-    });
-
-    const item_price = item.buying_price?.listing_price?.amount;
-    const seller_stock = item.fulfillment_availability?.quantity;
-
-    // const free_shipping_cost = product.shipping.free_shipping ? product.selling_costs.free_shipping_cost : undefined;
-
-    // let profit = product.price - (free_shipping_cost ? free_shipping_cost : 0) - product.selling_costs.sale_fee_amount;
-    // const shipping = item.buying_price?.shipping?.amount ? item.buying_price?.shipping?.amount : 0;
-    const total_fees = item.total_fees_estimate?.amount ? item.total_fees_estimate?.amount : 0;
-
-    let profit = item_price - total_fees;
-    const profit_percent = (profit / productCost) - 1;
-    profit -= productCost;
-
-    const percentageOfFeeAmount = Math.round((item.total_fees_estimate?.amount * 100) / item.buying_price?.landed_price?.amount);
-
-    const objectReturn = {
-      profit_percent: this.formatPercent.format(profit_percent),
-      profit: this.formatCurrency.format(profit),
-      color_of_profit: this.getColor(profit_percent),
-      product_cost: this.formatCurrency.format(productCost),
-      percentage_of_fee_amount: `${percentageOfFeeAmount}%`,
-      sale_fee_amount: this.formatCurrency.format(item.total_fees_estimate?.amount),
-      landed_price: this.formatCurrency.format(item.buying_price?.landed_price?.amount),
-      shipping: this.formatCurrency.format(item.buying_price?.shipping?.amount),
-      price: this.formatCurrency.format(item_price),
-      available_quantity: seller_stock
-    };
-    // console.log(objectReturn);
-    return objectReturn;
-  }
-
-  getColor(value: number) {
-    // value from 0 to 1
-    // tslint:disable-next-line:no-unused-expression
-    value > 1 ? value = 1 : value < 0 ? value = 0 : undefined;
-    value = 1 - value;
-    // console.log('VALUE START');
-    // console.log(value);
-    const hue = ((1 - value) * 120).toString(10);
-    // console.log(hue);
-    // console.log('VALUE END');
-    return ['hsl(', hue, ',60%,50%)'].join('');
-  }
-
   onPageChange(event: { pageIndex: number; pageSize: number }): void {
     console.log(event);
-  }
-
-  ngOnDestroy() {
-    this.unsubscribe.forEach((sb) => sb.unsubscribe());
   }
 }

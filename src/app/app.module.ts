@@ -1,7 +1,7 @@
 import {APP_INITIALIZER, NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {ClipboardModule} from 'ngx-clipboard';
 import {TranslateModule} from '@ngx-translate/core';
@@ -17,6 +17,7 @@ import {AmazonComponent} from './modules/amazon/amazon.component';
 import {TecneuComponent} from './modules/tecneu/tecneu.component';
 import {SyncResultsDialogComponent} from './shared/dialogs/sync-results-dialog/sync-results-dialog.component';
 import {FormsModule} from "@angular/forms";
+import {TecneuApiInterceptor} from "./core/interceptors/tecneu-api.interceptor";
 
 // #fake-end#
 
@@ -48,17 +49,22 @@ function appInitializer(authService: AuthService) {
     // #fake-end#
     AppRoutingModule,
     InlineSVGModule.forRoot(),
-    NgbModule,
+    NgbModule
   ],
   providers: [
     {
       provide: APP_INITIALIZER,
       useFactory: appInitializer,
       multi: true,
-      deps: [AuthService],
+      deps: [AuthService]
     },
+    {
+      provide: HTTP_INTERCEPTORS,
+      multi: true,
+      useClass: TecneuApiInterceptor
+    }
   ],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {
 }

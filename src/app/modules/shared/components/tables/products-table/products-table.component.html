@@ -23,10 +23,11 @@
       <thead>
       <tr class="fw-bolder text-muted bg-light">
         <th class="ps-4 min-w-325px rounded-start">Producto</th>
-        <th class="min-w-125px">Price</th>
-        <th class="min-w-125px">Deposit</th>
-        <th class="min-w-200px">Agent</th>
-        <th class="min-w-150px">Estado</th>
+        <th class="min-w-125px">Stock</th>
+        <th class="min-w-125px">Precio</th>
+        <th class="min-w-125px">Costo</th>
+        <th class="min-w-125px">Envio / Precio en destino</th>
+        <th class="min-w-125px">Ganancia</th>
         <th class="min-w-200px text-end rounded-end"></th>
       </tr>
       </thead>
@@ -42,40 +43,42 @@
             <div class="d-flex justify-content-start flex-column"><a
               class="text-dark fw-bolder text-hover-primary mb-1 fs-6" href="#">
               {{ product.productName }}
-            </a> <span class="text-muted fw-bold text-muted d-block fs-7">
-                        {{ product.technology }}
-                        </span>
+            </a>
+              <span class="text-muted fw-bold text-muted d-block fs-7">{{ product.productId }}</span>
             </div>
           </div>
         </td>
-        <td><a class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6" href="#">
-          ${{ product.price }}
-        </a> <span class="text-muted fw-bold text-muted d-block fs-7">
-                  {{ product.priceStatus }}
-                  </span>
-        </td>
-        <td><a class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6" href="#">
-          ${{ product.deposit }}
-        </a> <span class="text-muted fw-bold text-muted d-block fs-7">
-                  {{ product.depositStatus }}
-                  </span>
-        </td>
-        <td><a class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6" href="#">
-          {{ product.agent }}
-        </a> <span class="text-muted fw-bold text-muted d-block fs-7">
-                  {{ product.agentRole }}
-                  </span>
+        <td>
+          <span class="text-dark fw-bolder d-block mb-1 fs-6" href="#">{{ product.stock }}</span>
+          <!--          <span class="text-muted fw-bold text-muted d-block fs-7">{{ product.stockDetail }}</span>-->
         </td>
         <td>
+          <span class="text-dark fw-bolder d-block mb-1 fs-6"
+                href="#">{{ this.formatCurrency.format(product.price) }}</span>
+          <!--          <span class="text-muted fw-bold text-muted d-block fs-7">{{ product.priceDetail }}</span>-->
+        </td>
+        <td>
+          <span class="text-dark fw-bolder d-block mb-1 fs-6"
+                href="#">{{ this.formatCurrency.format(product.totalCostOfSales.COGS) }}</span>
+          <!--          <span class="text-muted fw-bold text-muted d-block fs-7">{{ product.costDetail }}</span>-->
+        </td>
+        <td>
+          <span class="text-dark fw-bolder d-block mb-1 fs-6"
+                href="#">{{ this.formatCurrency.format(product.totalCostOfSales.commissionFee) }}</span>
           <!--          'badge-light-primary': product.status ===-->
-          <span [ngClass]="{
-                  'badge-light-success': product.status === 'Success',
-                  'badge-light-warning': product.status === 'Approved',
-                  'badge-light-info': product.status === 'Rejected',
-                  'badge-light-danger': product.status === 'In Progress'
-                  }" class="badge fs-7 fw-bold">
-                  {{ product.status }}
-                  </span>
+          <!--          <span [ngClass]="{-->
+          <!--                  'badge-light-success': product.totalCostOfSales === 'Success',-->
+          <!--                  'badge-light-warning': product.totalCostOfSales === 'Approved',-->
+          <!--                  'badge-light-info': product.totalCostOfSales === 'Rejected',-->
+          <!--                  'badge-light-danger': product.totalCostOfSales === 'In Progress'-->
+          <!--                  }" class="badge fs-7 fw-bold">-->
+          <!--                  {{ product.totalCostOfSales }}-->
+          <!--                  </span>-->
+        </td>
+        <td>
+          <span class="text-dark fw-bolder d-block mb-1 fs-6"
+                href="#">{{ this.getProfit(product).profit_percent }}</span>
+          <span class="text-muted fw-bold text-muted d-block fs-7">{{ this.getProfit(product).profit }}</span>
         </td>
         <td class="text-end">
           <a class="
