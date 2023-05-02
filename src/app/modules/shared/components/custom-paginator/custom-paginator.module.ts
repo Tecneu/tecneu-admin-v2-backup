@@ -6,9 +6,7 @@ import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [CustomPaginatorComponent],
-  exports: [
-    CustomPaginatorComponent
-  ],
+  exports: [CustomPaginatorComponent],
   imports: [
     CommonModule,
     FormsModule

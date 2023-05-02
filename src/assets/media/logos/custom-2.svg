@@ -14,7 +14,8 @@
     d="M14.512 0H22.3796C24.3062 0 25.6806 1.86778 25.1074 3.70711L14.4781 37.8196C14.1061 39.0136 13.0009 39.8269 11.7503 39.8269H3.88281C1.95625 39.8269 0.581894 37.9591 1.15502 36.1197L11.7843 2.00718C12.1563 0.813257 13.2615 0 14.512 0Z"
     fill="#EF305E"/>
   <defs>
-    <filter color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" height="42.5381" id="filter0_i_8605_3258" width="19.8467" x="13.7917"
+    <filter color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" height="42.5381" id="filter0_i_8605_3258"
+            width="19.8467" x="13.7917"
             y="0">
       <feFlood flood-opacity="0" result="BackgroundImageFix"/>
       <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape"/>

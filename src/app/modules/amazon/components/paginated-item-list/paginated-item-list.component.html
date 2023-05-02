@@ -1,4 +1,4 @@
-<p>Paginated works!</p>
+<!--<p>Paginated works!</p>-->
 
 <!--<div *ngIf="isSpinnerOverlayVisible" class="spinner-wrapper">-->
 <!--  <div class="spinner">-->
@@ -20,15 +20,15 @@
 <!--      <div class="sc-list-navbar__container">-->
 <!--        &lt;!&ndash; column &ndash;&gt;-->
 <!--        <div class="sc-list-navbar-left">-->
-<!--          <mat-form-field appearance="standard" style="margin-left: 15px; width: 350px">-->
-<!--            <button (click)="search(query, true)" color="primary" mat-icon-button matPrefix>-->
-<!--              <mat-icon aria-label="Search" class="inputMatButton">search</mat-icon>-->
-<!--            </button>-->
-<!--            <input (keyup.enter)="search(query, true)" [(ngModel)]="query" matInput placeholder="Buscar" type="text">-->
-<!--            <button (click)="clearQuery()" *ngIf="query" aria-label="Clear" mat-button mat-icon-button matSuffix>-->
-<!--              <mat-icon class="inputMatButton">close</mat-icon>-->
-<!--            </button>-->
-<!--          </mat-form-field>-->
+<!--          &lt;!&ndash;          <mat-form-field appearance="standard" style="margin-left: 15px; width: 350px">&ndash;&gt;-->
+<!--          &lt;!&ndash;            <button (click)="search(query, true)" color="primary" mat-icon-button matPrefix>&ndash;&gt;-->
+<!--          &lt;!&ndash;              <mat-icon aria-label="Search" class="inputMatButton">search</mat-icon>&ndash;&gt;-->
+<!--          &lt;!&ndash;            </button>&ndash;&gt;-->
+<!--          &lt;!&ndash;            <input (keyup.enter)="search(query, true)" [(ngModel)]="query" matInput placeholder="Buscar" type="text">&ndash;&gt;-->
+<!--          &lt;!&ndash;            <button (click)="clearQuery()" *ngIf="query" aria-label="Clear" mat-button mat-icon-button matSuffix>&ndash;&gt;-->
+<!--          &lt;!&ndash;              <mat-icon class="inputMatButton">close</mat-icon>&ndash;&gt;-->
+<!--          &lt;!&ndash;            </button>&ndash;&gt;-->
+<!--          &lt;!&ndash;          </mat-form-field>&ndash;&gt;-->
 <!--        </div>-->
 <!--        <div class="sc-list-navbar-right">-->
 <!--          <div>-->
@@ -94,19 +94,19 @@
 
 <!--<div *ngFor="let dataSource of dataSources; let dataSourceIndex = index" class="sc-list-navbar__secondary-container"-->
 <!--     style="width: 100%">-->
-<!--  <div *ngIf="dataSource?._data[0]?.product?.has_tecneu_item_relationships === 'partial'"-->
-<!--       class="sc-ui-badge relationships partial-relationships"><span-->
-<!--    class="sc-ui-badge-text">Faltan relaciones</span>-->
-<!--  </div>-->
-<!--  <div *ngIf="dataSource?._data[0]?.product?.has_tecneu_item_relationships === false"-->
-<!--       class="sc-ui-badge relationships no-relationships"><span class="sc-ui-badge-text">No tiene relaciones</span>-->
-<!--  </div>-->
-<!--  <div [ngClass]="'other_listing_type'"-->
-<!--       class="sc-ui-badge listing_type">-->
-<!--      <span class="sc-ui-badge-text">-->
-<!--        Comisión: {{dataSource?._data[0]?.costs_and_profits?.percentage_of_fee_amount}}-->
-<!--      </span>-->
-<!--  </div>-->
+<!--  &lt;!&ndash;  <div *ngIf="dataSource?._data[0]?.product?.has_tecneu_item_relationships === 'partial'"&ndash;&gt;-->
+<!--  &lt;!&ndash;       class="sc-ui-badge relationships partial-relationships"><span&ndash;&gt;-->
+<!--  &lt;!&ndash;    class="sc-ui-badge-text">Faltan relaciones</span>&ndash;&gt;-->
+<!--  &lt;!&ndash;  </div>&ndash;&gt;-->
+<!--  &lt;!&ndash;  <div *ngIf="dataSource?._data[0]?.product?.has_tecneu_item_relationships === false"&ndash;&gt;-->
+<!--  &lt;!&ndash;       class="sc-ui-badge relationships no-relationships"><span class="sc-ui-badge-text">No tiene relaciones</span>&ndash;&gt;-->
+<!--  &lt;!&ndash;  </div>&ndash;&gt;-->
+<!--  &lt;!&ndash;  <div [ngClass]="'other_listing_type'"&ndash;&gt;-->
+<!--  &lt;!&ndash;       class="sc-ui-badge listing_type">&ndash;&gt;-->
+<!--  &lt;!&ndash;      <span class="sc-ui-badge-text">&ndash;&gt;-->
+<!--  &lt;!&ndash;        Comisión: {{dataSource?._data[0]?.costs_and_profits?.percentage_of_fee_amount}}&ndash;&gt;-->
+<!--  &lt;!&ndash;      </span>&ndash;&gt;-->
+<!--  &lt;!&ndash;  </div>&ndash;&gt;-->
 <!--  <cdk-tree [dataSource]="dataSource" [treeControl]="treeControl">-->
 <!--    <cdk-tree-node *cdkTreeNodeDef="let node; when: hasChild"-->
 <!--                   [style.display]="shouldRender(dataSourceIndex, node) ? 'flex' : 'none'"-->
@@ -121,9 +121,9 @@
 <!--                      [style.visibility]="'hidden'"-->
 <!--                      cdkTreeNodeToggle-->
 <!--                      mat-icon-button>-->
-<!--                <mat-icon class="mat-icon-rtl-mirror">-->
-<!--                  {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}-->
-<!--                </mat-icon>-->
+<!--                &lt;!&ndash;                <mat-icon class="mat-icon-rtl-mirror">&ndash;&gt;-->
+<!--                &lt;!&ndash;                  {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}&ndash;&gt;-->
+<!--                &lt;!&ndash;                </mat-icon>&ndash;&gt;-->
 <!--              </button>-->
 <!--            </div>-->
 <!--          </div>-->
@@ -184,21 +184,21 @@
 <!--          &lt;!&ndash;          <div *ngIf="show_profit" class="sc-ui-grid-header-column sc-ui-grid-header-column&#45;&#45;9">&ndash;&gt;-->
 <!--          &lt;!&ndash;          </div>&ndash;&gt;-->
 <!--          <div class="sc-list-trigger-content">-->
-<!--            <div class="sc-ui-trigger-content">-->
-<!--              <button [matMenuTriggerFor]="menu" mat-icon-button>-->
-<!--                <mat-icon>more_vert</mat-icon>-->
-<!--              </button>-->
-<!--              <mat-menu #menu="matMenu">-->
-<!--                <button (click)="modifyItem(node)" mat-menu-item>-->
-<!--                  <mat-icon>edit</mat-icon>-->
-<!--                  <span>Modificar producto</span>-->
-<!--                </button>-->
-<!--                &lt;!&ndash;                <button mat-menu-item (click)="deleteItem(node)">&ndash;&gt;-->
-<!--                &lt;!&ndash;                  <mat-icon>delete</mat-icon>&ndash;&gt;-->
-<!--                &lt;!&ndash;                  <span>Eliminar item</span>&ndash;&gt;-->
-<!--                &lt;!&ndash;                </button>&ndash;&gt;-->
-<!--              </mat-menu>-->
-<!--            </div>-->
+<!--            &lt;!&ndash;            <div class="sc-ui-trigger-content">&ndash;&gt;-->
+<!--            &lt;!&ndash;              <button [matMenuTriggerFor]="menu" mat-icon-button>&ndash;&gt;-->
+<!--            &lt;!&ndash;                <mat-icon>more_vert</mat-icon>&ndash;&gt;-->
+<!--            &lt;!&ndash;              </button>&ndash;&gt;-->
+<!--            &lt;!&ndash;              <mat-menu #menu="matMenu">&ndash;&gt;-->
+<!--            &lt;!&ndash;                <button (click)="modifyItem(node)" mat-menu-item>&ndash;&gt;-->
+<!--            &lt;!&ndash;                  <mat-icon>edit</mat-icon>&ndash;&gt;-->
+<!--            &lt;!&ndash;                  <span>Modificar producto</span>&ndash;&gt;-->
+<!--            &lt;!&ndash;                </button>&ndash;&gt;-->
+<!--            &lt;!&ndash;                &lt;!&ndash;                <button mat-menu-item (click)="deleteItem(node)">&ndash;&gt;&ndash;&gt;-->
+<!--            &lt;!&ndash;                &lt;!&ndash;                  <mat-icon>delete</mat-icon>&ndash;&gt;&ndash;&gt;-->
+<!--            &lt;!&ndash;                &lt;!&ndash;                  <span>Eliminar item</span>&ndash;&gt;&ndash;&gt;-->
+<!--            &lt;!&ndash;                &lt;!&ndash;                </button>&ndash;&gt;&ndash;&gt;-->
+<!--            &lt;!&ndash;              </mat-menu>&ndash;&gt;-->
+<!--            &lt;!&ndash;            </div>&ndash;&gt;-->
 <!--          </div>-->
 <!--        </div>-->
 <!--      </div>-->
@@ -211,9 +211,11 @@
 <!--  </mat-paginator>-->
 <!--</div>-->
 
-<!--<app-custom-paginator-->
-<!--  (pageChange)="onPageChange($event)"-->
-<!--  [length]="4200"-->
-<!--  [pageSizeOptions]="[20, 50, 100]"-->
-<!--  [pageSize]="50"-->
-<!--&gt;</app-custom-paginator>-->
+<app-items-table class="card mb-5 mb-xl-8"></app-items-table>
+
+<app-custom-paginator
+  (pageChange)="onPageChange($event)"
+  [length]="400"
+  [pageSizeOptions]="[20, 50, 100]"
+  [pageSize]="100"
+></app-custom-paginator>

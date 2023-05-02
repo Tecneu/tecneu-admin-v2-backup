@@ -1,4 +1,4 @@
-export interface Permissions {
+export interface RequiredPermission {
   permissionName: string;
   validPrivileges: string[];
 }

@@ -1,5 +1,4 @@
 import {Routes} from '@angular/router';
-import {Error403Component} from "../modules/errors/error403/error403.component";
 
 const Routing: Routes = [
   {

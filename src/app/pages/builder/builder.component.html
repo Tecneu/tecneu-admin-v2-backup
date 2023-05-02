@@ -5,8 +5,9 @@
       class="d-flex h-50px w-50px h-lg-80px w-lg-80px flex-shrink-0 flex-center position-relative align-self-start align-self-lg-center mt-3 mt-lg-0">
       <svg class="text-primary h-75px w-75px h-lg-100px w-lg-100px position-absolute opacity-5" viewBox="0 0 24 24"
            xmlns="http://www.w3.org/2000/svg">
-        <path d="M10.2,21.23,4.91,18.17a3.58,3.58,0,0,1-1.8-3.11V8.94a3.58,3.58,0,0,1,1.8-3.11L10.2,2.77a3.62,3.62,0,0,1,3.6,0l5.29,3.06a3.58,3.58,0,0,1,1.8,3.11v6.12a3.58,3.58,0,0,1-1.8,3.11L13.8,21.23A3.62,3.62,0,0,1,10.2,21.23Z"
-              fill="currentColor"/>
+        <path
+          d="M10.2,21.23,4.91,18.17a3.58,3.58,0,0,1-1.8-3.11V8.94a3.58,3.58,0,0,1,1.8-3.11L10.2,2.77a3.62,3.62,0,0,1,3.6,0l5.29,3.06a3.58,3.58,0,0,1,1.8,3.11v6.12a3.58,3.58,0,0,1-1.8,3.11L13.8,21.23A3.62,3.62,0,0,1,10.2,21.23Z"
+          fill="currentColor"/>
       </svg>
 
       <app-keenicon class="fs-2x fs-lg-3x text-primary position-absolute" name="wrench"></app-keenicon>
@@ -80,7 +81,8 @@
                     form-check form-check-custom form-check-solid form-switch
                     mb-2
                   ">
-                  <input [(ngModel)]="model.app.sidebar.default.fixed.desktop" class="form-check-input" name="model.app.sidebar.default.fixed.desktop"
+                  <input [(ngModel)]="model.app.sidebar.default.fixed.desktop" class="form-check-input"
+                         name="model.app.sidebar.default.fixed.desktop"
                          type="checkbox"/>
                 </div>
 
@@ -146,7 +148,8 @@
                     form-check form-check-custom form-check-solid form-switch
                     mb-2
                   ">
-                  <input [(ngModel)]="model.app.header.default.fixed.desktop" class="form-check-input" name="model.app.header.default.fixed.desktop"
+                  <input [(ngModel)]="model.app.header.default.fixed.desktop" class="form-check-input"
+                         name="model.app.header.default.fixed.desktop"
                          type="checkbox"/>
                 </div>
 
@@ -163,7 +166,8 @@
             <div class="d-flex justify-content-end">
               <!--begin::Check-->
               <div class="form-check form-check-custom form-check-success form-check-solid form-check-sm ms-10">
-                <input [(ngModel)]="model.app.header.default.content" checked="checked" class="form-check-input" id="kt_builder_header_content_menu"
+                <input [(ngModel)]="model.app.header.default.content" checked="checked" class="form-check-input"
+                       id="kt_builder_header_content_menu"
                        name="model.app.header.default.content" type="radio"
                        value="menu" value="menu">
                 <!--begin::Label-->
@@ -174,7 +178,8 @@
               <!--end::Check-->
               <!--begin::Check-->
               <div class="form-check form-check-custom form-check-success form-check-solid form-check-sm ms-10">
-                <input [(ngModel)]="model.app.header.default.content" class="form-check-input" id="kt_builder_header_content_page-title"
+                <input [(ngModel)]="model.app.header.default.content" class="form-check-input"
+                       id="kt_builder_header_content_page-title"
                        name="model.app.header.default.content"
                        name="layout-builder[layout][app][header][default][content]"
                        type="radio" value="page-title"
@@ -213,7 +218,8 @@
                 <!--end::Check-->
                 <!--begin::Check-->
                 <div class="form-check form-check-custom form-check-solid form-check-success form-switch">
-                  <input [(ngModel)]="model.app.toolbar.fixed.mobile" class="form-check-input w-45px h-30px" id="kt_builder_toolbar_fixed_mobile"
+                  <input [(ngModel)]="model.app.toolbar.fixed.mobile" class="form-check-input w-45px h-30px"
+                         id="kt_builder_toolbar_fixed_mobile"
                          name="model.app.toolbar.fixed.mobile" type="checkbox">
                   <!--begin::Label-->
                   <label class="form-check-label text-gray-700 fw-bold" for="kt_builder_toolbar_fixed_mobile">Mobile
@@ -242,7 +248,8 @@
               <!--end::Image-->
               <!--begin::Check-->
               <div class="form-check form-check-custom form-check-success form-check-sm form-check-solid">
-                <input [(ngModel)]="model.app.toolbar.layout" checked="checked" class="form-check-input" name="model.app.toolbar.layout"
+                <input [(ngModel)]="model.app.toolbar.layout" checked="checked" class="form-check-input"
+                       name="model.app.toolbar.layout"
                        type="radio" value="classic">
                 <!--begin::Label-->
                 <div class="form-check-label text-gray-800">Classic</div>
@@ -261,7 +268,8 @@
               <!--end::Image-->
               <!--begin::Check-->
               <div class="form-check form-check-custom form-check-success form-check-sm form-check-solid">
-                <input [(ngModel)]="model.app.toolbar.layout" class="form-check-input" name="model.app.toolbar.layout" type="radio"
+                <input [(ngModel)]="model.app.toolbar.layout" class="form-check-input" name="model.app.toolbar.layout"
+                       type="radio"
                        value="saas">
                 <!--begin::Label-->
                 <div class="form-check-label text-gray-800">SaaS</div>
@@ -280,7 +288,8 @@
               <!--end::Image-->
               <!--begin::Check-->
               <div class="form-check form-check-custom form-check-success form-check-sm form-check-solid">
-                <input [(ngModel)]="model.app.toolbar.layout" class="form-check-input" name="model.app.toolbar.layout" type="radio"
+                <input [(ngModel)]="model.app.toolbar.layout" class="form-check-input" name="model.app.toolbar.layout"
+                       type="radio"
                        value="accounting">
                 <!--begin::Label-->
                 <div class="form-check-label text-gray-800">Accounting</div>
@@ -299,7 +308,8 @@
               <!--end::Image-->
               <!--begin::Check-->
               <div class="form-check form-check-custom form-check-success form-check-sm form-check-solid">
-                <input [(ngModel)]="model.app.toolbar.layout" class="form-check-input" name="model.app.toolbar.layout" type="radio"
+                <input [(ngModel)]="model.app.toolbar.layout" class="form-check-input" name="model.app.toolbar.layout"
+                       type="radio"
                        value="extended">
                 <!--begin::Label-->
                 <div class="form-check-label text-gray-800">Extended</div>
@@ -318,7 +328,8 @@
               <!--end::Image-->
               <!--begin::Check-->
               <div class="form-check form-check-custom form-check-success form-check-sm form-check-solid">
-                <input [(ngModel)]="model.app.toolbar.layout" class="form-check-input" name="model.app.toolbar.layout" type="radio"
+                <input [(ngModel)]="model.app.toolbar.layout" class="form-check-input" name="model.app.toolbar.layout"
+                       type="radio"
                        value="reports">
                 <!--begin::Label-->
                 <div class="form-check-label text-gray-800">Reports</div>
@@ -353,7 +364,8 @@
             </ng-container>
           </button>
 
-          <button (click)="resetPreview()" [disabled]="configLoading || resetLoading" class="btn btn-active-light btn-color-muted"
+          <button (click)="resetPreview()" [disabled]="configLoading || resetLoading"
+                  class="btn btn-active-light btn-color-muted"
                   id="kt_layout_builder_reset" type="button">
             <ng-container *ngIf="!resetLoading">
               <span class="indicator-label">Reset</span>

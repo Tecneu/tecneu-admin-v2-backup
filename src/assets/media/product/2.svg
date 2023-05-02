@@ -4,7 +4,8 @@
     <rect fill="url(#pattern0)" height="270.2" shape-rendering="crispEdges" width="266" x="60" y="60"/>
   </g>
   <defs>
-    <filter color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" height="390.2" id="filter0_d_3216_1482" width="386" x="0"
+    <filter color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" height="390.2" id="filter0_d_3216_1482"
+            width="386" x="0"
             y="0">
       <feFlood flood-opacity="0" result="BackgroundImageFix"/>
       <feColorMatrix in="SourceAlpha" result="hardAlpha" type="matrix"

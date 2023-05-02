@@ -20,7 +20,8 @@
     fill: #EE1D23;
   }
 </style>
-  <radialGradient cx="-1067.6371" cy="-3631.4714" gradientTransform="matrix(2.4159 0 0 -0.1268 3320.4456 -328.9957)" gradientUnits="userSpaceOnUse"
+  <radialGradient cx="-1067.6371" cy="-3631.4714" gradientTransform="matrix(2.4159 0 0 -0.1268 3320.4456 -328.9957)"
+                  gradientUnits="userSpaceOnUse"
                   id="SVGID_1_" r="149.8881">
 	<stop offset="0" style="stop-color:#6B6B6D"/>
     <stop offset="1" style="stop-color:#231F20"/>

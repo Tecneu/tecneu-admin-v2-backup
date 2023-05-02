@@ -19,7 +19,8 @@
       fill="#F1416C"/>
   </g>
   <defs>
-    <filter color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" height="24.7461" id="filter0_i_9269_2885" width="12.7158" x="5.78564"
+    <filter color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" height="24.7461" id="filter0_i_9269_2885"
+            width="12.7158" x="5.78564"
             y="6">
       <feFlood flood-opacity="0" result="BackgroundImageFix"/>
       <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape"/>

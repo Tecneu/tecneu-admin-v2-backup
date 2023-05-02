@@ -11,7 +11,7 @@ import {ConnectionsComponent} from './connections/connections.component';
 import {CardsModule, DropdownMenusModule, WidgetsModule,} from '../../_metronic/partials';
 import {SharedModule} from "../../_metronic/shared/shared.module";
 import {FormsModule} from "@angular/forms";
-import {CustomPaginatorModule} from "../../shared/custom-paginator/custom-paginator.module";
+import {CustomPaginatorModule} from "../shared/components/custom-paginator/custom-paginator.module";
 
 @NgModule({
   declarations: [

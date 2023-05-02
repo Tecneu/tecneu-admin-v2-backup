@@ -173,6 +173,22 @@ export function getMenuItems(translate: (key: string) => string): MenuItem[] {
           label: 'Drawer Chat',
         }
       ]
+    },
+    {
+      type: 'separator',
+      label: 'Tecneu'
+    },
+    {
+      type: 'link',
+      route: '/builder',
+      label: 'Shopify',
+      icon: 'shop',
+    },
+    {
+      type: 'link',
+      route: '/amazon/items',
+      label: 'Amazon',
+      icon: 'handcart',
     }
   ]
 }

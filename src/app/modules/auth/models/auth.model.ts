@@ -1,7 +1,7 @@
-import CryptoJS from 'crypto-js';
+import CryptoJS from 'crypto-es';
 
 import {environment} from "../../../../environments/environment";
-import {Permissions} from "./required-permissions.interface";
+import {RequiredPermission} from "./required-permissions.interface";
 
 export class AuthModel {
   access_token: string;
@@ -14,7 +14,7 @@ export class AuthModel {
     return JSON.parse(bytes.toString(CryptoJS.enc.Utf8)) as DecryptedPermissions[];
   }
 
-  hasPermission(requiredPermission: Permissions): boolean {
+  hasPermission(requiredPermission: RequiredPermission): boolean {
     const permissions = this.getPermissionsDecrypted();
 
     const permission = permissions.find(p => p.permission_name === requiredPermission.permissionName && requiredPermission.validPrivileges?.includes(p.privilege));

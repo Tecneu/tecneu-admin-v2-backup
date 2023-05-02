@@ -15,12 +15,16 @@
 
         <li class="nav-item">
           <a (click)="setTab('Week')"
-             [ngClass]="{'active': tab === 'Week'}" class="nav-link btn btn-sm btn-color-muted btn-active btn-active-light fw-bold px-4 me-1" data-bs-toggle="tab"
+             [ngClass]="{'active': tab === 'Week'}"
+             class="nav-link btn btn-sm btn-color-muted btn-active btn-active-light fw-bold px-4 me-1"
+             data-bs-toggle="tab"
              id="kt_chart_widget_8_month_toggle">Week</a>
         </li>
         <li class="nav-item">
           <a (click)="setTab('Month')"
-             [ngClass]="{'active': tab === 'Month'}" class="nav-link btn btn-sm btn-color-muted btn-active btn-active-light fw-bold px-4 me-1" data-bs-toggle="tab"
+             [ngClass]="{'active': tab === 'Month'}"
+             class="nav-link btn btn-sm btn-color-muted btn-active btn-active-light fw-bold px-4 me-1"
+             data-bs-toggle="tab"
              id="kt_chart_widget_8_week_toggle">Month</a>
         </li>
 
@@ -64,7 +68,8 @@
             <apx-chart [chart]="chart1Options.chart" [colors]="chart1Options.colors"
                        [dataLabels]="chart1Options.dataLabels" [fill]="chart1Options.fill"
                        [legend]="chart1Options.legend"
-                       [markers]="chart1Options.markers" [plotOptions]="chart1Options.plotOptions" [series]="chart1Options.series"
+                       [markers]="chart1Options.markers" [plotOptions]="chart1Options.plotOptions"
+                       [series]="chart1Options.series"
                        [states]="chart1Options.states" [stroke]="chart1Options.stroke" [tooltip]="chart1Options.tooltip"
                        [xaxis]="chart1Options.xaxis" [yaxis]="chart1Options.yaxis"></apx-chart>
           </ng-container>
@@ -195,7 +200,8 @@
             <apx-chart #monthChart [chart]="chart2Options.chart" [colors]="chart2Options.colors"
                        [dataLabels]="chart2Options.dataLabels" [fill]="chart2Options.fill"
                        [legend]="chart2Options.legend"
-                       [markers]="chart2Options.markers" [plotOptions]="chart2Options.plotOptions" [series]="chart2Options.series"
+                       [markers]="chart2Options.markers" [plotOptions]="chart2Options.plotOptions"
+                       [series]="chart2Options.series"
                        [states]="chart2Options.states" [stroke]="chart2Options.stroke" [tooltip]="chart2Options.tooltip"
                        [xaxis]="chart2Options.xaxis" [yaxis]="chart2Options.yaxis"></apx-chart>
 

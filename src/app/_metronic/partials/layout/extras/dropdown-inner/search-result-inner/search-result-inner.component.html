@@ -9,7 +9,8 @@
     <!--end::Icon-->
 
     <!--begin::Input-->
-    <input (ngModelChange)="search($event)" [ngModel]="keyword" class="form-control form-control-flush ps-10" data-kt-search-element="input" name="search"
+    <input (ngModelChange)="search($event)" [ngModel]="keyword" class="form-control form-control-flush ps-10"
+           data-kt-search-element="input" name="search"
            placeholder="Search..." type="text" value=""/>
     <!--end::Input-->
 
@@ -22,14 +23,16 @@
 
     <!--begin::Reset-->
     <span (click)="clearSearch()"
-          [ngClass]="searching || keyword.length === 0 ? 'd-none' : ''" class="btn btn-flush btn-active-color-primary position-absolute top-50 end-0 translate-middle-y lh-0"
+          [ngClass]="searching || keyword.length === 0 ? 'd-none' : ''"
+          class="btn btn-flush btn-active-color-primary position-absolute top-50 end-0 translate-middle-y lh-0"
           data-kt-search-element="clear">
         <app-keenicon class="fs-2 fs-lg-1 me-0" name="cross"></app-keenicon>
     </span>
     <!--end::Reset-->
 
     <!--begin::Toolbar-->
-    <div [ngClass]="searching || keyword.length > 0 ? 'd-none' : ''" class="position-absolute top-50 end-0 translate-middle-y"
+    <div [ngClass]="searching || keyword.length > 0 ? 'd-none' : ''"
+         class="position-absolute top-50 end-0 translate-middle-y"
          data-kt-search-element="toolbar">
       <!--begin::Preferences toggle-->
       <div class="btn btn-icon w-20px btn-sm btn-active-color-primary me-1" data-bs-toggle="tooltip"

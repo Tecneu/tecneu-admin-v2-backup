@@ -30,14 +30,16 @@
             <app-toolbar [appToolbarLayout]="appToolbarLayout" [ngClass]="appToolbarCSSClass" class="app-toolbar"
                          id="kt_app_toolbar"></app-toolbar>
           </ng-container>
-          <app-content [appContentContainerClass]="appContentContainerClass" [appContentContiner]="appContentContiner" [contentContainerCSSClass]="contentContainerCSSClass"
+          <app-content [appContentContainerClass]="appContentContainerClass" [appContentContiner]="appContentContiner"
+                       [contentContainerCSSClass]="contentContainerCSSClass"
                        [ngClass]="contentCSSClasses" class="app-content"
                        id=" kt_app_content">
           </app-content>
         </div>
         <!--end::Content wrapper-->
         <ng-container *ngIf="appFooterDisplay">
-          <app-footer [appFooterContainerCSSClass]="appFooterContainerCSSClass" [ngClass]="appFooterCSSClass" class="app-footer"
+          <app-footer [appFooterContainerCSSClass]="appFooterContainerCSSClass" [ngClass]="appFooterCSSClass"
+                      class="app-footer"
                       id="kt_app_footer"></app-footer>
         </ng-container>
       </div>

@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {ActivatedRouteSnapshot, CanActivateChild, Router, RouterStateSnapshot, UrlTree} from '@angular/router';
 import {Observable} from 'rxjs';
 import {AuthService} from "../modules/auth";
-import {Permissions} from "../modules/auth/models/required-permissions.interface";
+import {RequiredPermission} from "../modules/auth/models/required-permissions.interface";
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +24,7 @@ export class PermissionsGuard implements CanActivateChild {
             return resolve(false);
           }
 
-          const requiredPermissions = childRoute.data?.permissions as Permissions[] | undefined;
+          const requiredPermissions = childRoute.data?.permissions as RequiredPermission[] | undefined;
 
           if (!requiredPermissions || requiredPermissions.every(requiredPermission => user.hasPermission(requiredPermission))) {
             return resolve(true);
