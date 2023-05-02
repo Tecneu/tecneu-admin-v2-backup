@@ -1,12 +1,12 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {SharedModule} from "../../../../_metronic/shared/shared.module";
-import {ItemsTableComponent} from "./items-table/items-table.component";
+import {ProductsTableComponent} from "./products-table/products-table.component";
 
 
 @NgModule({
-  declarations: [ItemsTableComponent],
-  exports: [ItemsTableComponent],
+  declarations: [ProductsTableComponent],
+  exports: [ProductsTableComponent],
   imports: [
     CommonModule,
     SharedModule

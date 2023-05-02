@@ -1,0 +1,105 @@
+<!-- begin::Header -->
+<div class="card-header border-0 pt-5">
+  <h3 class="card-title align-items-start flex-column">
+      <span
+        class="card-label fw-bolder fs-3 mb-1">Amazon Items</span>
+    <!-- <span class="text-muted mt-1 fw-bold fs-7">Over 500 new products</span>-->
+  </h3>
+  <div class="card-toolbar">
+    <a class="btn btn-sm btn-light-primary" href="#">
+      <app-keenicon class="fs-3" name="arrows-loop"></app-keenicon>
+      Sincronizar items
+    </a>
+  </div>
+</div>
+<!-- end::Header -->
+<!-- begin::Body -->
+<div class="card-body py-3">
+  <!-- begin::Table container -->
+  <div class="table-responsive">
+    <!-- begin::Table -->
+    <table class="table align-middle gs-0 gy-4">
+      <!-- begin::Table head -->
+      <thead>
+      <tr class="fw-bolder text-muted bg-light">
+        <th class="ps-4 min-w-325px rounded-start">Producto</th>
+        <th class="min-w-125px">Price</th>
+        <th class="min-w-125px">Deposit</th>
+        <th class="min-w-200px">Agent</th>
+        <th class="min-w-150px">Estado</th>
+        <th class="min-w-200px text-end rounded-end"></th>
+      </tr>
+      </thead>
+      <!-- end::Table head -->
+      <!-- begin::Table body -->
+      <tbody>
+      <tr *ngFor="let product of products">
+        <td>
+          <div class="d-flex align-items-center">
+            <div class="symbol symbol-50px me-5">
+              <img [src]="product.imageUrl" alt="" class=""/>
+            </div>
+            <div class="d-flex justify-content-start flex-column"><a
+              class="text-dark fw-bolder text-hover-primary mb-1 fs-6" href="#">
+              {{ product.productName }}
+            </a> <span class="text-muted fw-bold text-muted d-block fs-7">
+                        {{ product.technology }}
+                        </span>
+            </div>
+          </div>
+        </td>
+        <td><a class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6" href="#">
+          ${{ product.price }}
+        </a> <span class="text-muted fw-bold text-muted d-block fs-7">
+                  {{ product.priceStatus }}
+                  </span>
+        </td>
+        <td><a class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6" href="#">
+          ${{ product.deposit }}
+        </a> <span class="text-muted fw-bold text-muted d-block fs-7">
+                  {{ product.depositStatus }}
+                  </span>
+        </td>
+        <td><a class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6" href="#">
+          {{ product.agent }}
+        </a> <span class="text-muted fw-bold text-muted d-block fs-7">
+                  {{ product.agentRole }}
+                  </span>
+        </td>
+        <td>
+          <!--          'badge-light-primary': product.status ===-->
+          <span [ngClass]="{
+                  'badge-light-success': product.status === 'Success',
+                  'badge-light-warning': product.status === 'Approved',
+                  'badge-light-info': product.status === 'Rejected',
+                  'badge-light-danger': product.status === 'In Progress'
+                  }" class="badge fs-7 fw-bold">
+                  {{ product.status }}
+                  </span>
+        </td>
+        <td class="text-end">
+          <a class="
+                     btn btn-icon btn-bg-light btn-active-color-primary btn-sm
+                     me-1
+                     " href="#">
+            <app-keenicon class="fs-3" name="switch"></app-keenicon>
+          </a>
+          <a class="
+                     btn btn-icon btn-bg-light btn-active-color-primary btn-sm
+                     me-1
+                     " href="#">
+            <app-keenicon class="fs-3" name="pencil"></app-keenicon>
+          </a>
+          <a class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm" href="#">
+            <app-keenicon class="fs-3" name="trash"></app-keenicon>
+          </a>
+        </td>
+      </tr>
+      </tbody>
+      <!-- end::Table body -->
+    </table>
+    <!-- end::Table -->
+  </div>
+  <!-- end::Table container -->
+</div>
+<!-- end::Body -->

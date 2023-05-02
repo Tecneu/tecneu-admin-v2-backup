@@ -19,6 +19,7 @@ import {MatDialog} from "@angular/material/dialog";
 import {ArrayUtilsService} from "../../../../services/array-utils.service";
 import {ArrayDataSource} from "@angular/cdk/collections";
 import {SyncResultsDialogComponent} from "../../../../shared/dialogs/sync-results-dialog/sync-results-dialog.component";
+import {Product} from "../../../shared/components/tables/models/product.interface";
 
 @Component({
   selector: 'app-paginated-item-list',
@@ -26,6 +27,74 @@ import {SyncResultsDialogComponent} from "../../../../shared/dialogs/sync-result
   styleUrls: ['./paginated-item-list.component.scss']
 })
 export class PaginatedItemListComponent implements OnInit, OnDestroy {
+
+  products: Product[] = [
+    {
+      id: 1,
+      productName: "Sant Extreanet Solution",
+      imageUrl: "./assets/media/stock/600x400/img-26.jpg",
+      technology: "HTML, JS, ReactJS",
+      price: 2790,
+      priceStatus: 'Paid',
+      deposit: 520,
+      depositStatus: 'Rejected',
+      agent: "Bradly Beal",
+      agentRole: 'Insurance',
+      status: "Approved",
+    },
+    {
+      id: 2,
+      productName: "Telegram Development",
+      imageUrl: "./assets/media/stock/600x400/img-3.jpg",
+      technology: "C#, ASP.NET, MS SQL",
+      price: 4790,
+      priceStatus: 'Paid',
+      deposit: 240,
+      depositStatus: 'Rejected',
+      agent: "Chris Thompson",
+      agentRole: 'NBA Player',
+      status: "In Progress",
+    },
+    {
+      id: 3,
+      productName: "Payroll Application",
+      imageUrl: "./assets/media/stock/600x400/img-9.jpg",
+      technology: "PHP, Laravel, VueJS",
+      price: 4390,
+      priceStatus: 'Paid',
+      deposit: 593,
+      depositStatus: 'Rejected',
+      agent: "Zoey McGee",
+      agentRole: 'Ruby Developer',
+      status: "Success",
+    },
+    {
+      id: 4,
+      productName: "HR Management System",
+      imageUrl: "./assets/media/stock/600x400/img-18.jpg",
+      technology: "Python, PostgreSQL, ReactJS",
+      price: 7990,
+      priceStatus: 'Paid',
+      deposit: 980,
+      depositStatus: 'Rejected',
+      agent: "Brandon Ingram",
+      agentRole: 'Insurance',
+      status: "Rejected",
+    },
+    {
+      id: 5,
+      productName: "Telegram Mobile",
+      imageUrl: "./assets/media/stock/600x400/img-8.jpg",
+      technology: "HTML, JS, ReactJS",
+      price: 5790,
+      priceStatus: 'Paid',
+      deposit: 750,
+      depositStatus: 'Rejected',
+      agent: "Natali Trump",
+      agentRole: 'Insurance',
+      status: "Approved",
+    },
+  ];
 
   currentUser: UserType;
   isSpinnerVisible = true;
